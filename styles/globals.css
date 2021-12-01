@@ -2,8 +2,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #02c692 !important;
+  font-family: "Press Start 2P", "Roboto", 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -14,3 +18,173 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 
+/* 
+  VIDEO PLAYER START
+*/
+
+/* Style the video: 100% width and height to cover the entire window */
+.video {
+  width: 100%;
+
+  height: 100vh;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: absolute;
+  top: 15%;
+  color: #f1f1f1;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.sub-content {
+  text-align: center;
+}
+.sub-content h1 {
+  color: #ffff;
+  font-size: 1.3rem;
+  margin: 0px;
+  padding: 0px;
+}
+.sub-content p {
+  color: #eee;
+  font-size: 1rem;
+  margin: 5px 0;
+}
+.sub-content button {
+  font-weight: bold;
+  color: #f1f1f1;
+  border: #f1f1f1 1px solid;
+  padding: 10px 5px;
+  background-color: hsla(0, 0%, 0%, 0);
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.sub-content button:hover {
+  background-color: #f1f1f1;
+  color: #000000c0;
+}
+
+.sub-content img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Style the video: 100% width and height to cover the entire window */
+  .video {
+    margin-top: -20%;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Add some content at the bottom of the video/page */
+  .content {
+    position: absolute;
+    top: 0;
+    color: #f1f1f1;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .sub-content {
+    text-align: center;
+    padding: 10px;
+  }
+  .sub-content h1 {
+    color: #ffff;
+    font-size: 1.7rem;
+  }
+  .sub-content p {
+    color: #efefef;
+    font-size: 1.3rem;
+    margin: 10px 0 !important;
+  }
+  .sub-content button {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #f1f1f1;
+    border: #f1f1f1 1px solid;
+    padding: 10px 5px;
+    background-color: hsla(0, 0%, 0%, 0);
+    font-size: 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .sub-content button:hover {
+    background-color: #f1f1f1;
+    color: #000000c0;
+  }
+
+  .sub-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    border: #f1f1f1 1px solid;
+    opacity: 0.4;
+  }
+} 
+
+/* 
+  VIDEO PLAYER END
+*/
