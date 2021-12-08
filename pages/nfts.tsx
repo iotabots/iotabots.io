@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import ProTip from '../components/ProTip';
 import Copyright from '../components/Copyright';
 
-import { Button } from 'react-nft-components';
+// import { Button } from '@iotabots/react-nft-components';
 
 export default function Nfts() {
   return (
@@ -14,11 +14,11 @@ export default function Nfts() {
         <Typography variant="h4" component="h1" gutterBottom>
           Mint your NFT now for free with zero costs!
         </Typography>
-        <Button
+        {/* <Button
           label="MintButton"
           onClick={() => { console.log("Creating NFT...") }}
           primary
-        />
+        /> */}
         <ProTip />
         <Copyright />
       </Box>

@@ -33,7 +33,7 @@ export default function Home() {
             <button
               className="btn btn-outline-dark"
               onClick={scrollToBottom}>
-              Let's go!
+              {"Let's go!"}
             </button>
             {/* <img
                       className="view-image"
