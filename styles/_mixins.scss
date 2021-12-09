@@ -1,0 +1,12 @@
+@mixin view($minmax, $value) {
+  @if $minmax == 'smaller' {
+    @media (max-width: $value) {
+      @content;
+    }
+
+  } @else if $minmax == 'larger' {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
