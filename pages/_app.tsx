@@ -25,7 +25,6 @@ export default function MyApp(props: MyAppProps) {
       <Head>
         <title>IOTABOTS</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"></link>
       </Head>
       <ThemeProvider theme={theme}>
          <Navigation />
