@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from '../components/theme';
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import createEmotionCache from '../components/createEmotionCache';
 
 import Navigation from '../components/Navigation'
@@ -25,7 +25,6 @@ export default function MyApp(props: MyAppProps) {
       <Head>
         <title>IOTABOTS</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"></link>
       </Head>
       <ThemeProvider theme={theme}>
          <Navigation />

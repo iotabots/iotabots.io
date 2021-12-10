@@ -1,0 +1,173 @@
+@import "mixins";
+
+/* press-start-2p-regular */
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+    url('/assets/press-start-2p-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('/assets/press-start-2p-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #02c692 !important;
+  font-family: "Press Start 2P", "Roboto", 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  align-items: center;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* VIDEO PLAYER START */
+
+.container {
+  position: relative;
+  overflow: hidden;
+
+  height: 0; // responsive video container
+
+  @include view('smaller', '768px') {
+    padding-bottom: 100%;  // responsive video 1x1
+  }
+
+  @include view('larger', '768px') {
+    padding-bottom: 56.25%; // responsive video 16x9
+  }
+
+  .video {
+    width: 100%;
+
+    @include view('larger', '768px') {
+      transform: translateY(-20%);
+    }
+  }
+
+  .content {
+    bottom: 0;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include view('smaller', '768px') {
+      justify-content: flex-end;
+      padding-bottom: 25px;
+    }
+
+    @include view('larger', '768px') {
+      justify-content: flex-start;
+      padding-top: 35%;
+    }
+  }
+
+  .sub-content {
+    text-align: center;
+
+    h1 {
+      color: #ffff;
+      margin: 0px;
+      padding: 0px;
+
+      @include view('smaller', '768px') {
+        font-size: 1.3rem;
+      }
+
+      @include view('larger', '768px') {
+        font-size: 1.7rem;
+      }
+    }
+
+    p {
+      color: #eee;
+
+      @include view('smaller', '768px') {
+        font-size: 1rem;
+        margin: 5px 0;
+      }
+
+      @include view('larger', '768px') {
+        font-size: 1.3rem;
+        margin: 10px 0;
+      }
+    }
+
+    button {
+      background-color: hsla(0, 0%, 0%, 0);
+      border-radius: 5px;
+      border: #f1f1f1 1px solid;
+      color: #f1f1f1;
+      cursor: pointer;
+      font-weight: bold;
+
+      @include view('smaller', '768px') {
+        font-size: 0.9rem;
+        margin-top: 5px;
+        padding: 10px 15px;
+      }
+
+      @include view('larger', '768px') {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        padding: 15px 20px;
+      }
+
+      &:hover {
+        background-color: #f1f1f1;
+        color: #000000c0;
+      }
+    }
+  }
+}
