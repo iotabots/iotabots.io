@@ -8,6 +8,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+
+import { ContentBox } from '@iotabots/react-nft-components'
 
 
 import BackgroundVideo from '../components/BackgroundVideo'
@@ -51,38 +54,24 @@ export default function Home() {
             pb: 6,
           }}
         >
-
-
           <Container id="what" maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              IOTABOTS
-            </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              *BEE* *BOB* *BOO*
-            </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              On the 2nd November 2021, the first 500 IOTABOTS were minted for free on the public IOTA Smart Contracts EVM Testnet. More drops soon!
-            </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              *BEE* *BOB* *BOO*
-            </Typography>
-
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Link href="/nfts">
-                <a>Discover NFTs</a>
-              </Link>
-            </Stack>
+            {/* {process.browser &&
+              <ContentBox
+                backgroundColor="#2B2B2B"
+                breakPoint={620}
+                edgeRightBottomSize={50}
+                hasImage
+                headerBackgroundColor="#02c692"
+                imageSize={150}
+                imageSource="http://assets.iotabots.io/9.png"
+                text="An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet."
+                textMarginBottom="30px"
+                textMarginLeft="10px"
+                textMarginRight="10px"
+                title="WHAT IS AN IOTABOT?!"
+                topBarHeight="20px"
+                topBarMarginLeft="75px"
+              />} */}
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
