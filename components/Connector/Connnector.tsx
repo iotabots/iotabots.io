@@ -11,20 +11,8 @@ import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } fro
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
-import { useEagerConnect, useInactiveListener } from '../utils/hooks'
-import { injected, network, walletconnect } from '../utils/connectors'
-
-enum ConnectorNames {
-  Injected = 'Browser Wallet',
-  // Network = 'RPC Connect',
-  // WalletConnect = 'WalletConnect'
-}
-
-const connectorsByName: { [connectorName in ConnectorNames]: any } = {
-  [ConnectorNames.Injected]: injected,
-  // [ConnectorNames.Network]: network,
-  // [ConnectorNames.WalletConnect]: walletconnect
-}
+import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
+import { injected, network, walletconnect } from '../../utils/connectors'
 
 function getErrorMessage(error: Error) {
   if (error instanceof NoEthereumProviderError) {
@@ -37,17 +25,6 @@ function getErrorMessage(error: Error) {
     console.error(error)
     return 'An unknown error occurred. Check the console for more details.'
   }
-}
-
-function getLibrary(provider: any): Web3Provider {
-  const library = new Web3Provider(provider)
-  library.pollingInterval = 1000
-  return library
-}
-
-function ChainId() {
-  const { chainId } = useWeb3React()
-  return <span>{chainId ?? '-'}</span>
 }
 
 function BlockNumber() {
@@ -148,7 +125,7 @@ function Header() {
   )
 }
 
-function ConnectionDetails() {
+function Connnector() {
   const context = useWeb3React<Web3Provider>()
   const { connector, library, chainId, account, activate, deactivate, active, error } = context
 
@@ -179,6 +156,7 @@ function ConnectionDetails() {
             cursor: 'pointer'
           }}
           onClick={() => {
+            console.log("Disconnect!!!")
             deactivate()
           }}
         >
@@ -203,7 +181,6 @@ function ConnectionDetails() {
         (
           'connect'
         )}
-      <hr />
       <div
         style={{
           display: 'grid',
@@ -213,36 +190,7 @@ function ConnectionDetails() {
           margin: 'auto'
         }}
       >
-        {Object.keys(connectorsByName).map(name => {
-          const currentConnector = connectorsByName[name]
-          const activating = currentConnector === activatingConnector
-          const connected = currentConnector === connector
-          const disabled = !triedEager || !!activatingConnector || connected || !!error
-
-          return (
-            <button
-              style={{
-                height: '3rem',
-                borderRadius: '1rem',
-                borderColor: activating ? 'orange' : connected ? 'green' : 'unset',
-                cursor: disabled ? 'unset' : 'pointer',
-                position: 'relative'
-              }}
-              disabled={disabled}
-              key={name}
-              onClick={() => {
-                setActivatingConnector(currentConnector)
-                activate(connectorsByName[name])
-              }}
-            >
-              <div>
-                {activating && '⏳'}
-                {connected && '✅'}
-              </div>
-              {name}
-            </button>
-          )
-        })}
+        {/* Button */}
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         {!!error && <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>{getErrorMessage(error)}</h4>}
@@ -286,10 +234,4 @@ function ConnectionDetails() {
   )
 }
 
-export default function Connnector() {
-  return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <ConnectionDetails />
-    </Web3ReactProvider>
-  )
-}
+export default Connnector;

@@ -10,6 +10,9 @@ import Menu from '@mui/material/Menu';
 import Twitter from '@mui/icons-material/Twitter';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ActiveLink from './ActiveLink'
+import ConnectButton from './Connector/ConnectButton'
+import { Web3Provider } from '@ethersproject/providers'
+import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 
 export default function PrimarySearchAppBar() {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -18,6 +21,15 @@ export default function PrimarySearchAppBar() {
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+    const context = useWeb3React<Web3Provider>()
+
+    const { connector, library, chainId, account, activate, deactivate, active, error } = context
+
+
+    console.log("connector", connector)
+    console.log("account", account)
+
 
     // const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     //     setAnchorEl(event.currentTarget);
@@ -128,6 +140,24 @@ export default function PrimarySearchAppBar() {
         </Menu>
     );
 
+
+    let profile;
+    if (account) {
+        profile = <ActiveLink
+            activeClassName="active"
+            style={({ isActive }) => {
+                return {
+                    color: isActive ? "#02c692" : ""
+                };
+            }}
+            className="nav-link" href="/profile">
+            <a>Profile({account.substring(0, 5)})</a>
+        </ActiveLink>
+
+    } else {
+        profile = <ConnectButton />;
+    }
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -176,23 +206,7 @@ export default function PrimarySearchAppBar() {
                         |
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <ActiveLink
-                            activeClassName="active"
-                            style={({ isActive }) => {
-                                return {
-                                    color: isActive ? "#02c692" : ""
-                                };
-                            }}
-                            className="nav-link" href="/profile">
-                            <a>Profile</a>
-                        </ActiveLink>
-                    </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <IconButton target="_blank" href="https://twitter.com/iotabots" size="large" aria-label="twitter" color="inherit">
-                            <Badge badgeContent={1} color="error">
-                                <Twitter />
-                            </Badge>
-                        </IconButton>
+                        {profile}
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

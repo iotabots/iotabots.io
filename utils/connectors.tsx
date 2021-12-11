@@ -4,8 +4,6 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 
-const POLLING_INTERVAL = 1000
-
 const RPC_URLS: { [chainId: number]: string } = {
   1074: process.env.RPC_URL_IOTA_EVM as string,
 }
@@ -21,6 +19,5 @@ export const network = new NetworkConnector({
 
 export const walletconnect = new WalletConnectConnector({
   rpc: { 1: RPC_URLS[1] },
-  qrcode: true,
-  pollingInterval: POLLING_INTERVAL
+  qrcode: true
 })
