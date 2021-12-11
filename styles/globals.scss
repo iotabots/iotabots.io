@@ -1,16 +1,31 @@
 @import "mixins";
 @import "fonts";
 
+// Breakpoint Variables
+
+$xs: 0;
+$sm: 768;
+$md: 992;
+$lg: 1200;
+$xl: 1700;
+
 html,
 body {
   padding: 0;
   margin: 0;
   background-color: #02c692 !important;
   font-family: "Press Start 2P", "Roboto", 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  // Responsive Fonts
+  font-size: 100%;
+
+  @include view('smaller', $sm, 'px') {
+    font-size: 75%;
+  }
 }
 
 a {
@@ -20,6 +35,15 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@include view('smaller', $sm, 'px') {
+  h1, h2, h3, h4, h5, h6 {
+    hyphens: auto;
+    overflow: hidden;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
 }
 
 .App {
@@ -59,33 +83,54 @@ a {
   }
 }
 
-/* VIDEO PLAYER START */
+// Buttons
 
-.container {
+[class*="iotabots-MuiButton"] {
+  font-family: "Press Start 2P", "Roboto", 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &[class*="-outlined"] {
+    border-width: 2px;
+    border-color: #ffffff;
+    border-style: solid;
+
+    &:hover {
+      border-width: 2px;
+      border-color: #ffffff;
+      border-style: solid;
+    }
+  }
+}
+
+// Video
+
+.video-container {
   position: relative;
   overflow: hidden;
 
   height: 0; // responsive video container
 
-  @include view('smaller', 768, 'px') {
+  @include view('smaller', $sm, 'px') {
     padding-bottom: 100%;  // responsive video 1x1
   }
 
-  @include view('larger', 768, 'px') {
+  @include view('larger', $sm, 'px') {
     padding-bottom: 56.25%; // responsive video 16x9
   }
 
   .video {
     width: 100%;
 
-    @include view('larger', 768, 'px') {
+    @include view('larger', $sm, 'px') {
       transform: translateY(-20%);
     }
   }
 
   .content {
     bottom: 0;
-    color: #f1f1f1;
     display: flex;
     flex-direction: column;
     left: 0;
@@ -93,72 +138,18 @@ a {
     right: 0;
     top: 0;
 
-    @include view('smaller', 768, 'px') {
+    @include view('smaller', $sm, 'px') {
       justify-content: flex-end;
       padding-bottom: 25px;
     }
 
-    @include view('larger', 768, 'px') {
+    @include view('larger', $sm, 'px') {
       justify-content: flex-start;
+      padding-top: 25%;
+    }
+
+    @include view('larger', $md, 'px') {
       padding-top: 35%;
-    }
-  }
-
-  .sub-content {
-    text-align: center;
-
-    h1 {
-      color: #ffff;
-      margin: 0px;
-      padding: 0px;
-
-      @include view('smaller', 768, 'px') {
-        font-size: 1.3rem;
-      }
-
-      @include view('larger', 768, 'px') {
-        font-size: 1.7rem;
-      }
-    }
-
-    p {
-      color: #eee;
-
-      @include view('smaller', 768, 'px') {
-        font-size: 1rem;
-        margin: 5px 0;
-      }
-
-      @include view('larger', 768, 'px') {
-        font-size: 1.3rem;
-        margin: 10px 0;
-      }
-    }
-
-    button {
-      background-color: hsla(0, 0%, 0%, 0);
-      border-radius: 5px;
-      border: #f1f1f1 1px solid;
-      color: #f1f1f1;
-      cursor: pointer;
-      font-weight: bold;
-
-      @include view('smaller', 768, 'px') {
-        font-size: 0.9rem;
-        margin-top: 5px;
-        padding: 10px 15px;
-      }
-
-      @include view('larger', 768, 'px') {
-        font-size: 1.2rem;
-        margin-top: 20px;
-        padding: 15px 20px;
-      }
-
-      &:hover {
-        background-color: #f1f1f1;
-        color: #000000c0;
-      }
     }
   }
 }
