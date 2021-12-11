@@ -135,9 +135,9 @@ export default function Home() {
           </Grid>
         </Container>
 
-        <Container sx={{ py: 8 }} maxWidth="md"  >
+        {/* <Container sx={{ py: 8 }} maxWidth="md"  >
           <Typography align="center" gutterBottom variant="button" component="h1"></Typography>
-        </Container>
+        </Container> */}
 
       </main>
     </>
