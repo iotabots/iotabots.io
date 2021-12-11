@@ -6,8 +6,9 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from 'next/link'
+import Link from '@mui/material/Link';
 
 
 import BackgroundVideo from '../components/BackgroundVideo'
@@ -27,23 +28,36 @@ export default function Home() {
         blur={0}
         videoSource="assets/TEASER.mp4" >
         <div className='content'>
-          <div className='sub-content' >
-            <h1>IOTABOTS</h1>
-            <p>First PFP NFTs on IOTA</p>
-            <button
-              className="btn btn-outline-dark"
-              onClick={scrollToBottom}>
-              {"Let's go!"}
-            </button>
-            {/* <img
-                      className="view-image"
-                      src="https://www.jing.fm/clipimg/detail/139-1394959_panda-cartoon-png-cute-cartoon-panda-bear.png"
-                      alt="profile" /> */}
+          <div className='sub-content mui--text-center'>
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="#ffffff"
+              gutterBottom
+            >
+              {'IOTABOTS'}
+            </Typography>
+
+            <Typography variant="h5" align="center" color="#ffffff" paragraph>
+              {'First PFP NFTs on IOTA'}
+            </Typography>
+
+            <Box sx={{ textAlign: 'center' }}>
+              <Button
+                variant="outlined"
+                onClick={scrollToBottom}
+                size="large"
+                sx={{color: "primary.contrastText", mt: {sm:2}}}
+              >
+                {"Let's go!"}
+              </Button>
+            </Box>
           </div>
         </div>
       </BackgroundVideo>
+
       <main>
-        {/* Hero unit */}
         <Box
           sx={{
             bgcolor: 'background.paper',
@@ -51,9 +65,8 @@ export default function Home() {
             pb: 6,
           }}
         >
-
-
-          <Container id="what" maxWidth="sm">
+          <Container maxWidth="sm">
+            <div id="what" className="anchor" />
             <Typography
               component="h1"
               variant="h2"
@@ -61,16 +74,19 @@ export default function Home() {
               color="text.primary"
               gutterBottom
             >
-              IOTABOTS
+              {'IOTABOTS'}
             </Typography>
+
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              *BEE* *BOB* *BOO*
+              {'*BEE* *BOB* *BOO*'}
             </Typography>
+
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              On the 2nd November 2021, the first 500 IOTABOTS were minted for free on the public IOTA Smart Contracts EVM Testnet. More drops soon!
+              {'#On the 2nd November 2021, the first 500 IOTABOTS were minted for free on the public IOTA Smart Contracts EVM Testnet. More drops soon!'}
             </Typography>
+
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-              *BEE* *BOB* *BOO*
+              {'*BEE* *BOB* *BOO*'}
             </Typography>
 
             <Stack
@@ -80,11 +96,19 @@ export default function Home() {
               justifyContent="center"
             >
               <Link href="/nfts">
-                <a>Discover NFTs</a>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  sx={{color: "primary.contrastText", mt: {sm:2}}}
+                >
+                  {'Discover NFTs'}
+                </Button>
               </Link>
             </Stack>
           </Container>
         </Box>
+
         <Container sx={{ py: 8 }} maxWidth="md">
           <Typography
             component="h1"
@@ -93,10 +117,10 @@ export default function Home() {
             color="#fff"
             gutterBottom
           >
-            Available Bots
+            {'Available Bots'}
           </Typography>
-          {/* End hero unit */}
-          <Grid container spacing={4}>
+
+          <Grid container spacing={2}>
             {cards.map((card, index) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
@@ -111,23 +135,21 @@ export default function Home() {
                     image={`https://assets.iotabots.io/${index + 1}.png`}
                     alt="IOTABOT"
                   />
+
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h6" component="h3">
                       {`IOTABOT #${index + 1}`}
                     </Typography>
-
                   </CardContent>
                 </Card>
               </Grid>
             ))}
           </Grid>
-
         </Container>
-        <Container sx={{ py: 8 }} maxWidth="md"  >
-          <Typography align="center" gutterBottom variant="button" component="h1">
 
-          </Typography>
-        </Container>
+        {/* <Container sx={{ py: 8 }} maxWidth="md"  >
+          <Typography align="center" gutterBottom variant="button" component="h1"></Typography>
+        </Container> */}
 
       </main>
     </>

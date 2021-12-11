@@ -157,9 +157,7 @@ export default function PrimarySearchAppBar() {
                             <a>Home</a>
                         </ActiveLink>
                     </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        |
-                    </Box>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 1, mr: 1 }}>|</Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <ActiveLink
                             activeClassName="active"
@@ -172,9 +170,7 @@ export default function PrimarySearchAppBar() {
                             <a>Bots</a>
                         </ActiveLink>
                     </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        |
-                    </Box>
+                    <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 1, mr: 1 }}>|</Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <ActiveLink
                             activeClassName="active"
