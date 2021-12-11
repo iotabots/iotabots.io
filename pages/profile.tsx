@@ -2,18 +2,16 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import ProTip from '../components/ProTip';
-import Copyright from '../components/Copyright';
+import Connnector from '../components/Connector/Connnector'
 
-export default function About() {
+export default function Profile() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Next.js v5-beta with TypeScript example
+        <Typography variant="h1" component="h1" gutterBottom>
+          Profile
         </Typography>
-        <ProTip />
-        <Copyright />
+        <Connnector />
       </Box>
     </Container>
   );
