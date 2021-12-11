@@ -1,14 +1,5 @@
 @import "mixins";
-
-/* press-start-2p-regular */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-    url('/assets/press-start-2p-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url('/assets/press-start-2p-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
+@import "fonts";
 
 html,
 body {
