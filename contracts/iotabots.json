@@ -1,4 +1,4 @@
-const IOTABOTS_ABI = [
+[
     {
       "inputs": [
         {
@@ -709,5 +709,3 @@ const IOTABOTS_ABI = [
       "type": "function"
     }
   ]
-
-  export default IOTABOTS_ABI;
