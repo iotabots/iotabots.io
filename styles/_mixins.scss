@@ -1,11 +1,23 @@
-@mixin view($minmax, $value) {
+@mixin view($minmax, $value, $unit) {
   @if $minmax == 'smaller' {
-    @media (max-width: $value) {
+    $max-width: $value + $unit;
+
+    @if $unit == 'px' {
+      $max-width: $value - 0.01 + $unit;
+    }
+
+    @media (max-width: $max-width) {
       @content;
     }
 
   } @else if $minmax == 'larger' {
-    @media (min-width: $value) {
+    $min-width: $value + $unit;
+
+    @if $unit == 'px' {
+      $min-width: $value + 0.01 + $unit;
+    }
+
+    @media (min-width: $min-width) {
       @content;
     }
   }

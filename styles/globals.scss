@@ -76,18 +76,18 @@ a {
 
   height: 0; // responsive video container
 
-  @include view('smaller', '768px') {
+  @include view('smaller', 768, 'px') {
     padding-bottom: 100%;  // responsive video 1x1
   }
 
-  @include view('larger', '768px') {
+  @include view('larger', 768, 'px') {
     padding-bottom: 56.25%; // responsive video 16x9
   }
 
   .video {
     width: 100%;
 
-    @include view('larger', '768px') {
+    @include view('larger', 768, 'px') {
       transform: translateY(-20%);
     }
   }
@@ -102,12 +102,12 @@ a {
     right: 0;
     top: 0;
 
-    @include view('smaller', '768px') {
+    @include view('smaller', 768, 'px') {
       justify-content: flex-end;
       padding-bottom: 25px;
     }
 
-    @include view('larger', '768px') {
+    @include view('larger', 768, 'px') {
       justify-content: flex-start;
       padding-top: 35%;
     }
@@ -121,11 +121,11 @@ a {
       margin: 0px;
       padding: 0px;
 
-      @include view('smaller', '768px') {
+      @include view('smaller', 768, 'px') {
         font-size: 1.3rem;
       }
 
-      @include view('larger', '768px') {
+      @include view('larger', 768, 'px') {
         font-size: 1.7rem;
       }
     }
@@ -133,12 +133,12 @@ a {
     p {
       color: #eee;
 
-      @include view('smaller', '768px') {
+      @include view('smaller', 768, 'px') {
         font-size: 1rem;
         margin: 5px 0;
       }
 
-      @include view('larger', '768px') {
+      @include view('larger', 768, 'px') {
         font-size: 1.3rem;
         margin: 10px 0;
       }
@@ -152,13 +152,13 @@ a {
       cursor: pointer;
       font-weight: bold;
 
-      @include view('smaller', '768px') {
+      @include view('smaller', 768, 'px') {
         font-size: 0.9rem;
         margin-top: 5px;
         padding: 10px 15px;
       }
 
-      @include view('larger', '768px') {
+      @include view('larger', 768, 'px') {
         font-size: 1.2rem;
         margin-top: 20px;
         padding: 15px 20px;
