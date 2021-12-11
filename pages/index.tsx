@@ -8,6 +8,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+
+import dynamic from 'next/dynamic'
+
+import { ContentBox } from '@iotabots/react-nft-components'
 import Link from '@mui/material/Link';
 
 
@@ -65,7 +69,24 @@ export default function Home() {
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
+          <Container id="what" maxWidth="sm">
+            {/* {process.browser &&
+              <ContentBox
+                backgroundColor="#2B2B2B"
+                breakPoint={620}
+                edgeRightBottomSize={50}
+                hasImage
+                headerBackgroundColor="#02c692"
+                imageSize={150}
+                imageSource="http://assets.iotabots.io/9.png"
+                text="An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet."
+                textMarginBottom="30px"
+                textMarginLeft="10px"
+                textMarginRight="10px"
+                title="WHAT IS AN IOTABOT?!"
+                topBarHeight="20px"
+                topBarMarginLeft="75px"
+              />} */}
             <div id="what" className="anchor" />
             <Typography
               component="h1"

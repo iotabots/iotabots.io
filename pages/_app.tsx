@@ -11,6 +11,9 @@ import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material
 
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
+import { Web3Provider } from '@ethersproject/providers'
+
+import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 
 // call this function at the root of the application and before any MUI components import
 ClassNameGenerator.configure((componentName) => `iotabots-${componentName}`);
@@ -22,6 +25,12 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
 
+function getLibrary(provider: any): Web3Provider {
+  const library = new Web3Provider(provider)
+  library.pollingInterval = 1000
+  return library
+}
+
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   return (
@@ -30,14 +39,18 @@ export default function MyApp(props: MyAppProps) {
         <title>IOTABOTS</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <ThemeProvider theme={theme}>
-         <Navigation />
+      <Web3ReactProvider getLibrary={getLibrary}>
 
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
+        <ThemeProvider theme={theme}>
+          <Navigation />
+
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <CssBaseline />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </Web3ReactProvider>
+
     </CacheProvider>
   );
 }
