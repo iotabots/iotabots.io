@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from 'next/link'
+import Link from '@mui/material/Link';
 
 
 import BackgroundVideo from '../components/BackgroundVideo'
@@ -95,7 +95,14 @@ export default function Home() {
               justifyContent="center"
             >
               <Link href="/nfts">
-                <a>{'Discover NFTs'}</a>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  sx={{color: "primary.contrastText", mt: {sm:2}}}
+                >
+                  {'Discover NFTs'}
+                </Button>
               </Link>
             </Stack>
           </Container>
