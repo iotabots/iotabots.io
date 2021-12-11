@@ -65,7 +65,8 @@ export default function Home() {
             pb: 6,
           }}
         >
-          <Container id="what" maxWidth="sm">
+          <Container maxWidth="sm">
+            <div id="what" className="anchor" />
             <Typography
               component="h1"
               variant="h2"
