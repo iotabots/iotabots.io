@@ -87,7 +87,6 @@ export default function Home() {
                 topBarHeight="20px"
                 topBarMarginLeft="75px"
               />} */}
-          <Container maxWidth="sm">
             <div id="what" className="anchor" />
             <Typography
               component="h1"
