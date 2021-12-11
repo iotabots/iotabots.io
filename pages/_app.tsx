@@ -7,12 +7,16 @@ import { CacheProvider, EmotionCache } from '@emotion/react';
 import theme from '../components/theme';
 import '../styles/globals.scss';
 import createEmotionCache from '../components/createEmotionCache';
+import { unstable_ClassNameGenerator as ClassNameGenerator } from '@mui/material/utils';
 
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { Web3Provider } from '@ethersproject/providers'
 
 import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+
+// call this function at the root of the application and before any MUI components import
+ClassNameGenerator.configure((componentName) => `iotabots-${componentName}`);
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
