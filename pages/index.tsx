@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from 'next/link'
+
 import dynamic from 'next/dynamic'
 
 import { ContentBox } from '@iotabots/react-nft-components'
