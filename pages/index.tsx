@@ -128,7 +128,11 @@ export default function Home() {
                 >
                   <CardMedia
                     component="img"
-                    image={`http://assets.iotabots.io/${index + 1}.png`}
+                    sx={{
+                      // 16:9
+                      // pt: '56.25%',
+                    }}
+                    image={`https://assets.iotabots.io/${index + 1}.png`}
                     alt="IOTABOT"
                   />
 
