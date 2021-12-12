@@ -27,6 +27,7 @@ export default function Profile() {
 
   const [bots, setBots] = React.useState<Array<any>>([]);
 
+  const [errorRetrievingBots, setErrorRetrievingBots] = React.useState(false)
   const context = useWeb3React<Web3Provider>()
 
   const { connector, library, chainId, account, activate, deactivate, active, error } = context
@@ -61,6 +62,15 @@ export default function Profile() {
 
         let data = await contract.methods.walletOfOwner(account).call();
 
+        let data 
+        try {
+          data = await contract.methods.walletOfOwner(account).call();
+        }
+        catch (e) {
+          setErrorRetrievingBots(true)
+          console.log(e)
+          return new Array<Bot> ();
+        }
         console.log("i", init)
 
         const items: Array<Bot> = await Promise.all(data.map(async (i: any) => {
