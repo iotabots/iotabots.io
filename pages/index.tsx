@@ -25,41 +25,46 @@ export default function Home() {
     const bottomEle = document.getElementById("what");
     if (bottomEle) bottomEle.scrollIntoView({ behavior: "smooth" });
   }
+
   return (
-    <>
-      <CssBaseline />
-      <BackgroundVideo
-        blur={0}
-        videoSource="assets/TEASER.mp4" >
-        <div className='content'>
-          <div className='sub-content mui--text-center'>
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="#ffffff"
-              gutterBottom
-            >
-              {'IOTABOTS'}
-            </Typography>
-
-            <Typography variant="h5" align="center" color="#ffffff" paragraph>
-              {'First PFP NFTs on IOTA'}
-            </Typography>
-
-            <Box sx={{ textAlign: 'center' }}>
-              <Button
-                variant="outlined"
-                onClick={scrollToBottom}
-                size="large"
-                sx={{color: "primary.contrastText", mt: {sm:2}}}
+    <Box className='flex-body'>
+      {/* <CssBaseline /> */}
+      <Box sx={{bgcolor: 'IB_green.main'}}>
+        <BackgroundVideo
+          blur={0}
+          videoSource="assets/TEASER.mp4"
+        >
+          <div className='content'>
+            <div className='sub-content mui--text-center'>
+              <Typography
+                component="h1"
+                variant="h2"
+                align="center"
+                color="#ffffff"
+                gutterBottom
+                sx={{ display: { xs: 'none', sm: 'block' } }}
               >
-                {"Let's go!"}
-              </Button>
-            </Box>
+                {'IOTABOTS'}
+              </Typography>
+
+              <Typography variant="h5" align="center" color="#ffffff" paragraph>
+                {'First PFP NFTs on IOTA'}
+              </Typography>
+
+              <Box sx={{ textAlign: 'center' }}>
+                <Button
+                  variant="outlined"
+                  onClick={scrollToBottom}
+                  size="large"
+                  sx={{color: "primary.contrastText", mt: {sm:2}}}
+                >
+                  {"Let's go!"}
+                </Button>
+              </Box>
+            </div>
           </div>
-        </div>
-      </BackgroundVideo>
+        </BackgroundVideo>
+      </Box>
 
       <main>
         <Box
@@ -94,6 +99,7 @@ export default function Home() {
               align="center"
               color="text.primary"
               gutterBottom
+              sx={{ display: { xs: 'block', sm: 'none' } }}
             >
               {'IOTABOTS'}
             </Typography>
@@ -130,49 +136,54 @@ export default function Home() {
           </Container>
         </Box>
 
-        <Container sx={{ py: 8 }} maxWidth="md">
-          <Typography
-            component="h1"
-            variant="h2"
-            align="center"
-            color="#fff"
-            gutterBottom
+        <Box sx={{bgcolor: 'IB_green.main'}}>
+          <Container
+            maxWidth="md"
+            sx={{py: 8}}
           >
-            {'Available Bots'}
-          </Typography>
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="#fff"
+              gutterBottom
+            >
+              {'Available Bots'}
+            </Typography>
 
-          <Grid container spacing={2}>
-            {cards.map((card, index) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      // pt: '56.25%',
-                    }}
-                    image={`https://assets.iotabots.io/${index + 1}.png`}
-                    alt="IOTABOT"
-                  />
+            <Grid container spacing={2}>
+              {cards.map((card, index) => (
+                <Grid item key={card} xs={12} sm={6} md={4}>
+                  <Card
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                  >
+                    <CardMedia
+                      component="img"
+                      sx={{
+                        // 16:9
+                        // pt: '56.25%',
+                      }}
+                      image={`https://assets.iotabots.io/${index + 1}.png`}
+                      alt="IOTABOT"
+                    />
 
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h6" component="h3">
-                      {`IOTABOT #${index + 1}`}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Typography gutterBottom variant="h6" component="h3">
+                        {`IOTABOT #${index + 1}`}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
 
         {/* <Container sx={{ py: 8 }} maxWidth="md"  >
           <Typography align="center" gutterBottom variant="button" component="h1"></Typography>
         </Container> */}
 
       </main>
-    </>
+    </Box>
   );
 }

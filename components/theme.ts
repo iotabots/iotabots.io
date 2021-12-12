@@ -32,6 +32,14 @@ const theme = createTheme({
   },
 
   palette: {
+    IB_green: {
+      main: '#02c692',
+    },
+
+    IB_gray: {
+      main: '#2b2b2b',
+    },
+
     primary: {
       light: '#757ce8',
       main: '#2b2b2b',
