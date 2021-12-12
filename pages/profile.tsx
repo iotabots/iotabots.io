@@ -26,7 +26,7 @@ export default function Profile() {
 
 
   const [bots, setBots] = React.useState<Array<any>>([]);
-
+  const [errorRetrievingBots, setErrorRetrievingBots] = React.useState(false)
   const context = useWeb3React<Web3Provider>()
 
   const { connector, library, chainId, account, activate, deactivate, active, error } = context
@@ -42,7 +42,7 @@ export default function Profile() {
     image: string;
     name: string;
   }
-
+  
 
 
   React.useEffect(() => {
@@ -53,14 +53,20 @@ export default function Profile() {
         /* eslint-disable */
 
         const web3 = new Web3(window.web3.currentProvider);
-
         let contract = new web3.eth.Contract(IOTABOTS_ABI, IOTABOTS_ADR);
 
         /* eslint-enable */
         console.log("contract", contract)
 
-        let data = await contract.methods.walletOfOwner(account).call();
-
+        let data 
+        try {
+          data = await contract.methods.walletOfOwner(account).call();
+        }
+        catch (e) {
+          setErrorRetrievingBots(true)
+          console.log(e)
+          return new Array<Bot> ();
+        }
         console.log("i", init)
 
         const items: Array<Bot> = await Promise.all(data.map(async (i: any) => {
@@ -95,9 +101,16 @@ export default function Profile() {
         </Typography>
         <Connnector />
       </Box>
-      <Box sx={{ textAlign: 'center' }} >
-
-        {bots.map((bot, index) => (
+      <Box sx={{ marginBottom:"10px", textAlign: 'center' }} >
+        {errorRetrievingBots ?      
+            <Typography gutterBottom variant="h6" component="h6">
+              {"There was an error retrieving your IotaBots"}
+            </Typography>
+            :  bots.length === 0 ? 
+            <Typography gutterBottom variant="h6" component="h6">
+              {"You don't own any IotaBots yet :("}
+            </Typography> :
+        bots.map((bot, index) => (
           <Grid item key={index} xs={12} sm={12} md={12}>
             <Card
             // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
@@ -125,7 +138,7 @@ export default function Profile() {
             </Card>
           </Grid>
         ))}
-      </Box>ƒ
+      </Box>
     </Container>
   );
 }
