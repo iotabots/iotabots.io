@@ -16,6 +16,7 @@ import Link from '@mui/material/Link';
 
 
 import BackgroundVideo from '../components/BackgroundVideo'
+import { flexbox } from '@mui/system';
 
 export default function Home() {
 
@@ -34,8 +35,8 @@ export default function Home() {
           blur={0}
           videoSource="assets/TEASER.mp4"
         >
-          <div className='content'>
-            <div className='sub-content mui--text-center'>
+          <Box className='content'>
+            <Box className='sub-content' sx={{ px: 2 }}>
               <Typography
                 component="h1"
                 variant="h2"
@@ -61,8 +62,8 @@ export default function Home() {
                   {"Let's go!"}
                 </Button>
               </Box>
-            </div>
-          </div>
+            </Box>
+          </Box>
         </BackgroundVideo>
       </Box>
 
@@ -167,8 +168,14 @@ export default function Home() {
                       alt="IOTABOT"
                     />
 
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h6" component="h3">
+                    <CardContent
+                      sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center', p: 2.4 }}
+                    >
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="h3"
+                      >
                         {`IOTABOT #${index + 1}`}
                       </Typography>
                     </CardContent>

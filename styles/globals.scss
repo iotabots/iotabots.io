@@ -29,7 +29,7 @@ body {
   font-size: 100%;
 
   @include view('smaller', $sm, 'px') {
-    font-size: 75%;
+    font-size: 70%;
   }
 }
 
