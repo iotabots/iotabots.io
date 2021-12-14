@@ -53,6 +53,10 @@ export default function Profile() {
         /* eslint-disable */
 
         const web3 = new Web3(window.web3.currentProvider);
+        window.ethereum.on('accountsChanged', function()
+        {
+          window.location.reload();
+        })
         let contract = new web3.eth.Contract(IOTABOTS_ABI, IOTABOTS_ADR);
 
         /* eslint-enable */
