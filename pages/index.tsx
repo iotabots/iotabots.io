@@ -75,7 +75,8 @@ export default function Home() {
             pb: 6,
           }}
         >
-          <Container id="what" maxWidth="sm">
+          <Container maxWidth="sm">
+            <div id="what" className="anchor" />
             {/* {process.browser &&
               <ContentBox
                 backgroundColor="#2B2B2B"
@@ -93,7 +94,6 @@ export default function Home() {
                 topBarHeight="20px"
                 topBarMarginLeft="75px"
               />} */}
-            <div id="what" className="anchor" />
             <Typography
               component="h1"
               variant="h2"
