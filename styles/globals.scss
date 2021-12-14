@@ -17,18 +17,19 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: #02c692 !important;
+  background-color: #2b2b2b !important;
   font-family: "Press Start 2P", "Roboto", 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 
   // Responsive Fonts
   font-size: 100%;
 
   @include view('smaller', $sm, 'px') {
-    font-size: 75%;
+    font-size: 70%;
   }
 }
 
@@ -59,6 +60,24 @@ a {
   position: absolute;
   visibility: hidden;
   margin-top: -50px;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .flex-header {
+    flex: 0 1;
+  }
+
+  .flex-body {
+    flex: 1 1 auto;
+  }
+
+  .flex-footer {
+    flex: 0 1;
+  }
 }
 
 // .App {

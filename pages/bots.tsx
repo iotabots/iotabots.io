@@ -7,14 +7,16 @@ import { InfiniteBotList } from '@iotabots/react-nft-components'
 
 export default function Bots() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ m: 4 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
-          IOTABOTS
-        </Typography>
-        Coming soon...
-        {/* <InfiniteBotList /> */}
-      </Box>
-    </Container>
+    <Box sx={{bgcolor: 'IB_green.main'}} className='flex-body' display="flex" alignItems="center">
+      <Container maxWidth="sm">
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <Typography variant="h2" component="h1" gutterBottom>
+            IOTABOTS
+          </Typography>
+          Coming soon...
+          {/* <InfiniteBotList /> */}
+        </Box>
+      </Container>
+    </Box>
   );
 }

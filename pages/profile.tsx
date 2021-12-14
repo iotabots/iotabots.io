@@ -98,51 +98,53 @@ export default function Profile() {
   }, [active])
 
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h1" component="h1" gutterBottom>
-          Profile
-        </Typography>
-        <Connnector />
-      </Box>
-      <Box sx={{ marginBottom:"10px", textAlign: 'center' }} >
-        {errorRetrievingBots ?      
-            <Typography gutterBottom variant="h6" component="h6">
-              {"There was an error retrieving your IotaBots"}
-            </Typography>
-            :  bots.length === 0 ? 
-            <Typography gutterBottom variant="h6" component="h6">
-              {"You don't own any IotaBots yet :("}
-            </Typography> :
-        bots.map((bot, index) => (
-          <Grid item key={index} xs={12} sm={12} md={12}>
-            <Card
-            // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
-            >
-              <CardMedia
-                height="100%"
-                component="img"
-                image={bot.image}
-                alt="IOTABOT"
-              />
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant="h6" component="h6">
-                  {`IOTABOT ${bot.name}`}
-                </Typography>
-                <Typography gutterBottom variant="body1" component="p">
-                  {`DNA ${bot.dna}`}
-                </Typography>
-                <Typography gutterBottom variant="body1" component="p">
-                  {`Edition ${bot.edition}`}
-                </Typography>
-                <Typography gutterBottom variant="body1" component="p">
-                  {`Created on ${new Date(bot.date).toLocaleDateString()}`}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Box>
-    </Container>
+    <Box sx={{bgcolor: 'IB_green.main'}} className='flex-body'>
+      <Container maxWidth="sm">
+        <Box sx={{ my: 4 }}>
+          <Typography variant="h1" component="h1" gutterBottom>
+            Profile
+          </Typography>
+          <Connnector />
+        </Box>
+        <Box sx={{ marginBottom:"10px", textAlign: 'center' }} >
+          {errorRetrievingBots ?      
+              <Typography gutterBottom variant="h6" component="h6">
+                {"There was an error retrieving your IotaBots"}
+              </Typography>
+              :  bots.length === 0 ? 
+              <Typography gutterBottom variant="h6" component="h6">
+                {"You don't own any IotaBots yet :("}
+              </Typography> :
+          bots.map((bot, index) => (
+            <Grid item key={index} xs={12} sm={12} md={12}>
+              <Card
+              // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
+              >
+                <CardMedia
+                  height="100%"
+                  component="img"
+                  image={bot.image}
+                  alt="IOTABOT"
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h6" component="h6">
+                    {`IOTABOT ${bot.name}`}
+                  </Typography>
+                  <Typography gutterBottom variant="body1" component="p">
+                    {`DNA ${bot.dna}`}
+                  </Typography>
+                  <Typography gutterBottom variant="body1" component="p">
+                    {`Edition ${bot.edition}`}
+                  </Typography>
+                  <Typography gutterBottom variant="body1" component="p">
+                    {`Created on ${new Date(bot.date).toLocaleDateString()}`}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Box>
+     </Container>
+    </Box>
   );
 }

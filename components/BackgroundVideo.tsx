@@ -7,6 +7,7 @@ const BackgroundVideo = ({ videoSource, children, blur }: {videoSource:any, chil
           autoPlay
           loop
           muted
+          playsInline
           // ref={video}
           id="video-id"
           className='video'>

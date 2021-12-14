@@ -1,6 +1,7 @@
 {
   "name": "iotabots.io",
   "private": true,
+  "types": "./types.d.ts",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
