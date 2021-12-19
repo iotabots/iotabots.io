@@ -15,7 +15,8 @@ const BaseLayout: React.FC = (props) => {
 const useStyles = makeStyles((theme: Theme) => {
   return {
     root: {
-      background: theme.palette.background.gradient
+      background: theme.palette.background.gradient,
+      minHeight: 'calc(100vh - 140px)'
     }
   }
 })

@@ -1,7 +1,4 @@
-
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import { Box, Link, Typography } from '@iotabots/components'
 
 export default function Album() {
 
@@ -28,19 +25,15 @@ export default function Album() {
             <Typography variant="h6" align="center" gutterBottom>
                 {'*BEE* *BOB* *BOO*'}
             </Typography>
-            <Typography
-                variant="subtitle1"
-                align="center"
-                color="text.secondary"
-                component="p"
-            >
+            <Typography align="center" color="text.secondary">
                 {'Follow us on '}
                 <Link
                     href="https://twitter.com/iotabots"
                     target="_blank"
                     rel="noreferrer"
                     className="link"
-                    color="inherit">
+                    color="inherit"
+                >
                     {'Twitter'}
                 </Link>
             </Typography>

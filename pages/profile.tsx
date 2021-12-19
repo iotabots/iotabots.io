@@ -1,18 +1,12 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Connnector from '../components/Connector/Connnector'
-
+import Connector from '../components/Connector/Connector'
+import { Box, Container, Typography, Grid, CardContent, Card } from '@iotabots/components'
 import { Web3Provider } from '@ethersproject/providers'
-import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
-
+import { useWeb3React } from '@web3-react/core'
 
 import Web3 from 'web3';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
+import BaseLayout from '../layout/BaseLayout';
 
 const IOTABOTS_ABI = require('../contracts/iotabots.json')
 
@@ -24,14 +18,11 @@ declare global {
 }
 
 export default function Profile() {
-
-
   const [bots, setBots] = React.useState<Array<any>>([]);
   const [errorRetrievingBots, setErrorRetrievingBots] = React.useState(false)
   const context = useWeb3React<Web3Provider>()
 
-  const { connector, library, chainId, account, activate, deactivate, active, error } = context
-  console.log("library", library)
+  const { account, active } = context
 
   const IOTABOTS_ADR = "0x3a3c0D4BDAB6d0e9715Fa2eAA852af3038Bec342"
   interface Bot {
@@ -97,53 +88,53 @@ export default function Profile() {
   }, [active])
 
   return (
-    <Box sx={{bgcolor: 'IB_green.main'}} className='flex-body'>
-      <Container maxWidth="sm">
-        <Box sx={{ my: 4 }}>
-          <Typography variant="h1" component="h1" gutterBottom>
-            Profile
-          </Typography>
-          <Connnector />
-        </Box>
-        <Box sx={{ marginBottom:"10px", textAlign: 'center' }} >
-          {errorRetrievingBots ?      
-              <Typography gutterBottom variant="h6" component="h6">
-                {"There was an error retrieving your IotaBots"}
-              </Typography>
-              :  bots.length === 0 ? 
-              <Typography gutterBottom variant="h6" component="h6">
-                {"You don't own any IotaBots yet :("}
-              </Typography> :
-          bots.map((bot, index) => (
-            <Grid item key={index} xs={12} sm={12} md={12}>
-              <Card
-              // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
-              >
-                <CardMedia
-                  height="100%"
-                  component="img"
-                  image={bot.image}
-                  alt="IOTABOT"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h6" component="h6">
-                    {`IOTABOT ${bot.name}`}
-                  </Typography>
-                  <Typography gutterBottom variant="body1" component="p">
-                    {`DNA ${bot.dna}`}
-                  </Typography>
-                  <Typography gutterBottom variant="body1" component="p">
-                    {`Edition ${bot.edition}`}
-                  </Typography>
-                  <Typography gutterBottom variant="body1" component="p">
-                    {`Created on ${new Date(bot.date).toLocaleDateString()}`}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Box>
-      </Container>
-    </Box>
+    <BaseLayout>
+      <Box py={11} className='flex-body'>
+        <Container maxWidth="sm">
+          <Box sx={{ my: 4 }}>
+            <Typography variant="h1" gutterBottom>
+              Profile
+            </Typography>
+            <Connector />
+          </Box>
+          <Box sx={{ marginBottom:"10px", textAlign: 'center' }} >
+            {errorRetrievingBots ?      
+                <Typography gutterBottom variant="h6">
+                  {"There was an error retrieving your IotaBots"}
+                </Typography>
+                :  bots.length === 0 ? 
+                <Typography gutterBottom variant="h6">
+                  {"You don't own any IotaBots yet :("}
+                </Typography> :
+            bots.map((bot, index) => (
+              <Grid item key={index} xs={12} sm={12} md={12}>
+                <Card>
+                  <CardMedia
+                    height="100%"
+                    component="img"
+                    image={bot.image}
+                    alt="IOTABOT"
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h6">
+                      {`IOTABOT ${bot.name}`}
+                    </Typography>
+                    <Typography gutterBottom variant="body1">
+                      {`DNA ${bot.dna}`}
+                    </Typography>
+                    <Typography gutterBottom variant="body1">
+                      {`Edition ${bot.edition}`}
+                    </Typography>
+                    <Typography gutterBottom variant="body1">
+                      {`Created on ${new Date(bot.date).toLocaleDateString()}`}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Box>
+        </Container>
+      </Box>
+    </BaseLayout>
   );
 }

@@ -1,19 +1,15 @@
 import * as React from 'react';
+import Router from 'next/router'
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import Twitter from '@mui/icons-material/Twitter';
-import MoreIcon from '@mui/icons-material/MoreVert';
+import { Box, IconButton, Typography, Badge, MenuItem, Menu } from '@iotabots/components'
 import ActiveLink from './ActiveLink'
 import ConnectButton from './Connector/ConnectButton'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 import { ModeContext } from '../contexts/Theme'
+import MoreIcon from '@mui/icons-material/MoreVert';
+import Twitter from '@mui/icons-material/Twitter';
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded'
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded'
 
@@ -30,14 +26,8 @@ export default function PrimarySearchAppBar() {
 
     const { connector, library, chainId, account, activate, deactivate, active, error } = context
 
-
     console.log("connector", connector)
     console.log("account", account)
-
-
-    // const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    //     setAnchorEl(event.currentTarget);
-    // };
 
     const handleMobileMenuClose = () => {
         setMobileMoreAnchorEl(null);
@@ -130,8 +120,7 @@ export default function PrimarySearchAppBar() {
 
             >
                 <IconButton
-                    target="_blank"
-                    href="https://twitter.com/iotabots"
+                    onClick={() => window.open('https://twitter.com/iotabots', '_blank')}
                     size="large"
                     aria-label="show 1 new tweets"
                     color="inherit"
@@ -195,7 +184,6 @@ export default function PrimarySearchAppBar() {
                         <Typography
                             variant="h6"
                             noWrap
-                            component="div"
                             sx={{ display: { xs: 'block', sm: 'block' }, mr: 6 }}
                         >
                             <ActiveLink

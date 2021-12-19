@@ -1,8 +1,5 @@
-
-import Head from 'next/head'
-
-import React, { useState } from 'react'
-import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+import React from 'react'
+import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected
@@ -12,7 +9,7 @@ import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
-import { injected, network, walletconnect } from '../../utils/connectors'
+import { Box, Divider, Button } from '@iotabots/components'
 
 function getErrorMessage(error: Error) {
   if (error instanceof NoEthereumProviderError) {
@@ -125,7 +122,7 @@ function Header() {
   )
 }
 
-function Connnector() {
+function Connector() {
   const context = useWeb3React<Web3Provider>()
   const { connector, library, chainId, account, activate, deactivate, active, error } = context
 
@@ -147,73 +144,42 @@ function Connnector() {
     <>
       <Header />
       {active ? (
-        <button
-          style={{
-            height: '3rem',
-            marginTop: '2rem',
-            borderRadius: '1rem',
-            borderColor: 'red',
-            cursor: 'pointer'
-          }}
-          onClick={() => {
-            console.log("Disconnect!!!")
-            deactivate()
-          }}
+        <Button
+          size='large'
+          variant='contained'
+          onClick={() => { deactivate() }}
         >
           Disconnect
-        </button>
+        </Button>
       ) : error ? (
-        <button
-          style={{
-            height: '3rem',
-            marginTop: '2rem',
-            borderRadius: '1rem',
-            borderColor: 'red',
-            cursor: 'pointer'
-          }}
+        <Button
+        size='large'
+          variant='contained'
           onClick={() => {
             deactivate()
           }}
         >
           Cancel Connect
-        </button>
+        </Button>
       ) :
-        (
-          'connect'
-        )}
-      <div
-        style={{
-          display: 'grid',
-          gridGap: '1rem',
-          gridTemplateColumns: '1fr 1fr',
-          maxWidth: '20rem',
-          margin: 'auto'
-        }}
-      >
-        {/* Button */}
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        {!!error && <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>{getErrorMessage(error)}</h4>}
-      </div>
+      (
+        'connect'
+      )}
 
-      <hr style={{ margin: '2rem' }} />
+      {error && (
+        <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>
+          {getErrorMessage(error)}
+        </h4>
+      )}
 
-      <div
-        style={{
-          display: 'grid',
-          gridGap: '1rem',
-          gridTemplateColumns: 'fit-content',
-          maxWidth: '20rem',
-          margin: 'auto'
-        }}
-      >
-        {!!(library && account) && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
+      <Divider sx={{ my: 6 }} />
+
+      <Box>
+        {library && account && (
+          <Button
+            size='large'
+            fullWidth
+            variant='contained'
             onClick={() => {
               library
                 .getSigner(account)
@@ -227,11 +193,11 @@ function Connnector() {
             }}
           >
             Sign Message
-          </button>
+          </Button>
         )}
-      </div>
+      </Box>
     </>
   )
 }
 
-export default Connnector;
+export default Connector
