@@ -12,9 +12,13 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import ActiveLink from './ActiveLink'
 import ConnectButton from './Connector/ConnectButton'
 import { Web3Provider } from '@ethersproject/providers'
-import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+import { useWeb3React } from '@web3-react/core'
+import { ModeContext } from '../contexts/Theme'
+import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded'
+import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded'
 
 export default function PrimarySearchAppBar() {
+    const { mode, toggleMode } = React.useContext(ModeContext)
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
         React.useState<null | HTMLElement>(null);
@@ -159,62 +163,96 @@ export default function PrimarySearchAppBar() {
     }
 
     return (
-        <Box sx={{ flexGrow: 1 }} className='flex-header'>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'block', sm: 'block' } }}
+        <Box sx={{ flexGrow: 1, position: 'fixed', zIndex: 1000, top: 0, left: 0, width: '100%' }} className='flex-header'>
+            <AppBar
+                position="static"
+                sx={{ 
+                    bgcolor: 'background.paper',
+                    height: 'inherit',
+                    display: 'flex',
+                    alignItems: 'center',
+                    '& a': {
+                        color: 'text.primary',
+                        '&.active': {
+                            color: 'primary.main'
+                        }
+                    }
+                }}
+            >
+                <Toolbar
+                    sx={{
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}
                     >
-                        <ActiveLink
-                            activeClassName="active"
-                            className="nav-link" href="/">
-                            <a>IOTABOTS</a>
-                        </ActiveLink>
-                    </Typography>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <ActiveLink
-                            activeClassName="active"
-                            style={({ isActive }) => {
-                                return {
-                                    color: isActive ? "#02c692" : ""
-                                };
-                            }}
-                            className="nav-link" href="/">
-                            <a>Home</a>
-                        </ActiveLink>
-                    </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, mx: 1 }}>|</Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <ActiveLink
-                            activeClassName="active"
-                            style={({ isActive }) => {
-                                return {
-                                    color: isActive ? "#02c692" : ""
-                                };
-                            }}
-                            className="nav-link" href="/bots">
-                            <a>Bots</a>
-                        </ActiveLink>
-                    </Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' }, mx: 1 }}>|</Box>
-                    <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        {profile}
-                    </Box>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                            size="large"
-                            aria-label="show more"
-                            aria-controls={mobileMenuId}
-                            aria-haspopup="true"
-                            onClick={handleMobileMenuOpen}
-                            color="inherit"
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'block', sm: 'block' }, mr: 6 }}
                         >
-                            <MoreIcon />
+                            <ActiveLink
+                                activeClassName="active"
+                                className="nav-link" href="/">
+                                <a>IOTABOTS</a>
+                            </ActiveLink>
+                        </Typography>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                            <ActiveLink
+                                activeClassName="active"
+                                style={({ isActive }) => {
+                                    return {
+                                        color: isActive ? "#02c692" : ""
+                                    };
+                                }}
+                                className="nav-link" href="/">
+                                <a>Home</a>
+                            </ActiveLink>
+                        </Box>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, mx: 3 }}>|</Box>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                            <ActiveLink
+                                activeClassName="active"
+                                className="nav-link" href="/bots"
+                            >
+                                <a>Bots</a>
+                            </ActiveLink>
+                        </Box>
+                    </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center'
+                        }}
+                    >
+                        <IconButton sx={{ color: 'text.primary' }} onClick={() => toggleMode()}>
+                            {mode === 'dark'
+                                ? <WbSunnyRoundedIcon color='inherit' />
+                                : <DarkModeRoundedIcon color='inherit' />
+                            }
                         </IconButton>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 3 }}>
+                            {profile}
+                        </Box>
+                        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+                            <IconButton
+                                size="large"
+                                aria-label="show more"
+                                aria-controls={mobileMenuId}
+                                aria-haspopup="true"
+                                onClick={handleMobileMenuOpen}
+                                color="inherit"
+                            >
+                                <MoreIcon />
+                            </IconButton>
+                        </Box>
                     </Box>
                 </Toolbar>
             </AppBar>

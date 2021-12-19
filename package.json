@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.6.0",
     "@ethersproject/providers": "^5.5.1",
     "@ethersproject/units": "^5.5.0",
-    "@iotabots/react-nft-components": "0.0.5",
+    "@iotabots/components": "^0.0.8",
     "@mui/icons-material": "^5.1.1",
     "@mui/material": "^5.1.1",
     "@web3-react/core": "^6.1.9",

@@ -219,10 +219,10 @@ function Connnector() {
                 .getSigner(account)
                 .signMessage('👋')
                 .then((signature: any) => {
-                  window.alert(`Success!\n\n${signature}`)
+                  console.log(`Success!\n\n${signature}`)
                 })
                 .catch((error: any) => {
-                  window.alert('Failure!' + (error && error.message ? `\n\n${error.message}` : ''))
+                  console.log('Failure!' + (error && error.message ? `\n\n${error.message}` : ''))
                 })
             }}
           >

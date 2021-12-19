@@ -1,22 +1,12 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-
-import dynamic from 'next/dynamic'
-
-import { ContentBox } from '@iotabots/react-nft-components'
-import Link from '@mui/material/Link';
-
-
-import BackgroundVideo from '../components/BackgroundVideo'
-import { flexbox } from '@mui/system';
+import { Box, Container, Link, Typography } from '@mui/material'
+import { Button, ContentBox } from '@iotabots/components'
+import BackgroundVideo from '../components/BackgroundVideo' 
+import BaseLayout from '../layout/BaseLayout';
 
 export default function Home() {
 
@@ -28,17 +18,16 @@ export default function Home() {
   }
 
   return (
+    <BaseLayout>
     <Box className='flex-body'>
-      {/* <CssBaseline /> */}
-      <Box sx={{bgcolor: 'IB_green.main'}}>
+      <Box>
         <BackgroundVideo
           blur={0}
           videoSource="assets/TEASER.mp4"
         >
           <Box className='content'>
-            <Box className='sub-content' sx={{ px: 2 }}>
+            <Box className='sub-content' sx={{ px: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <Typography
-                component="h1"
                 variant="h2"
                 align="center"
                 color="#ffffff"
@@ -48,16 +37,17 @@ export default function Home() {
                 {'IOTABOTS'}
               </Typography>
 
+
               <Typography variant="h5" align="center" color="#ffffff" paragraph>
                 {'First PFP NFTs on IOTA'}
               </Typography>
 
               <Box sx={{ textAlign: 'center' }}>
                 <Button
-                  variant="outlined"
+                  variant="contained"
                   onClick={scrollToBottom}
                   size="large"
-                  sx={{color: "primary.contrastText", mt: {sm:2}}}
+                  sx={{color: "primary.contrastText", mt: {sm:2}, boxShadow: 2 }}
                 >
                   {"Let's go!"}
                 </Button>
@@ -68,6 +58,15 @@ export default function Home() {
       </Box>
 
       <main>
+        <Box sx={{ bgcolor: 'background.light'}} py={8}>
+          <Container>
+            <ContentBox
+              image="http://assets.iotabots.io/9.png"
+              text="An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet."
+              title="WHAT IS AN IOTABOT?!"
+            />
+          </Container>
+        </Box>
         <Box
           sx={{
             bgcolor: 'background.paper',
@@ -77,25 +76,7 @@ export default function Home() {
         >
           <Container maxWidth="sm">
             <div id="what" className="anchor" />
-            {/* {process.browser &&
-              <ContentBox
-                backgroundColor="#2B2B2B"
-                breakPoint={620}
-                edgeRightBottomSize={50}
-                hasImage
-                headerBackgroundColor="#02c692"
-                imageSize={150}
-                imageSource="http://assets.iotabots.io/9.png"
-                text="An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet."
-                textMarginBottom="30px"
-                textMarginLeft="10px"
-                textMarginRight="10px"
-                title="WHAT IS AN IOTABOT?!"
-                topBarHeight="20px"
-                topBarMarginLeft="75px"
-              />} */}
             <Typography
-              component="h1"
               variant="h2"
               align="center"
               color="text.primary"
@@ -137,22 +118,20 @@ export default function Home() {
           </Container>
         </Box>
 
-        <Box sx={{bgcolor: 'IB_green.main'}}>
+        <Box sx={{bgcolor: 'background.light'}}>
           <Container
             maxWidth="md"
             sx={{py: 8}}
           >
             <Typography
-              component="h1"
-              variant="h2"
+              variant="h3"
               align="center"
-              color="#fff"
-              gutterBottom
+              sx={{ pb: 6 }}
             >
               {'Available Bots'}
             </Typography>
 
-            <Grid container spacing={2}>
+            <Grid container spacing={6}>
               {cards.map((card, index) => (
                 <Grid item key={card} xs={12} sm={6} md={4}>
                   <Card
@@ -174,7 +153,6 @@ export default function Home() {
                       <Typography
                         gutterBottom
                         variant="h6"
-                        component="h3"
                       >
                         {`IOTABOT #${index + 1}`}
                       </Typography>
@@ -185,12 +163,7 @@ export default function Home() {
             </Grid>
           </Container>
         </Box>
-
-        {/* <Container sx={{ py: 8 }} maxWidth="md"  >
-          <Typography align="center" gutterBottom variant="button" component="h1"></Typography>
-        </Container> */}
-
       </main>
-    </Box>
+    </Box></BaseLayout>
   );
 }

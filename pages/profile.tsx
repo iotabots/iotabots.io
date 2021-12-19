@@ -18,7 +18,8 @@ const IOTABOTS_ABI = require('../contracts/iotabots.json')
 
 declare global {
   interface Window {
-    web3: any;
+    web3: any
+    ethereum: any
   }
 }
 
@@ -43,8 +44,6 @@ export default function Profile() {
     name: string;
   }
   
-
-
   React.useEffect(() => {
     if (active) {
       const init = async () => {
@@ -144,7 +143,7 @@ export default function Profile() {
             </Grid>
           ))}
         </Box>
-     </Container>
+      </Container>
     </Box>
   );
 }

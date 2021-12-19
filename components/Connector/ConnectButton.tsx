@@ -4,6 +4,7 @@ import { injected, network, walletconnect } from '../../utils/connectors'
 import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { Web3Provider } from '@ethersproject/providers'
+import { Button } from '@iotabots/components'
 
 enum ConnectorNames {
     Injected = 'Connect',
@@ -34,9 +35,10 @@ const ConnectButton = function () {
     const disabled = !triedEager || !!activatingConnector || connected || !!error
 
     return (
-        < button
+        <Button
             disabled={disabled}
             key={"Connect"}
+            size='small'
             onClick={() => {
                 setActivatingConnector(currentConnector)
                 activate(connectorsByName["Connect"])
@@ -47,7 +49,7 @@ const ConnectButton = function () {
                 {connected && '✅'}
             </div>
             { 'Connect' }
-        </button >
+        </Button>
     )
 
 }
