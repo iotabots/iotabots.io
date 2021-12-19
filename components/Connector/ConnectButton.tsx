@@ -25,7 +25,7 @@ const ConnectButton: React.FC = () => {
 
     /* handle logic to connect in reaction to certain events on the injected
     ethereum provider, if it exists */
-    useInactiveListener(!triedEager || !!activatingConnector)
+    useInactiveListener({ suppress: !triedEager || !!activatingConnector })
 
     const currentConnector = connectorsByName.Connect
     const activating = currentConnector === activatingConnector
@@ -39,7 +39,7 @@ const ConnectButton: React.FC = () => {
     return (
         <Button
             disabled={disabled}
-            key="Connect"
+            key='Connect'
             size='small'
             onClick={() => {
                 setActivatingConnector(currentConnector)

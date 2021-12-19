@@ -12,18 +12,19 @@ export const Home = (): JSX.Element => (
       <Box id='what' py={8} bgcolor='background.default'>
         <Container  >
           <ContentBox
-            image="http://assets.iotabots.io/9.png"
-            text="An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet."
-            title="WHAT IS AN IOTABOT?!"
+            image='http://assets.iotabots.io/9.png'
+            // eslint-disable-next-line max-len
+            text='An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet.'
+            title='WHAT IS AN IOTABOT?!'
           />
         </Container>
       </Box>
 
       <Box py={8} bgcolor='background.light'>
-        <Container maxWidth="md">
+        <Container maxWidth='md'>
           <Typography
-            variant="h3"
-            align="center"
+            variant='h3'
+            align='center'
             sx={{ pb: 6 }}
           >
             Available Bots

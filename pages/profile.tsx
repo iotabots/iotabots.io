@@ -47,8 +47,6 @@ const Profile: React.FC = () => {
     if (active) {
       // eslint-disable-next-line consistent-return
       const init = async (): Promise<Bot[]> => {
-
-        // window.ethereum.enable();
         /* eslint-disable */
 
         const web3 = new Web3(window.web3.currentProvider);
@@ -56,9 +54,6 @@ const Profile: React.FC = () => {
           window.location.reload();
         })
         let contract = new web3.eth.Contract(IOTABOTS_ABI, IOTABOTS_ADR);
-
-        /* eslint-enable */
-        console.log('contract', contract)
 
         let data
         try {
@@ -72,7 +67,6 @@ const Profile: React.FC = () => {
         console.log('i', init)
 
         const items: Array<Bot> = await Promise.all(data.map(async (i: any) => {
-          // let token_index = i.toNumber()
           console.log('token_index', i)
 
           const metadataUrl = await contract.methods.tokenURI(i).call()

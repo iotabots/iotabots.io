@@ -18,9 +18,10 @@ export const useEagerConnect = (): boolean => {
         setTried(true)
       }
     })
-  }, [activate]) // intentionally only running on mount (make sure it's only mounted once :))
+  }, [activate])
 
-  // if the connection worked, wait until we get confirmation of that to flip the flag
+  /* if the connection worked, wait until we get confirmation of that to 
+  flip the flag */
   useEffect(() => {
     if (!tried && active) {
       setTried(true)
@@ -43,6 +44,7 @@ export const useInactiveListener = (
   useEffect((): any => {
     const { ethereum } = window as any
     if (ethereum && ethereum.on && !active && !error && !suppress) {
+      // eslint-disable-next-line max-len
       // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
       const handleConnect = () => {
         console.log('Handling \'connect\' event')

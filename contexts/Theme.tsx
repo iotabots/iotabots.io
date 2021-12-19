@@ -1,6 +1,9 @@
 import React from 'react'
-import { ThemeProvider as MuiThemeProvider, CustomThemeName, CssBaseline } from '@iotabots/components'
-
+import {
+  CssBaseline,
+  CustomThemeName,
+  ThemeProvider as MuiThemeProvider
+} from '@iotabots/components'
 import { getItem, setItem } from '../utils/localStorage'
 
 export interface ThemeProviderProps {
@@ -12,13 +15,15 @@ export interface ModeContextProps {
   toggleMode?: () => void
 }
 
-export const ModeContext = React.createContext<ModeContextProps>({ mode: 'light' as Mode })
+export const ModeContext =
+  React.createContext<ModeContextProps>({ mode: 'light' as Mode })
 
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props
 
   const [modeState, setModeState] = React.useState<Mode>('light' as Mode)
-  const [themeState, setThemeState] = React.useState<CustomThemeName | undefined>('light')
+  const [themeState, setThemeState] =
+    React.useState<CustomThemeName | undefined>('light')
 
   const getTheme = (mode: Mode): CustomThemeName | undefined => {
     if (mode === 'light') return 'light'

@@ -90,24 +90,24 @@ export const Navigation: React.FC = () => {
     >
       <MenuItem>
         <ActiveLink
-          activeClassName="active"
-          href="/"
+          activeClassName='active'
+          href='/'
         >
           <Typography>Home</Typography>
         </ActiveLink>
       </MenuItem>
       <MenuItem>
         <ActiveLink
-          activeClassName="active"
-          href="/bots"
+          activeClassName='active'
+          href='/bots'
         >
           <Typography>Bots</Typography>
         </ActiveLink>
       </MenuItem>
       <MenuItem>
         <ActiveLink
-          activeClassName="active"
-          href="/profile"
+          activeClassName='active'
+          href='/profile'
         >
           <Typography>Profile</Typography>
         </ActiveLink>
@@ -119,11 +119,11 @@ export const Navigation: React.FC = () => {
               'https://twitter.com/iotabots', '_blank'
             )
           }
-          size="large"
-          aria-label="show 1 new tweets"
-          color="inherit"
+          size='large'
+          aria-label='show 1 new tweets'
+          color='inherit'
         >
-          <Badge badgeContent={1} color="error">
+          <Badge badgeContent={1} color='error'>
             <Twitter />
           </Badge>
         </IconButton>
@@ -135,8 +135,8 @@ export const Navigation: React.FC = () => {
   if (account) {
     profile = (
       <ActiveLink
-        activeClassName="active"
-        href="/profile"
+        activeClassName='active'
+        href='/profile'
       >
         <Typography>Profile({account.substring(0, 5)})</Typography>
       </ActiveLink>
@@ -155,10 +155,10 @@ export const Navigation: React.FC = () => {
         left: 0,
         width: '100%',
       }}
-      className="flex-header"
+      className='flex-header'
     >
       <AppBar
-        position="static"
+        position='static'
         sx={{
           bgcolor: 'background.paper',
           height: 'inherit',
@@ -186,21 +186,21 @@ export const Navigation: React.FC = () => {
             }}
           >
             <Typography
-              variant="h6"
+              variant='h6'
               noWrap
               sx={{ display: { xs: 'block', sm: 'block' }, mr: 6 }}
             >
               <ActiveLink
-                activeClassName="active"
-                href="/"
+                activeClassName='active'
+                href='/'
               >
                 <Typography>IOTABOTS</Typography>
               </ActiveLink>
             </Typography>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <ActiveLink
-                activeClassName="active"
-                href="/"
+                activeClassName='active'
+                href='/'
               >
                 <Typography>Home</Typography>
               </ActiveLink>
@@ -208,8 +208,8 @@ export const Navigation: React.FC = () => {
             <Box sx={{ display: { xs: 'none', md: 'flex' }, mx: 3 }}>|</Box>
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
               <ActiveLink
-                activeClassName="active"
-                href="/bots"
+                activeClassName='active'
+                href='/bots'
               >
                 <Typography>Bots</Typography>
               </ActiveLink>
@@ -226,9 +226,9 @@ export const Navigation: React.FC = () => {
               onClick={() => toggleMode()}
             >
               {mode === 'dark' ? (
-                <WbSunnyRoundedIcon color="inherit" />
+                <WbSunnyRoundedIcon color='inherit' />
               ) : (
-                <DarkModeRoundedIcon color="inherit" />
+                <DarkModeRoundedIcon color='inherit' />
               )}
             </IconButton>
             <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 3 }}>
@@ -236,12 +236,12 @@ export const Navigation: React.FC = () => {
             </Box>
             <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
               <IconButton
-                size="large"
-                aria-label="show more"
+                size='large'
+                aria-label='show more'
                 aria-controls={mobileMenuId}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 onClick={handleMobileMenuOpen}
-                color="inherit"
+                color='inherit'
               >
                 <MoreIcon />
               </IconButton>

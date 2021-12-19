@@ -20,7 +20,7 @@ const ActiveLink = (props: ActiveLinkProps): JSX.Element => {
       : childClassName
 
   return (
-    <Link href="something" {...props}>
+    <Link href='something' {...props}>
       {
         React.cloneElement(child, {
           className: className || null,

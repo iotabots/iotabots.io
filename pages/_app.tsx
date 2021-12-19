@@ -22,28 +22,28 @@ const App: React.FC<AppProps> = (props) => {
     <>
       <Head>
         <title>IOTABOTS</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta name='viewport' content='initial-scale=1, width=device-width' />
         <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="favicon/apple-touch-icon.png"
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='favicon/apple-touch-icon.png'
         />
         <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="favicon/favicon-32x32.png"
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='favicon/favicon-32x32.png'
         />
         <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="favicon/favicon-16x16.png"
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='favicon/favicon-16x16.png'
         />
-        <link rel="manifest" href="favicon/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#20c593" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+        <link rel='manifest' href='favicon/site.webmanifest' />
+        <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#20c593' />
+        <meta name='msapplication-TileColor' content='#da532c' />
+        <meta name='theme-color' content='#ffffff' />
       </Head>
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>

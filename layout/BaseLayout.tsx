@@ -1,6 +1,13 @@
 import React from 'react'
 import { Box, makeStyles, Theme } from '@iotabots/components'
 
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    background: theme.palette.background.gradient,
+    minHeight: 'calc(100vh - 140px)'
+  }
+}))
+
 const BaseLayout: React.FC = (props) => {
   const { children } = props
   const classes = useStyles()
@@ -11,15 +18,5 @@ const BaseLayout: React.FC = (props) => {
     </Box>
   )
 }
-
-const useStyles = makeStyles((theme: Theme) => {
-  return {
-    root: {
-      background: theme.palette.background.gradient,
-      minHeight: 'calc(100vh - 140px)'
-    }
-  }
-})
-
 
 export default BaseLayout

@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
   return (
     <Box>
       <BackgroundVideo blur={0}
-        videoSource="assets/TEASER.mp4">
-        <Box className="content">
+        videoSource='assets/TEASER.mp4'>
+        <Box className='content'>
           <Box
-            className="sub-content"
+            className='sub-content'
             sx={{
               px: 2,
               display: 'flex',
@@ -22,28 +22,28 @@ const Hero: React.FC = () => {
             }}
           >
             <Typography
-              variant="h2"
-              align="center"
-              color="#ffffff"
+              variant='h2'
+              align='center'
+              color='#ffffff'
               gutterBottom
               sx={{ display: { xs: 'none', sm: 'block' } }}
             >
               IOTABOTS
             </Typography>
 
-            <Typography variant="h5"
-              align="center"
-              color="#ffffff"
+            <Typography variant='h5'
+              align='center'
+              color='#ffffff'
               paragraph>
               First PFP NFTs on IOTA
             </Typography>
 
             <Box sx={{ textAlign: 'center' }}>
               <Button
-                color="secondary"
-                variant="contained"
+                color='secondary'
+                variant='contained'
                 onClick={scrollToBottom}
-                size="large"
+                size='large'
                 sx={{
                   color: 'primary.contrastText',
                   mt: { sm: 2 },

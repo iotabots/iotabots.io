@@ -12,9 +12,9 @@ const IotabotGrid: React.FC = () => {
             sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
           >
             <CardMedia
-              component="img"
+              component='img'
               image={`https://assets.iotabots.io/compressed/${index + 1}.png`}
-              alt="IOTABOT"
+              alt='IOTABOT'
             />
             <CardContent
               sx={{
@@ -24,7 +24,7 @@ const IotabotGrid: React.FC = () => {
                 p: 2.4,
               }}
             >
-              <Typography gutterBottom variant="h6">
+              <Typography gutterBottom variant='h6'>
                 {`IOTABOT #${index + 1}`}
               </Typography>
             </CardContent>
