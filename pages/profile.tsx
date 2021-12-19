@@ -20,12 +20,15 @@ const IOTABOTS_ABI = require('../contracts/iotabots.json')
 
 declare global {
   interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     web3: any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ethereum: any
   }
 }
 
 const Profile: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [bots, setBots] = React.useState<Array<any>>([])
   const [errorRetrievingBots, setErrorRetrievingBots] = React.useState(false)
   const context = useWeb3React<Web3Provider>()

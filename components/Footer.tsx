@@ -4,7 +4,10 @@ import { Box, Link, Typography } from '@iotabots/components'
 const Copyright: React.FC = () => (
   <Typography variant='body2' color='text.secondary' align='center'>
     Copyright ©
-    <Link href='/' className='link' color='inherit' sx={{ ml: 1, mr: 1 }}>
+    <Link href='/'
+      className='link'
+      color='inherit'
+      sx={{ ml: 1, mr: 1 }}>
       iotabots.io
     </Link>
     {new Date().getFullYear()}.

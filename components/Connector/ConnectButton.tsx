@@ -10,6 +10,7 @@ enum ConnectorNames {
     Injected = 'Connect',
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const connectorsByName: { [connectorName in ConnectorNames]: any } = {
     [ConnectorNames.Injected]: injected,
 }
@@ -18,6 +19,7 @@ const ConnectButton: React.FC = () => {
     const context = useWeb3React<Web3Provider>()
     const { connector, activate, error } = context
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [activatingConnector, setActivatingConnector] = React.useState<any>()
     /* handle logic to eagerly connect to the injected ethereum provider, 
     if it exists and has granted access already */

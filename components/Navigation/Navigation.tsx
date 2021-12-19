@@ -6,7 +6,6 @@ import {
   IconButton,
   makeStyles,
   Theme,
-  Typography,
 } from '@iotabots/components'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
@@ -30,7 +29,7 @@ export const Navigation: React.FC = () => {
     React.useState<null | HTMLElement>(null)
 
   const handleMobileMenuOpen = (
-    event: React.MouseEvent<HTMLElement>
+    event: React.MouseEvent<HTMLElement>,
   ): void => {
     setMobileMoreAnchorEl(event.currentTarget)
   }
@@ -39,11 +38,9 @@ export const Navigation: React.FC = () => {
   if (account) {
     profile = (
       <ActiveLink
-        activeClassName='active'
         href='/profile'
-      >
-        <Typography>Profile({account.substring(0, 5)})</Typography>
-      </ActiveLink>
+        label={`Profile (${account.substring(0, 5)})`}
+      />
     )
   } else {
     profile = <ConnectButton />
@@ -62,21 +59,17 @@ export const Navigation: React.FC = () => {
         }}
       >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {MENU.map((item) => (
+          {MENU.map((item, index) => (
             <Box
               key={item.label}
               sx={
-                item.showMobile
+                // Assuming Logo is the first Link in MENU Array
+                index === 0
                   ? { display: 'flex', mr: 6 }
                   : { display: { xs: 'none', md: 'flex' }, mr: 6 }
               }
             >
-              <ActiveLink
-                activeClassName='active'
-                href={item.link}
-              >
-                <Typography>{item.label}</Typography>
-              </ActiveLink>
+              <ActiveLink href={item.link} label={item.label} />
             </Box>
           ))}
         </Box>
@@ -86,14 +79,12 @@ export const Navigation: React.FC = () => {
             {profile}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size='large'
+            <IconButton size='large'
               aria-label='show more'
               aria-controls={mobileMenuId}
               aria-haspopup='true'
               onClick={handleMobileMenuOpen}
-              color='inherit'
-            >
+              color='inherit'>
               <MoreIcon />
             </IconButton>
           </Box>
@@ -129,5 +120,5 @@ const useStyles = makeStyles((theme: Theme) => ({
         color: theme.palette.primary.main,
       },
     },
-  }
+  },
 }))

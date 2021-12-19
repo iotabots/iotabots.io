@@ -139,6 +139,7 @@ const Connector: React.FC = () => {
   } = context
 
   // handle logic to recognize the connector currently being activated
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [activatingConnector, setActivatingConnector] = React.useState<any>()
   React.useEffect(() => {
     if (activatingConnector && activatingConnector === connector) {
@@ -199,10 +200,13 @@ const Connector: React.FC = () => {
               library
                 .getSigner(account)
                 .signMessage('👋')
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 .then((signature: any) => {
+                  // eslint-disable-next-line no-console
                   console.log(`Success!\n\n${signature}`)
                 })
                 .catch(() => {
+                  // eslint-disable-next-line no-console
                   console.log(
                     `Failure!${error && error.message
                       ? `\n\n${error.message}`

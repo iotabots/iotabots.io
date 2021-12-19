@@ -8,6 +8,7 @@ import { AppProps } from 'next/dist/shared/lib/router/router'
 import { Navigation } from '../components/Navigation/Navigation'
 import { Footer } from '../components/Footer'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getLibrary = (provider: any): Web3Provider => {
   const library = new Web3Provider(provider)
   library.pollingInterval = 1000

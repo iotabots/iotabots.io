@@ -5,6 +5,7 @@
   },
   "extends": [
     "plugin:react/recommended",
+    "plugin:@next/next/recommended",
     "airbnb",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
@@ -26,7 +27,12 @@
   },
   "rules": {
     "no-use-before-define": "off",
+    "comma-dangle": ["error", "only-multiline"],
     "react/jsx-no-constructed-context-values": "off",
+    "react/jsx-max-props-per-line": [
+      "error",
+      { "maximum": { "single": 3, "multi": 1 } }
+    ],
     "import/no-extraneous-dependencies": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "import/extensions": [

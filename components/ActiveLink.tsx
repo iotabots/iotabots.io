@@ -1,37 +1,33 @@
 import { useRouter } from 'next/router'
-import PropTypes from 'prop-types'
 import Link, { LinkProps } from 'next/link'
-import React, { Children } from 'react'
+import React from 'react'
+import { Box } from '@iotabots/components'
 
 interface ActiveLinkProps extends LinkProps {
-  activeClassName: string
-  children: JSX.Element
+  label: string
 }
 
 const ActiveLink = (props: ActiveLinkProps): JSX.Element => {
-  const { children, activeClassName, href, as } = props
-  const { asPath } = useRouter()
-  const child = Children.only(children)
-  const childClassName = child.props.className || ''
-
-  const className =
-    asPath === href || asPath === as
-      ? `${childClassName} ${activeClassName}`.trim()
-      : childClassName
+  const { label, href } = props
+  const { pathname } = useRouter()
 
   return (
-    <Link href='something' {...props}>
-      {
-        React.cloneElement(child, {
-          className: className || null,
-        })
-      }
-    </Link>
+    <Box
+      className={pathname === href ? 'active' : ''}
+      sx={{
+        '& a': {
+          fontSize: '16px'
+        },
+        '&.active': {
+          color: 'primary.main'
+        }
+      }}
+    >
+      <Link {...props}>
+        {label}
+      </Link>
+    </Box>
   )
-}
-
-ActiveLink.propTypes = {
-  activeClassName: PropTypes.string.isRequired,
 }
 
 export default ActiveLink

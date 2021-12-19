@@ -1,8 +1,9 @@
-import { Badge, IconButton, Menu, Typography } from '@iotabots/components'
+import { Badge, IconButton, Menu } from '@iotabots/components'
 import { MenuItem } from '@mui/material'
 import React, { Dispatch, SetStateAction } from 'react'
 import Twitter from '@mui/icons-material/Twitter'
 import ActiveLink from '../ActiveLink'
+import { MOBILE_MENU } from './menu'
 
 interface Props {
   mobileMenuId: string
@@ -25,44 +26,19 @@ const MobileMenu: React.FC<Props> = (props) => {
 
   return (
     <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
       id={mobileMenuId}
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
       keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <ActiveLink
-          activeClassName='active'
-          href='/'
-        >
-          <Typography>Home</Typography>
-        </ActiveLink>
-      </MenuItem>
-      <MenuItem>
-        <ActiveLink
-          activeClassName='active'
-          href='/bots'
-        >
-          <Typography>Bots</Typography>
-        </ActiveLink>
-      </MenuItem>
-      <MenuItem>
-        <ActiveLink
-          activeClassName='active'
-          href='/profile'
-        >
-          <Typography>Profile</Typography>
-        </ActiveLink>
-      </MenuItem>
+      {MOBILE_MENU.map((item) => (
+        <MenuItem key={item.label}>
+          <ActiveLink href={item.link} label={item.label} />
+        </MenuItem>
+      ))}
       <MenuItem>
         <IconButton
           onClick={

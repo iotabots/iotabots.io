@@ -7,7 +7,11 @@ const IotabotGrid: React.FC = () => {
   return (
     <Grid container spacing={6}>
       {cards.map((card, index) => (
-        <Grid item key={card} xs={12} sm={6} md={4}>
+        <Grid item
+          key={card}
+          xs={12}
+          sm={6}
+          md={4}>
           <Card
             sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
           >
