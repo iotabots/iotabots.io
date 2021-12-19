@@ -1,6 +1,12 @@
-const BackgroundVideo = ({ videoSource, children, blur }: {videoSource:any, children:any, blur:any}) => {
-    return (
-        <>
+interface BackgroundVideoProps {
+  videoSource: string
+  blur: number
+}
+
+const BackgroundVideo: React.FC<BackgroundVideoProps> = (props) => {
+  const { videoSource, children, blur } = props
+  return (
+    <>
       <div className='video-container'>
         <video
           style={{ filter: `blur(${blur}px)`, WebkitFilter: `blur(${blur}px)` }}
@@ -8,17 +14,15 @@ const BackgroundVideo = ({ videoSource, children, blur }: {videoSource:any, chil
           loop
           muted
           playsInline
-          // ref={video}
           id="video-id"
-          className='video'>
-          {/* TODO make it accept multiple media types */}
+          className='video'
+        >
           <source src={videoSource} type="video/mp4" />
-            Your browser does not support the video tag.
-      </video>
+          Your browser does not support the video tag.
+        </video>
         {children}
       </div>
-      {/* <span id="video-bottom"></span> */}
     </>
-    )
+  )
 }
 export default BackgroundVideo

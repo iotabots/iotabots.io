@@ -1,26 +1,22 @@
 
-import React, { useState } from 'react'
-import { injected, network, walletconnect } from '../../utils/connectors'
-import { Web3ReactProvider, useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+import React from 'react'
+import { injected } from '../../utils/connectors'
+import { useWeb3React } from '@web3-react/core'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { Web3Provider } from '@ethersproject/providers'
 import { Button } from '@iotabots/components'
 
 enum ConnectorNames {
     Injected = 'Connect',
-    // Network = 'RPC Connect',
-    // WalletConnect = 'WalletConnect'
 }
 
 const connectorsByName: { [connectorName in ConnectorNames]: any } = {
     [ConnectorNames.Injected]: injected,
-    // [ConnectorNames.Network]: network,
-    // [ConnectorNames.WalletConnect]: walletconnect
 }
 
 const ConnectButton = function () {
     const context = useWeb3React<Web3Provider>()
-    const { connector, library, chainId, account, activate, deactivate, active, error } = context
+    const { connector, activate, error } = context
 
     const [activatingConnector, setActivatingConnector] = React.useState<any>()
     // handle logic to eagerly connect to the injected ethereum provider, if it exists and has granted access already
@@ -48,7 +44,7 @@ const ConnectButton = function () {
                 {activating && '⏳'}
                 {connected && '✅'}
             </div>
-            { 'Connect' }
+            {'Connect'}
         </Button>
     )
 

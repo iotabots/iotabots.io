@@ -27,7 +27,7 @@ const IotabotGrid = () => {
                 flexGrow: 1,
                 display: 'flex',
                 justifyContent: 'center',
-                p: 2.4 
+                p: 2.4
               }}
             >
               <Typography
