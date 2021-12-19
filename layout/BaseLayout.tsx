@@ -6,20 +6,20 @@ const BaseLayout: React.FC = (props) => {
   const classes = useStyles()
 
   return (
-    <Box className={classes.root} pt='64px'>
+    <Box
+      className={classes.root}
+      sx={{ pt: { xs: '56px', sm: '64px' } }}
+    >
       {children}
     </Box>
   )
 }
 
-const useStyles = makeStyles((theme: Theme) => {
-  return {
-    root: {
-      background: theme.palette.background.gradient,
-      minHeight: 'calc(100vh - 140px)'
-    }
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    background: theme.palette.background.gradient,
+    minHeight: 'calc(100vh - 140px)'
   }
-})
-
+}))
 
 export default BaseLayout

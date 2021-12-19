@@ -1,6 +1,5 @@
-export const getItem = (itemName: string): string | null => {
-  return localStorage.getItem(itemName)
-}
+export const getItem = (itemName: string): string | null =>
+  localStorage.getItem(itemName)
 
 export const setItem = (itemName: string, itemValue: string | object): void => {
   if (itemValue instanceof Object) {

@@ -1,40 +1,45 @@
 import React from 'react'
-import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+import { useWeb3React } from '@web3-react/core'
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from '@web3-react/injected-connector'
-import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@web3-react/walletconnect-connector'
+import {
+  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect
+} from '@web3-react/walletconnect-connector'
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
+import { Box, Button, Divider } from '@iotabots/components'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
-import { Box, Divider, Button } from '@iotabots/components'
 
-function getErrorMessage(error: Error) {
+// eslint-disable-next-line max-len
+const ERROR_NO_ETH_PROVIDER = 'No Wallet Browser Extension detected, install Browser Extension on desktop or visit from a dApp browser on mobile.'
+
+const getErrorMessage = (error: Error): string => {
   if (error instanceof NoEthereumProviderError) {
-    return 'No Wallet Browser Extension detected, install Browser Extension on desktop or visit from a dApp browser on mobile.'
-  } else if (error instanceof UnsupportedChainIdError) {
-    return "You're connected to an unsupported network."
-  } else if (error instanceof UserRejectedRequestErrorInjected || UserRejectedRequestErrorWalletConnect) {
+    return ERROR_NO_ETH_PROVIDER
+  } if (
+    error instanceof UserRejectedRequestErrorInjected ||
+    UserRejectedRequestErrorWalletConnect
+  ) {
     return 'Please authorize this website to access your Wallet account.'
-  } else {
-    console.error(error)
-    return 'An unknown error occurred. Check the console for more details.'
   }
+  return 'An unknown error occurred. Check the console for more details.'
 }
 
-function BlockNumber() {
+const BlockNumber: React.FC = () => {
   const { chainId, library } = useWeb3React()
-
   const [blockNumber, setBlockNumber] = React.useState<number>()
-  React.useEffect((): any => {
-    if (!!library) {
+
+  // eslint-disable-next-line consistent-return
+  React.useEffect(() => {
+    if (library) {
       let stale = false
 
       library
         .getBlockNumber()
-        .then((blockNumber: number) => {
+        .then((): void => {
           if (!stale) {
             setBlockNumber(blockNumber)
           }
@@ -45,7 +50,7 @@ function BlockNumber() {
           }
         })
 
-      const updateBlockNumber = (blockNumber: number) => {
+      const updateBlockNumber = (): void => {
         setBlockNumber(blockNumber)
       }
       library.on('block', updateBlockNumber)
@@ -56,32 +61,24 @@ function BlockNumber() {
         setBlockNumber(undefined)
       }
     }
-  }, [library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
+    /* ensures refresh if referential identity of library doesn't change 
+    across chainIds */
+  }, [library, chainId, blockNumber])
 
   return <span>{blockNumber === null ? 'Error' : blockNumber ?? '-'}</span>
 }
 
-function Account() {
-  const { account } = useWeb3React()
-
-  return (
-    <span>
-      {account === null ? '-' : account ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}` : '-'}
-    </span>
-  )
-}
-
-function Balance() {
+const Balance: React.FC = () => {
   const { account, library, chainId } = useWeb3React()
 
   const [balance, setBalance] = React.useState()
-  React.useEffect((): any => {
+  React.useEffect(() => {
     if (!!account && !!library) {
       let stale = false
 
       library
         .getBalance(account)
-        .then((balance: any) => {
+        .then(() => {
           if (!stale) {
             setBalance(balance)
           }
@@ -97,24 +94,32 @@ function Balance() {
         setBalance(undefined)
       }
     }
-  }, [account, library, chainId]) // ensures refresh if referential identity of library doesn't change across chainIds
+    return null
 
-  return <span>{balance === null ? null : balance ? formatEther(balance) : '-'}</span>
+  }, [account, library, chainId, balance])
+
+  return (
+    <span>
+      { /* eslint-disable-next-line no-nested-ternary */}
+      {balance === null ? null : balance ? formatEther(balance) : '-'}
+    </span>
+  )
 }
 
-function Header() {
+const Header: React.FC = () => {
   const { active, error } = useWeb3React()
 
-  const { account, library, chainId } = useWeb3React()
+  const { account, chainId } = useWeb3React()
 
   return (
     <>
+      { /* eslint-disable-next-line no-nested-ternary */}
       <h5>Status: {active ? '🟢' : error ? '🔴' : '🟠'}</h5>
-      <h5>chainId: {chainId ? chainId : '-'}</h5>
+      <h5>chainId: {chainId || '-'}</h5>
       <h5>
         BlockNumber: <BlockNumber />
       </h5>
-      <h5>address: {account ? account : '-'}</h5>
+      <h5>address: {account || '-'}</h5>
       <h5>
         Balance:<Balance />
       </h5>
@@ -122,11 +127,19 @@ function Header() {
   )
 }
 
-function Connector() {
+const Connector: React.FC = () => {
   const context = useWeb3React<Web3Provider>()
-  const { connector, library, chainId, account, activate, deactivate, active, error } = context
+  const {
+    connector,
+    library,
+    account,
+    deactivate,
+    active,
+    error
+  } = context
 
   // handle logic to recognize the connector currently being activated
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [activatingConnector, setActivatingConnector] = React.useState<any>()
   React.useEffect(() => {
     if (activatingConnector && activatingConnector === connector) {
@@ -134,15 +147,18 @@ function Connector() {
     }
   }, [activatingConnector, connector])
 
-  // handle logic to eagerly connect to the injected ethereum provider, if it exists and has granted access already
+  /* handle logic to eagerly connect to the injected ethereum provider, 
+  if it exists and has granted access already */
   const triedEager = useEagerConnect()
 
-  // handle logic to connect in reaction to certain events on the injected ethereum provider, if it exists
-  useInactiveListener(!triedEager || !!activatingConnector)
+  /* handle logic to connect in reaction to certain events on the 
+  injected ethereum provider, if it exists */
+  useInactiveListener({ suppress: !triedEager || !!activatingConnector })
 
   return (
     <>
       <Header />
+      { /* eslint-disable-next-line no-nested-ternary */}
       {active ? (
         <Button
           size='large'
@@ -153,7 +169,7 @@ function Connector() {
         </Button>
       ) : error ? (
         <Button
-        size='large'
+          size='large'
           variant='contained'
           onClick={() => {
             deactivate()
@@ -162,9 +178,9 @@ function Connector() {
           Cancel Connect
         </Button>
       ) :
-      (
-        'connect'
-      )}
+        (
+          'connect'
+        )}
 
       {error && (
         <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>
@@ -184,11 +200,18 @@ function Connector() {
               library
                 .getSigner(account)
                 .signMessage('👋')
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 .then((signature: any) => {
+                  // eslint-disable-next-line no-console
                   console.log(`Success!\n\n${signature}`)
                 })
-                .catch((error: any) => {
-                  console.log('Failure!' + (error && error.message ? `\n\n${error.message}` : ''))
+                .catch(() => {
+                  // eslint-disable-next-line no-console
+                  console.log(
+                    `Failure!${error && error.message
+                      ? `\n\n${error.message}`
+                      : ''}`
+                  )
                 })
             }}
           >
