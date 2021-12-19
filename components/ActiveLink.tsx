@@ -26,7 +26,7 @@ const ActiveLink = (props: ActiveLinkProps): JSX.Element => {
           className: className || null,
         })
       }
-    </Link >
+    </Link>
   )
 }
 

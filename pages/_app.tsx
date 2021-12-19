@@ -5,7 +5,7 @@ import '../styles/globals.scss'
 import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
 import { AppProps } from 'next/dist/shared/lib/router/router'
-import { Navigation } from '../components/Navigation'
+import { Navigation } from '../components/Navigation/Navigation'
 import { Footer } from '../components/Footer'
 
 const getLibrary = (provider: any): Web3Provider => {

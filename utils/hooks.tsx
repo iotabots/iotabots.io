@@ -35,9 +35,9 @@ interface InactiveListenerProps {
   suppress: boolean
 }
 
-export const useInactiveListener = (
-  { suppress = false }: InactiveListenerProps
-): void => {
+export const useInactiveListener = ({
+  suppress = false,
+}: InactiveListenerProps): void => {
   const { active, error, activate } = useWeb3React()
 
   // eslint-disable-next-line consistent-return
