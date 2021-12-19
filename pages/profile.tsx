@@ -1,13 +1,21 @@
-import * as React from 'react';
-import Connector from '../components/Connector/Connector'
-import { Box, Container, Typography, Grid, CardContent, Card } from '@iotabots/components'
+import * as React from 'react'
+import {
+  Box,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Typography
+} from '@iotabots/components'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 
-import Web3 from 'web3';
-import CardMedia from '@mui/material/CardMedia';
-import BaseLayout from '../layout/BaseLayout';
+import Web3 from 'web3'
+import CardMedia from '@mui/material/CardMedia'
+import Connector from '../components/Connector/Connector'
+import BaseLayout from '../layout/BaseLayout'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const IOTABOTS_ABI = require('../contracts/iotabots.json')
 
 declare global {
@@ -17,14 +25,14 @@ declare global {
   }
 }
 
-export default function Profile() {
-  const [bots, setBots] = React.useState<Array<any>>([]);
+const Profile: React.FC = () => {
+  const [bots, setBots] = React.useState<Array<any>>([])
   const [errorRetrievingBots, setErrorRetrievingBots] = React.useState(false)
   const context = useWeb3React<Web3Provider>()
 
   const { account, active } = context
 
-  const IOTABOTS_ADR = "0x3a3c0D4BDAB6d0e9715Fa2eAA852af3038Bec342"
+  const IOTABOTS_ADR = '0x3a3c0D4BDAB6d0e9715Fa2eAA852af3038Bec342'
   interface Bot {
     attributes: Array<object>;
     date: number;
@@ -34,56 +42,57 @@ export default function Profile() {
     image: string;
     name: string;
   }
-  
+
   React.useEffect(() => {
     if (active) {
-      const init = async () => {
+      // eslint-disable-next-line consistent-return
+      const init = async (): Promise<Bot[]> => {
 
         // window.ethereum.enable();
         /* eslint-disable */
 
         const web3 = new Web3(window.web3.currentProvider);
-        window.ethereum.on('accountsChanged', function()
-        {
+        window.ethereum.on('accountsChanged', function () {
           window.location.reload();
         })
         let contract = new web3.eth.Contract(IOTABOTS_ABI, IOTABOTS_ADR);
 
         /* eslint-enable */
-        console.log("contract", contract)
+        console.log('contract', contract)
 
-        let data 
+        let data
         try {
-          data = await contract.methods.walletOfOwner(account).call();
+          data = await contract.methods.walletOfOwner(account).call()
         }
         catch (e) {
           setErrorRetrievingBots(true)
           console.log(e)
-          return new Array<Bot> ();
+          return new Array<Bot>()
         }
-        console.log("i", init)
+        console.log('i', init)
 
         const items: Array<Bot> = await Promise.all(data.map(async (i: any) => {
           // let token_index = i.toNumber()
-          console.log("token_index", i)
+          console.log('token_index', i)
 
-          const metadata_url = await contract.methods.tokenURI(i).call()
+          const metadataUrl = await contract.methods.tokenURI(i).call()
 
-          console.log("metadata_url:", metadata_url)
+          console.log('metadata_url:', metadataUrl)
 
-          const metadata_raw = await fetch(metadata_url)
-          const metadata = await metadata_raw.json()
+          const metadataRaw = await fetch(metadataUrl)
+          const metadata = await metadataRaw.json()
 
-          console.log("metadata:", metadata)
+          console.log('metadata:', metadata)
           return metadata
         }))
 
-        console.log("items:", items)
+        console.log('items:', items)
         setBots(items)
 
-      };
+      }
       init()
     }
+    return null
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active])
 
@@ -97,17 +106,18 @@ export default function Profile() {
             </Typography>
             <Connector />
           </Box>
-          <Box sx={{ marginBottom:"10px", textAlign: 'center' }} >
-            {errorRetrievingBots ?      
-                <Typography gutterBottom variant="h6">
-                  {"There was an error retrieving your IotaBots"}
-                </Typography>
-                :  bots.length === 0 ? 
-                <Typography gutterBottom variant="h6">
-                  {"You don't own any IotaBots yet :("}
-                </Typography> :
-            bots.map((bot, index) => (
-              <Grid item key={index} xs={12} sm={12} md={12}>
+          <Box sx={{ marginBottom: '10px', textAlign: 'center' }} >
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {errorRetrievingBots ? (
+              <Typography gutterBottom variant="h6">
+                There was an error retrieving your IotaBots
+              </Typography>
+            ) : bots.length === 0 ? (
+              <Typography gutterBottom variant="h6">
+                You don&apos;t own any IotaBots yet :(
+              </Typography>
+            ) : bots.map((bot) => (
+              <Grid item key={bot.name} xs={12} sm={12} md={12}>
                 <Card>
                   <CardMedia
                     height="100%"
@@ -136,5 +146,7 @@ export default function Profile() {
         </Container>
       </Box>
     </BaseLayout>
-  );
+  )
 }
+
+export default Profile

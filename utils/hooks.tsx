@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 
 import { injected } from './connectors'
 
-export function useEagerConnect() {
+export const useEagerConnect = (): boolean => {
   const { activate, active } = useWeb3React()
 
   const [tried, setTried] = useState(false)
@@ -30,28 +30,36 @@ export function useEagerConnect() {
   return tried
 }
 
-export function useInactiveListener(suppress: boolean = false) {
+interface InactiveListenerProps {
+  suppress: boolean
+}
+
+export const useInactiveListener = (
+  { suppress = false }: InactiveListenerProps
+): void => {
   const { active, error, activate } = useWeb3React()
 
+  // eslint-disable-next-line consistent-return
   useEffect((): any => {
     const { ethereum } = window as any
     if (ethereum && ethereum.on && !active && !error && !suppress) {
+      // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
       const handleConnect = () => {
-        console.log("Handling 'connect' event")
+        console.log('Handling \'connect\' event')
         activate(injected)
       }
-      const handleChainChanged = (chainId: string | number) => {
-        console.log("Handling 'chainChanged' event with payload", chainId)
+      const handleChainChanged = (chainId: string | number): void => {
+        console.log('Handling \'chainChanged\' event with payload', chainId)
         activate(injected)
       }
-      const handleAccountsChanged = (accounts: string[]) => {
-        console.log("Handling 'accountsChanged' event with payload", accounts)
+      const handleAccountsChanged = (accounts: string[]): void => {
+        console.log('Handling \'accountsChanged\' event with payload', accounts)
         if (accounts.length > 0) {
           activate(injected)
         }
       }
-      const handleNetworkChanged = (networkId: string | number) => {
-        console.log("Handling 'networkChanged' event with payload", networkId)
+      const handleNetworkChanged = (networkId: string | number): void => {
+        console.log('Handling \'networkChanged\' event with payload', networkId)
         activate(injected)
       }
 
