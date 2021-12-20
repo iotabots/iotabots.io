@@ -4,10 +4,7 @@ import BaseLayout from '../layout/BaseLayout'
 
 const Bots: React.FC = () => (
   <BaseLayout>
-    <Box py={11}
-      className='flex-body'
-      display='flex'
-      alignItems='center'>
+    <Box py={11} display='flex' alignItems='center'>
       <Container maxWidth='sm'>
         <Box display='flex' flexDirection='column' alignItems='center'>
           <Typography variant='h2' gutterBottom>

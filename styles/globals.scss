@@ -70,18 +70,6 @@ a {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-
-  .flex-header {
-    flex: 0 1;
-  }
-
-  .flex-body {
-    flex: 1 1 auto;
-  }
-
-  .flex-footer {
-    flex: 0 1;
-  }
 }
 
 // Buttons
