@@ -27,7 +27,7 @@ const BotList: React.FC = () => {
       }}
       dataLength={items.length}
       next={fetchMoreData}
-      hasMore={!(items.length >= 1050)}
+      hasMore={!(items.length >= 1000)}
       loader={<h4>Loading...</h4>}
     >
       {items.map((item, index) => (
