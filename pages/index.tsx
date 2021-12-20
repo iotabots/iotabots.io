@@ -16,13 +16,13 @@ export const Home = (): JSX.Element => (
             image='http://assets.iotabots.io/9.png'
             // eslint-disable-next-line max-len
             text='An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet.'
-            title='WHAT IS AN IOTABOT?!'
+            headline='WHAT IS AN IOTABOT?!'
           />
           <ContentBox
             image='http://assets.iotabots.io/1000.png'
             // eslint-disable-next-line max-len
             text='The IOTABOTVERSE consists of many NFT projects. Discover the metaverse and play, trade and earn with IOTABOTS and others.'
-            title='WHAT IS the IOTABOTVERSE?!'
+            headline='WHAT IS the IOTABOTVERSE?!'
           />
         </Container>
       </Box>
