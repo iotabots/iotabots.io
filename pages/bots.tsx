@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Box, Container, Typography } from '@iotabots/components'
 import BaseLayout from '../layout/BaseLayout'
+import BotList from '../components/BotList'
 
 const Bots: React.FC = () => (
   <BaseLayout>
@@ -10,7 +11,7 @@ const Bots: React.FC = () => (
           <Typography variant='h2' gutterBottom>
             IOTABOTS
           </Typography>
-          Coming soon...
+          <BotList />
         </Box>
       </Container>
     </Box>

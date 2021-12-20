@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.6.0",
     "@ethersproject/providers": "^5.5.1",
     "@ethersproject/units": "^5.5.0",
-    "@iotabots/components": "^0.0.9",
+    "@iotabots/components": "^0.0.10",
     "@mui/icons-material": "^5.1.1",
     "@mui/material": "^5.1.1",
     "@web3-react/core": "^6.1.9",
@@ -30,6 +30,7 @@
     "next": "12.0.4",
     "react": "^17.0.2",
     "react-dom": "17.0.2",
+    "react-infinite-scroll-component": "^6.1.0",
     "web3": "^1.6.1"
   },
   "devDependencies": {
