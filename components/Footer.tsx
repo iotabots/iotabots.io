@@ -18,7 +18,6 @@ export const Footer: React.FC = () => (
   <Box
     sx={{ bgcolor: 'background.paper', px: 2, py: 6 }}
     component='footer'
-    className='flex-footer'
   >
     <Typography variant='h6' align='center' gutterBottom>
       *BEE* *BOB* *BOO*

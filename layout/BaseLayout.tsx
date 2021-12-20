@@ -5,21 +5,18 @@ const BaseLayout: React.FC = (props) => {
   const { children } = props
   const classes = useStyles()
 
-  return (
-    <Box
-      className={classes.root}
-      sx={{ pt: { xs: '56px', sm: '64px' } }}
-    >
-      {children}
-    </Box>
-  )
+  return <Box className={classes.root}>{children}</Box>
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     background: theme.palette.background.gradient,
-    minHeight: 'calc(100vh - 140px)'
-  }
+    flexGrow: 1,
+    flexShrink: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
+  },
 }))
 
 export default BaseLayout

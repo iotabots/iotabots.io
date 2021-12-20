@@ -48,7 +48,6 @@ export const Navigation: React.FC = () => {
 
   return (
     <AppBar
-      position='static'
       className={classes.app}
     >
       <Toolbar
@@ -101,15 +100,13 @@ export const Navigation: React.FC = () => {
 
 const useStyles = makeStyles((theme: Theme) => ({
   app: {
-    position: 'fixed',
+    position: 'sticky',
     zIndex: 1000,
     top: 0,
-    left: 0,
-    height: 'inherit',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-    flexGrow: 1,
+    flexShrink: 1,
     background: `${theme.palette.background.paper} !important`,
 
     '& .MuiTypography-root': {

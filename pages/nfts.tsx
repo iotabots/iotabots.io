@@ -4,7 +4,7 @@ import BaseLayout from '../layout/BaseLayout'
 
 const Nfts: React.FC = () => (
   <BaseLayout>
-    <Box py={11} className='flex-body'>
+    <Box>
       <Container maxWidth='sm'>
         <Box sx={{ my: 4 }}>
           <Typography variant='h4' gutterBottom>
