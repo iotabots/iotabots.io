@@ -9,7 +9,8 @@ export const Home = (): JSX.Element => (
     <Box>
       <Hero />
 
-      <Box id='what' py={8} bgcolor='background.default'>
+      <Box py={8} bgcolor='background.default'>
+        <span id='what' className='anchor' style={{ marginTop: '-100px' }}/>
         <Container  >
           <ContentBox
             image='http://assets.iotabots.io/9.png'
