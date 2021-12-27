@@ -51,9 +51,7 @@ export const Home = (): JSX.Element => (
           }}
         >
           <br />
-          <Link href='/bots'>
-            <a>Discover all PFP NFTs</a>
-          </Link>
+          <Link href='/bots'>Discover all PFP NFTs</Link>
         </Box>
       </Box>
     </Box>

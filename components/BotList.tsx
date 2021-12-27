@@ -33,7 +33,7 @@ const BotList: React.FC = () => {
       hasMore={items.length <= 1000}
       loader={<h4>Loading...</h4>}
     >
-      {items.map((item, index) => (
+      {items.map((item) => (
         // eslint-disable-next-line react/jsx-max-props-per-line
         <Grid item key={item} xs={4} sm={3} md={2}>
           <Card

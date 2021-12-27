@@ -29,10 +29,7 @@
     "no-use-before-define": "off",
     "comma-dangle": ["error", "only-multiline"],
     "react/jsx-no-constructed-context-values": "off",
-    "react/jsx-max-props-per-line": [
-      "error",
-      { "maximum": { "single": 3, "multi": 1 } }
-    ],
+    "react/jsx-max-props-per-line": [1, { "when": "multiline" }],
     "import/no-extraneous-dependencies": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
     "import/extensions": [
