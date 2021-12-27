@@ -5,12 +5,13 @@ import BotList from '../components/BotList'
 
 const Bots: React.FC = () => (
   <BaseLayout>
-    <Box py={11} display='flex' alignItems='center'>
-      <Container maxWidth='sm'>
+    <Box py={6} display='flex' alignItems='center'>
+      <Container maxWidth='md'>
         <Box display='flex' flexDirection='column' alignItems='center'>
           <Typography gutterBottom variant='h1'>
             IOTABOTS
           </Typography>
+          <Typography variant='body1'>Discover all IOTABOTS.</Typography>
           <BotList />
         </Box>
       </Container>

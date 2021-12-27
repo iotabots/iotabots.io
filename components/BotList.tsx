@@ -10,12 +10,12 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 const BotList: React.FC = () => {
   const [items, setItems] = React.useState(
-    Array.from({ length: 50 }, (v, k) => k + 1)
+    Array.from({ length: 42 }, (v, k) => k + 1)
   )
 
   const fetchMoreData = (): void => {
     setItems(
-      items.concat(Array.from({ length: 50 }, (v, k) => k + 1 + items.length))
+      items.concat(Array.from({ length: 24 }, (v, k) => k + 1 + items.length))
     )
   }
 
@@ -40,18 +40,14 @@ const BotList: React.FC = () => {
             sx={{
               minHeight: '100px',
               height: '100%',
-              margin: '2px',
+              padding: '2px',
             }}
           >
             <CardMedia
               sx={{ height: '100%' }}
               image={`http://assets.iotabots.io/compressed/${item}.png`}
             />
-            <CardContent sx={{ minHeight: '100px', flexGrow: 1 }}>
-              <Typography gutterBottom variant='body1'>
-                {`#${item}`}
-              </Typography>
-            </CardContent>
+            <CardContent sx={{ minHeight: '100px', flexGrow: 1 }} />
           </Card>
         </Grid>
       ))}
