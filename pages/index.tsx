@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Container, ContentBox, Typography } from '@iotabots/components'
 import Fade from 'react-reveal/Zoom'
+import Link from 'next/link'
 import BaseLayout from '../layout/BaseLayout'
 import Hero from '../components/Hero'
 import IotabotGrid from '../components/IotabotGrid'
@@ -41,6 +42,19 @@ export const Home = (): JSX.Element => (
             <IotabotGrid />
           </Container>
         </Fade>
+        <Box
+          sx={{
+            px: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <br />
+          <Link href='/bots'>
+            <a>Discover all PFP NFTs</a>
+          </Link>
+        </Box>
       </Box>
     </Box>
   </BaseLayout>
