@@ -3,15 +3,11 @@ import { Card, CardContent, Grid, Typography } from '@iotabots/components'
 import { CardMedia } from '@mui/material'
 
 const IotabotGrid: React.FC = () => {
-  const cards = [0, 1, 2, 3, 4, 5]
+  const cards = Array.from({ length: 12 }, (v, k) => k + 1)
   return (
     <Grid container spacing={6}>
       {cards.map((card, index) => (
-        <Grid item
-          key={card}
-          xs={12}
-          sm={6}
-          md={4}>
+        <Grid item key={card} xs={4} sm={3} md={2}>
           <Card
             sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
           >
@@ -29,7 +25,7 @@ const IotabotGrid: React.FC = () => {
               }}
             >
               <Typography gutterBottom variant='h6'>
-                {`IOTABOT #${index + 1}`}
+                {`#${index + 1}`}
               </Typography>
             </CardContent>
           </Card>
