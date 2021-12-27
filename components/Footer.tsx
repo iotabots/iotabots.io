@@ -3,27 +3,25 @@ import { Box, Link, Typography } from '@iotabots/components'
 
 const Copyright: React.FC = () => (
   <Typography variant='body2' color='text.secondary' align='center'>
-    Copyright ©
-    <Link href='/'
-      className='link'
-      color='inherit'
-      sx={{ ml: 1, mr: 1 }}>
-      iotabots.io
-    </Link>
-    {new Date().getFullYear()}.
+    © iotabots.io
   </Typography>
 )
 
 export const Footer: React.FC = () => (
-  <Box
-    sx={{ bgcolor: 'background.paper', px: 2, py: 6 }}
-    component='footer'
-  >
-    <Typography variant='h6' align='center' gutterBottom>
+  <Box sx={{ bgcolor: 'background.paper', px: 2, py: 6 }} component='footer'>
+    <Typography
+      variant='body1'
+      color='text.secondary'
+      align='center'
+      gutterBottom
+    >
       *BEE* *BOB* *BOO*
     </Typography>
-    <Typography align='center' color='text.secondary'>
-      {'Follow us on '}
+    <Typography gutterBottom align='center' color='text.secondary'>
+      Dont Miss the Next Drop - Follow us on Twitter
+    </Typography>
+    <br />
+    <Typography gutterBottom align='center' color='text.primary'>
       <Link
         href='https://twitter.com/iotabots'
         target='_blank'
@@ -31,9 +29,11 @@ export const Footer: React.FC = () => (
         className='link'
         color='inherit'
       >
-        Twitter
+        @iotabots
       </Link>
     </Typography>
+    <br />
+    <hr />
     <Copyright />
   </Box>
 )
