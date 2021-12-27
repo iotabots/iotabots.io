@@ -2,7 +2,7 @@ interface ArticleMeta {
   title: string
   slug: string
   description: string
-  humbnail: string
+  thumbnail: string
 }
 
 interface ArticleInfo {

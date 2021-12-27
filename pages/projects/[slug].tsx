@@ -1,6 +1,6 @@
-import { FunctionComponent } from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
+import * as React from 'react'
 import styles from '../../styles/Article.module.scss'
 import { ArticleInfo } from '../../interfaces/article'
 import Markdown from '../../components/Markdown'
@@ -9,10 +9,10 @@ interface IProps {
   article: ArticleInfo
 }
 
-const Article: FunctionComponent<IProps> = ({ article }) => (
+const Article: React.FC<IProps> = ({ article }) => (
   <div className={styles.article}>
     <div className={styles.thumbnail}>
-      <img src={article.meta.thumbnail} />
+      <img src={article.meta.thumbnail} alt={article.meta.description} />
 
       <div className={styles.title}>
         <h1>{article.meta.title}</h1>
@@ -25,6 +25,7 @@ const Article: FunctionComponent<IProps> = ({ article }) => (
   </div>
 )
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function getStaticProps({ ...ctx }) {
   const { slug } = ctx.params
 
@@ -47,6 +48,7 @@ export async function getStaticProps({ ...ctx }) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function getStaticPaths() {
   const files = fs.readdirSync('projects')
   const paths = files.map((file) => ({
