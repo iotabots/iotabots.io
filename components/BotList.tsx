@@ -1,19 +1,21 @@
 import * as React from 'react'
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Grid from '@mui/material/Grid'
-import Typography from '@mui/material/Typography'
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from '@iotabots/components'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const BotList: React.FC = () => {
   const [items, setItems] = React.useState(
-    Array.from({ length: 20 }, (v, k) => k + 1)
+    Array.from({ length: 50 }, (v, k) => k + 1)
   )
 
   const fetchMoreData = (): void => {
     setItems(
-      items.concat(Array.from({ length: 20 }, (v, k) => k + 1 + items.length))
+      items.concat(Array.from({ length: 50 }, (v, k) => k + 1 + items.length))
     )
   }
 
@@ -23,7 +25,6 @@ const BotList: React.FC = () => {
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        width: '100%',
         textAlign: 'center',
         justifyContent: 'center',
       }}
@@ -34,19 +35,21 @@ const BotList: React.FC = () => {
     >
       {items.map((item, index) => (
         // eslint-disable-next-line react/jsx-max-props-per-line
-        <Grid item key={item} xs={12} sm={6} md={4}>
+        <Grid item key={item} xs={4} sm={3} md={2}>
           <Card
-          // sx={{ width: '100%', display: 'flex', flexDirection: 'column' }}
+            sx={{
+              minHeight: '100px',
+              height: '100%',
+              margin: '2px',
+            }}
           >
             <CardMedia
-              height='100%'
-              component='img'
+              sx={{ height: '100%' }}
               image={`http://assets.iotabots.io/compressed/${item}.png`}
-              alt='IOTABOT'
             />
-            <CardContent sx={{ flexGrow: 1 }}>
-              <Typography gutterBottom variant='h6' component='h3'>
-                {`IOTABOT #${item}`}
+            <CardContent sx={{ minHeight: '100px', flexGrow: 1 }}>
+              <Typography gutterBottom variant='body1'>
+                {`#${item}`}
               </Typography>
             </CardContent>
           </Card>

@@ -8,7 +8,7 @@ const Bots: React.FC = () => (
     <Box py={11} display='flex' alignItems='center'>
       <Container maxWidth='sm'>
         <Box display='flex' flexDirection='column' alignItems='center'>
-          <Typography variant='h2' gutterBottom>
+          <Typography gutterBottom variant='h1'>
             IOTABOTS
           </Typography>
           <BotList />
