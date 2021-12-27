@@ -1,20 +1,20 @@
 import Link from 'next/link'
 import * as React from 'react'
-import { ArticleMeta } from '../interfaces/article'
+import { ProjectMeta } from '../interfaces/project'
 import styles from '../styles/Card.module.scss'
 
 interface IProps {
-  article: ArticleMeta
+  project: ProjectMeta
 }
 
-const Card: React.FC<IProps> = ({ article }) => (
-  <Link href={`/projects/${article.slug}`}>
+const Card: React.FC<IProps> = ({ project }) => (
+  <Link href={`/projects/${project.slug}`}>
     <div className={styles.card}>
-      <img src={article.thumbnail} alt={article.description} />
+      <img src={project.thumbnail} alt={project.description} />
 
       <div className={styles.info}>
-        <h1>{article.title}</h1>
-        <p>{article.description}</p>
+        <h1>{project.title}</h1>
+        <p>{project.description}</p>
       </div>
     </div>
   </Link>

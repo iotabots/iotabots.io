@@ -3,16 +3,16 @@ import matter from 'gray-matter'
 import * as React from 'react'
 import styles from '../styles/Projects.module.scss'
 import Card from '../components/Card'
-import { ArticleMeta } from '../interfaces/article'
+import { ProjectMeta } from '../interfaces/project'
 
 interface IProps {
-  articles: ArticleMeta[]
+  projects: ProjectMeta[]
 }
 
-const Projects: React.FC<IProps> = ({ articles }) => (
+const Projects: React.FC<IProps> = ({ projects }) => (
   <div className={styles.container}>
-    {articles.map((article) => (
-      <Card key={article.slug} article={article} />
+    {projects.map((project) => (
+      <Card key={project.slug} project={project} />
     ))}
   </div>
 )
@@ -21,7 +21,7 @@ const Projects: React.FC<IProps> = ({ articles }) => (
 export async function getStaticProps() {
   const files = fs.readdirSync('projects')
 
-  const articles = files.map((file) => {
+  const projects = files.map((file) => {
     const data = fs.readFileSync(`projects/${file}`).toString()
 
     return {
@@ -32,7 +32,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      articles,
+      projects,
     },
   }
 }

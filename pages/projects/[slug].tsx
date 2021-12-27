@@ -1,26 +1,26 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import * as React from 'react'
-import styles from '../../styles/Article.module.scss'
-import { ArticleInfo } from '../../interfaces/article'
+import styles from '../../styles/Project.module.scss'
+import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
 
 interface IProps {
-  article: ArticleInfo
+  project: ProjectInfo
 }
 
-const Article: React.FC<IProps> = ({ article }) => (
-  <div className={styles.article}>
+const Project: React.FC<IProps> = ({ project }) => (
+  <div className={styles.project}>
     <div className={styles.thumbnail}>
-      <img src={article.meta.thumbnail} alt={article.meta.description} />
+      <img src={project.meta.thumbnail} alt={project.meta.description} />
 
       <div className={styles.title}>
-        <h1>{article.meta.title}</h1>
+        <h1>{project.meta.title}</h1>
       </div>
     </div>
 
     <div className={styles.content}>
-      <Markdown content={article.content} />
+      <Markdown content={project.content} />
     </div>
   </div>
 )
@@ -33,7 +33,7 @@ export async function getStaticProps({ ...ctx }) {
 
   const info = matter(content)
 
-  const article = {
+  const project = {
     meta: {
       ...info.data,
       slug,
@@ -43,7 +43,7 @@ export async function getStaticProps({ ...ctx }) {
 
   return {
     props: {
-      article,
+      project,
     },
   }
 }
@@ -63,4 +63,4 @@ export async function getStaticPaths() {
   }
 }
 
-export default Article
+export default Project
