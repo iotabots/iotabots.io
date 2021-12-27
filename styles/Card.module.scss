@@ -1,10 +1,8 @@
 .card {
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
-  width: 300px;
-  height: 400px;
+  min-width: 300px;
+  min-height: 400px;
   margin: 20px;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 #0001, 0 6px 20px 0 #0001;
@@ -12,15 +10,15 @@
   transition: all 0.3s;
 }
 
-.card:hover {
-  width: 320px;
-  height: 420px;
-  margin: 10px;
-}
+// .card:hover {
+//   width: 320px;
+//   height: 420px;
+//   margin: 10px;
+// }
 
-.card:hover .info {
-  padding: 20px 30px;
-}
+// .card:hover .info {
+//   padding: 20px 30px;
+// }
 
 .card img {
   width: 100%;

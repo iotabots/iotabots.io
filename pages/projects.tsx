@@ -1,8 +1,8 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import * as React from 'react'
-import { Box, Container, Typography } from '@iotabots/components'
-import Card from '../components/Card'
+import { Box, Container, Grid, Typography } from '@iotabots/components'
+import ProjectCard from '../components/ProjectCard'
 import { ProjectMeta } from '../interfaces/project'
 import BaseLayout from '../layout/BaseLayout'
 
@@ -21,9 +21,14 @@ const Projects: React.FC<IProps> = ({ projects }) => (
           The IOTABOTS Team and the Community building amazing projects.
           Discover all projects in the IOTABOTS Metaverse.
         </Typography>
-        {projects.map((project) => (
-          <Card key={project.slug} project={project} />
-        ))}
+
+        <Grid container>
+          {projects.map((project) => (
+            <Grid item key={project.slug} xs={12} sm={12} md={6}>
+              <ProjectCard key={project.slug} project={project} />
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </Box>
   </BaseLayout>
