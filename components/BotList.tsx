@@ -7,11 +7,13 @@ import Typography from '@mui/material/Typography'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const BotList: React.FC = () => {
-  let items = Array.from({ length: 20 }, (v, k) => k + 1)
+  const [items, setItems] = React.useState(
+    Array.from({ length: 20 }, (v, k) => k + 1)
+  )
 
   const fetchMoreData = (): void => {
-    items = items.concat(
-      Array.from({ length: 20 }, (v, k) => k + 1 + items.length)
+    setItems(
+      items.concat(Array.from({ length: 20 }, (v, k) => k + 1 + items.length))
     )
   }
 
@@ -27,7 +29,7 @@ const BotList: React.FC = () => {
       }}
       dataLength={items.length}
       next={fetchMoreData}
-      hasMore={!(items.length >= 1000)}
+      hasMore={items.length <= 1000}
       loader={<h4>Loading...</h4>}
     >
       {items.map((item, index) => (
@@ -39,12 +41,12 @@ const BotList: React.FC = () => {
             <CardMedia
               height='100%'
               component='img'
-              image={`http://assets.iotabots.io/compressed/${index + 1}.png`}
+              image={`http://assets.iotabots.io/compressed/${item}.png`}
               alt='IOTABOT'
             />
             <CardContent sx={{ flexGrow: 1 }}>
               <Typography gutterBottom variant='h6' component='h3'>
-                {`IOTABOT #${index + 1}`}
+                {`IOTABOT #${item}`}
               </Typography>
             </CardContent>
           </Card>
