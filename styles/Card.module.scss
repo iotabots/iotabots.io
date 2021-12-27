@@ -1,0 +1,54 @@
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 #0001, 0 6px 20px 0 #0001;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  width: 320px;
+  height: 420px;
+  margin: 10px;
+}
+
+.card:hover .info {
+  padding: 20px 30px;
+}
+
+.card img {
+  width: 100%;
+  flex: 1;
+}
+
+.card .info {
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.card .info h1,
+.card .info p {
+  color: #555;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card .info h1 {
+  margin: 0;
+  font-size: 1.3em;
+  -webkit-line-clamp: 2;
+}
+
+.card .info p {
+  margin: 10px 0 0 0;
+  -webkit-line-clamp: 4;
+}
