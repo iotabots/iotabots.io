@@ -8,8 +8,10 @@ import {
   Input,
   Typography,
 } from '@iotabots/components'
+import Head from 'next/head'
 import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
+import { SEO } from '../config'
 
 const Bots: React.FC = () => {
   const [number, setNumber] = React.useState(() => null)
@@ -24,6 +26,9 @@ const Bots: React.FC = () => {
 
   return (
     <BaseLayout>
+      <Head>
+        <title>{`${SEO.title} | Bot List`}</title>
+      </Head>
       <Box py={6} display='flex' alignItems='center'>
         <Container maxWidth='md'>
           <Box display='flex' flexDirection='column' alignItems='center'>
