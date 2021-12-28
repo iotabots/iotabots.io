@@ -7,6 +7,7 @@ import {
   Typography,
 } from '@iotabots/components'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import Link from 'next/link'
 
 const BotList: React.FC = () => {
   const [items, setItems] = React.useState(
@@ -41,19 +42,21 @@ const BotList: React.FC = () => {
         {items.map((item) => (
           // eslint-disable-next-line react/jsx-max-props-per-line
           <Grid item key={item}>
-            <Card
-              sx={{
-                padding: '2px',
-              }}
-            >
-              <CardMedia
+            <Link href={`/bots/${item}`}>
+              <Card
                 sx={{
-                  height: '100px',
-                  width: '100px',
+                  padding: '2px',
                 }}
-                image={`http://assets.iotabots.io/compressed/${item}.png`}
-              />
-            </Card>
+              >
+                <CardMedia
+                  sx={{
+                    height: '100px',
+                    width: '100px',
+                  }}
+                  image={`http://assets.iotabots.io/compressed/${item}.png`}
+                />
+              </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>
