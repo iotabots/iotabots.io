@@ -1,22 +1,71 @@
 import * as React from 'react'
-import { Box, Container, Typography } from '@iotabots/components'
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Container,
+  Input,
+  Typography,
+} from '@iotabots/components'
 import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 
-const Bots: React.FC = () => (
-  <BaseLayout>
-    <Box py={6} display='flex' alignItems='center'>
-      <Container maxWidth='md'>
-        <Box display='flex' flexDirection='column' alignItems='center'>
-          <Typography gutterBottom variant='h1'>
-            IOTABOTS
-          </Typography>
-          <Typography variant='body1'>Discover all IOTABOTS.</Typography>
-          <BotList />
-        </Box>
-      </Container>
-    </Box>
-  </BaseLayout>
-)
+const Bots: React.FC = () => {
+  const [number, setNumber] = React.useState(() => 0)
 
+  const handleChange = (bot: number): void => {
+    if (bot && bot > 0) {
+      setNumber(bot)
+    } else {
+      setNumber(null)
+    }
+  }
+
+  return (
+    <BaseLayout>
+      <Box py={6} display='flex' alignItems='center'>
+        <Container maxWidth='md'>
+          <Box display='flex' flexDirection='column' alignItems='center'>
+            <Typography gutterBottom variant='h1'>
+              IOTABOTS
+            </Typography>
+            <Typography variant='body1'>Discover all IOTABOTS.</Typography>
+            <Typography gutterBottom variant='body1'>
+              Search with Number:
+            </Typography>
+            <Input
+              type='number'
+              value={number}
+              onChange={(e) => handleChange(parseInt(e.target.value, 10))}
+            />
+            {number > 0 ? (
+              <Box pt={8}>
+                <Card
+                  sx={{
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                  }}
+                >
+                  <CardMedia
+                    height='280px'
+                    component='img'
+                    image={`https://assets.iotabots.io/compressed/${number}.png`}
+                    alt='IOTABOT'
+                  />
+                  <CardContent />
+                  <Typography gutterBottom variant='body1'>
+                    {`IOTABOT #${number}`}
+                  </Typography>
+                </Card>
+              </Box>
+            ) : (
+              <BotList />
+            )}
+          </Box>
+        </Container>
+      </Box>
+    </BaseLayout>
+  )
+}
 export default Bots
