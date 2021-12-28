@@ -1,6 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import * as React from 'react'
+import { Typography } from '@iotabots/components'
 import styles from '../../styles/Project.module.scss'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
@@ -15,7 +16,7 @@ const Project: React.FC<IProps> = ({ project }) => (
       <img src={project.meta.thumbnail} alt={project.meta.description} />
 
       <div className={styles.title}>
-        <h1>{project.meta.title}</h1>
+        <Typography variant='h1'>{project.meta.title}</Typography>
       </div>
     </div>
 
