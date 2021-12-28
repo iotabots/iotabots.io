@@ -15,7 +15,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/987.png'
           // eslint-disable-next-line max-len
-          text='1048 - OThe first 1000 IOTABOTS could be minted for free - the other was randomly choosen in Givaways mostly on Twitter.'
+          text='1048 - The first 1000 IOTABOTS could be minted for free - the other was randomly choosen in Givaways mostly on Twitter.'
           headline='How many NFTs exist?'
         />
         <ContentBox
