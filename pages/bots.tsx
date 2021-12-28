@@ -48,10 +48,14 @@ const Bots: React.FC = () => {
                   }}
                 >
                   <CardMedia
-                    height='280px'
-                    component='img'
+                    sx={{
+                      minHeight: '280px',
+                      maxHeight: '480px',
+                      minWidth: '280px',
+                      maxWidth: '480px',
+                    }}
+                    // eslint-disable-next-line max-len
                     image={`https://assets.iotabots.io/compressed/${number}.png`}
-                    alt='IOTABOT'
                   />
                   <CardContent />
                   <Typography gutterBottom variant='body1'>
