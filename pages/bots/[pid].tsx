@@ -8,10 +8,19 @@ import {
   Typography,
 } from '@iotabots/components'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import BaseLayout from '../../layout/BaseLayout'
 
 const BotDetail: React.FC<any> = ({ bot }) => (
   <BaseLayout>
+    <Head>
+      <meta key='og:image' name='og:image' content={bot.image} />
+      <meta
+        key='description'
+        name='description'
+        content={`Say hello to IOTABOT ${bot.name}!`}
+      />
+    </Head>
     <Box>
       <Container maxWidth='sm'>
         <Box sx={{ my: 8 }}>
