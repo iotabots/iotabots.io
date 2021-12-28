@@ -54,40 +54,41 @@ export const Home = (): JSX.Element => {
               <IotabotGrid />
             </Container>
           </Fade>
-        </Box>
-        <Box className='content'>
-          <Fade bottom>
-            <Box
-              className='sub-content'
-              sx={{
-                px: 2,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Typography
-                variant='body1'
-                align='center'
-                color='#ffffff'
-                paragraph
-              >
-                There are 10.000 unqiue IOTABOTS!
-              </Typography>
-              <Button
-                variant='contained'
-                onClick={goToBots}
-                size='large'
+          <Box className='content'>
+            <Fade bottom>
+              <Box
+                className='sub-content'
                 sx={{
-                  color: 'primary.contrastText',
-                  mt: { sm: 2 },
-                  boxShadow: 2,
+                  px: 2,
+                  mt: '50px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
                 }}
               >
-                Discover IOTABOTS NFTs
-              </Button>
-            </Box>
-          </Fade>
+                <Typography
+                  variant='body1'
+                  align='center'
+                  color='#ffffff'
+                  paragraph
+                >
+                  There are 10.000 unqiue IOTABOTS!
+                </Typography>
+                <Button
+                  variant='contained'
+                  onClick={goToBots}
+                  size='large'
+                  sx={{
+                    color: 'primary.contrastText',
+                    mt: { sm: 2 },
+                    boxShadow: 2,
+                  }}
+                >
+                  Discover IOTABOTS NFTs
+                </Button>
+              </Box>
+            </Fade>
+          </Box>
         </Box>
       </Box>
     </BaseLayout>

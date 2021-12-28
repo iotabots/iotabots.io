@@ -7,9 +7,14 @@ const IotabotGrid: React.FC = () => {
   return (
     <Grid container spacing={6}>
       {cards.map((card, index) => (
-        <Grid item key={card} xs={4} sm={3} md={2}>
+        <Grid item key={card} xs={4} sm={3} md={2} sx={{ padding: '2px' }}>
           <Card
-            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            sx={{
+              height: '100%',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
             <CardMedia
               component='img'
@@ -24,7 +29,7 @@ const IotabotGrid: React.FC = () => {
                 p: 2.4,
               }}
             >
-              <Typography gutterBottom variant='h6'>
+              <Typography gutterBottom variant='body1'>
                 {`#${index + 1}`}
               </Typography>
             </CardContent>
