@@ -14,12 +14,10 @@ const Project: React.FC<IProps> = ({ project }) => (
   <div className={styles.project}>
     <div className={styles.thumbnail}>
       <img src={project.meta.thumbnail} alt={project.meta.description} />
-
       <div className={styles.title}>
         <Typography variant='h1'>{project.meta.title}</Typography>
       </div>
     </div>
-
     <div className={styles.content}>
       <Markdown content={project.content} />
     </div>
