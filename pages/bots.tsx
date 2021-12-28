@@ -12,7 +12,7 @@ import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 
 const Bots: React.FC = () => {
-  const [number, setNumber] = React.useState(() => 0)
+  const [number, setNumber] = React.useState(() => null)
 
   const handleChange = (bot: number): void => {
     if (bot && bot > 0) {
@@ -31,14 +31,17 @@ const Bots: React.FC = () => {
               IOTABOTS
             </Typography>
             <Typography variant='body1'>Discover all IOTABOTS.</Typography>
-            <Typography gutterBottom variant='body1'>
-              Search with Number:
-            </Typography>
-            <Input
-              type='number'
-              value={number}
-              onChange={(e) => handleChange(parseInt(e.target.value, 10))}
-            />
+            <Box mt={6} mb={6}>
+              <Typography gutterBottom variant='body1'>
+                Search with Number:
+              </Typography>
+              <Input
+                autoFocus
+                type='number'
+                value={number}
+                onChange={(e) => handleChange(parseInt(e.target.value, 10))}
+              />
+            </Box>
             {number > 0 ? (
               <Box pt={8}>
                 <Card
