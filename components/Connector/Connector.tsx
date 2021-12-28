@@ -2,24 +2,24 @@ import React from 'react'
 import { useWeb3React } from '@web3-react/core'
 import {
   NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected
+  UserRejectedRequestError as UserRejectedRequestErrorInjected,
 } from '@web3-react/injected-connector'
-import {
-  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect
-} from '@web3-react/walletconnect-connector'
+import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@web3-react/walletconnect-connector'
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
-import { Box, Button, Divider } from '@iotabots/components'
+import { Box, Button, Divider, Typography } from '@iotabots/components'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 
 // eslint-disable-next-line max-len
-const ERROR_NO_ETH_PROVIDER = 'No Wallet Browser Extension detected, install Browser Extension on desktop or visit from a dApp browser on mobile.'
+const ERROR_NO_ETH_PROVIDER =
+  'No Wallet Browser Extension detected, install Browser Extension on desktop or visit from a dApp browser on mobile.'
 
 const getErrorMessage = (error: Error): string => {
   if (error instanceof NoEthereumProviderError) {
     return ERROR_NO_ETH_PROVIDER
-  } if (
+  }
+  if (
     error instanceof UserRejectedRequestErrorInjected ||
     UserRejectedRequestErrorWalletConnect
   ) {
@@ -95,12 +95,11 @@ const Balance: React.FC = () => {
       }
     }
     return null
-
   }, [account, library, chainId, balance])
 
   return (
     <span>
-      { /* eslint-disable-next-line no-nested-ternary */}
+      {/* eslint-disable-next-line no-nested-ternary */}
       {balance === null ? null : balance ? formatEther(balance) : '-'}
     </span>
   )
@@ -113,30 +112,30 @@ const Header: React.FC = () => {
 
   return (
     <>
-      { /* eslint-disable-next-line no-nested-ternary */}
-      <h5>Status: {active ? '🟢' : error ? '🔴' : '🟠'}</h5>
-      <h5>chainId: {chainId || '-'}</h5>
-      <h5>
+      <Typography variant='body1' paragraph>
+        {/* eslint-disable-next-line no-nested-ternary */}
+        Status: {active ? '🟢' : error ? '🔴' : '🟠'}
+      </Typography>
+      <Typography variant='body1' paragraph>
+        chainId: {chainId || '-'}
+      </Typography>
+      <Typography variant='body1' paragraph>
         BlockNumber: <BlockNumber />
-      </h5>
-      <h5>address: {account || '-'}</h5>
-      <h5>
-        Balance:<Balance />
-      </h5>
+      </Typography>
+      <Typography variant='body1' paragraph>
+        address: {account || '-'}
+      </Typography>
+      <Typography variant='body1' paragraph>
+        Balance:
+        <Balance />
+      </Typography>
     </>
   )
 }
 
 const Connector: React.FC = () => {
   const context = useWeb3React<Web3Provider>()
-  const {
-    connector,
-    library,
-    account,
-    deactivate,
-    active,
-    error
-  } = context
+  const { connector, library, account, deactivate, active, error } = context
 
   // handle logic to recognize the connector currently being activated
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -158,12 +157,14 @@ const Connector: React.FC = () => {
   return (
     <>
       <Header />
-      { /* eslint-disable-next-line no-nested-ternary */}
+      {/* eslint-disable-next-line no-nested-ternary */}
       {active ? (
         <Button
           size='large'
           variant='contained'
-          onClick={() => { deactivate() }}
+          onClick={() => {
+            deactivate()
+          }}
         >
           Disconnect
         </Button>
@@ -177,15 +178,14 @@ const Connector: React.FC = () => {
         >
           Cancel Connect
         </Button>
-      ) :
-        (
-          'connect'
-        )}
+      ) : (
+        'connect'
+      )}
 
       {error && (
-        <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>
+        <Typography variant='body1' paragraph>
           {getErrorMessage(error)}
-        </h4>
+        </Typography>
       )}
 
       <Divider sx={{ my: 6 }} />
@@ -208,9 +208,9 @@ const Connector: React.FC = () => {
                 .catch(() => {
                   // eslint-disable-next-line no-console
                   console.log(
-                    `Failure!${error && error.message
-                      ? `\n\n${error.message}`
-                      : ''}`
+                    `Failure!${
+                      error && error.message ? `\n\n${error.message}` : ''
+                    }`
                   )
                 })
             }}
