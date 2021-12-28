@@ -37,10 +37,17 @@ const BotDetail: React.FC<any> = ({ bot }) => (
                 // eslint-disable-next-line max-len
                 image={`https://assets.iotabots.io/compressed/${bot.edition}.png`}
               />
-              <CardContent />
-              <Typography gutterBottom variant='body1'>
-                {`IOTABOT #${bot.edition}`}
-              </Typography>
+              <CardContent>
+                <Typography gutterBottom variant='body1'>
+                  {`DNA ${bot.dna}`}
+                </Typography>
+                <Typography gutterBottom variant='body1'>
+                  {`Edition ${bot.edition}`}
+                </Typography>
+                <Typography gutterBottom variant='body1'>
+                  {`Created on ${new Date(bot.date).toLocaleDateString()}`}
+                </Typography>
+              </CardContent>
             </Card>
           </Box>
         </Box>
