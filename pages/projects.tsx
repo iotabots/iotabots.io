@@ -22,9 +22,26 @@ const Projects: React.FC<IProps> = ({ projects }) => (
           Discover all projects in the IOTABOTS Metaverse.
         </Typography>
 
-        <Grid container>
+        <Grid
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            textAlign: 'center',
+            justifyContent: 'center',
+          }}
+          container
+          spacing={{ xs: 1, md: 1 }}
+          columns={{ xs: 12, sm: 12, md: 12 }}
+        >
           {projects.map((project) => (
-            <Grid item key={project.slug} xs={12} sm={12} md={6}>
+            <Grid
+              item
+              key={project.slug}
+              style={{
+                maxWidth: '33%',
+                minWidth: '360px',
+              }}
+            >
               <ProjectCard key={project.slug} project={project} />
             </Grid>
           ))}
