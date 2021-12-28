@@ -10,12 +10,14 @@ import {
   Typography,
 } from '@iotabots/components'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 import { SEO } from '../config'
 
 const Bots: React.FC = () => {
   const [number, setNumber] = React.useState(() => null)
+  const { query } = useRouter()
 
   const handleChange = (bot: number): void => {
     if (bot && bot > 0) {
@@ -24,6 +26,12 @@ const Bots: React.FC = () => {
       setNumber(null)
     }
   }
+
+  React.useEffect(() => {
+    if (query.q) {
+      setNumber(query.q)
+    }
+  }, [query])
 
   return (
     <BaseLayout>
