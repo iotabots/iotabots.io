@@ -26,7 +26,6 @@ const Projects: React.FC<IProps> = ({ projects }) => (
           style={{
             display: 'flex',
             flexDirection: 'row',
-            textAlign: 'center',
             justifyContent: 'center',
           }}
           container
