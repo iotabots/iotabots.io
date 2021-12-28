@@ -21,36 +21,42 @@ const BotList: React.FC = () => {
 
   return (
     <InfiniteScroll
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        textAlign: 'center',
-        justifyContent: 'center',
-      }}
       dataLength={items.length}
       next={fetchMoreData}
       hasMore={items.length <= 1000}
-      loader={<h4>Loading...</h4>}
+      loader={<p>Loading...</p>}
     >
-      {items.map((item) => (
-        // eslint-disable-next-line react/jsx-max-props-per-line
-        <Grid item key={item} xs={4} sm={3} md={2}>
-          <Card
-            sx={{
-              minHeight: '100px',
-              height: '100%',
-              padding: '2px',
-            }}
-          >
-            <CardMedia
-              sx={{ height: '100%' }}
-              image={`http://assets.iotabots.io/compressed/${item}.png`}
-            />
-            <CardContent sx={{ minHeight: '100px', flexGrow: 1 }} />
-          </Card>
-        </Grid>
-      ))}
+      <Grid
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          textAlign: 'center',
+          justifyContent: 'center',
+        }}
+        container
+        spacing={{ xs: 1, md: 1 }}
+        columns={{ xs: 4, sm: 3, md: 2 }}
+      >
+        {items.map((item) => (
+          // eslint-disable-next-line react/jsx-max-props-per-line
+          <Grid item key={item}>
+            <Card
+              sx={{
+                padding: '2px',
+              }}
+            >
+              <CardMedia
+                sx={{
+                  height: '100px',
+                  width: '100px',
+                }}
+                image={`http://assets.iotabots.io/compressed/${item}.png`}
+              />
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     </InfiniteScroll>
   )
 }
