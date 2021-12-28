@@ -49,13 +49,15 @@ export const Home = (): JSX.Element => {
           <Fade bottom>
             <Container maxWidth='md'>
               <Typography variant='h3' align='center' sx={{ pb: 6 }}>
-                Available Bots
+                Profile Picture NFTs
+              </Typography>
+              <Typography variant='body1' align='center' sx={{ pb: 6 }}>
+                Collect the IOTABOTS Profile Picture Non-fungible Tokens (PFP
+                NFTs) and discover the Metaverse.
               </Typography>
               <IotabotGrid />
             </Container>
-          </Fade>
-          <Box className='content'>
-            <Fade bottom>
+            <Box className='content'>
               <Box
                 className='sub-content'
                 sx={{
@@ -87,8 +89,8 @@ export const Home = (): JSX.Element => {
                   Discover All IOTABOTS
                 </Button>
               </Box>
-            </Fade>
-          </Box>
+            </Box>
+          </Fade>
         </Box>
       </Box>
     </BaseLayout>
