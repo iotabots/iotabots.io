@@ -5,6 +5,7 @@ import '../styles/globals.scss'
 import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
 import { AppProps } from 'next/dist/shared/lib/router/router'
+import ReactGA from 'react-ga'
 import { Navigation } from '../components/Navigation/Navigation'
 import { Footer } from '../components/Footer'
 
@@ -15,10 +16,18 @@ const getLibrary = (provider: any): Web3Provider => {
   return library
 }
 
+const YOUR_TRACKING_ID = 'G-YTZ512CCQL'
+
 const ThemeProvider = dynamic(() => import('../contexts/Theme'), { ssr: false })
 
 const App: React.FC<AppProps> = (props) => {
   const { pageProps, Component } = props
+
+  React.useEffect(() => {
+    ReactGA.initialize(`${YOUR_TRACKING_ID}`)
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
+
   return (
     <>
       <Head>
@@ -31,6 +40,20 @@ const App: React.FC<AppProps> = (props) => {
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#20c593' />
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${YOUR_TRACKING_ID}`}
+        />
+        <script
+          async
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', ${YOUR_TRACKING_ID});`,
+          }}
+        />
       </Head>
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
