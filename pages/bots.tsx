@@ -6,6 +6,7 @@ import {
   CardMedia,
   Container,
   Input,
+  Link,
   Typography,
 } from '@iotabots/components'
 import Head from 'next/head'
@@ -49,27 +50,29 @@ const Bots: React.FC = () => {
             </Box>
             {number > 0 ? (
               <Box pt={8}>
-                <Card
-                  sx={{
-                    justifyContent: 'center',
-                    textAlign: 'center',
-                  }}
-                >
-                  <CardMedia
+                <Link href={`/bots/${number}`}>
+                  <Card
                     sx={{
-                      minHeight: '280px',
-                      maxHeight: '480px',
-                      minWidth: '280px',
-                      maxWidth: '480px',
+                      justifyContent: 'center',
+                      textAlign: 'center',
                     }}
-                    // eslint-disable-next-line max-len
-                    image={`https://assets.iotabots.io/compressed/${number}.png`}
-                  />
-                  <CardContent />
-                  <Typography gutterBottom variant='body1'>
-                    {`IOTABOT #${number}`}
-                  </Typography>
-                </Card>
+                  >
+                    <CardMedia
+                      sx={{
+                        minHeight: '280px',
+                        maxHeight: '480px',
+                        minWidth: '280px',
+                        maxWidth: '480px',
+                      }}
+                      // eslint-disable-next-line max-len
+                      image={`https://assets.iotabots.io/compressed/${number}.png`}
+                    />
+                    <CardContent />
+                    <Typography gutterBottom variant='body1'>
+                      {`IOTABOT #${number}`}
+                    </Typography>
+                  </Card>
+                </Link>
               </Box>
             ) : (
               <BotList />
