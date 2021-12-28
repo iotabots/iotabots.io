@@ -122,7 +122,7 @@ const Header: React.FC = () => {
       <Typography variant='body1' paragraph>
         BlockNumber: <BlockNumber />
       </Typography>
-      <Typography variant='body1' paragraph>
+      <Typography noWrap variant='body1' paragraph>
         address: {account || '-'}
       </Typography>
       <Typography variant='body1' paragraph>
