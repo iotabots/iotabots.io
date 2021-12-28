@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import * as React from 'react'
-import { Box, Container, Typography } from '@iotabots/components'
+import { Typography } from '@iotabots/components'
 import { ProjectMeta } from '../interfaces/project'
 import styles from '../styles/Card.module.scss'
 
