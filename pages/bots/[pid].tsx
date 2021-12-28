@@ -11,8 +11,13 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import BaseLayout from '../../layout/BaseLayout'
 
+interface BotAttribute {
+  // eslint-disable-next-line camelcase
+  trait_type: string
+  value: string
+}
 interface Bot {
-  attributes: Array<object>
+  attributes: Array<BotAttribute>
   date: number
   description: string
   dna: string
@@ -32,8 +37,6 @@ const BotDetail: React.FC = () => {
       const data = await res.json()
       setBot(data)
     }
-
-    // call the function
     fetchData()
       // make sure to catch any error
       .catch((err: any) => {
@@ -85,6 +88,11 @@ const BotDetail: React.FC = () => {
                   <Typography gutterBottom variant='body1'>
                     {`Created on ${new Date(bot?.date).toLocaleDateString()}`}
                   </Typography>
+                  {bot?.attributes.map((attribute) => (
+                    <Typography gutterBottom variant='body1'>
+                      {`${attribute.trait_type}: ${attribute.value}`}
+                    </Typography>
+                  ))}
                 </CardContent>
               </Card>
             </Box>
