@@ -15,17 +15,16 @@ const ActiveLink = (props: ActiveLinkProps): JSX.Element => {
     <Box
       className={pathname === href ? 'active' : ''}
       sx={{
+        color: 'text.primary',
         '& a': {
-          fontSize: '16px'
+          fontSize: '16px',
         },
         '&.active': {
-          color: 'primary.main'
-        }
+          color: 'primary.main',
+        },
       }}
     >
-      <Link {...props}>
-        {label}
-      </Link>
+      <Link {...props}>{label}</Link>
     </Box>
   )
 }
