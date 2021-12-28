@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import * as React from 'react'
 import { Box, Container, Typography } from '@iotabots/components'
 import { ProjectMeta } from '../interfaces/project'
@@ -12,17 +11,15 @@ interface IProps {
 const ProjectCard: React.FC<IProps> = ({ project }) => (
   <Link href={`/projects/${project.slug}`}>
     <div className={styles.card}>
-      <Image
-        width={500}
-        height={500}
-        layout='intrinsic'
-        src={project.thumbnail}
-        alt={project.description}
-      />
+      <img src={project.thumbnail} alt={project.description} />
 
       <div className={styles.info}>
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+        <Typography variant='h5' paragraph>
+          {project.title}
+        </Typography>
+        <Typography variant='body1' paragraph>
+          {project.description}
+        </Typography>
       </div>
     </div>
   </Link>
