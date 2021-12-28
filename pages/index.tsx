@@ -84,7 +84,7 @@ export const Home = (): JSX.Element => {
                     boxShadow: 2,
                   }}
                 >
-                  Discover IOTABOTS NFTs
+                  Discover All IOTABOTS
                 </Button>
               </Box>
             </Fade>
