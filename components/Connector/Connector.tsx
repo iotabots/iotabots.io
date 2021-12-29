@@ -29,46 +29,6 @@ const getErrorMessage = (error: Error): string => {
   return 'An unknown error occurred. Check the console for more details.'
 }
 
-const BlockNumber: React.FC = () => {
-  const { chainId, library } = useWeb3React()
-  const [blockNumber, setBlockNumber] = React.useState<number>()
-
-  // eslint-disable-next-line consistent-return
-  React.useEffect(() => {
-    if (library) {
-      let stale = false
-
-      library
-        .getBlockNumber()
-        .then((): void => {
-          if (!stale) {
-            setBlockNumber(blockNumber)
-          }
-        })
-        .catch(() => {
-          if (!stale) {
-            setBlockNumber(null)
-          }
-        })
-
-      const updateBlockNumber = (): void => {
-        setBlockNumber(blockNumber)
-      }
-      library.on('block', updateBlockNumber)
-
-      return () => {
-        stale = true
-        library.removeListener('block', updateBlockNumber)
-        setBlockNumber(undefined)
-      }
-    }
-    /* ensures refresh if referential identity of library doesn't change 
-    across chainIds */
-  }, [library, chainId, blockNumber])
-
-  return <span>{blockNumber === null ? 'Error' : blockNumber ?? '-'}</span>
-}
-
 const Balance: React.FC = () => {
   const { account, library, chainId } = useWeb3React()
 
@@ -107,25 +67,13 @@ const Balance: React.FC = () => {
 }
 
 const Header: React.FC = () => {
-  const { active, error } = useWeb3React()
-
-  const { account, chainId } = useWeb3React()
+  const { account } = useWeb3React()
 
   return (
     <>
       <ProfilePicture />
-      <Typography variant='body1' paragraph>
-        {/* eslint-disable-next-line no-nested-ternary */}
-        Status: {active ? '🟢' : error ? '🔴' : '🟠'}
-      </Typography>
-      <Typography variant='body1' paragraph>
-        chainId: {chainId || '-'}
-      </Typography>
-      <Typography variant='body1' paragraph>
-        BlockNumber: <BlockNumber />
-      </Typography>
       <Typography noWrap variant='body1' paragraph>
-        address: {account || '-'}
+        {account || '-'}
       </Typography>
       <Typography variant='body1' paragraph>
         Balance:
