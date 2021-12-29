@@ -10,7 +10,6 @@ import {
 } from '@iotabots/components'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
-import MoreIcon from '@mui/icons-material/MoreVert'
 
 import Link from 'next/link'
 import ConnectButton from '../Connector/ConnectButton'
@@ -64,11 +63,11 @@ export const Navigation: React.FC = () => {
     }
   }
 
-  let profile
+  let profilePicture
   if (account) {
     if (account) {
       // TODO - fetch current IOTABOT
-      profile = (
+      profilePicture = (
         <div className={classes.profilePicture}>
           <Link href='/profile'>
             <Avatar
@@ -80,7 +79,7 @@ export const Navigation: React.FC = () => {
         </div>
       )
     } else {
-      profile = (
+      profilePicture = (
         <div className={classes.profilePicture}>
           <Link href='/profile'>
             <Avatar {...stringAvatar(account)} sx={{ width: 56, height: 56 }} />
@@ -89,7 +88,7 @@ export const Navigation: React.FC = () => {
       )
     }
   } else {
-    profile = <ConnectButton />
+    profilePicture = <ConnectButton />
   }
 
   return (
@@ -119,7 +118,7 @@ export const Navigation: React.FC = () => {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <ToggleMode />
           <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 3 }}>
-            {profile}
+            {profilePicture}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -130,7 +129,7 @@ export const Navigation: React.FC = () => {
               onClick={handleMobileMenuOpen}
               color='inherit'
             >
-              <MoreIcon />
+              {profilePicture}
             </IconButton>
           </Box>
         </Box>
