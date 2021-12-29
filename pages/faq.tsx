@@ -36,6 +36,12 @@ const FAQ: React.FC = () => (
           text='Download you favourite one and use it as a profile picture.'
           headline='What can I do with my IOTABOT?'
         />
+        <ContentBox
+          image='http://assets.iotabots.io/compressed/895.png'
+          // eslint-disable-next-line max-len
+          text='You need Metamask with the following custom network settings: RPC URL = https://evm.wasp.sc.iota.org and Chain ID = 1074'
+          headline='How can i connect to the public IOTA EVM testnet?'
+        />
       </Container>
     </Box>
   </BaseLayout>
