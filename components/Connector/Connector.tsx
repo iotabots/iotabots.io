@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import {
   NoEthereumProviderError,
@@ -8,7 +8,8 @@ import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } fro
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
-import { Box, Button, Divider, Grid, Typography } from '@iotabots/components'
+import { Button, Typography } from '@iotabots/components'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { ProfilePicture } from '../ProfilePicture'
 
@@ -68,13 +69,50 @@ const Balance: React.FC = () => {
 
 const Header: React.FC = () => {
   const { account } = useWeb3React()
+  const [copySuccess, setCopySuccess] = useState('')
+  const copyRef = useRef(null)
 
+  function copyToClipboard(e): void {
+    console.log('e', e)
+    console.log('copyRef', copyRef)
+    console.log('copyRefcurrent', copyRef.current)
+    copyRef.current.select()
+    document.execCommand('copy')
+    // This is just personal preference.
+    // I prefer to not show the the whole text area selected.
+    e.target.focus()
+    setCopySuccess('Copied!')
+  }
   return (
     <>
       <ProfilePicture />
+      <form style={{ display: 'none' }}>
+        <textarea ref={copyRef} value={account} />
+      </form>
       <Typography noWrap variant='body1' paragraph>
-        {account || '-'}
+        {`${account?.substring(0, 4)}...${account?.substring(
+          // eslint-disable-next-line no-unsafe-optional-chaining
+          account?.length - 3,
+          account?.length
+        )}` || '-'}
+
+        {
+          /* Logical shortcut for only displaying the 
+        button if the copy command exists */
+          document.queryCommandSupported('copy') && (
+            <div>
+              <Button
+                onClick={(e) => copyToClipboard(e)}
+                variant='contained'
+                endIcon={<ContentCopyIcon />}
+              />
+
+              {copySuccess}
+            </div>
+          )
+        }
       </Typography>
+
       <Typography variant='body1' paragraph>
         Balance:
         <Balance />
