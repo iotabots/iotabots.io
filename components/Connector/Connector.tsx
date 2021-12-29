@@ -160,6 +160,7 @@ const Connector: React.FC = () => {
       {/* eslint-disable-next-line no-nested-ternary */}
       {active ? (
         <Button
+          disabled
           size='large'
           variant='contained'
           onClick={() => {
