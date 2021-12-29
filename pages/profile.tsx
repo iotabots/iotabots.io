@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Box, Container, Typography } from '@iotabots/components'
-import Connector from '../components/Connector/Connector'
-import Iotabots from '../components/iotabots'
 import BaseLayout from '../layout/BaseLayout'
+import Iotabots from '../components/iotabots'
+import Connector from '../components/Connector/Connector'
 
 const Profile: React.FC = () => (
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

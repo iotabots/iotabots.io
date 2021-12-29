@@ -10,6 +10,7 @@ import { formatEther } from '@ethersproject/units'
 
 import { Box, Button, Divider, Typography } from '@iotabots/components'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
+import { ProfilePicture } from '../ProfilePicture'
 
 // eslint-disable-next-line max-len
 const ERROR_NO_ETH_PROVIDER =
@@ -112,6 +113,7 @@ const Header: React.FC = () => {
 
   return (
     <>
+      <ProfilePicture />
       <Typography variant='body1' paragraph>
         {/* eslint-disable-next-line no-nested-ternary */}
         Status: {active ? '🟢' : error ? '🔴' : '🟠'}
