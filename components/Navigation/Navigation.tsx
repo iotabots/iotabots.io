@@ -66,23 +66,26 @@ export const Navigation: React.FC = () => {
 
   let profile
   if (account) {
-    console.log('account', account)
     if (account) {
       // TODO - fetch current IOTABOT
       profile = (
-        <Link href='/profile'>
-          <Avatar
-            alt='IOTABOT #1'
-            src='https://assets.iotabots.io/compressed/1.png'
-            sx={{ width: 56, height: 56 }}
-          />
-        </Link>
+        <div className={classes.profilePicture}>
+          <Link href='/profile'>
+            <Avatar
+              alt='IOTABOT #1'
+              src='https://assets.iotabots.io/compressed/1.png'
+              sx={{ width: 56, height: 56 }}
+            />
+          </Link>
+        </div>
       )
     } else {
       profile = (
-        <Link href='/profile'>
-          <Avatar {...stringAvatar(account)} sx={{ width: 56, height: 56 }} />
-        </Link>
+        <div className={classes.profilePicture}>
+          <Link href='/profile'>
+            <Avatar {...stringAvatar(account)} sx={{ width: 56, height: 56 }} />
+          </Link>
+        </div>
       )
     }
   } else {
@@ -160,5 +163,8 @@ const useStyles = makeStyles((theme: Theme) => ({
         color: theme.palette.primary.main,
       },
     },
+  },
+  profilePicture: {
+    cursor: 'pointer',
   },
 }))
