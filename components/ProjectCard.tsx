@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import * as React from 'react'
-import { Chip, Typography } from '@iotabots/components'
+import { Box, Button, Chip, Typography } from '@iotabots/components'
 import { ProjectMeta } from '../interfaces/project'
 import styles from '../styles/Card.module.scss'
 
@@ -18,21 +18,28 @@ const Status: React.FC<StatusProps> = ({ status }) => {
 }
 
 const ProjectCard: React.FC<IProps> = ({ project }) => (
-  <Link href={`/projects/${project.slug}`}>
-    <div className={styles.card}>
-      <img src={project.thumbnail} alt={project.description} />
-
-      <div className={styles.info}>
-        <Status status={project.status} />
-        <Typography variant='h5' paragraph>
-          {project.title}
-        </Typography>
-        <Typography variant='body1' paragraph>
-          {project.description}
-        </Typography>
-      </div>
+  <div className={styles.card}>
+    <img src={project.thumbnail} alt={project.description} />
+    <Box sx={{ paddingTop: '2px', paddingLeft: '20px' }}>
+      <Status status={project.status} />
+    </Box>
+    <div className={styles.info}>
+      <Typography variant='h5' paragraph>
+        {project.title}
+      </Typography>
+      <Typography variant='body1' paragraph>
+        {project.description}
+      </Typography>
     </div>
-  </Link>
+    <Box display='flex' justifyContent='center'>
+      <Button
+        sx={{ marginTop: '8px', width: '80%' }}
+        href={`/projects/${project.slug}`}
+      >
+        Learn more
+      </Button>
+    </Box>
+  </div>
 )
 
 export default ProjectCard
