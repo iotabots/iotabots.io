@@ -76,13 +76,13 @@ const Iotabots: React.FC = () => {
   }, [active])
   return (
     <Box sx={{ marginBottom: '10px' }}>
-      <Typography gutterBottom variant='h3'>
-        Your IOTABOTS
+      <Typography gutterBottom variant='h4'>
+        IOTABOTS
       </Typography>
       {/* eslint-disable-next-line no-nested-ternary */}
       {errorRetrievingBots ? (
         <Typography gutterBottom variant='h6'>
-          There was an error retrieving your IotaBots
+          There was an error retrieving your IOTABOTS
         </Typography>
       ) : bots.length === 0 ? (
         <Typography gutterBottom variant='h6'>
