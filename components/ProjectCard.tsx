@@ -10,13 +10,11 @@ interface IProps {
 interface StatusProps {
   status: string
 }
-const Status = ({ status }): any => {
-  if (status === 'done') {
-    return <Chip label='Done' />
-  }
+const Status: React.FC<StatusProps> = ({ status }) => {
   if (status === 'in_progress') {
-    return <Chip label='In Progress' />
+    return <Chip label='In Progress' color='warning' />
   }
+  return <Chip label='Done' color='primary' />
 }
 
 const ProjectCard: React.FC<IProps> = ({ project }) => (
