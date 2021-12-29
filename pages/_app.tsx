@@ -51,6 +51,7 @@ const App: React.FC<AppProps> = (props) => {
         />
         <meta key='og:url' name='og:url' content={SEO.openGraph.url} />
         <meta key='og:image' name='og:image' content={SEO.openGraph.image} />
+        <meta name='keywords' content='IOTA, NFT, Metaverse, DeFi, EVM' />
         <script
           async
           // eslint-disable-next-line max-len
