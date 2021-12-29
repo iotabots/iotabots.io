@@ -3,6 +3,7 @@ interface ProjectMeta {
   slug: string
   description: string
   thumbnail: string
+  status: string
 }
 
 interface ProjectInfo {

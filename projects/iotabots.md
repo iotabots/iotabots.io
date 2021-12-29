@@ -2,6 +2,7 @@
 title: Profile Picture NFTs
 description: Learn more about the first Profile Picture (PFP) Non-Fungible Tokens (NFTs) on IOTA. Discover all 10.000 unique IOTABOTS artworks and collect your favourites!
 thumbnail: /assets/projects/iotabots.png
+status: 'in_progress'
 ---
 
 ## The first Profile Picture NFTs on IOTA
