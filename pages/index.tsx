@@ -125,7 +125,7 @@ export const Home = ({ projects }): JSX.Element => {
                     item
                     key={project.slug}
                     style={{
-                      maxWidth: '33%',
+                      maxWidth: '50%',
                       minWidth: '360px',
                     }}
                   >
