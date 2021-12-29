@@ -12,6 +12,7 @@ import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 
 import Link from 'next/link'
+import MoreIcon from '@mui/icons-material/MoreVert'
 import ConnectButton from '../Connector/ConnectButton'
 import ActiveLink from '../ActiveLink'
 import ToggleMode from '../ToggleMode'
@@ -129,7 +130,7 @@ export const Navigation: React.FC = () => {
               onClick={handleMobileMenuOpen}
               color='inherit'
             >
-              {profilePicture}
+              {account ? profilePicture : <MoreIcon />}
             </IconButton>
           </Box>
         </Box>
