@@ -1,7 +1,6 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import React from 'react'
-import { Box } from '@iotabots/components'
 import BaseLayout from '../layout/BaseLayout'
 import Hero from '../components/Sections/HeroSection'
 import ProjectsSection from '../components/Sections/ProjectsSection'
@@ -26,6 +25,7 @@ export const Home = ({ projects }): JSX.Element => (
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function getStaticProps() {
+  // Load markdown files from '/projects' folder.
   const files = fs.readdirSync('projects')
 
   const projects = files.map((file) => {
