@@ -1,12 +1,52 @@
+<p align="center">
+  <br>
+  <a href="https://iotabots.io">
+     <img
+      alt="iotabots logo"
+      src="https://pbs.twimg.com/profile_banners/1453664485063933965/1635716136/1500x500"
+    />
+  </a>
+</p>
+
+<h1 align="center"><a href="https://iotabots.io">IOTABOTS.io</a></h1>
+
+<p align="center">#NFT project #DeFi #NFT #GameFi #play2earn #IOTABOTS 🤖</p>
+
+<p align="center">
+  <a href="https://twitter.com/iotabots" style="text-decoration:none;"><img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2Fiotabots" alt="Twitter"></a>
+</p>
+
+---
+
+# IOTABOTS.io Website
+
+This is the repository for the IOTABOTS website on [www.iotabots.io](https://www.iotabots.io).
+
+You can contribute to this code an earn badges and XP on our [soonaverse.com project](https://soonaverse.com/space/0x9dd831f7eed22ca73b254422baab74a8c460e438/awards).
+
+## Development
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### React Component Library
 
-First, run the development server:
+We have a Library with all shared [IOTABOTS components](https://github.com/iotabots/nft-ui-components) - published on npmjs.com: [@iotabots/components](https://www.npmjs.com/package/@iotabots/components). This library contains several components to quickly and efficiently build new applications within the IOTABOTS design.
+
+### Storybook
+
+On top of Material UI's base ui components we have custom shared UI components for the iotabots team and community. These can be found in Storybook [Live Preview Page](https://iotabots.github.io/nft-ui-components/?path=/story/example-introduction--page)
+
+### Getting Started
+
+First, install the dependencies
 
 ```bash
-npm run dev
-# or
+yarn dev
+```
+
+after that, run the development server:
+
+```bash
 yarn dev
 ```
 
@@ -18,7 +58,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -26,9 +66,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
