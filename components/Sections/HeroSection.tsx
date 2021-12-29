@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Button, Typography } from '@iotabots/components'
 import Fade from 'react-reveal/Zoom'
-import BackgroundVideo from './BackgroundVideo'
+import BackgroundVideo from '../BackgroundVideo'
 
-const Hero: React.FC = () => {
+const HeroSection: React.FC = () => {
   const scrollToBottom = (): void => {
     const bottomEle = document.getElementById('what')
     if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
@@ -59,4 +59,4 @@ const Hero: React.FC = () => {
   )
 }
 
-export default Hero
+export default HeroSection

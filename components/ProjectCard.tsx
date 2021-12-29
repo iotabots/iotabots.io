@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import * as React from 'react'
 import { Box, Button, Chip, Typography } from '@iotabots/components'
 import { ProjectMeta } from '../interfaces/project'
