@@ -8,7 +8,7 @@ import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } fro
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
-import { Box, Button, Divider, Typography } from '@iotabots/components'
+import { Box, Button, Divider, Grid, Typography } from '@iotabots/components'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { ProfilePicture } from '../ProfilePicture'
 
@@ -190,38 +190,6 @@ const Connector: React.FC = () => {
           {getErrorMessage(error)}
         </Typography>
       )}
-
-      <Divider sx={{ my: 6 }} />
-
-      <Box>
-        {library && account && (
-          <Button
-            size='large'
-            fullWidth
-            variant='contained'
-            onClick={() => {
-              library
-                .getSigner(account)
-                .signMessage('👋')
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                .then((signature: any) => {
-                  // eslint-disable-next-line no-console
-                  console.log(`Success!\n\n${signature}`)
-                })
-                .catch(() => {
-                  // eslint-disable-next-line no-console
-                  console.log(
-                    `Failure!${
-                      error && error.message ? `\n\n${error.message}` : ''
-                    }`
-                  )
-                })
-            }}
-          >
-            Sign Message
-          </Button>
-        )}
-      </Box>
     </>
   )
 }

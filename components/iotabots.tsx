@@ -75,8 +75,8 @@ const Iotabots: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active])
   return (
-    <Box sx={{ marginBottom: '10px', textAlign: 'center' }}>
-      <Typography gutterBottom variant='h2'>
+    <Box sx={{ marginBottom: '10px' }}>
+      <Typography gutterBottom variant='h3'>
         Your IOTABOTS
       </Typography>
       {/* eslint-disable-next-line no-nested-ternary */}

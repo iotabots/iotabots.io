@@ -43,7 +43,7 @@ export const ProfilePicture: React.FC = () => (
       <Avatar
         alt='IOTABOT #1'
         src='https://assets.iotabots.io/compressed/1.png'
-        sx={{ width: 240, height: 240 }}
+        sx={{ width: 140, height: 140 }}
       />
     </StyledBadge>
   </Tooltip>
