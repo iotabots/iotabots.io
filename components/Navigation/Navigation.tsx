@@ -2,6 +2,7 @@ import * as React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import {
+  Avatar,
   Box,
   IconButton,
   makeStyles,
@@ -11,6 +12,7 @@ import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 import MoreIcon from '@mui/icons-material/MoreVert'
 
+import Link from 'next/link'
 import ConnectButton from '../Connector/ConnectButton'
 import ActiveLink from '../ActiveLink'
 import ToggleMode from '../ToggleMode'
@@ -28,28 +30,67 @@ export const Navigation: React.FC = () => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null)
 
-  const handleMobileMenuOpen = (
-    event: React.MouseEvent<HTMLElement>,
-  ): void => {
+  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>): void => {
     setMobileMoreAnchorEl(event.currentTarget)
+  }
+
+  function stringToColor(string: string): any {
+    let hash = 0
+    let i
+
+    /* eslint-disable no-bitwise */
+    for (i = 0; i < string.length; i += 1) {
+      hash = string.charCodeAt(i) + ((hash << 5) - hash)
+    }
+
+    let color = '#'
+
+    for (i = 0; i < 3; i += 1) {
+      const value = (hash >> (i * 8)) & 0xff
+      color += `00${value.toString(16)}`.substr(-2)
+    }
+    /* eslint-enable no-bitwise */
+
+    return color
+  }
+
+  function stringAvatar(name: string): any {
+    return {
+      sx: {
+        bgcolor: stringToColor(name),
+        color: 'text.primary',
+      },
+      children: name.substring(2, 4),
+    }
   }
 
   let profile
   if (account) {
-    profile = (
-      <ActiveLink
-        href='/profile'
-        label={`Profile (${account.substring(0, 5)})`}
-      />
-    )
+    console.log('account', account)
+    if (account) {
+      // TODO - fetch current IOTABOT
+      profile = (
+        <Link href='/profile'>
+          <Avatar
+            alt='IOTABOT #1'
+            src='https://assets.iotabots.io/compressed/1.png'
+            sx={{ width: 56, height: 56 }}
+          />
+        </Link>
+      )
+    } else {
+      profile = (
+        <Link href='/profile'>
+          <Avatar {...stringAvatar(account)} sx={{ width: 56, height: 56 }} />
+        </Link>
+      )
+    }
   } else {
     profile = <ConnectButton />
   }
 
   return (
-    <AppBar
-      className={classes.app}
-    >
+    <AppBar className={classes.app}>
       <Toolbar
         sx={{
           width: '100%',
@@ -78,12 +119,14 @@ export const Navigation: React.FC = () => {
             {profile}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton size='large'
+            <IconButton
+              size='large'
               aria-label='show more'
               aria-controls={mobileMenuId}
               aria-haspopup='true'
               onClick={handleMobileMenuOpen}
-              color='inherit'>
+              color='inherit'
+            >
               <MoreIcon />
             </IconButton>
           </Box>
@@ -94,7 +137,7 @@ export const Navigation: React.FC = () => {
         mobileMoreAnchorEl={mobileMoreAnchorEl}
         setMobileMoreAnchorEl={setMobileMoreAnchorEl}
       />
-    </AppBar >
+    </AppBar>
   )
 }
 
