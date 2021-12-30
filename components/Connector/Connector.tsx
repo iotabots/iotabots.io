@@ -8,7 +8,7 @@ import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } fro
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
-import { Button, Typography } from '@iotabots/components'
+import { Box, Button, Typography } from '@iotabots/components'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { ProfilePicture } from '../ProfilePicture'
@@ -73,37 +73,34 @@ const Header: React.FC = () => {
   const copyRef = useRef(null)
 
   function copyToClipboard(e): void {
-    console.log('e', e)
-    console.log('copyRef', copyRef)
-    console.log('copyRefcurrent', copyRef.current)
     copyRef.current.select()
     document.execCommand('copy')
-    // This is just personal preference.
-    // I prefer to not show the the whole text area selected.
     e.target.focus()
     setCopySuccess('Copied!')
   }
   return (
-    <>
+    <Box justifyContent='center' textAlign='center'>
       <ProfilePicture />
       <form style={{ display: 'none' }}>
         <textarea ref={copyRef} value={account} />
       </form>
-      <Typography noWrap variant='body1' paragraph>
-        {`${account?.substring(0, 4)}...${account?.substring(
-          // eslint-disable-next-line no-unsafe-optional-chaining
-          account?.length - 3,
-          account?.length
-        )}` || '-'}
-
+      <Box mt='20px' display='flex' justifyContent='center' textAlign='center'>
+        <Typography pt='6px' noWrap variant='body1' paragraph>
+          {`${account?.substring(0, 4)}...${account?.substring(
+            // eslint-disable-next-line no-unsafe-optional-chaining
+            account?.length - 3,
+            account?.length
+          )}` || '-'}
+        </Typography>
         {
           /* Logical shortcut for only displaying the 
         button if the copy command exists */
           document.queryCommandSupported('copy') && (
             <div>
               <Button
+                size='small'
+                variant='text'
                 onClick={(e) => copyToClipboard(e)}
-                variant='contained'
                 endIcon={<ContentCopyIcon />}
               />
 
@@ -111,13 +108,13 @@ const Header: React.FC = () => {
             </div>
           )
         }
-      </Typography>
+      </Box>
 
       <Typography variant='body1' paragraph>
         Balance:
         <Balance />
       </Typography>
-    </>
+    </Box>
   )
 }
 
@@ -148,7 +145,7 @@ const Connector: React.FC = () => {
       {/* eslint-disable-next-line no-nested-ternary */}
       {active ? (
         <Button
-          disabled
+          style={{ display: 'none' }}
           size='large'
           variant='contained'
           onClick={() => {
