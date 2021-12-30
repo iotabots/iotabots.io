@@ -3,21 +3,8 @@ import { Box, Card, CardContent, Grid, Typography } from '@iotabots/components'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 
-import Web3 from 'web3'
 import CardMedia from '@mui/material/CardMedia'
-import { BotMeta } from '../interfaces/bot'
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const IOTABOTS_ABI = require('../contracts/iotabots.json')
-
-declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    web3: any
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ethereum: any
-  }
-}
+import Link from 'next/link'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const FakeIotabots = (props) => {
@@ -57,21 +44,24 @@ const FakeIotabots = (props) => {
         </Typography>
       ) : (
         bots.map((bot) => (
-          <Grid item key={bot.name} xs={12} sm={12} md={12}>
-            <Card>
-              <CardMedia
-                height='100%'
-                component='img'
-                image={`https://assets.iotabots.io/compressed/${bot}.png`}
-                alt='IOTABOT'
-              />
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Typography gutterBottom variant='h6'>
-                  {`IOTABOT ${bot}`}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+          <Link href={`/bots/${bot}`}>
+            <Grid item key={bot} xs={4} sm={4} md={4}>
+              <Card sx={{ minWidth: '300px', cursor: 'pointer' }}>
+                <CardMedia
+                  height='100%'
+                  width='100%'
+                  component='img'
+                  image={`https://assets.iotabots.io/compressed/${bot}.png`}
+                  alt='IOTABOT'
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant='h6'>
+                    {`IOTABOT #${bot}`}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Link>
         ))
       )}
     </Box>
