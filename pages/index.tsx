@@ -6,6 +6,7 @@ import Hero from '../components/Sections/HeroSection'
 import ProjectsSection from '../components/Sections/ProjectsSection'
 import BotsSection from '../components/Sections/BotsSection'
 import WelcomeSection from '../components/Sections/WelcomeSection'
+import RoadmapSection from '../components/Sections/RoadmapSection'
 
 export const Home = ({ projects }): JSX.Element => (
   <BaseLayout>
@@ -20,6 +21,9 @@ export const Home = ({ projects }): JSX.Element => (
 
     {/* ProjectsSection */}
     <ProjectsSection projects={projects} />
+
+    {/* RoadmapSection */}
+    <RoadmapSection />
   </BaseLayout>
 )
 
