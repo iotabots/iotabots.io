@@ -46,6 +46,7 @@ const BotList: React.FC = () => {
               <Card
                 sx={{
                   padding: '2px',
+                  cursor: 'pointer',
                 }}
               >
                 <CardMedia
