@@ -10,7 +10,7 @@ const Profile: React.FC = () => (
   <BaseLayout>
     <Container maxWidth='md'>
       <Box sx={{ my: 4 }}>
-        <Typography variant='h1' gutterBottom>
+        <Typography m='50px 0' variant='h1' gutterBottom>
           Profile
         </Typography>
       </Box>
