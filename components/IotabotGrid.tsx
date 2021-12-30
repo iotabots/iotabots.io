@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardContent, Grid, Typography } from '@iotabots/components'
 import { CardMedia } from '@mui/material'
+import Link from 'next/link'
 
 const IotabotGrid: React.FC = () => {
   const cards = [
@@ -23,32 +24,35 @@ const IotabotGrid: React.FC = () => {
       {' '}
       {cards.map((card) => (
         <Grid item key={card}>
-          <Card
-            sx={{
-              height: '100px',
-              width: '100px',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <CardMedia
-              component='img'
-              image={`https://assets.iotabots.io/compressed/${card}.png`}
-              alt='IOTABOT'
-            />
-            <CardContent
+          <Link href={`/bots/${card}`}>
+            <Card
               sx={{
-                flexGrow: 1,
+                height: '100px',
+                width: '100px',
                 display: 'flex',
-                justifyContent: 'center',
-                p: 2.4,
+                flexDirection: 'column',
+                cursor: 'pointer',
               }}
             >
-              <Typography gutterBottom variant='body1'>
-                {`#${card}`}
-              </Typography>
-            </CardContent>
-          </Card>
+              <CardMedia
+                component='img'
+                image={`https://assets.iotabots.io/compressed/${card}.png`}
+                alt='IOTABOT'
+              />
+              <CardContent
+                sx={{
+                  flexGrow: 1,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  p: 2.4,
+                }}
+              >
+                <Typography gutterBottom variant='body1'>
+                  {`#${card}`}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Link>
         </Grid>
       ))}
     </Grid>
