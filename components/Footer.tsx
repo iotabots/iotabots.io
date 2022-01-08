@@ -26,14 +26,11 @@ export const Footer: React.FC = () => (
         href='https://twitter.com/iotabots'
         target='_blank'
         rel='noreferrer'
-        className='link'
+        className='link decent'
         color='inherit'
       >
-        @iotabots
+        <Copyright />
       </Link>
     </Typography>
-    <br />
-    <hr />
-    <Copyright />
   </Box>
 )
