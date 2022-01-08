@@ -1,6 +1,7 @@
 import React from 'react'
-import { Card, CardContent, Grid, Typography } from '@iotabots/components'
-import { CardMedia } from '@mui/material'
+import { BotCard, Grid } from '@iotabots/components'
+import Image from 'next/image'
+import { Box } from '@mui/material'
 import Link from 'next/link'
 
 const IotabotGrid: React.FC = () => {
@@ -18,41 +19,31 @@ const IotabotGrid: React.FC = () => {
         justifyContent: 'center',
       }}
       container
-      spacing={{ xs: 1, md: 1 }}
+      spacing={{ xs: 2 }}
       columns={{ xs: 4, sm: 3, md: 2 }}
     >
       {' '}
       {cards.map((card) => (
         <Grid item key={card}>
-          <Link href={`/bots/${card}`}>
-            <Card
-              sx={{
-                height: '100px',
-                width: '100px',
-                display: 'flex',
-                flexDirection: 'column',
-                cursor: 'pointer',
-              }}
-            >
-              <CardMedia
-                component='img'
-                image={`https://assets.iotabots.io/compressed/${card}.png`}
-                alt='IOTABOT'
+            <Box sx={{cursor: 'pointer'}}>
+              <BotCard
+                image={
+                  <Link href={`/bots/${card}`}>
+                    <Image
+                      src={`https://assets.iotabots.io/compressed/${card}.png`}
+                      alt='IOTABOT'
+                      layout='intrinsic'
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
+                }
+                headline=''
+                text={`#${card}`}
+                maxWidth='100px'
+                rounded
               />
-              <CardContent
-                sx={{
-                  flexGrow: 1,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  p: 2.4,
-                }}
-              >
-                <Typography gutterBottom variant='body1'>
-                  {`#${card}`}
-                </Typography>
-              </CardContent>
-            </Card>
-          </Link>
+            </Box>
         </Grid>
       ))}
     </Grid>
