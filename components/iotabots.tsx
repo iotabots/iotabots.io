@@ -77,7 +77,7 @@ const Iotabots: React.FC = () => {
   return (
     <Box sx={{ mb: 6 }}>
       <Typography gutterBottom variant='h4'>
-        IOTABOTS11111
+        IOTABOTS
       </Typography>
       {/* eslint-disable-next-line no-nested-ternary */}
       {errorRetrievingBots ? (
