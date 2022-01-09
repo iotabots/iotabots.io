@@ -5,7 +5,7 @@ import BackgroundVideo from '../BackgroundVideo'
 
 const HeroSection: React.FC = () => {
   const scrollToBottom = (): void => {
-    const bottomEle = document.getElementById('what')
+    const bottomEle = document.getElementById('welcome')
     if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
   }
   return (

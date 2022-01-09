@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { Box, Card, CardContent, Grid, Typography } from '@iotabots/components'
+import { BotCard, Box, Grid, Typography } from '@iotabots/components'
+import Image from 'next/image'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 
 import Web3 from 'web3'
-import CardMedia from '@mui/material/CardMedia'
 import { BotMeta } from '../interfaces/bot'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -75,7 +75,7 @@ const Iotabots: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active])
   return (
-    <Box sx={{ marginBottom: '10px' }}>
+    <Box sx={{ mb: 6 }}>
       <Typography gutterBottom variant='h4'>
         IOTABOTS
       </Typography>
@@ -91,14 +91,30 @@ const Iotabots: React.FC = () => {
       ) : (
         bots.map((bot) => (
           <Grid item key={bot.name} xs={12} sm={12} md={12}>
-            <Card>
-              <CardMedia
-                height='100%'
-                component='img'
-                image={bot.image}
-                alt='IOTABOT'
-              />
-              <CardContent sx={{ flexGrow: 1 }}>
+            <Box
+              sx={{
+                width: '100px',
+                display: 'flex',
+                flexDirection: 'column',
+                cursor: 'pointer',
+                borderRadius: '3px'
+              }}
+            >
+              <BotCard
+                image={
+                  <Image
+                    src={bot.image}
+                    alt='IOTABOT'
+                    layout='intrinsic'
+                    width={100}
+                    height={100}
+                  />
+                }
+                headline=''
+                text=''
+                maxWidth='100px'
+                rounded
+              >
                 <Typography gutterBottom variant='h6'>
                   {`IOTABOT ${bot.name}`}
                 </Typography>
@@ -111,8 +127,8 @@ const Iotabots: React.FC = () => {
                 <Typography gutterBottom variant='body1'>
                   {`Created on ${new Date(bot.date).toLocaleDateString()}`}
                 </Typography>
-              </CardContent>
-            </Card>
+              </BotCard>
+            </Box>
           </Grid>
         ))
       )}

@@ -39,7 +39,7 @@ a {
   &.link {
     text-decoration: underline;
 
-    &:hover {
+    &:hover, &.decent {
       text-decoration: none;
     }
   }
