@@ -24,7 +24,7 @@ const BotList: React.FC = () => {
     <InfiniteScroll
       dataLength={items.length}
       next={fetchMoreData}
-      hasMore={items.length <= 1000}
+      hasMore={items.length <= 1050}
       loader={<p>Loading...</p>}
     >
       <Grid
