@@ -53,7 +53,7 @@ const BotDetail: React.FC = () => {
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
             <BotCard
@@ -73,7 +73,7 @@ const BotDetail: React.FC = () => {
               rounded
             >
               <Typography gutterBottom variant='body1'>
-              {`DNA ${bot?.dna}`}
+                {`DNA ${bot?.dna}`}
               </Typography>
               <Typography gutterBottom variant='body1'>
                 {`Edition ${bot?.edition}`}
@@ -81,11 +81,11 @@ const BotDetail: React.FC = () => {
               <Typography gutterBottom variant='body1'>
                 {`Created on ${new Date(bot?.date).toLocaleDateString()}`}
               </Typography>
-              {bot?.attributes.map((attribute) => (
+              {/* {bot?.attributes.map((attribute) => (
                 <Typography gutterBottom variant='body1'>
                   {`${attribute.trait_type}: ${attribute.value}`}
                 </Typography>
-              ))}
+              ))} */}
             </BotCard>
           </Box>
         </Container>

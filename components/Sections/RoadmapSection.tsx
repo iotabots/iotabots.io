@@ -15,7 +15,7 @@ const RoadmapSection = () => (
     <Fade bottom>
       <Container maxWidth='md'>
         <ContentBox headline='Roadmap' text='' image=''>
-          <Timeline title='Website relaunch'>
+          <Timeline checked title='Website relaunch'>
             Better Teck Stack, UI Improvments and extern component library.
           </Timeline>
           <Timeline checked title='Twitter Giveaways'>
