@@ -20,7 +20,7 @@
     "@emotion/styled": "^11.6.0",
     "@ethersproject/providers": "^5.5.1",
     "@ethersproject/units": "^5.5.0",
-    "@iotabots/components": "^0.0.12",
+    "@iotabots/components": "^0.0.13",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.1.1",
     "@web3-react/core": "^6.1.9",
