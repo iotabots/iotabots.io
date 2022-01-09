@@ -1,11 +1,6 @@
 import * as React from 'react'
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from '@iotabots/components'
+import { BotCard, Box, Grid, Typography } from '@iotabots/components'
+import Image from 'next/image'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Link from 'next/link'
 
@@ -25,7 +20,13 @@ const BotList: React.FC = () => {
       dataLength={items.length}
       next={fetchMoreData}
       hasMore={items.length <= 1050}
-      loader={<p>Loading...</p>}
+      loader={
+        <Box my={6}>
+          <Typography textAlign='center' variant='body1'>
+            Loading...
+          </Typography>
+        </Box>
+      }
     >
       <Grid
         style={{
@@ -36,28 +37,30 @@ const BotList: React.FC = () => {
           justifyContent: 'center',
         }}
         container
-        spacing={{ xs: 1, md: 1 }}
+        spacing={{ xs: 2 }}
         columns={{ xs: 4, sm: 3, md: 2 }}
       >
         {items.map((item) => (
-          // eslint-disable-next-line react/jsx-max-props-per-line
           <Grid item key={item}>
-            <Link href={`/bots/${item}`}>
-              <Card
-                sx={{
-                  padding: '2px',
-                  cursor: 'pointer',
-                }}
-              >
-                <CardMedia
-                  sx={{
-                    height: '100px',
-                    width: '100px',
-                  }}
-                  image={`http://assets.iotabots.io/compressed/${item}.png`}
-                />
-              </Card>
-            </Link>
+            <Box sx={{ cursor: 'pointer' }}>
+              <BotCard
+                image={
+                  <Link href={`/bots/${item}`}>
+                    <Image
+                      src={`http://assets.iotabots.io/compressed/${item}.png`}
+                      alt='IOTABOT'
+                      layout='intrinsic'
+                      width={100}
+                      height={100}
+                    />
+                  </Link>
+                }
+                headline=''
+                text=''
+                maxWidth='100px'
+                rounded
+              />
+            </Box>
           </Grid>
         ))}
       </Grid>

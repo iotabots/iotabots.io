@@ -1,14 +1,13 @@
 import * as React from 'react'
 import {
+  BotCard,
   Box,
-  Card,
-  CardContent,
-  CardMedia,
   Container,
   Input,
   Link,
   Typography,
 } from '@iotabots/components'
+import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import BaseLayout from '../layout/BaseLayout'
@@ -38,7 +37,7 @@ const Bots: React.FC = () => {
       <Head>
         <title>{`${SEO.title} | Bot List`}</title>
       </Head>
-      <Box py={6} display='flex' alignItems='center'>
+      <Box>
         <Container maxWidth='md'>
           <Box display='flex' flexDirection='column' alignItems='center'>
             <Typography gutterBottom variant='h1'>
@@ -57,30 +56,25 @@ const Bots: React.FC = () => {
               />
             </Box>
             {number > 0 ? (
-              <Box pt={8}>
-                <Link href={`/bots/${number}`}>
-                  <Card
-                    sx={{
-                      justifyContent: 'center',
-                      textAlign: 'center',
-                    }}
-                  >
-                    <CardMedia
-                      sx={{
-                        minHeight: '280px',
-                        maxHeight: '480px',
-                        minWidth: '280px',
-                        maxWidth: '480px',
-                      }}
-                      // eslint-disable-next-line max-len
-                      image={`https://assets.iotabots.io/compressed/${number}.png`}
-                    />
-                    <CardContent />
-                    <Typography gutterBottom variant='body1'>
-                      {`IOTABOT #${number}`}
-                    </Typography>
-                  </Card>
-                </Link>
+              <Box pt={6}>
+                  <BotCard
+                    image={
+                      <Link href={`/bots/${number}`}>
+                        <Image
+                          // eslint-disable-next-line max-len
+                          src={`https://assets.iotabots.io/compressed/${number}.png`}
+                          alt={`IOTABOT #${number}`}
+                          layout='intrinsic'
+                          width={300}
+                          height={300}
+                        />
+                      </Link>
+                    }
+                    headline={`IOTABOT #${number}`}
+                    text=''
+                    maxWidth='300px'
+                    rounded
+                  />
               </Box>
             ) : (
               <BotList />

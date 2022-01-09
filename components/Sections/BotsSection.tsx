@@ -37,7 +37,6 @@ const BotsSection = () => {
             <Typography
               variant='body1'
               align='center'
-              color='#ffffff'
               paragraph
             >
               There are 10.000 unqiue IOTABOTS!
