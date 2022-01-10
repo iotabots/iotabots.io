@@ -48,7 +48,7 @@ export async function getStaticProps() {
 
   const array = data.split('\n')
   // for (var i = 0; i < array.length; i++) {
-  for (let index = 0; index < array.length; index += 1) {
+  for (let index = 0; index < array.length - 1; index += 1) {
     const botData = array[index].split(':')
     const obj = {
       id: botData[0],
