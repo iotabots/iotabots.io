@@ -9,7 +9,9 @@ import { getItem, setItem } from '../utils/localStorage'
 export interface ThemeProviderProps {
   children: JSX.Element
 }
+
 export type Mode = 'dark' | 'light'
+
 export interface ModeContextProps {
   mode: Mode
   toggleMode?: () => void

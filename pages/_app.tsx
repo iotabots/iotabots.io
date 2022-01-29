@@ -6,8 +6,8 @@ import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import ReactGA from 'react-ga'
-import { Navigation } from '../components/Navigation/Navigation'
-import { Footer } from '../components/Footer'
+// import { Navigation } from '../components/Navigation/Navigation'
+// import { Footer } from '../components/Footer'
 import { SEO } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -71,9 +71,9 @@ const App: React.FC<AppProps> = (props) => {
       </Head>
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
-          <Navigation />
+          {/* <Navigation /> */}
           <Component {...pageProps} />
-          <Footer />
+          {/* <Footer /> */}
         </Web3ReactProvider>
       </ThemeProvider>
     </>
