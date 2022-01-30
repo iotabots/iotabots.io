@@ -19,7 +19,9 @@ export const Footer: React.FC = () => (
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      borderRadius: '8px'
+      borderRadius: '8px',
+      position: 'relative',
+      zIndex: 11,
     }}
     component='footer'
   >

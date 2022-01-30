@@ -3,7 +3,7 @@ import React from 'react'
 
 const Section: React.FC = ({ children }) => (
   <Box sx={{
-    mt: '160px',
+    mt: '200px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
