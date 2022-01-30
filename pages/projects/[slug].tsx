@@ -23,6 +23,7 @@ const Project: React.FC<IProps> = ({ project }) => (
             borderRadius: '8px',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
             height: '320px',
             border: 'none',
             width: '100%',
