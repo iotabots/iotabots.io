@@ -11,8 +11,8 @@ export const Footer: React.FC = () => (
   <Box
     sx={{
       mx: 'auto',
-      my: 8,
-      width: 'calc(100% - 124px)',
+      my: { xs: 7, md: 8 },
+      width: { xs: 'calc(100% - 80px)', md: 'calc(100% - 128px)' },
       px: 5,
       py: 4,
       bgcolor: 'rgba(0,0,0,0.5)',
@@ -22,13 +22,21 @@ export const Footer: React.FC = () => (
       borderRadius: '8px',
       borderStyle: 'solid',
       borderWidth: 2,
+      backdropFilter: 'blur(8px)',
+      boxSizing: 'border-box',
       borderColor: 'rgba(0,0,0,0.5)',
       position: 'relative',
       zIndex: 11,
     }}
     component='footer'
   >
-    <Typography gutterBottom align='center' color='text.primary'>
+    <Typography
+      gutterBottom
+      align='center'
+      color='text.primary'
+      variant='body2'
+      mb={0}
+    >
       <Link
         href='https://twitter.com/iotabots'
         target='_blank'
@@ -39,10 +47,10 @@ export const Footer: React.FC = () => (
         <Copyright />
       </Link>
     </Typography>
-    <Typography variant='button'>
+    <Typography sx={{ display: { xs: 'none', md: 'block' } }} variant='button'>
       *BEE* *BOB* *BOO*
     </Typography>
-    <Box display='flex' >
+    <Box display='flex' sx={{ '& a': { cursor: 'pointer' } }}>
       <Link
         href='https://twitter.com/iotabots'
         target='_blank'

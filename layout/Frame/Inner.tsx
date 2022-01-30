@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { Box, SxProps } from '@mui/material'
 import React from 'react'
+import { WIDTH } from '.'
 
 const baseStyles: SxProps = {
   bgcolor: '#212C44',
@@ -41,7 +42,7 @@ const Inner: React.FC = () => (
         ...baseStyles,
         top: 0,
         left: 0,
-        height: 36,
+        height: { xs: WIDTH.xs + 16, md: WIDTH.md + 16 },
         width: '100%',
         zIndex: 7,
       }}
@@ -51,7 +52,7 @@ const Inner: React.FC = () => (
         ...baseStyles,
         top: 0,
         right: 0,
-        width: 36,
+        width: { xs: WIDTH.xs + 16, md: WIDTH.md + 16 },
         height: '100vh',
         zIndex: 7,
       }}
@@ -61,7 +62,7 @@ const Inner: React.FC = () => (
         ...baseStyles,
         bottom: 0,
         right: 0,
-        height: 36,
+        height: { xs: WIDTH.xs + 16, md: WIDTH.md + 16 },
         width: '100%',
         zIndex: 7,
       }}
@@ -71,7 +72,7 @@ const Inner: React.FC = () => (
         ...baseStyles,
         bottom: 0,
         left: 0,
-        width: 36,
+        width: { xs: WIDTH.xs + 16, md: WIDTH.md + 16 },
         height: '100vh',
         zIndex: 7,
       }}
@@ -82,7 +83,7 @@ const Inner: React.FC = () => (
         width: 'calc(100% - 440px)',
         position: 'fixed',
         left: 220,
-        top: 22,
+        top: { xs: WIDTH.xs + 6, md: WIDTH.md + 6 },
         zIndex: 100,
         display: 'flex',
         justifyContent: 'space-between',
@@ -99,7 +100,7 @@ const Inner: React.FC = () => (
         width: 'calc(100% - 440px)',
         position: 'fixed',
         left: 220,
-        bottom: 22,
+        bottom: { xs: WIDTH.xs + 6, md: WIDTH.md + 6 },
         zIndex: 100,
         display: 'flex',
         justifyContent: 'space-between',
@@ -115,7 +116,7 @@ const Inner: React.FC = () => (
         width: 4,
         height: 'calc(100vh - 440px)',
         position: 'fixed',
-        left: 22,
+        left: { xs: WIDTH.xs + 6, md: WIDTH.md + 6 },
         bottom: 220,
         zIndex: 100,
         display: 'flex',
@@ -133,7 +134,7 @@ const Inner: React.FC = () => (
         width: 4,
         height: 'calc(100vh - 440px)',
         position: 'fixed',
-        right: 22,
+        right: { xs: WIDTH.xs + 6, md: WIDTH.md + 6 },
         bottom: 220,
         zIndex: 100,
         display: 'flex',
@@ -146,14 +147,6 @@ const Inner: React.FC = () => (
       <Box sx={pipeVertical} />
       <Box sx={circleStyles} className='circle' />
     </Box>
-    {/* <Box
-      sx={{
-        borderColor: 'rgba(0,0,0,0.8)',
-        borderWidth: 34,
-        zIndex: 6,
-        ...baseStyles
-      }}
-    /> */}
   </>
 )
 

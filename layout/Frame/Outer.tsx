@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { Box, SxProps } from '@mui/material'
 import React from 'react'
+import { WIDTH } from '.'
 
 const baseStyles: SxProps = {
   bgcolor: 'rgba(0,0,0,0.8)',
@@ -15,7 +16,7 @@ const Outer: React.FC = () => (
         ...baseStyles,
         top: 0,
         left: 0,
-        height: 16,
+        height: { ...WIDTH },
         width: '100%',
       }}
     />
@@ -24,7 +25,7 @@ const Outer: React.FC = () => (
         ...baseStyles,
         top: 0,
         right: 0,
-        width: 16,
+        width: { ...WIDTH },
         height: '100vh',
       }}
     />
@@ -33,7 +34,7 @@ const Outer: React.FC = () => (
         ...baseStyles,
         bottom: 0,
         right: 0,
-        height: 16,
+        height: { ...WIDTH },
         width: '100%',
       }}
     />
@@ -42,7 +43,7 @@ const Outer: React.FC = () => (
         ...baseStyles,
         bottom: 0,
         left: 0,
-        width: 16,
+        width: { ...WIDTH },
         height: '100vh',
       }}
     />
