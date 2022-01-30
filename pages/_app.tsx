@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable @next/next/no-page-custom-font */
 import * as React from 'react'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
@@ -6,8 +8,7 @@ import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import ReactGA from 'react-ga'
-// import { Navigation } from '../components/Navigation/Navigation'
-// import { Footer } from '../components/Footer'
+import { Navigation } from '../components/Navigation/Navigation'
 import { SEO } from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -39,6 +40,10 @@ const App: React.FC<AppProps> = (props) => {
         <link rel='icon' type='image/png' sizes='16x16' href='favicon.ico' />
         <link rel='manifest' href='favicon/site.webmanifest' />
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#20c593' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sarpanch:wght@800&display=swap' rel='stylesheet' />
+
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
         <meta key='description' name='description' content={SEO.description} />
@@ -71,9 +76,8 @@ const App: React.FC<AppProps> = (props) => {
       </Head>
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
-          {/* <Navigation /> */}
+          <Navigation />
           <Component {...pageProps} />
-          {/* <Footer /> */}
         </Web3ReactProvider>
       </ThemeProvider>
     </>

@@ -1,28 +1,25 @@
+/* eslint-disable react/require-default-props */
 import React from 'react'
 import { Box } from '@iotabots/components'
-import { Typography } from '@mui/material'
-import Pattern from './Pattern'
 import Frame from './Frame'
+import { Footer } from '../components/Footer'
 
-const BaseLayout: React.FC = (props) => {
-  const { children } = props
+interface BaseLayout {
+  frame?: boolean
+}
+
+const BaseLayout: React.FC<BaseLayout> = (props) => {
+  const { frame = true, children } = props
 
   return (
-    <Box sx={{
-      flexGrow: 1,
-      flexShrink: 1,
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center'
-    }}>
-      <Pattern />
-      <Frame />
-      <Typography>Peter</Typography>
+    <Box className='page'>
+      {frame && <Frame />}
       <Box sx={{
         position: 'relative',
         zIndex: 2,
       }}>
         {children}
+        <Footer />
       </Box>
     </Box>
   )

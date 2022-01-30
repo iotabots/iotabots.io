@@ -1,17 +1,15 @@
 import React from 'react'
 import {
   Box,
-  Button,
   Container,
   ContentBox,
   Timeline,
-  Typography,
 } from '@iotabots/components'
 import Fade from 'react-reveal/Zoom'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const RoadmapSection = () => (
-  <Box py={8} bgcolor='background.light'>
+  <Box py={8}>
     <Fade bottom>
       <Container maxWidth='md'>
         <ContentBox headline='Roadmap' text='' image=''>

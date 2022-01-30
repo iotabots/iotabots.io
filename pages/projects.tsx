@@ -1,10 +1,11 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import * as React from 'react'
-import { Box, Container, Grid, Typography } from '@iotabots/components'
+import { Container, Grid, Typography } from '@iotabots/components'
 import ProjectCard from '../components/ProjectCard'
 import { ProjectMeta } from '../interfaces/project'
 import BaseLayout from '../layout/BaseLayout'
+import Section from '../components/Section'
 
 interface IProps {
   projects: ProjectMeta[]
@@ -12,8 +13,8 @@ interface IProps {
 
 const Projects: React.FC<IProps> = ({ projects }) => (
   <BaseLayout>
-    <Box py={6} display='flex' alignItems='center'>
-      <Container maxWidth='md'>
+    <Section>
+      <Container>
         <Typography gutterBottom variant='h1'>
           Projects
         </Typography>
@@ -28,25 +29,22 @@ const Projects: React.FC<IProps> = ({ projects }) => (
             flexDirection: 'row',
             justifyContent: 'center',
           }}
+          mt={6}
           container
-          spacing={{ xs: 1, md: 1 }}
-          columns={{ xs: 12, sm: 12, md: 12 }}
+          spacing={6}
         >
           {projects.map((project) => (
             <Grid
               item
+              xs={4}
               key={project.slug}
-              style={{
-                maxWidth: '50%',
-                minWidth: '360px',
-              }}
             >
               <ProjectCard key={project.slug} project={project} />
             </Grid>
           ))}
         </Grid>
       </Container>
-    </Box>
+    </Section>
   </BaseLayout>
 )
 

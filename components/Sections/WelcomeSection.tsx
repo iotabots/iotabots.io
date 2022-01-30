@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Zoom'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const WelcomeSection = () => (
-  <Box py={8} bgcolor='background.default'>
+  <Box py={8}>
     <span id='welcome' className='anchor' style={{ marginTop: '-100px' }} />
     <Container>
       <Box sx={{ mb: 6 }}>
@@ -24,7 +24,7 @@ const WelcomeSection = () => (
             text='An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet.'
             headline='WHAT IS AN IOTABOT?!'
           >
-            {}
+            { }
           </ContentBox>
         </Fade>
       </Box>
@@ -44,7 +44,7 @@ const WelcomeSection = () => (
             text='The IOTABOTVERSE consists of many NFT projects. Discover the metaverse and play, trade and earn with IOTABOTS and others.'
             headline='WHAT IS the IOTABOTVERSE?!'
           >
-            {}
+            { }
           </ContentBox>
         </Fade>
       </Box>

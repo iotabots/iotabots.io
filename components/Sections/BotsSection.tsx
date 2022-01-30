@@ -11,7 +11,7 @@ const BotsSection = () => {
     router.push('/bots')
   }
   return (
-    <Box py={8} bgcolor='background.light'>
+    <Box py={8}>
       <Fade bottom>
         <Container maxWidth='md'>
           <Typography variant='h3' align='center' sx={{ pb: 6 }}>

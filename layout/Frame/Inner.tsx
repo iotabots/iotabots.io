@@ -3,12 +3,11 @@ import { Box, SxProps } from '@mui/material'
 import React from 'react'
 
 const baseStyles: SxProps = {
+  bgcolor: '#212C44',
+  borderWidth: 2,
   borderStyle: 'solid',
+  borderColor: 'rgba(0,0,0,0.8)',
   position: 'fixed',
-  top: 0,
-  left: 0,
-  height: '100vh',
-  width: '100%',
 }
 
 const circleStyles: SxProps = {
@@ -39,10 +38,42 @@ const Inner: React.FC = () => (
   <>
     <Box
       sx={{
-        borderColor: '#212C44',
-        borderWidth: 32,
+        ...baseStyles,
+        top: 0,
+        left: 0,
+        height: 36,
+        width: '100%',
         zIndex: 7,
-        ...baseStyles
+      }}
+    />
+    <Box
+      sx={{
+        ...baseStyles,
+        top: 0,
+        right: 0,
+        width: 36,
+        height: '100vh',
+        zIndex: 7,
+      }}
+    />
+    <Box
+      sx={{
+        ...baseStyles,
+        bottom: 0,
+        right: 0,
+        height: 36,
+        width: '100%',
+        zIndex: 7,
+      }}
+    />
+    <Box
+      sx={{
+        ...baseStyles,
+        bottom: 0,
+        left: 0,
+        width: 36,
+        height: '100vh',
+        zIndex: 7,
       }}
     />
     <Box
@@ -115,14 +146,14 @@ const Inner: React.FC = () => (
       <Box sx={pipeVertical} />
       <Box sx={circleStyles} className='circle' />
     </Box>
-    <Box
+    {/* <Box
       sx={{
         borderColor: 'rgba(0,0,0,0.8)',
         borderWidth: 34,
         zIndex: 6,
         ...baseStyles
       }}
-    />
+    /> */}
   </>
 )
 

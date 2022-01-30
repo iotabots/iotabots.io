@@ -8,7 +8,7 @@ const Copyright: React.FC = () => (
 )
 
 export const Footer: React.FC = () => (
-  <Box sx={{ bgcolor: 'background.paper', px: 2, py: 6 }} component='footer'>
+  <Box sx={{ px: 2, py: 6 }} component='footer'>
     <Typography
       variant='body1'
       color='text.secondary'

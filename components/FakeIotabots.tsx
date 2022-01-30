@@ -45,8 +45,14 @@ const FakeIotabots = (props) => {
       ) : (
         bots.map((bot) => (
           <Link href={`/bots/${bot}`}>
-            <Grid item key={bot} xs={4} sm={4} md={4}>
-              <Card sx={{ minWidth: '300px', cursor: 'pointer' }}>
+            <Grid item key={bot} xs={2} sm={3} md={4}>
+              <Card
+                sx={{
+                  minWidth: '100%',
+                  cursor: 'pointer',
+                  bgcolor: 'rgba(0,0,0,0.5)'
+                }}
+              >
                 <CardMedia
                   height='100%'
                   width='100%'
@@ -54,8 +60,8 @@ const FakeIotabots = (props) => {
                   image={`https://assets.iotabots.io/compressed/${bot}.png`}
                   alt='IOTABOT'
                 />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant='h6'>
+                <CardContent p={2}>
+                  <Typography variant='h6' mb={0}>
                     {`IOTABOT #${bot}`}
                   </Typography>
                 </CardContent>

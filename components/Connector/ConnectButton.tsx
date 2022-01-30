@@ -2,8 +2,10 @@ import React from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 import { Button } from '@iotabots/components'
+import { Box, Typography } from '@mui/material'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { injected } from '../../utils/connectors'
+import Wallet from '../Icons/Wallet'
 
 enum ConnectorNames {
   Injected = 'Connect',
@@ -42,12 +44,34 @@ const ConnectButton: React.FC = () => {
         setActivatingConnector(currentConnector)
         activate(connectorsByName.Connect)
       }}
+      sx={{
+        '&.MuiButton-containedPrimary': {
+          borderRadius: '50px',
+          maxWidth: 'auto',
+          minWidth: 'auto',
+          width: 50,
+          height: 50,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          bgcolor: 'rgba(0,0,0,0.5)',
+          borderColor: 'rgba(0,0,0,0.5)',
+          '&:hover': {
+            bgcolor: 'primary.main',
+          }
+        }
+      }}
     >
-      <div>
-        {activating && '⏳'}
-        {connected && ''}
-      </div>
-      Connect Wallet
+      <Box sx={{
+        height: 20,
+        width: 20,
+        '& svg': {
+          height: 'inherit',
+          width: 'inherit',
+        }
+      }}>
+        {activating ? <Typography>...</Typography> : <Wallet />}
+      </Box>
     </Button>
   )
 }

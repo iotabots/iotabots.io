@@ -3,11 +3,10 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import {
   Avatar,
-  Box,
   IconButton,
   makeStyles,
-  Theme,
 } from '@iotabots/components'
+import { Box } from '@mui/material'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'
 
@@ -15,9 +14,10 @@ import Link from 'next/link'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import ConnectButton from '../Connector/ConnectButton'
 import ActiveLink from '../ActiveLink'
-import ToggleMode from '../ToggleMode'
 import { MENU } from './menu'
 import MobileMenu from './MobileMenu'
+
+import logo from '../../public/assets/iotabots.svg'
 
 export const Navigation: React.FC = () => {
   const classes = useStyles()
@@ -101,23 +101,42 @@ export const Navigation: React.FC = () => {
           justifyContent: 'space-between',
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {MENU.map((item, index) => (
-            <Box
-              key={item.label}
-              sx={
-                // Assuming Logo is the first Link in MENU Array
-                index === 0
-                  ? { display: 'flex', mr: 6 }
-                  : { display: { xs: 'none', md: 'flex' }, mr: 6 }
-              }
-            >
+        <Link href='/'>
+          <Box
+            component='img'
+            src={logo.src}
+            sx={{
+              height: 50, '&:hover': { cursor: 'pointer' }
+            }}
+          />
+        </Link>
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 68,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            bgcolor: 'rgba(0,0,0,0.5)',
+            p: '4px',
+            borderRadius: '8px',
+            height: 50
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              borderRadius: '6px',
+              overflow: 'hidden',
+              height: 42
+            }}
+          >
+            {MENU.map((item) => (
               <ActiveLink href={item.link} label={item.label} />
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <ToggleMode />
+          {/* <ToggleMode /> */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 3 }}>
             {profilePicture}
           </Box>
@@ -144,25 +163,18 @@ export const Navigation: React.FC = () => {
   )
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   app: {
-    position: 'sticky',
-    zIndex: 1000,
-    top: 0,
-    width: '100%',
+    position: 'fixed',
+    zIndex: 11,
+    top: 64,
+    left: 64,
+    width: 'calc(100% - 128px)',
     display: 'flex',
     alignItems: 'center',
     flexShrink: 1,
-    background: `${theme.palette.background.paper} !important`,
-
-    '& .MuiTypography-root': {
-      color: theme.palette.text.primary,
-      cursor: 'pointer',
-
-      '&.active': {
-        color: theme.palette.primary.main,
-      },
-    },
+    background: 'rgba(0,0,0,0)',
+    boxShadow: 'none',
   },
   profilePicture: {
     cursor: 'pointer',

@@ -1,9 +1,8 @@
 /* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-var-requires */
-
 import React from 'react'
 import { Box } from '@mui/system'
-import pattern from '../public/assets/pattern.png'
+import pattern from '../../public/assets/pattern.png'
 import Cursor from './Cursor'
 
 const Pattern: React.FC = () => {

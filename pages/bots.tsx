@@ -13,6 +13,7 @@ import { useRouter } from 'next/router'
 import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 import { SEO } from '../config'
+import Section from '../components/Section'
 
 const Bots: React.FC = () => {
   const [number, setNumber] = React.useState(() => null)
@@ -37,7 +38,7 @@ const Bots: React.FC = () => {
       <Head>
         <title>{`${SEO.title} | Bot List`}</title>
       </Head>
-      <Box>
+      <Section>
         <Container maxWidth='md'>
           <Box display='flex' flexDirection='column' alignItems='center'>
             <Typography gutterBottom variant='h1'>
@@ -57,31 +58,31 @@ const Bots: React.FC = () => {
             </Box>
             {number > 0 ? (
               <Box pt={6}>
-                  <BotCard
-                    image={
-                      <Link href={`/bots/${number}`}>
-                        <Image
-                          // eslint-disable-next-line max-len
-                          src={`https://assets.iotabots.io/compressed/${number}.png`}
-                          alt={`IOTABOT #${number}`}
-                          layout='intrinsic'
-                          width={300}
-                          height={300}
-                        />
-                      </Link>
-                    }
-                    headline={`IOTABOT #${number}`}
-                    text=''
-                    maxWidth='300px'
-                    rounded
-                  />
+                <BotCard
+                  image={
+                    <Link href={`/bots/${number}`}>
+                      <Image
+                        // eslint-disable-next-line max-len
+                        src={`https://assets.iotabots.io/compressed/${number}.png`}
+                        alt={`IOTABOT #${number}`}
+                        layout='intrinsic'
+                        width={300}
+                        height={300}
+                      />
+                    </Link>
+                  }
+                  headline={`IOTABOT #${number}`}
+                  text=''
+                  maxWidth='300px'
+                  rounded
+                />
               </Box>
             ) : (
               <BotList />
             )}
           </Box>
         </Container>
-      </Box>
+      </Section>
     </BaseLayout>
   )
 }

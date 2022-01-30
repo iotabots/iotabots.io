@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Box, Button, Chip, Typography } from '@iotabots/components'
+import { Button, Chip, Typography } from '@iotabots/components'
+import { Card, CardActions, CardContent, CardMedia } from '@mui/material'
 import { ProjectMeta } from '../interfaces/project'
-import styles from '../styles/Card.module.scss'
 
 interface IProps {
   project: ProjectMeta
@@ -9,6 +9,7 @@ interface IProps {
 interface StatusProps {
   status: string
 }
+
 const Status: React.FC<StatusProps> = ({ status }) => {
   if (status === 'in_progress') {
     return <Chip label='In Progress' color='warning' />
@@ -17,28 +18,25 @@ const Status: React.FC<StatusProps> = ({ status }) => {
 }
 
 const ProjectCard: React.FC<IProps> = ({ project }) => (
-  <div className={styles.card}>
-    <img src={project.thumbnail} alt={project.description} />
-    <Box sx={{ paddingTop: '2px', paddingLeft: '20px' }}>
+  <Card sx={{ bgcolor: 'rgba(0,0,0,0.5)' }}>
+    <CardMedia sx={{ height: 200 }} image={project.thumbnail} />
+    <CardContent>
       <Status status={project.status} />
-    </Box>
-    <div className={styles.info}>
-      <Typography variant='h5' paragraph>
+      <Typography my={3} variant='h5'>
         {project.title}
       </Typography>
-      <Typography variant='body1' paragraph>
+      <Typography variant='body1' color='rgba(255,255,255,0.8)' paragraph>
         {project.description}
       </Typography>
-    </div>
-    <Box display='flex' justifyContent='center'>
       <Button
         sx={{ marginTop: '8px', width: '80%' }}
         href={`/projects/${project.slug}`}
+        fullWidth
       >
         Learn more
       </Button>
-    </Box>
-  </div>
+    </CardContent>
+  </Card>
 )
 
 export default ProjectCard

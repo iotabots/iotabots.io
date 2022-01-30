@@ -10,19 +10,10 @@ import RoadmapSection from '../components/Sections/RoadmapSection'
 
 export const Home = ({ projects }): JSX.Element => (
   <BaseLayout>
-    {/* HeroSection */}
     <Hero />
-
-    {/* WelcomeSection */}
     <WelcomeSection />
-
-    {/* BotsSection */}
     <BotsSection />
-
-    {/* ProjectsSection */}
     <ProjectsSection projects={projects} />
-
-    {/* RoadmapSection */}
     <RoadmapSection />
   </BaseLayout>
 )

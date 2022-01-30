@@ -1,6 +1,6 @@
+import React, { Dispatch, SetStateAction } from 'react'
 import { Badge, IconButton, Menu } from '@iotabots/components'
 import { MenuItem } from '@mui/material'
-import React, { Dispatch, SetStateAction } from 'react'
 import Twitter from '@mui/icons-material/Twitter'
 import ActiveLink from '../ActiveLink'
 import { MOBILE_MENU } from './menu'
@@ -35,7 +35,7 @@ const MobileMenu: React.FC<Props> = (props) => {
       onClose={handleMobileMenuClose}
     >
       {MOBILE_MENU.map((item) => (
-        <MenuItem key={item.label}>
+        <MenuItem sx={{ 'a': { fontFamily: 'Inter' } }} key={item.label}>
           <ActiveLink href={item.link} label={item.label} />
         </MenuItem>
       ))}

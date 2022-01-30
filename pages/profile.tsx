@@ -1,33 +1,29 @@
+/* eslint-disable max-len */
 import * as React from 'react'
 import { Box, Container, Grid, Typography } from '@iotabots/components'
 import BaseLayout from '../layout/BaseLayout'
 import FakeIotabots from '../components/FakeIotabots'
 import Connector from '../components/Connector/Connector'
+import Section from '../components/Section'
 
 const Profile: React.FC = (props) => (
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
   <BaseLayout>
-    <Container maxWidth='md'>
-      <Box sx={{ my: 4 }}>
-        <Typography m='50px 0' variant='h1' gutterBottom>
-          Profile
+    <Section>
+      <Container maxWidth='md'>
+        <Typography variant='h1'>Profile</Typography>
+        <Typography fontSize={20} mb={6} color='rgba(255,255,255,0.75)'>
+          Here at your profile we will show all your NFTs from different collections.
         </Typography>
-      </Box>
-      <Grid container spacing={2}>
-        <Grid p='40px' item xs={12} md={4}>
-          <Connector />
+        <Grid container spacing={2}>
+          <Grid p='40px' item xs={12} md={4}>
+            <Connector />
+          </Grid>
+          <Grid p='40px' item xs={12} md={8}>
+            <FakeIotabots addresses={props} />
+          </Grid>
         </Grid>
-
-        <Grid p='40px' item xs={12} md={8}>
-          <Typography variant='h3' gutterBottom>
-            Your NFTs
-          </Typography>
-          <FakeIotabots addresses={props} />
-        </Grid>
-      </Grid>
-      {/* IOTABOTS NFTs */}
-    </Container>
+      </Container>
+    </Section>
   </BaseLayout>
 )
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type

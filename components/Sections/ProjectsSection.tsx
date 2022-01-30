@@ -12,7 +12,7 @@ const ProjectsSection = ({ projects }) => {
     router.push('/projects')
   }
   return (
-    <Box py={8} bgcolor='background.default'>
+    <Box py={8}>
       <Fade bottom>
         <Container maxWidth='md'>
           <Typography variant='h3' align='center' sx={{ pb: 6 }}>

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useRef, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import {
@@ -13,7 +14,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
 import { ProfilePicture } from '../ProfilePicture'
 
-// eslint-disable-next-line max-len
+
 const ERROR_NO_ETH_PROVIDER =
   'No Wallet Browser Extension detected, install Browser Extension on desktop or visit from a dApp browser on mobile.'
 
@@ -67,6 +68,16 @@ const Balance: React.FC = () => {
   )
 }
 
+const boxStyles = {
+  mt: 4,
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  bgcolor: 'rgba(0,0,0,0.5)',
+  borderRadius: '8px',
+  p: 3
+}
+
 const Header: React.FC = () => {
   const { account } = useWeb3React()
   const [copySuccess, setCopySuccess] = useState('')
@@ -84,43 +95,40 @@ const Header: React.FC = () => {
       <form style={{ display: 'none' }}>
         <textarea ref={copyRef} value={account} />
       </form>
-      <Box mt='20px' display='flex' justifyContent='center' textAlign='center'>
-        <Typography pt='6px' noWrap variant='body1' paragraph>
-          {`${account?.substring(0, 4)}...${account?.substring(
-            // eslint-disable-next-line no-unsafe-optional-chaining
-            account?.length - 3,
-            account?.length
-          )}` || '-'}
+      {account && (
+        <Box sx={boxStyles}>
+          <Typography variant='button'>
+            {`${account.substring(0, 5)}...${account.substring(
+              account.length - 3,
+              account.length
+            )}`}
+          </Typography>
+          <Button
+            size='small'
+            variant='text'
+            onClick={(e) => copyToClipboard(e)}
+            endIcon={<ContentCopyIcon />}
+          >
+            Copy
+          </Button>
+        </Box>
+      )}
+
+      <Box sx={boxStyles}>
+        <Typography>
+          Balance
         </Typography>
-        {
-          /* Logical shortcut for only displaying the 
-        button if the copy command exists */
-          document.queryCommandSupported('copy') && (
-            <div>
-              <Button
-                size='small'
-                variant='text'
-                onClick={(e) => copyToClipboard(e)}
-                endIcon={<ContentCopyIcon />}
-              />
-
-              {copySuccess}
-            </div>
-          )
-        }
+        <Typography>
+          <Balance />
+        </Typography>
       </Box>
-
-      <Typography variant='body1' paragraph>
-        Balance:
-        <Balance />
-      </Typography>
     </Box>
   )
 }
 
 const Connector: React.FC = () => {
   const context = useWeb3React<Web3Provider>()
-  const { connector, library, account, deactivate, active, error } = context
+  const { connector, deactivate, active, error } = context
 
   // handle logic to recognize the connector currently being activated
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

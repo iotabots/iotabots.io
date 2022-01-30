@@ -18,12 +18,12 @@ export interface ModeContextProps {
 }
 
 export const ModeContext =
-  React.createContext<ModeContextProps>({ mode: 'light' as Mode })
+  React.createContext<ModeContextProps>({ mode: 'dark' as Mode })
 
 const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
   const { children } = props
 
-  const [modeState, setModeState] = React.useState<Mode>('light' as Mode)
+  const [modeState, setModeState] = React.useState<Mode>('dark' as Mode)
   const [themeState, setThemeState] =
     React.useState<CustomThemeName | undefined>('light')
 
