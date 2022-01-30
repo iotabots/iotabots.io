@@ -2,8 +2,8 @@
 import React from 'react'
 import { Container } from '@iotabots/components'
 import { Box, Grid, Typography } from '@mui/material'
-import Section from '../../../components/Section'
-import SectionHeader from '../../../components/SectionHeader'
+import Section from '../../components/Section'
+import SectionHeader from '../../components/SectionHeader'
 
 const data = {
   title: 'Metaverse',
@@ -38,11 +38,11 @@ const Metaverse: React.FC = () => (
             item
             xs={12}
             container
-            spacing={6}
+            spacing={{ xs: 4, md: 6 }}
             alignItems='center'
-            sx={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
+            direction={index % 2 === 0 ? 'row' : 'row-reverse'}
           >
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={8} md={6} >
               <Typography variant='h2'>
                 {item.headline}
               </Typography>
@@ -52,7 +52,9 @@ const Metaverse: React.FC = () => (
             </Grid>
             <Grid
               item
-              xs={6}
+              xs={12}
+              sm={4}
+              md={6}
               display='flex'
               justifyContent='center'
               alignItems='center'
@@ -60,7 +62,7 @@ const Metaverse: React.FC = () => (
               <Box
                 component='img'
                 src={item.image}
-                sx={{ maxWidth: '100%', maxHeight: '400px' }}
+                sx={{ maxWidth: '100%', maxHeight: { xs: '200px', sm: '400px' } }}
               />
             </Grid>
           </Grid>

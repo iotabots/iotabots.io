@@ -1,10 +1,10 @@
 import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import BaseLayout from '../../layout/BaseLayout'
-import Hero from './Sections/Hero'
-import Metaverse from './Sections/Metaverse'
-import Roadmap from './Sections/Roadmap'
+import BaseLayout from '../layout/BaseLayout'
+import Hero from '../sections/home/Hero'
+import Metaverse from '../sections/home/Metaverse'
+import Roadmap from '../sections/home/Roadmap'
 
 export const Home: React.FC = () => (
   <BaseLayout>

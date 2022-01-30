@@ -3,18 +3,18 @@ import {
   BotCard,
   Box,
   Container,
-  Input,
   Link,
-  Typography,
 } from '@iotabots/components'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { TextField } from '@mui/material'
+
 import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 import { SEO } from '../config'
 import Section from '../components/Section'
+import SectionHeader from '../components/SectionHeader'
+import Search from '../components/Search'
 
 const Bots: React.FC = () => {
   const [number, setNumber] = React.useState(() => null)
@@ -40,28 +40,15 @@ const Bots: React.FC = () => {
         <title>{`${SEO.title} | Bot List`}</title>
       </Head>
       <Section>
+        <SectionHeader
+          title='IOTABOTS'
+          subtitle='Discover all IOTABOTS or find your own.'
+        />
         <Container maxWidth='md'>
-          <Typography variant='h1' mb={3}>IOTABOTS</Typography>
-          <Typography fontSize={20} mb={6} color='text.secondary'>
-            Discover all IOTABOTS.
-          </Typography>
-          <Box mt={6} mb={6}>
-            <TextField
-              variant='filled'
-              placeholder='Search by number'
-              size='medium'
-              fullWidth
-              autoFocus
-              type='number'
+          <Box mb={6}>
+            <Search
               value={number}
               onChange={(e) => handleChange(parseInt(e.target.value, 10))}
-              sx={{
-                mb: 6,
-                '& .MuiFilledInput-input ': {
-                  bgcolor: 'rgba(0,0,0,0.5)',
-                  borderRadius: '8px',
-                }
-              }}
             />
             {number > 0 ? (
               <Box>

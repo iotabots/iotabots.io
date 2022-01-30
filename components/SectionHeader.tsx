@@ -7,7 +7,7 @@ interface SectionHeaderProps {
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
-  const { title, subtitle } = props
+  const { title, subtitle, children } = props
   return (
     <Container sx={{ mb: 8 }} maxWidth='sm'>
       <Typography
@@ -24,6 +24,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
       >
         {subtitle}
       </Typography>
+      {children}
     </Container>
   )
 }

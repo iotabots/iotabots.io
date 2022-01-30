@@ -2,10 +2,9 @@
 import React from 'react'
 import { Button } from '@iotabots/components'
 import { Box, Container, Grid, Typography } from '@mui/material'
-import iotabots from '../../../public/assets/iotabots.png'
-import Section from '../../../components/Section'
+import iotabots from '../../public/assets/iotabots.png'
+import Section from '../../components/Section'
 
-// Change Content here
 const data = {
   title: 'NFT GAMES on IOTA',
   subtitle: 'IOTABOTS was the first project which launched Profile Picture Non-Fungible Tokens (PFP NFTs) on the public IOTA Smart Contracts EVM Testnet.',
