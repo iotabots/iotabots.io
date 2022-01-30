@@ -1,26 +1,27 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import * as React from 'react'
-import { Typography } from '@iotabots/components'
+import { Container } from '@mui/material'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
+import BaseLayout from '../../layout/BaseLayout'
+import Section from '../../components/Section'
+import SectionHeader from '../../components/SectionHeader'
 
 interface IProps {
   project: ProjectInfo
 }
 
 const Project: React.FC<IProps> = ({ project }) => (
-  <div>
-    <div>
-      <img src={project.meta.thumbnail} alt={project.meta.description} />
-      <div >
-        <Typography variant='h1'>{project.meta.title}</Typography>
-      </div>
-    </div>
-    <div>
-      <Markdown content={project.content} />
-    </div>
-  </div>
+  <BaseLayout>
+    <Section>
+      <SectionHeader title={project.meta.title} subtitle='' />
+      <Container maxWidth='md'>
+        <img src={project.meta.thumbnail} alt={project.meta.description} />
+        <Markdown content={project.content} />
+      </Container>
+    </Section>
+  </BaseLayout>
 )
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type

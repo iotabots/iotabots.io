@@ -1,11 +1,12 @@
+import * as React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import * as React from 'react'
-import { Container, Grid, Typography } from '@iotabots/components'
+import { Container, Grid } from '@iotabots/components'
 import ProjectCard from '../components/ProjectCard'
 import { ProjectMeta } from '../interfaces/project'
 import BaseLayout from '../layout/BaseLayout'
 import Section from '../components/Section'
+import SectionHeader from '../components/SectionHeader'
 
 interface IProps {
   projects: ProjectMeta[]
@@ -14,27 +15,25 @@ interface IProps {
 const Projects: React.FC<IProps> = ({ projects }) => (
   <BaseLayout>
     <Section>
+      <SectionHeader title='Projects'
+        subtitle='The IOTABOTS Team and the Community building amazing projects.
+          Discover all projects in the IOTABOTS Metaverse.' />
       <Container>
-        <Typography variant='h1' mb={3}>Projects</Typography>
-        <Typography fontSize={20} mb={6} color='text.secondary'>
-          The IOTABOTS Team and the Community building amazing projects.
-          Discover all projects in the IOTABOTS Metaverse.
-        </Typography>
-
         <Grid
           style={{
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
           }}
-          mt={6}
           container
           spacing={6}
         >
           {projects.map((project) => (
             <Grid
               item
-              xs={4}
+              xs={12}
+              sm={6}
+              md={4}
               key={project.slug}
             >
               <ProjectCard key={project.slug} project={project} />
