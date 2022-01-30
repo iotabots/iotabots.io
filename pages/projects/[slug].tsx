@@ -1,7 +1,7 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import * as React from 'react'
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
 import BaseLayout from '../../layout/BaseLayout'
@@ -16,8 +16,19 @@ const Project: React.FC<IProps> = ({ project }) => (
   <BaseLayout>
     <Section>
       <SectionHeader title={project.meta.title} subtitle='' />
-      <Container maxWidth='md'>
-        <img src={project.meta.thumbnail} alt={project.meta.description} />
+      <Container maxWidth='sm'>
+        <Box
+          component='img'
+          sx={{
+            borderRadius: '8px',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: '320px',
+            border: 'none',
+            width: '100%',
+            background: `url(${project.meta.thumbnail})`,
+          }}
+        />
         <Markdown content={project.content} />
       </Container>
     </Section>
