@@ -31,7 +31,13 @@ const Hero: React.FC = () => {
             justifyContent='center'
             alignItems='flex-start'
           >
-            <Typography variant='h1' mb={2} fontSize='92px' lineHeight='100%'>
+            <Typography
+              variant='h1'
+              mb={2}
+              sx={{
+                fontSize: { xs: '62px', md: '92px' }
+              }}
+              lineHeight='100%'>
               {data.title}
             </Typography>
             <Typography
@@ -58,7 +64,7 @@ const Hero: React.FC = () => {
           </Grid>
         </Grid>
       </Container>
-    </Section>
+    </Section >
   )
 }
 

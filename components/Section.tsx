@@ -7,7 +7,7 @@ const Section: React.FC<BoxProps> = (props) => {
     <Box {...props}
       sx={{
         py: '160px',
-        px: 8,
+        px: { xs: 6, md: 8 },
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',

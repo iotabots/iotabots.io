@@ -43,7 +43,10 @@ const Metaverse: React.FC = () => (
             direction={index % 2 === 0 ? 'row' : 'row-reverse'}
           >
             <Grid item xs={12} sm={8} md={6} >
-              <Typography variant='h2'>
+              <Typography variant='h2'
+                sx={{
+                  fontSize: { xs: '32px', md: '48px' },
+                }}>
                 {item.headline}
               </Typography>
               <Typography variant='subtitle2' color='rgba(255,255,255,0.66)'>

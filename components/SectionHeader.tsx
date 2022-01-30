@@ -14,6 +14,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = (props) => {
         variant='h1'
         component='h2'
         textAlign='center'
+        sx={{
+          fontSize: { xs: '40px', md: '62px' },
+        }}
       >
         {title}
       </Typography>
