@@ -1,0 +1,73 @@
+/* eslint-disable max-len */
+import React from 'react'
+import { Container } from '@iotabots/components'
+import { Box, Grid, Typography } from '@mui/material'
+import Section from '../../../components/Section'
+import SectionHeader from '../../../components/SectionHeader'
+
+const data = {
+  title: 'Metaverse',
+  subtitle: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
+  data: [
+    {
+      headline: 'Spacebots',
+      text: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
+      image: '/assets/metaverse/gameboy.png',
+    },
+    {
+      headline: 'Trading Cards',
+      text: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
+      image: '/assets/metaverse/tradingcards.png',
+    },
+    {
+      headline: 'IOTABOTS',
+      text: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
+      image: '/assets/metaverse/iotabots.png',
+    }
+  ]
+}
+
+const Metaverse: React.FC = () => (
+  <Section>
+    <SectionHeader title={data.title} subtitle={data.subtitle} />
+    <Container>
+      <Grid container spacing={8}>
+        {data.data.flatMap((item, index) => (
+          <Grid
+            key={item.headline}
+            item
+            xs={12}
+            container
+            spacing={6}
+            alignItems='center'
+            sx={{ flexDirection: index % 2 === 0 ? 'row' : 'row-reverse' }}
+          >
+            <Grid item xs={6}>
+              <Typography variant='h2'>
+                {item.headline}
+              </Typography>
+              <Typography variant='subtitle2' color='rgba(255,255,255,0.66)'>
+                {item.text}
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              display='flex'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Box
+                component='img'
+                src={item.image}
+                sx={{ maxWidth: '100%', maxHeight: '400px' }}
+              />
+            </Grid>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
+  </Section>
+)
+
+export default Metaverse

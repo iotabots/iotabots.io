@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { Box } from '@mui/material'
-import edgeTr from '../../public/assets/edge-tr.svg'
-import edgeBr from '../../public/assets/edge-br.svg'
-import edgeBl from '../../public/assets/edge-bl.svg'
-import edgeTl from '../../public/assets/edge-tl.svg'
+import edgeTr from '../../public/assets/frame/edge-tr.svg'
+import edgeBr from '../../public/assets/frame/edge-br.svg'
+import edgeBl from '../../public/assets/frame/edge-bl.svg'
+import edgeTl from '../../public/assets/frame/edge-tl.svg'
 
 
 const Edges: React.FC = () => (

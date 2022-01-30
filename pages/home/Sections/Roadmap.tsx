@@ -1,37 +1,58 @@
+/* eslint-disable max-len */
 import React from 'react'
-import {
-  Box,
-  Container,
-  ContentBox,
-  Timeline,
-} from '@iotabots/components'
-import Fade from 'react-reveal/Zoom'
+import { Container, Timeline } from '@iotabots/components'
+import Section from '../../../components/Section'
+import SectionHeader from '../../../components/SectionHeader'
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const RoadmapSection = () => (
-  <Box py={8}>
-    <Fade bottom>
-      <Container maxWidth='md'>
-        <ContentBox headline='Roadmap' text='' image=''>
-          <Timeline checked title='Website relaunch'>
-            Better Teck Stack, UI Improvments and extern component library.
-          </Timeline>
-          <Timeline checked title='Twitter Giveaways'>
-            Everyday Giveaways on Twitter.
-          </Timeline>
-          <Timeline checked title='Drop #3'>
-            Free drop of 1001 Spacebots Game NFT.
-          </Timeline>
-          <Timeline checked title='Drop #2'>
-            Free drop of 500 unique IOTABOTS NFTs from Number 501-1000.
-          </Timeline>
-          <Timeline checked title='Drop #1'>
-            Free drop of 500 unique IOTABOTS NFTs from Number 1-500.
-          </Timeline>
-        </ContentBox>
-      </Container>
-    </Fade>
-  </Box>
+const data = {
+  title: 'Roadmap',
+  subtitle: 'This is what we already achieved and what is in the workings - stay tuned.',
+  data: [
+    {
+      title: 'Drop #1',
+      description: 'Free drop of 500 unique IOTABOTS NFTs from Number 1-500.',
+      checked: true
+    },
+    {
+      title: 'Drop #2',
+      description: 'Free drop of 500 unique IOTABOTS NFTs from Number 501-1000.',
+      checked: true
+    },
+    {
+      title: 'Drop #3',
+      description: 'Free drop of 1001 Spacebots Game NFT.',
+      checked: true
+    },
+    {
+      title: 'Twitter Giveaways',
+      description: 'Everyday Giveaways on Twitter.',
+      checked: true
+    },
+    {
+      title: 'Website Relaunch',
+      description: 'Better Teck Stack, UI Improvments and extern component library.',
+      checked: true
+    },
+    {
+      title: 'Rebranding & Relaunch',
+      description: 'Better branding, better UI / UX, better structure.',
+      checked: false
+    },
+  ]
+}
+
+const RoadmapSection: React.FC = () => (
+  <Section>
+    <SectionHeader title={data.title} subtitle={data.subtitle} />
+    <Container maxWidth='md'>
+      {data.data.map(({ checked, title, description }) => (
+        <Timeline checked={checked} title={title}>
+          {description}
+        </Timeline>
+      ))}
+
+    </Container>
+  </Section>
 )
 
 export default RoadmapSection
