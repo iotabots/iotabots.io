@@ -8,7 +8,7 @@ const FAQ: React.FC = () => (
   <BaseLayout>
     <Section>
       <Container>
-        <Typography variant='h1'>FAQ</Typography>
+        <Typography variant='h1' mb={3}>FAQ</Typography>
         <Typography fontSize={20} mb={6} color='text.secondary'>
           The most important questions are collected here.
         </Typography>

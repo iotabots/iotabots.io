@@ -10,6 +10,7 @@ import {
 import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { TextField } from '@mui/material'
 import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 import { SEO } from '../config'
@@ -40,24 +41,30 @@ const Bots: React.FC = () => {
       </Head>
       <Section>
         <Container maxWidth='md'>
-          <Box display='flex' flexDirection='column' alignItems='center'>
-            <Typography gutterBottom variant='h1'>
-              IOTABOTS
-            </Typography>
-            <Typography variant='body1'>Discover all IOTABOTS.</Typography>
-            <Box mt={6} mb={6}>
-              <Typography gutterBottom variant='body1'>
-                Search with Number:
-              </Typography>
-              <Input
-                autoFocus
-                type='number'
-                value={number}
-                onChange={(e) => handleChange(parseInt(e.target.value, 10))}
-              />
-            </Box>
+          <Typography variant='h1' mb={3}>IOTABOTS</Typography>
+          <Typography fontSize={20} mb={6} color='text.secondary'>
+            Discover all IOTABOTS.
+          </Typography>
+          <Box mt={6} mb={6}>
+            <TextField
+              variant='filled'
+              placeholder='Search by number'
+              size='medium'
+              fullWidth
+              autoFocus
+              type='number'
+              value={number}
+              onChange={(e) => handleChange(parseInt(e.target.value, 10))}
+              sx={{
+                mb: 6,
+                '& .MuiFilledInput-input ': {
+                  bgcolor: 'rgba(0,0,0,0.5)',
+                  borderRadius: '8px',
+                }
+              }}
+            />
             {number > 0 ? (
-              <Box pt={6}>
+              <Box>
                 <BotCard
                   image={
                     <Link href={`/bots/${number}`}>
@@ -83,7 +90,7 @@ const Bots: React.FC = () => {
           </Box>
         </Container>
       </Section>
-    </BaseLayout>
+    </BaseLayout >
   )
 }
 export default Bots

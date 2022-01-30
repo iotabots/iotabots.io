@@ -8,19 +8,21 @@ const Copyright: React.FC = () => (
 )
 
 export const Footer: React.FC = () => (
-  <Box sx={{ px: 2, py: 6 }} component='footer'>
-    <Typography
-      variant='body1'
-      color='text.secondary'
-      align='center'
-      gutterBottom
-    >
-      *BEE* *BOB* *BOO*
-    </Typography>
-    <Typography gutterBottom align='center' color='text.secondary'>
-      Dont Miss the Next Drop - Follow us on Twitter
-    </Typography>
-    <br />
+  <Box
+    sx={{
+      mx: 'auto',
+      my: 8,
+      width: 'calc(100% - 124px)',
+      px: 5,
+      py: 4,
+      bgcolor: 'rgba(0,0,0,0.5)',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      borderRadius: '8px'
+    }}
+    component='footer'
+  >
     <Typography gutterBottom align='center' color='text.primary'>
       <Link
         href='https://twitter.com/iotabots'
@@ -32,5 +34,32 @@ export const Footer: React.FC = () => (
         <Copyright />
       </Link>
     </Typography>
+    <Typography variant='button'>
+      *BEE* *BOB* *BOO*
+    </Typography>
+    <Box display='flex' >
+      <Link
+        href='https://twitter.com/iotabots'
+        target='_blank'
+        rel='noreferrer'
+        className='link decent'
+        color='inherit'
+      >
+        <Typography ml={4} variant='body2' color='text.secondary'>
+          Discord
+        </Typography>
+      </Link>
+      <Link
+        href='https://twitter.com/iotabots'
+        target='_blank'
+        rel='noreferrer'
+        className='link decent'
+        color='inherit'
+      >
+        <Typography ml={4} variant='body2' color='text.secondary'>
+          Twitter
+        </Typography>
+      </Link>
+    </Box>
   </Box>
 )

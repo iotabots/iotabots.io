@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Button, Chip, Typography } from '@iotabots/components'
-import { Card, CardActions, CardContent, CardMedia } from '@mui/material'
+import { Card, CardContent, CardMedia } from '@mui/material'
 import { ProjectMeta } from '../interfaces/project'
 
 interface IProps {
@@ -22,7 +22,7 @@ const ProjectCard: React.FC<IProps> = ({ project }) => (
     <CardMedia sx={{ height: 200 }} image={project.thumbnail} />
     <CardContent>
       <Status status={project.status} />
-      <Typography my={3} variant='h5'>
+      <Typography mt={3} mb={1} variant='h4'>
         {project.title}
       </Typography>
       <Typography variant='body1' color='rgba(255,255,255,0.8)' paragraph>

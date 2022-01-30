@@ -15,10 +15,8 @@ const Projects: React.FC<IProps> = ({ projects }) => (
   <BaseLayout>
     <Section>
       <Container>
-        <Typography gutterBottom variant='h1'>
-          Projects
-        </Typography>
-        <Typography variant='body1'>
+        <Typography variant='h1' mb={3}>Projects</Typography>
+        <Typography fontSize={20} mb={6} color='text.secondary'>
           The IOTABOTS Team and the Community building amazing projects.
           Discover all projects in the IOTABOTS Metaverse.
         </Typography>
