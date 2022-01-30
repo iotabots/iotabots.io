@@ -20,6 +20,9 @@ export const Footer: React.FC = () => (
       justifyContent: 'space-between',
       alignItems: 'center',
       borderRadius: '8px',
+      borderStyle: 'solid',
+      borderWidth: 2,
+      borderColor: 'rgba(0,0,0,0.5)',
       position: 'relative',
       zIndex: 11,
     }}
