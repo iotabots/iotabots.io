@@ -1,20 +1,20 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import React from 'react'
-import BaseLayout from '../layout/BaseLayout'
-import Hero from '../components/Sections/HeroSection'
-import ProjectsSection from '../components/Sections/ProjectsSection'
-import BotsSection from '../components/Sections/BotsSection'
-import WelcomeSection from '../components/Sections/WelcomeSection'
-import RoadmapSection from '../components/Sections/RoadmapSection'
+import BaseLayout from '../../layout/BaseLayout'
+import Hero from './Sections/Hero'
+import Projects from './Sections/Projects'
+import Bots from './Sections/Bots'
+import Welcome from './Sections/Welcome'
+import Roadmap from './Sections/Roadmap'
 
 export const Home = ({ projects }): JSX.Element => (
   <BaseLayout>
     <Hero />
-    <WelcomeSection />
-    <BotsSection />
-    <ProjectsSection projects={projects} />
-    <RoadmapSection />
+    <Welcome />
+    <Bots />
+    <Projects projects={projects} />
+    <Roadmap />
   </BaseLayout>
 )
 

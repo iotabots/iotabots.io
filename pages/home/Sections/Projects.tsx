@@ -2,10 +2,10 @@ import React from 'react'
 import { Box, Button, Container, Grid, Typography } from '@iotabots/components'
 import { useRouter } from 'next/router'
 import Fade from 'react-reveal/Zoom'
-import ProjectCard from '../ProjectCard'
+import ProjectCard from '../../../components/ProjectCard'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const ProjectsSection = ({ projects }) => {
+const Projects = ({ projects }) => {
   const router = useRouter()
 
   const goToProjects = (): void => {
@@ -64,4 +64,4 @@ const ProjectsSection = ({ projects }) => {
   )
 }
 
-export default ProjectsSection
+export default Projects

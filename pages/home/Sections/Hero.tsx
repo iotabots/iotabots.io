@@ -1,28 +1,27 @@
 /* eslint-disable max-len */
 import React from 'react'
-import { Box, Button, Typography } from '@iotabots/components'
-import { Container, Grid } from '@mui/material'
-import iotabots from '../../public/assets/iotabots.png'
+import { Button } from '@iotabots/components'
+import { Box, Container, Grid, Typography } from '@mui/material'
+import iotabots from '../../../public/assets/iotabots.png'
+import Section from '../../../components/Section'
 
-const HeroSection: React.FC = () => {
+const Hero: React.FC = () => {
   const scrollToBottom = (): void => {
     const bottomEle = document.getElementById('welcome')
     if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
   }
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh'
-      }}
-    >
+    <Section sx={{ justifyContent: 'center' }}>
       <Container>
-        <Grid container spacing={6}>
+        <Grid
+          container
+          sx={{ flexDirection: { xs: 'column-reverse', md: 'row' } }}
+          spacing={6}
+        >
           <Grid
             item
-            xs={6}
+            xs={12}
+            md={6}
             display='flex'
             flexDirection='column'
             justifyContent='center'
@@ -36,19 +35,29 @@ const HeroSection: React.FC = () => {
             </Typography>
             <Button
               size='large'
-              sx={{ fontWeight: 'bold' }}
+              color='secondary'
+              sx={{
+                '&.MuiButton-containedSecondary': {
+                  bgcolor: 'secondary.main',
+                  borderColor: 'secondary.light'
+                }
+              }}
               onClick={() => scrollToBottom}
             >
               Explore Metaverse
             </Button>
           </Grid>
-          <Grid item xs={6}>
-            <img alt='3D Logo Animation' src={iotabots.src} />
+          <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
+            <Box
+              sx={{ width: '100%' }}
+              component='img'
+              src={iotabots.src}
+            />
           </Grid>
         </Grid>
       </Container>
-    </Box >
+    </Section>
   )
 }
 
-export default HeroSection
+export default Hero

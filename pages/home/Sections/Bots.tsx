@@ -2,10 +2,10 @@ import React from 'react'
 import { Box, Button, Container, Typography } from '@iotabots/components'
 import { useRouter } from 'next/router'
 import Fade from 'react-reveal/Zoom'
-import IotabotGrid from '../IotabotGrid'
+import IotabotGrid from '../../../components/IotabotGrid'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const BotsSection = () => {
+const Bots = () => {
   const router = useRouter()
   const goToBots = (): void => {
     router.push('/bots')
@@ -60,4 +60,4 @@ const BotsSection = () => {
   )
 }
 
-export default BotsSection
+export default Bots
