@@ -1,9 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react'
-import { Container } from '@iotabots/components'
-import { Box, Grid, Typography } from '@mui/material'
-import Section from '../../components/Section'
-import SectionHeader from '../../components/SectionHeader'
+import { Box } from '@mui/material'
+import { Container, Grid, Section, SectionHeader, Typography } from '@iotabots/components'
 
 const data = {
   title: 'Metaverse',

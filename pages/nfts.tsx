@@ -1,18 +1,18 @@
 import * as React from 'react'
-import { Box, Container, Typography } from '@iotabots/components'
-import BaseLayout from '../layout/BaseLayout'
+import {
+  BaseLayout,
+  Section,
+  SectionHeader,
+} from '@iotabots/components'
 
 const Nfts: React.FC = () => (
   <BaseLayout>
-    <Box>
-      <Container maxWidth='sm'>
-        <Box sx={{ my: 4 }}>
-          <Typography variant='h4' gutterBottom>
-            Mint your NFT now for free with zero costs!
-          </Typography>
-        </Box>
-      </Container>
-    </Box>
+    <Section>
+      <SectionHeader
+        title='NFTs'
+        subtitle='Mint your NFT now for free with zero costs!'
+      />
+    </Section>
   </BaseLayout>
 )
 

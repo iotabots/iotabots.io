@@ -11,8 +11,8 @@ import { formatEther } from '@ethersproject/units'
 
 import { Box, Button, Typography } from '@iotabots/components'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import { useEagerConnect, useInactiveListener } from '../../utils/hooks'
-import { ProfilePicture } from '../ProfilePicture'
+import { useEagerConnect, useInactiveListener } from '../utils/hooks'
+import { ProfilePicture } from './ProfilePicture'
 
 
 const ERROR_NO_ETH_PROVIDER =

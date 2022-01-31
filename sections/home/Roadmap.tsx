@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react'
-import { Container, Timeline } from '@iotabots/components'
-import Section from '../../components/Section'
-import SectionHeader from '../../components/SectionHeader'
+import { Container, Section, SectionHeader, Timeline } from '@iotabots/components'
 
 const data = {
   title: 'Roadmap',

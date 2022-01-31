@@ -1,10 +1,15 @@
 import * as React from 'react'
-import { BotCard, Box, Container, Typography } from '@iotabots/components'
+import {
+  BaseLayout,
+  BotCard,
+  Box,
+  Container,
+  Section,
+  Typography
+} from '@iotabots/components'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Head from 'next/head'
-import BaseLayout from '../../layout/BaseLayout'
-import Section from '../../components/Section'
 
 interface BotAttribute {
   // eslint-disable-next-line camelcase

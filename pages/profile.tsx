@@ -1,24 +1,28 @@
 /* eslint-disable max-len */
 import * as React from 'react'
-import { Box, Container, Grid, Typography } from '@iotabots/components'
-import BaseLayout from '../layout/BaseLayout'
+import {
+  BaseLayout,
+  Container,
+  Grid,
+  Section,
+  SectionHeader
+} from '@iotabots/components'
 import FakeIotabots from '../components/FakeIotabots'
-import Connector from '../components/Connector/Connector'
-import Section from '../components/Section'
+import Connector from '../components/Connector'
 
 const Profile: React.FC = (props) => (
   <BaseLayout>
     <Section>
+      <SectionHeader
+        title='Profile'
+        subtitle='Here at your profile we will show all your NFTs from different collections.'
+      />
       <Container maxWidth='md'>
-        <Typography variant='h1'>Profile</Typography>
-        <Typography fontSize={20} mb={6} color='rgba(255,255,255,0.75)'>
-          Here at your profile we will show all your NFTs from different collections.
-        </Typography>
-        <Grid container spacing={2}>
-          <Grid p='40px' item xs={12} md={4}>
+        <Grid container spacing={6}>
+          <Grid item xs={12} md={4}>
             <Connector />
           </Grid>
-          <Grid p='40px' item xs={12} md={8}>
+          <Grid item xs={12} md={8}>
             <FakeIotabots addresses={props} />
           </Grid>
         </Grid>

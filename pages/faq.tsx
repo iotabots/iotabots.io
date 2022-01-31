@@ -1,17 +1,21 @@
 import * as React from 'react'
-import { Container, ContentBox } from '@iotabots/components'
-import { Typography } from '@mui/material'
-import BaseLayout from '../layout/BaseLayout'
-import Section from '../components/Section'
+import {
+  BaseLayout,
+  Container,
+  ContentBox,
+  Section,
+  SectionHeader,
+  Typography
+} from '@iotabots/components'
 
 const FAQ: React.FC = () => (
   <BaseLayout>
     <Section>
+      <SectionHeader
+        title='FAQ'
+        subtitle='The most important questions are collected here.'
+      />
       <Container>
-        <Typography variant='h1' mb={3}>FAQ</Typography>
-        <Typography fontSize={20} mb={6} color='text.secondary'>
-          The most important questions are collected here.
-        </Typography>
         <ContentBox
           image='http://assets.iotabots.io/compressed/11.png'
           // eslint-disable-next-line max-len

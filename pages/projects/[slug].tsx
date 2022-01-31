@@ -1,12 +1,15 @@
+import * as React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import * as React from 'react'
-import { Box, Container } from '@mui/material'
+import {
+  BaseLayout,
+  Box,
+  Container,
+  Section,
+  SectionHeader
+} from '@iotabots/components'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
-import BaseLayout from '../../layout/BaseLayout'
-import Section from '../../components/Section'
-import SectionHeader from '../../components/SectionHeader'
 
 interface IProps {
   project: ProjectInfo

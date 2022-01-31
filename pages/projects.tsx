@@ -1,12 +1,15 @@
 import * as React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { Container, Grid } from '@iotabots/components'
+import {
+  BaseLayout,
+  Container,
+  Grid,
+  Section,
+  SectionHeader
+} from '@iotabots/components'
 import ProjectCard from '../components/ProjectCard'
 import { ProjectMeta } from '../interfaces/project'
-import BaseLayout from '../layout/BaseLayout'
-import Section from '../components/Section'
-import SectionHeader from '../components/SectionHeader'
 
 interface IProps {
   projects: ProjectMeta[]

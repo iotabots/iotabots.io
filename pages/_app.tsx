@@ -8,8 +8,11 @@ import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import ReactGA from 'react-ga'
-import { Navigation } from '../components/Navigation/Navigation'
+import { Navigation } from '@iotabots/components'
+import { useRouter } from 'next/router'
 import { SEO } from '../config'
+import ActiveLink from '../components/ActiveLink'
+import Logo from '../components/Logo'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const getLibrary = (provider: any): Web3Provider => {
@@ -18,12 +21,21 @@ const getLibrary = (provider: any): Web3Provider => {
   return library
 }
 
+const menuItems = [
+  <ActiveLink href='/' label='Home' />,
+  <ActiveLink href='/bots' label='Bots' />,
+  <ActiveLink href='/projects' label='Projects' />,
+  <ActiveLink href='/faq' label='FAQ' />,
+
+]
+
 const YOUR_TRACKING_ID = 'G-YTZ512CCQL'
 
 const ThemeProvider = dynamic(() => import('../contexts/Theme'), { ssr: false })
 
 const App: React.FC<AppProps> = (props) => {
   const { pageProps, Component } = props
+  const { push } = useRouter()
 
   React.useEffect(() => {
     ReactGA.initialize(`${YOUR_TRACKING_ID}`)
@@ -76,7 +88,13 @@ const App: React.FC<AppProps> = (props) => {
       </Head>
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
-          <Navigation />
+          <Navigation
+            menu={menuItems}
+            mobileMenu={menuItems}
+            identity
+            logo={<Logo />}
+            onClickProfile={() => push('/profile')}
+          />
           <Component {...pageProps} />
         </Web3ReactProvider>
       </ThemeProvider>

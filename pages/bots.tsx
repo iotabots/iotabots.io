@@ -1,20 +1,19 @@
 import * as React from 'react'
 import {
+  BaseLayout,
   BotCard,
   Box,
   Container,
   Link,
+  Search,
+  Section,
+  SectionHeader
 } from '@iotabots/components'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-
-import BaseLayout from '../layout/BaseLayout'
 import BotList from '../components/BotList'
 import { SEO } from '../config'
-import Section from '../components/Section'
-import SectionHeader from '../components/SectionHeader'
-import Search from '../components/Search'
 
 const Bots: React.FC = () => {
   const [number, setNumber] = React.useState(() => null)

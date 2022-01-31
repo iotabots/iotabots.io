@@ -1,9 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react'
-import { Button } from '@iotabots/components'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box } from '@mui/material'
+import { Button, Container, Grid, Section, Typography } from '@iotabots/components'
 import iotabots from '../../public/assets/iotabots.png'
-import Section from '../../components/Section'
 
 const data = {
   title: 'NFT GAMES on IOTA',
