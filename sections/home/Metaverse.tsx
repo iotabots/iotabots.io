@@ -1,28 +1,34 @@
 /* eslint-disable max-len */
 import React from 'react'
 import { Box } from '@mui/material'
-import { Container, Grid, Section, SectionHeader, Typography } from '@iotabots/components'
+import {
+  Container,
+  Grid,
+  Section,
+  SectionHeader,
+  Typography,
+} from '@iotabots/components'
 
 const data = {
   title: 'Metaverse',
-  subtitle: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
+  subtitle: 'NFTs | DEFI | DAO | GAMES | P2E | 100% OPENSOURCE',
   data: [
     {
-      headline: 'Spacebots',
-      text: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
-      image: '/assets/metaverse/gameboy.png',
+      headline: 'IOTABOTS',
+      text: 'IOTABOTS Profile Picture (PFP) NFTs were the first minted NFTs on IOTA. They bring access for the Metaverse via web3 applications.',
+      image: '/assets/metaverse/iotabots.png',
     },
     {
-      headline: 'Trading Cards',
-      text: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
+      headline: 'Trading Card Game',
+      text: 'The IOTABOTS TCG is the connection between the real world and the Metaverse. The game consists of physical cards and and NFTs. Collect, trade, play & earn!',
       image: '/assets/metaverse/tradingcards.png',
     },
     {
-      headline: 'IOTABOTS',
-      text: 'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Abgeschieden wohnen sie in Buchstabhausen an der Küste des Semantik.',
-      image: '/assets/metaverse/iotabots.png',
-    }
-  ]
+      headline: 'Spacebots',
+      text: 'This was the first NFT Game of many more following in the future. Spacebots is pixelbased simple game and just 1001 games are available as a NFT. shows, how NFTs can be used for game access.',
+      image: '/assets/metaverse/gameboy.png',
+    },
+  ],
 }
 
 const Metaverse: React.FC = () => (
@@ -40,11 +46,13 @@ const Metaverse: React.FC = () => (
             alignItems='center'
             direction={index % 2 === 0 ? 'row' : 'row-reverse'}
           >
-            <Grid item xs={12} sm={8} md={6} >
-              <Typography variant='h2'
+            <Grid item xs={12} sm={8} md={6}>
+              <Typography
+                variant='h2'
                 sx={{
                   fontSize: { xs: '32px', md: '48px' },
-                }}>
+                }}
+              >
                 {item.headline}
               </Typography>
               <Typography variant='subtitle2' color='rgba(255,255,255,0.66)'>
@@ -63,7 +71,10 @@ const Metaverse: React.FC = () => (
               <Box
                 component='img'
                 src={item.image}
-                sx={{ maxWidth: '100%', maxHeight: { xs: '200px', sm: '400px' } }}
+                sx={{
+                  maxWidth: '100%',
+                  maxHeight: { xs: '200px', sm: '400px' },
+                }}
               />
             </Grid>
           </Grid>

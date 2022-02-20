@@ -1,14 +1,21 @@
 /* eslint-disable max-len */
 import React from 'react'
 import { Box } from '@mui/material'
-import { Button, Container, Grid, Section, Typography } from '@iotabots/components'
+import {
+  Button,
+  Container,
+  Grid,
+  Section,
+  Typography,
+} from '@iotabots/components'
 import iotabots from '../../public/assets/iotabots.png'
 
 const data = {
-  title: 'NFT GAMES on IOTA',
-  subtitle: 'IOTABOTS was the first project which launched Profile Picture Non-Fungible Tokens (PFP NFTs) on the public IOTA Smart Contracts EVM Testnet.',
+  title: 'Enter the Multiverse',
+  subtitle:
+    '*BEE* *BOB* *BOO* First NFT project on IOTA. Discover the Metaverse | NFTs | DEFI | DAO | GAMES | P2E | 100% OPENSOURCE',
   buttonText: 'Explore Metaverse',
-  image: iotabots.src
+  image: iotabots.src,
 }
 
 const Hero: React.FC = () => {
@@ -34,9 +41,10 @@ const Hero: React.FC = () => {
               variant='h1'
               mb={2}
               sx={{
-                fontSize: { xs: '62px', md: '92px' }
+                fontSize: { xs: '62px', md: '92px' },
               }}
-              lineHeight='100%'>
+              lineHeight='100%'
+            >
               {data.title}
             </Typography>
             <Typography
@@ -55,15 +63,11 @@ const Hero: React.FC = () => {
             </Button>
           </Grid>
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
-            <Box
-              sx={{ width: '100%' }}
-              component='img'
-              src={data.image}
-            />
+            <Box sx={{ width: '100%' }} component='img' src={data.image} />
           </Grid>
         </Grid>
       </Container>
-    </Section >
+    </Section>
   )
 }
 
