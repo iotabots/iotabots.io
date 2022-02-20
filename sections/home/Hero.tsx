@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@iotabots/components'
 import Lottie from 'react-lottie-player'
-import iotabots from '../../public/assets/iotabots.png'
+import iotabots from '../../public/assets/logo_anim.gif'
 
 const data = {
   title: 'Enter the Multiverse',
