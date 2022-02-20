@@ -20,7 +20,7 @@ const data = {
 
 const Hero: React.FC = () => {
   const scrollToBottom = (): void => {
-    const bottomEle = document.getElementById('welcome')
+    const bottomEle = document.getElementById('metaverse')
     if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -54,11 +54,7 @@ const Hero: React.FC = () => {
             >
               {data.subtitle}
             </Typography>
-            <Button
-              size='large'
-              color='secondary'
-              onClick={() => scrollToBottom}
-            >
+            <Button size='large' color='secondary' onClick={scrollToBottom}>
               {data.buttonText}
             </Button>
           </Grid>

@@ -32,7 +32,7 @@ const data = {
 }
 
 const Metaverse: React.FC = () => (
-  <Section>
+  <Section id='metaverse'>
     <SectionHeader title={data.title} subtitle={data.subtitle} />
     <Container>
       <Grid container spacing={8}>
