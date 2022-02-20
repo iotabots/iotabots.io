@@ -8,6 +8,7 @@ import {
   Section,
   Typography,
 } from '@iotabots/components'
+import Lottie from 'react-lottie-player'
 import iotabots from '../../public/assets/iotabots.png'
 
 const data = {
@@ -19,6 +20,11 @@ const data = {
 }
 
 const Hero: React.FC = () => {
+  const [animationData, setAnimationData] = React.useState()
+
+  React.useEffect(() => {
+    import('../../public/assets/lottie.json').then(setAnimationData)
+  }, [])
   const scrollToBottom = (): void => {
     const bottomEle = document.getElementById('metaverse')
     if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
@@ -61,6 +67,21 @@ const Hero: React.FC = () => {
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: '100%' }} component='img' src={data.image} />
           </Grid>
+        </Grid>
+        <Grid
+          md={12}
+          sx={{
+            display: { xs: 'none', md: 'block' },
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}
+        >
+          <Lottie
+            loop
+            play
+            animationData={animationData}
+            style={{ width: '100%', height: '100px', marginTop: '100px' }}
+          />
         </Grid>
       </Container>
     </Section>
