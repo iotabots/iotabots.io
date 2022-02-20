@@ -21,12 +21,17 @@ const getLibrary = (provider: any): Web3Provider => {
   return library
 }
 
+// const menuItems = [
+//   <ActiveLink href='/' label='Home' />,
+//   <ActiveLink href='/bots' label='Bots' />,
+//   <ActiveLink href='/projects' label='Projects' />,
+//   <ActiveLink href='/faq' label='FAQ' />,
+// ]
 const menuItems = [
-  <ActiveLink href='/' label='Home' />,
-  <ActiveLink href='/bots' label='Bots' />,
-  <ActiveLink href='/projects' label='Projects' />,
-  <ActiveLink href='/faq' label='FAQ' />,
-
+  { href: '/', label: 'Home' },
+  { href: '/bots', label: 'Bots' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/faq', label: 'FAQ' },
 ]
 
 const YOUR_TRACKING_ID = 'G-YTZ512CCQL'
@@ -54,7 +59,10 @@ const App: React.FC<AppProps> = (props) => {
         <link rel='mask-icon' href='/safari-pinned-tab.svg' color='#20c593' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sarpanch:wght@800&display=swap' rel='stylesheet' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sarpanch:wght@800&display=swap'
+          rel='stylesheet'
+        />
 
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
