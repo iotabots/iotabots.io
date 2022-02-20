@@ -35,20 +35,63 @@ const data = {
       checked: true,
     },
     {
-      title: 'Website Relaunch',
+      title: 'Website Relaunch #1',
       description:
         'Better Teck Stack, UI Improvments and extern component library.',
       checked: true,
     },
     {
-      title: 'Rebranding & Relaunch',
+      title: 'IOTABOTS TCG Giveaway #1',
+      description:
+        'Giveaway of 10 IOTA TCG Card Sets each containing 50 Cards (physical version).',
+      checked: true,
+    },
+    {
+      title: 'SOONLABS x IOTABOTS Announcement',
+      description:
+        'Announcing the partnership between SOONLABS & IOTABOTS and the sale of SOONABOTS on SOONAVERSE.',
+      checked: true,
+    },
+    {
+      title: 'SHIMMERSEA x IOTABOTS Announcement',
+      description: 'Announcing the partnership between SHIMMERSEA & IOTABOTS.',
+      checked: true,
+    },
+    {
+      title: 'MOONACO Postcast x IOTABOTS',
+      description: 'Being on the MOONACO PODCAST promoting IOTABOTS.',
+      checked: true,
+    },
+    {
+      title: 'Open IOTABOTS Discord',
+      description: 'Opening IOTABOTS Discord server to the public.',
+      checked: true,
+    },
+    {
+      title: 'Website Relaunch #2 - Rebranding',
       description: 'Better branding, better UI / UX, better structure.',
       checked: true,
     },
     {
+      title: 'BOLTS Token Announcement',
+      description:
+        'Announcing that there will be a Token called $BOLTS tradeable on SHIMMERSEA and other exchanges. We will explain the distributions, tokenemics and what we have in mind to do with the token.',
+      checked: false,
+    },
+    {
       title: 'Indroducting Soonabots',
       description:
-        'Soonabots is a subset of IOTABOTS and unique 3D animated NFTs - this is completly new in the whole NFT space. Become member in our Soonaverse space and be ready in March',
+        'Revealing the design of the SOONABOT. SOONABOTS are a subset of IOTABOTS and are unique 3D animated NFTs - this is completly new in the whole NFT space. Become member in our Soonaverse space and be ready in March.',
+      checked: false,
+    },
+    {
+      title: 'SOONABOTS Giveaway',
+      description: 'Giveaway of 10 SOONABOTS on Twitter.',
+      checked: false,
+    },
+    {
+      title: 'SOONABOTS SALE',
+      description: 'Selling XXXX unique and animated SOONABOTS on SOONAVERSE.',
       checked: false,
     },
     {
@@ -58,9 +101,45 @@ const data = {
       checked: false,
     },
     {
-      title: 'BOLTS Token Announcement',
+      title: 'IOTABOTS TCG Giveaway #2',
       description:
-        'Announcing that there will be a Token called $BOLTS tradeable on SHIMMERSEA and other exchanges. We will explain the distributions, tokenemics and what we have in mind to do with the token.',
+        'Giveaway of 10 IOTA TCG Card Sets each containing 50 Cards (physical version).',
+      checked: false,
+    },
+    {
+      title: 'IOTABOTS TCG Sale',
+      description:
+        'Selling ~XXXX physical Sets of the IOTABOTS Trading Card Game (TCG)',
+      checked: false,
+    },
+    {
+      title: '$BOLTS Tokenomics reveal',
+      description: 'Revealing the tokenomics of the $BOLTS Token.',
+      checked: false,
+    },
+    {
+      title: '$BOLTS Token Launch',
+      description: 'Launching the $BOLTS token on SHIMMERSEA.',
+      checked: false,
+    },
+    {
+      title: 'NATURE DAO Announcement',
+      description: 'More information soon.',
+      checked: false,
+    },
+    {
+      title: 'Revealing NATUREBOTS',
+      description: 'More information soon.',
+      checked: false,
+    },
+    {
+      title: 'IOTABOTS TCG NFT Announcement',
+      description: 'More information soon.',
+      checked: false,
+    },
+    {
+      title: 'IOTABOTS TCG NFT Sale',
+      description: 'More information soon.',
       checked: false,
     },
   ],
