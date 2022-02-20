@@ -20,7 +20,7 @@ const data = {
 }
 
 const Hero: React.FC = () => {
-  const [animationData, setAnimationData] = React.useState()
+  const [animationData, setAnimationData] = React.useState(undefined)
 
   React.useEffect(() => {
     import('../../public/assets/lottie.json').then(setAnimationData)
