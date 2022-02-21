@@ -27,12 +27,6 @@ const getLibrary = (provider: any): Web3Provider => {
 //   <ActiveLink href='/projects' label='Projects' />,
 //   <ActiveLink href='/faq' label='FAQ' />,
 // ]
-const menuItems = [
-  { href: '/', label: 'Home' },
-  { href: '/bots', label: 'Bots' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/faq', label: 'FAQ' },
-]
 
 const YOUR_TRACKING_ID = 'G-YTZ512CCQL'
 
@@ -41,6 +35,13 @@ const ThemeProvider = dynamic(() => import('../contexts/Theme'), { ssr: false })
 const App: React.FC<AppProps> = (props) => {
   const { pageProps, Component } = props
   const { push } = useRouter()
+
+  const menuItems = [
+    { label: 'Home', onClick: () => push('/') },
+    { label: 'Bots', onClick: () => push('/bots') },
+    { label: 'Projects', onClick: () => push('/projects') },
+    { label: 'FAQ', onClick: () => push('/faq') },
+  ]
 
   React.useEffect(() => {
     ReactGA.initialize(`${YOUR_TRACKING_ID}`)
