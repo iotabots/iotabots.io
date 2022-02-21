@@ -1,6 +1,6 @@
 export const SEO = {
   title: 'IOTABOTS',
-  description: 'My description',
+  description: 'First NFT Profile Picture Project on IOTA. #DeFi #NFT #GameFi #play2earn',
   openGraph: {
     type: 'website',
     url: 'www.iotabots.io',
