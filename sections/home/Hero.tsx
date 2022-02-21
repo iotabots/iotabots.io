@@ -77,10 +77,16 @@ const Hero: React.FC = () => {
           }}
         >
           <Lottie
+            onClick={scrollToBottom}
             loop
             play
             animationData={animationData}
-            style={{ width: '100%', height: '100px', marginTop: '100px' }}
+            style={{
+              width: '100%',
+              height: '100px',
+              marginTop: '100px',
+              cursor: 'pointer',
+            }}
           />
         </Grid>
       </Container>
