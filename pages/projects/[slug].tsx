@@ -1,8 +1,13 @@
+import * as React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import * as React from 'react'
-import { Typography } from '@iotabots/components'
-import styles from '../../styles/Project.module.scss'
+import {
+  BaseLayout,
+  Box,
+  Container,
+  Section,
+  SectionHeader
+} from '@iotabots/components'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
 
@@ -11,17 +16,27 @@ interface IProps {
 }
 
 const Project: React.FC<IProps> = ({ project }) => (
-  <div className={styles.project}>
-    <div className={styles.thumbnail}>
-      <img src={project.meta.thumbnail} alt={project.meta.description} />
-      <div className={styles.title}>
-        <Typography variant='h1'>{project.meta.title}</Typography>
-      </div>
-    </div>
-    <div className={styles.content}>
-      <Markdown content={project.content} />
-    </div>
-  </div>
+  <BaseLayout>
+    <Section>
+      <SectionHeader title={project.meta.title} subtitle='' />
+      <Container maxWidth='sm'>
+        <Box
+          component='img'
+          sx={{
+            borderRadius: '8px',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            height: '320px',
+            border: 'none',
+            width: '100%',
+            background: `url(${project.meta.thumbnail})`,
+          }}
+        />
+        <Markdown content={project.content} />
+      </Container>
+    </Section>
+  </BaseLayout>
 )
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type

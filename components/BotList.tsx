@@ -1,13 +1,15 @@
+/* eslint-disable max-len */
 import * as React from 'react'
+import { useRouter } from 'next/router'
 import { BotCard, Box, Grid, Typography } from '@iotabots/components'
-import Image from 'next/image'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import Link from 'next/link'
 
 const BotList: React.FC = () => {
   const [items, setItems] = React.useState(
     Array.from({ length: 42 }, (v, k) => k + 1)
   )
+
+  const { push } = useRouter()
 
   const fetchMoreData = (): void => {
     setItems(
@@ -29,38 +31,30 @@ const BotList: React.FC = () => {
       }
     >
       <Grid
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          textAlign: 'center',
-          justifyContent: 'center',
-        }}
         container
         spacing={{ xs: 2 }}
-        columns={{ xs: 4, sm: 3, md: 2 }}
       >
-        {items.map((item) => (
-          <Grid item key={item}>
-            <Box sx={{ cursor: 'pointer' }}>
-              <BotCard
-                image={
-                  <Link href={`/bots/${item}`}>
-                    <Image
-                      src={`http://assets.iotabots.io/compressed/${item}.png`}
-                      alt='IOTABOT'
-                      layout='intrinsic'
-                      width={100}
-                      height={100}
-                    />
-                  </Link>
-                }
-                headline=''
-                text=''
-                maxWidth='100px'
-                rounded
-              />
-            </Box>
+        {items.flatMap((item) => (
+          <Grid item key={item} xs={6} sm={4} md={3}>
+            <BotCard
+              image={
+                <Box
+                  onClick={() => push(`/bots/${item}`)}
+                  sx={{
+                    backgroundImage: `url(http://assets.iotabots.io/compressed/${item}.png)`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '100%',
+                    height: { xs: '45vw', sm: '30vw', md: '23vw', lg: '280px' },
+                    cursor: 'pointer',
+                  }}
+                />
+              }
+              maxWidth='100%'
+              headline=''
+              text=''
+              rounded
+            />
           </Grid>
         ))}
       </Grid>

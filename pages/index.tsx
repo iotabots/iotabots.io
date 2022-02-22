@@ -1,35 +1,21 @@
+import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import React from 'react'
-import BaseLayout from '../layout/BaseLayout'
-import Hero from '../components/Sections/HeroSection'
-import ProjectsSection from '../components/Sections/ProjectsSection'
-import BotsSection from '../components/Sections/BotsSection'
-import WelcomeSection from '../components/Sections/WelcomeSection'
-import RoadmapSection from '../components/Sections/RoadmapSection'
+import { BaseLayout } from '@iotabots/components'
+import Hero from '../sections/home/Hero'
+import Metaverse from '../sections/home/Metaverse'
+import Roadmap from '../sections/home/Roadmap'
 
-export const Home = ({ projects }): JSX.Element => (
+export const Home: React.FC = () => (
   <BaseLayout>
-    {/* HeroSection */}
     <Hero />
-
-    {/* WelcomeSection */}
-    <WelcomeSection />
-
-    {/* BotsSection */}
-    <BotsSection />
-
-    {/* ProjectsSection */}
-    <ProjectsSection projects={projects} />
-
-    {/* RoadmapSection */}
-    <RoadmapSection />
+    <Metaverse />
+    <Roadmap />
   </BaseLayout>
 )
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function getStaticProps() {
-  // Load markdown files from '/projects' folder.
   const files = fs.readdirSync('projects')
 
   const projects = files.map((file) => {

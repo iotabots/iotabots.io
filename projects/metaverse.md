@@ -1,7 +1,7 @@
 ---
 title: Metaverse
 description: The IOTABOTS Metaverse is a new online experience for pioneers.
-thumbnail: /assets/projects/metaverse.jpg
+thumbnail: /assets/projects/metaverse.png
 status: 'in_progress'
 ---
 

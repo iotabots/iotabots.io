@@ -15,12 +15,27 @@ const ActiveLink = (props: ActiveLinkProps): JSX.Element => {
     <Box
       className={pathname === href ? 'active' : ''}
       sx={{
-        color: 'text.primary',
         '& a': {
-          fontSize: '16px',
+          minWidth: '100px',
+          height: '42px',
+          px: 5,
+          textAlign: 'center',
+          fontFamily: 'Sarpanch',
+          fontSize: 18,
+          fontWeight: '600',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'common.white'
         },
-        '&.active': {
-          color: 'primary.main',
+
+        '&.active a': {
+          bgcolor: 'rgba(255,255,255,1)',
+          color: 'background.paper',
+        },
+        '& a:hover': {
+          bgcolor: 'primary.main',
+          color: 'common.white',
         },
       }}
     >

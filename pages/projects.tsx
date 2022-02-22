@@ -1,10 +1,15 @@
+import * as React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import * as React from 'react'
-import { Box, Container, Grid, Typography } from '@iotabots/components'
+import {
+  BaseLayout,
+  Container,
+  Grid,
+  Section,
+  SectionHeader
+} from '@iotabots/components'
 import ProjectCard from '../components/ProjectCard'
 import { ProjectMeta } from '../interfaces/project'
-import BaseLayout from '../layout/BaseLayout'
 
 interface IProps {
   projects: ProjectMeta[]
@@ -12,16 +17,11 @@ interface IProps {
 
 const Projects: React.FC<IProps> = ({ projects }) => (
   <BaseLayout>
-    <Box py={6} display='flex' alignItems='center'>
-      <Container maxWidth='md'>
-        <Typography gutterBottom variant='h1'>
-          Projects
-        </Typography>
-        <Typography variant='body1'>
-          The IOTABOTS Team and the Community building amazing projects.
-          Discover all projects in the IOTABOTS Metaverse.
-        </Typography>
-
+    <Section>
+      <SectionHeader title='Projects'
+        subtitle='The IOTABOTS Team and the Community building amazing projects.
+          Discover all projects in the IOTABOTS Metaverse.' />
+      <Container>
         <Grid
           style={{
             display: 'flex',
@@ -29,24 +29,22 @@ const Projects: React.FC<IProps> = ({ projects }) => (
             justifyContent: 'center',
           }}
           container
-          spacing={{ xs: 1, md: 1 }}
-          columns={{ xs: 12, sm: 12, md: 12 }}
+          spacing={6}
         >
           {projects.map((project) => (
             <Grid
               item
+              xs={12}
+              sm={6}
+              md={4}
               key={project.slug}
-              style={{
-                maxWidth: '50%',
-                minWidth: '360px',
-              }}
             >
               <ProjectCard key={project.slug} project={project} />
             </Grid>
           ))}
         </Grid>
       </Container>
-    </Box>
+    </Section>
   </BaseLayout>
 )
 

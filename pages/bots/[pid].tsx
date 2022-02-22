@@ -1,9 +1,15 @@
 import * as React from 'react'
-import { BotCard, Box, Container, Typography } from '@iotabots/components'
+import {
+  BaseLayout,
+  BotCard,
+  Box,
+  Container,
+  Section,
+  Typography
+} from '@iotabots/components'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Head from 'next/head'
-import BaseLayout from '../../layout/BaseLayout'
 
 interface BotAttribute {
   // eslint-disable-next-line camelcase
@@ -24,6 +30,7 @@ const BotDetail: React.FC = () => {
 
   const router = useRouter()
   const { pid } = router.query
+
   React.useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
     const fetchData = async () => {
@@ -37,6 +44,7 @@ const BotDetail: React.FC = () => {
         console.log(err)
       })
   }, [pid])
+
   return (
     <BaseLayout>
       <Head>
@@ -47,7 +55,7 @@ const BotDetail: React.FC = () => {
           content={`Say hello to IOTABOT ${bot?.name}!`}
         />
       </Head>
-      <Box>
+      <Section>
         <Container maxWidth='sm'>
           <Box
             sx={{
@@ -81,15 +89,10 @@ const BotDetail: React.FC = () => {
               <Typography gutterBottom variant='body1'>
                 {`Created on ${new Date(bot?.date).toLocaleDateString()}`}
               </Typography>
-              {/* {bot?.attributes.map((attribute) => (
-                <Typography gutterBottom variant='body1'>
-                  {`${attribute.trait_type}: ${attribute.value}`}
-                </Typography>
-              ))} */}
             </BotCard>
           </Box>
         </Container>
-      </Box>
+      </Section>
     </BaseLayout>
   )
 }

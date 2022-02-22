@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { Box, Button, Chip, Typography } from '@iotabots/components'
+import { useRouter } from 'next/router'
+import { Button, Chip, Typography } from '@iotabots/components'
+import { Card, CardContent, CardMedia } from '@mui/material'
 import { ProjectMeta } from '../interfaces/project'
-import styles from '../styles/Card.module.scss'
 
 interface IProps {
   project: ProjectMeta
@@ -9,6 +10,7 @@ interface IProps {
 interface StatusProps {
   status: string
 }
+
 const Status: React.FC<StatusProps> = ({ status }) => {
   if (status === 'in_progress') {
     return <Chip label='In Progress' color='warning' />
@@ -16,29 +18,35 @@ const Status: React.FC<StatusProps> = ({ status }) => {
   return <Chip label='Done' color='primary' />
 }
 
-const ProjectCard: React.FC<IProps> = ({ project }) => (
-  <div className={styles.card}>
-    <img src={project.thumbnail} alt={project.description} />
-    <Box sx={{ paddingTop: '2px', paddingLeft: '20px' }}>
-      <Status status={project.status} />
-    </Box>
-    <div className={styles.info}>
-      <Typography variant='h5' paragraph>
-        {project.title}
-      </Typography>
-      <Typography variant='body1' paragraph>
-        {project.description}
-      </Typography>
-    </div>
-    <Box display='flex' justifyContent='center'>
-      <Button
-        sx={{ marginTop: '8px', width: '80%' }}
-        href={`/projects/${project.slug}`}
-      >
-        Learn more
-      </Button>
-    </Box>
-  </div>
-)
+const ProjectCard: React.FC<IProps> = ({ project }) => {
+  const { push } = useRouter()
+
+  const onClick = (e): void => {
+    e.preventDefault()
+    push(`/projects/${project.slug}`)
+  }
+
+  return (
+    <Card sx={{ bgcolor: 'rgba(0,0,0,0.5)' }}>
+      <CardMedia sx={{ height: 200 }} image={project.thumbnail} />
+      <CardContent>
+        <Status status={project.status} />
+        <Typography mt={3} mb={1} variant='h4'>
+          {project.title}
+        </Typography>
+        <Typography variant='body1' color='rgba(255,255,255,0.8)' paragraph>
+          {project.description}
+        </Typography>
+        <Button
+          sx={{ marginTop: '8px', width: '80%' }}
+          onClick={onClick}
+          fullWidth
+        >
+          Learn more
+        </Button>
+      </CardContent>
+    </Card>
+  )
+}
 
 export default ProjectCard
