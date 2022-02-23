@@ -1632,10 +1632,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@iotabots/components@^0.0.41":
-  version "0.0.41"
-  resolved "https://registry.yarnpkg.com/@iotabots/components/-/components-0.0.41.tgz#d98cb7e0401a7b43ba0a30e4bc881357fae1d0f5"
-  integrity sha512-C/lHzkznc/P1wkpSMSqhMxv1yjDUs190oOq+15rJXfU38lEIOSiu12icUm87KjJzPECdjj38+a4fPAUvIuwYkQ==
+"@iotabots/components@^0.0.42":
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/@iotabots/components/-/components-0.0.42.tgz#6c75247d93cfcbe8c54790186eb34e3274e89808"
+  integrity sha512-VqLL5LJ+zaoQKvvYmiHFf6ZCiMdt6dVkOhRzMNSxCZEss3RJ3Af9LQngr3k8XiogfJtJlQENYuVaV35S7ArRLw==
   dependencies:
     "@date-io/date-fns" "^1.3.13"
     "@date-io/moment" "^1.3.13"
