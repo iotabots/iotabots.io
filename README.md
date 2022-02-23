@@ -8,7 +8,7 @@
   </a>
 </p>
 
-<h1 align="center"><a href="https://iotabots.io">IOTABOTS.io</a></h1>
+<h1 align="center"><a href="https://iotabots.io">IOTABOTS</a></h1>
 
 <p align="center">#NFT project #DeFi #NFT #GameFi #play2earn #IOTABOTS 🤖</p>
 
@@ -18,7 +18,7 @@
 
 ---
 
-# IOTABOTS.io Website
+# IOTABOTS Website
 
 This is the repository for the IOTABOTS website on [www.iotabots.io](https://www.iotabots.io).
 
