@@ -97,7 +97,7 @@ const data = {
     {
       title: 'IOTABOTS Trading Card Game',
       description:
-        'Announcing the phisical IOTABOTS Trading Card Game (TCG) with all cards, rules and order details.',
+        'Announcing the physical IOTABOTS Trading Card Game (TCG) with all cards, rules and order details.',
       checked: false,
     },
     {
