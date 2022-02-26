@@ -1,8 +1,8 @@
-import React from 'react'
-import { Avatar, Badge, Box, Tooltip, Typography } from '@iotabots/components'
-import { styled } from '@mui/material/styles'
+import { Avatar, Badge, Box, Typography } from '@iotabots/components'
 import { Popper } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import { useWeb3React } from '@web3-react/core'
+import React from 'react'
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -75,7 +75,7 @@ const BlockNumber: React.FC = () => {
   return <span>{blockNumber === null ? 'Error' : blockNumber ?? '-'}</span>
 }
 
-export const ProfilePicture: React.FC = () => {
+export const ProfilePicture: React.FC<any> = ({ bots }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const { active, error } = useWeb3React()
 
@@ -87,6 +87,10 @@ export const ProfilePicture: React.FC = () => {
 
   const open = Boolean(anchorEl)
   const id = open ? 'simple-popper' : undefined
+
+  // Determine bot to show as profile picture
+  const botId = bots?.[0] || 1
+
   return (
     <>
       <StyledBadge
@@ -96,8 +100,8 @@ export const ProfilePicture: React.FC = () => {
         onClick={handleClick}
       >
         <Avatar
-          alt='IOTABOT #1'
-          src='https://assets.iotabots.io/compressed/1.png'
+          alt={`IOTABOT #${botId}`}
+          src={`https://assets.iotabots.io/compressed/${botId}.png`}
           sx={{ width: 140, height: 140 }}
         />
       </StyledBadge>
