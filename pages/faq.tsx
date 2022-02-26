@@ -51,7 +51,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/845.png'
           // eslint-disable-next-line max-len
-          text='Download you favourite one and use it as a profile picture.'
+          text='Download your favourite one and use it as a profile picture.'
           headline='What can I do with my IOTABOT?'
         >
           { }
