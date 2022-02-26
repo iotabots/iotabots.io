@@ -1,19 +1,17 @@
 /* eslint-disable max-len */
-import React, { useRef, useState } from 'react'
+import { Web3Provider } from '@ethersproject/providers'
+import { formatEther } from '@ethersproject/units'
+import { Box, Button, Typography } from '@iotabots/components'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useWeb3React } from '@web3-react/core'
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
 } from '@web3-react/injected-connector'
 import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@web3-react/walletconnect-connector'
-import { Web3Provider } from '@ethersproject/providers'
-import { formatEther } from '@ethersproject/units'
-
-import { Box, Button, Typography } from '@iotabots/components'
-import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import React, { useRef, useState } from 'react'
 import { useEagerConnect, useInactiveListener } from '../utils/hooks'
 import { ProfilePicture } from './ProfilePicture'
-
 
 const ERROR_NO_ETH_PROVIDER =
   'No Wallet Browser Extension detected, install Browser Extension on desktop or visit from a dApp browser on mobile.'
@@ -75,10 +73,10 @@ const boxStyles = {
   alignItems: 'center',
   bgcolor: 'rgba(0,0,0,0.5)',
   borderRadius: '8px',
-  p: 3
+  p: 3,
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<any> = ({ bots }) => {
   const { account } = useWeb3React()
   const [copySuccess, setCopySuccess] = useState('')
   const copyRef = useRef(null)
@@ -91,7 +89,7 @@ const Header: React.FC = () => {
   }
   return (
     <Box justifyContent='center' textAlign='center'>
-      <ProfilePicture />
+      <ProfilePicture bots={bots} />
       <form style={{ display: 'none' }}>
         <textarea ref={copyRef} value={account} />
       </form>
@@ -115,9 +113,7 @@ const Header: React.FC = () => {
       )}
 
       <Box sx={boxStyles}>
-        <Typography>
-          Balance
-        </Typography>
+        <Typography>Balance</Typography>
         <Typography>
           <Balance />
         </Typography>
@@ -126,7 +122,7 @@ const Header: React.FC = () => {
   )
 }
 
-const Connector: React.FC = () => {
+const Connector: React.FC<any> = ({ bots }) => {
   const context = useWeb3React<Web3Provider>()
   const { connector, deactivate, active, error } = context
 
@@ -149,7 +145,7 @@ const Connector: React.FC = () => {
 
   return (
     <>
-      <Header />
+      <Header bots={bots} />
       {/* eslint-disable-next-line no-nested-ternary */}
       {active ? (
         <Button
