@@ -76,7 +76,7 @@ const data = {
       title: 'BOLTS Token Announcement',
       description:
         'Announcing that there will be a Token called $BOLTS tradeable on SHIMMERSEA and other exchanges. We will explain the distributions, tokenemics and what we have in mind to do with the token.',
-      checked: false,
+      checked: true,
     },
     {
       title: 'Indroducting Soonabots',
