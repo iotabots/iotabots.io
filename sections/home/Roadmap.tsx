@@ -76,13 +76,13 @@ const data = {
       title: 'BOLTS Token Announcement',
       description:
         'Announcing that there will be a Token called $BOLTS tradeable on SHIMMERSEA and other exchanges. We will explain the distributions, tokenemics and what we have in mind to do with the token.',
-      checked: false,
+      checked: true,
     },
     {
       title: 'Indroducting Soonabots',
       description:
         'Revealing the design of the SOONABOT. SOONABOTS are a subset of IOTABOTS and are unique 3D animated NFTs - this is completly new in the whole NFT space. Become member in our Soonaverse space and be ready in March.',
-      checked: false,
+      checked: true,
     },
     {
       title: 'SOONABOTS Giveaway',
@@ -92,6 +92,11 @@ const data = {
     {
       title: 'SOONABOTS SALE',
       description: 'Selling XXXX unique and animated SOONABOTS on SOONAVERSE.',
+      checked: false,
+    },
+    {
+      title: 'Announcing $SCREWS',
+      description: 'Announcing the inflationary token for the IOTABOTS METAVERSE.',
       checked: false,
     },
     {
