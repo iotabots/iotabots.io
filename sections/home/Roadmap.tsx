@@ -87,12 +87,12 @@ const data = {
     {
       title: 'SOONABOTS Giveaway',
       description: 'Giveaway of 10 SOONABOTS on Twitter.',
-      checked: false,
+      checked: true,
     },
     {
       title: 'SOONABOTS SALE',
       description: 'Selling XXXX unique and animated SOONABOTS on SOONAVERSE.',
-      checked: false,
+      checked: true,
     },
     {
       title: 'Announcing $SCREWS',
