@@ -91,7 +91,7 @@ const data = {
     },
     {
       title: 'SOONABOTS SALE',
-      description: 'Selling XXXX unique and animated SOONABOTS on SOONAVERSE.',
+      description: 'Selling 3333 unique and animated SOONABOTS on SOONAVERSE.',
       checked: true,
     },
     {
