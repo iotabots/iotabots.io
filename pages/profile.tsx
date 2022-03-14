@@ -2,6 +2,7 @@
 import { Web3Provider } from '@ethersproject/providers'
 import {
   BaseLayout,
+  Button,
   Container,
   Grid,
   Section,
@@ -9,12 +10,15 @@ import {
 } from '@iotabots/components'
 import { useWeb3React } from '@web3-react/core'
 import * as React from 'react'
+import { useRouter } from 'next/router'
 import Connector from '../components/Connector'
 import FakeIotabots from '../components/FakeIotabots'
+import { DISCORD_CONNECT } from '../config'
 
 const Profile: React.FC = (props: any) => {
   const [bots, setBots] = React.useState<Array<any>>([])
   const context = useWeb3React<Web3Provider>()
+  const router = useRouter()
   const { account, active } = context
   const { addresses } = props
 
@@ -31,6 +35,10 @@ const Profile: React.FC = (props: any) => {
     setBots(iotabots)
   }, [account, active, addresses])
 
+  const conntect = (): void => {
+    router.push(DISCORD_CONNECT)
+  }
+
   return (
     <BaseLayout>
       <Section>
@@ -42,6 +50,7 @@ const Profile: React.FC = (props: any) => {
           <Grid container spacing={6}>
             <Grid item xs={12} md={4}>
               <Connector bots={bots} />
+              <Button onClick={conntect}>Connect Discord</Button>
             </Grid>
             <Grid item xs={12} md={8}>
               <FakeIotabots bots={bots} />
