@@ -14,6 +14,6 @@ export const SEO = {
 }
 
 export const DISCORD_CONNECT =
-  'https://discord.com/api/oauth2/authorize?client_id=949687840504160267&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord_connect&response_type=code&scope=identify'
+  'https://discord.com/api/oauth2/authorize?client_id=949687840504160267&redirect_uri=https%3A%2F%2Fiotabots.io%2Fdiscord_connect&response_type=code&scope=identify'
 
 export const BACKEND_URL = 'https://cryptodoctor.fr:5000/connect-discord'
