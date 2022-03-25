@@ -41,7 +41,7 @@ On top of Material UI's base ui components we have custom shared UI components f
 First, install the dependencies
 
 ```bash
-yarn dev
+yarn install
 ```
 
 after that, run the development server:
