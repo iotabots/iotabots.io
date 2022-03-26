@@ -30,13 +30,13 @@ const Project: React.FC<IProps> = ({ project }) => (
       <SectionHeader title={project.meta.title} subtitle='' />
       <Container maxWidth='sm'>
         <ProjectContainer>
-          <Image 
-            imageUrl={project.meta.thumbnail} 
-            imageWidth="400px" 
-            imageHeight= "100%"
-            border_radius="8px" 
-            border="solid white 0.001em"
-            />
+            <Image 
+              imageUrl={project.meta.thumbnail} 
+              imageWidth="400px" 
+              imageHeight= "100%"
+              border_radius="8px" 
+              border="solid white 0.001em"
+              />
           <Markdown content={project.content} />
         </ProjectContainer>
       </Container>

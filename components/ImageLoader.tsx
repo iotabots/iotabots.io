@@ -9,9 +9,15 @@ interface Props{
     imageHeight: string;
 }
 
+enum ImageLoadingState {
+    
+}
+
 const Image: React.FC<Props> = ({ imageUrl, imageWidth, border_radius, border, imageHeight }) => {
     return <div>
-        <S.Image src={imageUrl} style={{width: imageWidth, borderRadius: border_radius, border: border, height: imageHeight}}/>
+        <S.ImageWrapper>
+            <S.Image src={imageUrl} style={{width: imageWidth, borderRadius: border_radius, border: border, height: imageHeight}}/>
+        </S.ImageWrapper>
     </div>
 }
 
