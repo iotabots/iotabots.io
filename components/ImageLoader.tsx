@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import * as S from "./Image.styles"
 
 interface Props{
@@ -9,12 +9,9 @@ interface Props{
     imageHeight: string;
 }
 
-enum ImageLoadingState {
-    
-}
 
 const Image: React.FC<Props> = ({ imageUrl, imageWidth, border_radius, border, imageHeight }) => {
-    return <div>
+        return <div>
         <S.ImageWrapper>
             <S.Image src={imageUrl} style={{width: imageWidth, borderRadius: border_radius, border: border, height: imageHeight}}/>
         </S.ImageWrapper>
