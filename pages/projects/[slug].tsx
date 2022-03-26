@@ -18,30 +18,6 @@ interface IProps {
   project: ProjectInfo
 }
 
-// const Project: React.FC<IProps> = ({ project }) => (
-//   <BaseLayout>
-//     <Section>
-//       <SectionHeader title={project.meta.title} subtitle='' />
-//       <Container maxWidth='sm'>
-//         <Box
-//           component='img'
-//           sx={{
-//             borderRadius: '8px',
-//             backgroundSize: 'cover',
-//             backgroundPosition: 'center',
-//             backgroundRepeat: 'no-repeat',
-//             height: '320px',
-//             border: 'none',
-//             width: '100%',
-//             background: `url(${project.meta.thumbnail})`,
-//           }}
-//         />
-//         <Markdown content={project.content} />
-//       </Container>
-//     </Section>
-//   </BaseLayout>
-// )
-
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
