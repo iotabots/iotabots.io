@@ -13,4 +13,4 @@ The second free drop also consists of 500 unique bots.
 
 We randomly drop some IOTABOTS to our Twitter followers.
 
-[Discover all IOTABOTS here.](/bots)
+**[Discover all IOTABOTS here.](/bots)**
