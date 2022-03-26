@@ -11,4 +11,4 @@ SOONABOTS are a 3D, fully animated, PFP NFT. They run for $SCREWS and $BOLTS and
 
 The 3333 unique SOONABOTS are listed for sale at a starting price of 100 Miota on **[SOONAVERSE](https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a)**.
 
-After minting your SOONABOT you can download it and use it as your profile picture. Use [this](http://docs.iotabots.io/faq/#soonabots) instructions to download the animated version.
+After minting your SOONABOT you can download it and use it as your profile picture. Use **[this](http://docs.iotabots.io/faq/#soonabots)** instructions to download the animated version.
