@@ -5,7 +5,7 @@ import {
   ContentBox,
   Section,
   SectionHeader,
-  Typography
+//  Typography
 } from '@iotabots/components'
 
 const FAQ: React.FC = () => (
