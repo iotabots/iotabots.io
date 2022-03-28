@@ -3,16 +3,16 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import {
   BaseLayout,
-  Box,
   Container,
   Section,
   SectionHeader
 } from '@iotabots/components'
+import styled from 'styled-components'
+import Image from '../../components/ImageLoader'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
 
-import styled from 'styled-components'
-import Image from '../../components/ImageLoader'
+
 
 interface IProps {
   project: ProjectInfo
@@ -32,10 +32,10 @@ const Project: React.FC<IProps> = ({ project }) => (
         <ProjectContainer>
             <Image 
               imageUrl={project.meta.thumbnail} 
-              imageWidth="400px" 
-              imageHeight= "100%"
-              border_radius="8px" 
-              border="solid white 0.001em"
+              imageWidth='400px'
+              imageHeight= '100%'
+              border_radius='8px' 
+              border='solid white 0.001em'
               />
           <Markdown content={project.content} />
         </ProjectContainer>
