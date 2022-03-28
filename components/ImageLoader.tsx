@@ -1,19 +1,33 @@
-import React, { useEffect } from "react"
-import * as S from "./Image.styles"
+import React from 'react'
+import * as S from './Image.styles'
 
 interface Props{
     imageUrl: string;
-    imageWidth?: string;
-    border_radius?: string;
+    width?: string;
+    borderRadius?: string;
     border?: string;
-    imageHeight: string;
+    height?: string;
 }
 
 
-const Image: React.FC<Props> = ({ imageUrl, imageWidth, border_radius, border, imageHeight }) => {
-        return <div>
-            <S.Image src={imageUrl} style={{width: imageWidth, borderRadius: border_radius, border: border, height: imageHeight}}/>
-    </div>
+const Image: React.FC<Props> = ({ imageUrl, width, 
+    borderRadius, border, height }) => (    
+        <div>
+            <S.Image src={imageUrl} 
+                style={{
+                    width, 
+                    borderRadius, 
+                    border, 
+                    height}}/>
+        </div>
+    )
+
+Image.defaultProps = {
+    width: '400px',
+    borderRadius: '0px',
+    border: 'none',
+    height: '100%',
 }
+
 
 export default Image
