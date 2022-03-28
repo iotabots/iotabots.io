@@ -25,8 +25,13 @@ const data = {
     },
     {
       headline: 'Spacebots',
-      text: 'This was the first NFT Game of many more following in the future. Spacebots is pixelbased simple game and just 1001 games are available as a NFT. shows, how NFTs can be used for game access.',
+      text: 'This was the first NFT Game of many more following in the future. Spacebots is pixelbased simple game and just 1001 games are available as a NFT. Shows, how NFTs can be used for game access.',
       image: '/assets/metaverse/gameboy.png',
+    },
+    {
+      headline: 'Soonabots',
+      text: 'SOONABOTS are a 3D, fully animated, PFP NFT. They give you access to the IOTABOT Metaverse.',
+      image: '/assets/metaverse/soonabot.svg',
     },
   ],
 }

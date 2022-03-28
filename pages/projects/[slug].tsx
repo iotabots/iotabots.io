@@ -11,29 +11,34 @@ import {
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
 
+import styled from 'styled-components'
+import Image from '../../components/ImageLoader'
+
 interface IProps {
   project: ProjectInfo
 }
+
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 const Project: React.FC<IProps> = ({ project }) => (
   <BaseLayout>
     <Section>
       <SectionHeader title={project.meta.title} subtitle='' />
       <Container maxWidth='sm'>
-        <Box
-          component='img'
-          sx={{
-            borderRadius: '8px',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            height: '320px',
-            border: 'none',
-            width: '100%',
-            background: `url(${project.meta.thumbnail})`,
-          }}
-        />
-        <Markdown content={project.content} />
+        <ProjectContainer>
+            <Image 
+              imageUrl={project.meta.thumbnail} 
+              imageWidth="400px" 
+              imageHeight= "100%"
+              border_radius="8px" 
+              border="solid white 0.001em"
+              />
+          <Markdown content={project.content} />
+        </ProjectContainer>
       </Container>
     </Section>
   </BaseLayout>

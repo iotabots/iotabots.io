@@ -114,7 +114,7 @@ const data = {
     {
       title: 'IOTABOTS TCG Sale',
       description:
-        'Selling ~XXXX physical Sets of the IOTABOTS Trading Card Game (TCG)',
+        'Selling ~XXXX physical Sets of the IOTABOTS Trading Card Game (TCG).',
       checked: false,
     },
     {
