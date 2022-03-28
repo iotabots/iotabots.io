@@ -32,9 +32,9 @@ const Project: React.FC<IProps> = ({ project }) => (
         <ProjectContainer>
             <Image 
               imageUrl={project.meta.thumbnail} 
-              imageWidth='400px'
-              imageHeight= '100%'
-              border_radius='8px' 
+              width='400px'
+              height= '100%'
+              borderRadius='8px' 
               border='solid white 0.001em'
               />
           <Markdown content={project.content} />
