@@ -9,11 +9,21 @@ import {
   Section,
   SectionHeader
 } from '@iotabots/components'
+import styled from 'styled-components'
 import Image from 'next/image'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import BotList from '../components/BotList'
 import { SEO } from '../config'
+
+
+const HoverText = styled.p`
+	color: #000;
+	:hover {
+		color: #ed1212;
+		cursor: pointer;
+	}
+`
 
 const Bots: React.FC = () => {
   const [number, setNumber] = React.useState(() => null)
@@ -33,6 +43,10 @@ const Bots: React.FC = () => {
     }
   }, [query])
 
+
+  const { push } = useRouter()
+
+
   return (
     <BaseLayout>
       <Head>
@@ -49,20 +63,22 @@ const Bots: React.FC = () => {
               value={number}
               onChange={(e) => handleChange(parseInt(e.target.value, 10))}
             />
-            {number > 0 ? (
+            {number > 0 ? (          
               <Box>
                 <BotCard
                   image={
-                    <Link href={`/bots/${number}`}>
-                      <Image
+                    <HoverText>
+                      <Image 
+                        onClick={() => push(`/bots/${number}`)}
                         // eslint-disable-next-line max-len
                         src={`https://assets.iotabots.io/compressed/${number}.png`}
                         alt={`IOTABOT #${number}`}
                         layout='intrinsic'
                         width={300}
                         height={300}
+                        
                       />
-                    </Link>
+                    </HoverText>
                   }
                   headline={`IOTABOT #${number}`}
                   text=''

@@ -49,7 +49,8 @@ const FAQ: React.FC = (props: any) => {
       <Section>
         <SectionHeader
           title='Discord Connect'
-          subtitle='Connect your MetaMask Address with your Discord Handle to become a special IOTABOTS role.'
+          subtitle='Connect your MetaMask Address with your 
+          Discord Handle to become a special IOTABOTS role.'
         />
         <Container maxWidth='md'>
           <Typography variant='body2'>Connect with Discord</Typography>

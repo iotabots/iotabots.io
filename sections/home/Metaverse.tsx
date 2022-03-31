@@ -20,7 +20,7 @@ const data = {
     },
     {
       headline: 'Trading Card Game',
-      text: 'The IOTABOTS TCG is the connection between the real world and the Metaverse. The game consists of physical cards and and NFTs. Collect, trade, play & earn!',
+      text: 'The IOTABOTS TCG is the connection between the real world and the Metaverse. The game consists of physical cards and NFTs. Collect, trade, play & earn!',
       image: '/assets/metaverse/tradingcards.png',
     },
     {
