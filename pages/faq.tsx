@@ -59,7 +59,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/845.png'
           // eslint-disable-next-line max-len
-          text='Use this instruction to download the animated version of your SOONABOT.  '
+          text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
           headline='How do i get the animated SOONABOT version as my profile picture?'
         >
           { }
