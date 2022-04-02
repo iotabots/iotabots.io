@@ -49,6 +49,14 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
+          image=''
+          // eslint-disable-next-line max-len
+          text='All currently existing IOTABOTS and SPACEBOTS were given away for free and can no longer be acquired. The sale of the SOONABOTS is still live on SOONAVERSE where you can get one for 100 MIOTA. Here is the link where you can buy some SOONABOTS: https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'
+          headline='How can I get NFTs?'
+        >
+          { }
+        </ContentBox>
+        <ContentBox
           image='http://assets.iotabots.io/compressed/845.png'
           // eslint-disable-next-line max-len
           text='Download your favourite IOTABOT or SOONABOT and use it as a profile picture. The SOONABOT is a fully animated BOT. Your SPACEBOT gives you access to a NFT game.'
@@ -57,7 +65,7 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
-          image='http://assets.iotabots.io/compressed/845.png'
+          image=''
           // eslint-disable-next-line max-len
           text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
           headline='How do i get the animated SOONABOT version as my profile picture?'
