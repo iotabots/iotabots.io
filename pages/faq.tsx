@@ -57,6 +57,14 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
+          image='http://assets.iotabots.io/compressed/845.png'
+          // eslint-disable-next-line max-len
+          text='Use this instruction to download the animated version of your SOONABOT.  '
+          headline='How do i get the animated SOONABOT version as my profile picture?'
+        >
+          { }
+        </ContentBox>
+        <ContentBox
           image='http://assets.iotabots.io/compressed/895.png'
           // eslint-disable-next-line max-len
           text='You need Metamask with the following custom network settings: RPC URL = https://evm.wasp.sc.iota.org and Chain ID = 1074'
