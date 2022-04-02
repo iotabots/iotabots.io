@@ -41,7 +41,7 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
-          image=''
+          image='http://assets.iotabots.io/compressed/773.png'
           // eslint-disable-next-line max-len
           text='Follow IOTABOTS on Twitter (https://twitter.com/iotabots) or/and join the Discord (https://t.co/BLwSLmwoJt) channel to not miss anything.'
           headline='How do I know about any updates and giveaways?'
@@ -49,7 +49,7 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
-          image=''
+          image='http://assets.iotabots.io/compressed/385.png'
           // eslint-disable-next-line max-len
           text='On SOONAVERSE (https://soonaverse.com/) you can buy, sell and trade NFTs like the SOONABOTS without any fees. But it is also a platform to create DAOs and let the community engage for example via proposals.'
           headline='What is SOONAVERSE?'
@@ -57,7 +57,7 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
-          image=''
+          image='http://assets.iotabots.io/compressed/62.png'
           // eslint-disable-next-line max-len
           text='All currently existing IOTABOTS and SPACEBOTS were given away for free and can no longer be acquired. The sale of the SOONABOTS is still live on SOONAVERSE where you can get one for 100 MIOTA. Here is the link where you can buy some SOONABOTS: https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'
           headline='How can I get NFTs?'
