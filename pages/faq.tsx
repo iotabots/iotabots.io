@@ -27,15 +27,15 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/987.png'
           // eslint-disable-next-line max-len
-          text='Right now there are 1048 IOTABOTS, 1001 SPACEBOTS and 3333 SOONABOTS. There will be more IOTABOTS and also NATUREBOTS sometime in the Future.' 
-          headline='How many NFTs exist?'
+          text='Right now there are 1048 IOTABOTS, 1001 SPACEBOTS and 3333 SOONABOTS.' 
+          headline='How many NFTs exist right now?'
         >
           { }
         </ContentBox>
         <ContentBox
           image='http://assets.iotabots.io/compressed/990.png'
           // eslint-disable-next-line max-len
-          text='10.000 unique IOTABOTS.'
+          text='10.000 unique IOTABOTS, 1001 SPACEBOTS, 3333 SOONABOTS and tbd NATUREBOTS.'
           headline='How many NFTs will exist?'
         >
           { }
