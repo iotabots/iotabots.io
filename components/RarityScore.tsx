@@ -220,6 +220,14 @@ export const RarityScoreSoonabots = () => {
                     </Grid>
                 </Grid>  
 
+                <Grid  
+                    container spacing={1}
+                    justifyContent='center'
+                    className="select-search-reset-button"
+                >
+                
+                </Grid>
+
         </Container>
     );
 };
