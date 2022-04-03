@@ -73,7 +73,6 @@ export const RarityScoreSoonabots = () => {
                     <Grid>
                         <h3 className="select-search-heading">BODY</h3>
                         <SelectSearch
-                            //onChange={setBody}
                             onChange={body => {setBodyValue(body)}}
                             search
                             filterOptions={fuzzySearch}
