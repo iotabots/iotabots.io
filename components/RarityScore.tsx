@@ -9,6 +9,7 @@ import {
     SectionHeader,
     Typography
   } from '@iotabots/components'
+import { useEffect } from 'react';
 
 
 /**
@@ -128,6 +129,9 @@ export const RarityScoreSoonabots = () => {
         setDisplay(display)
         setRarityScore()
     }
+    useEffect(() => {
+        setRarityScore();
+      }, [display])
 
     const setBodyValue = (body) => {
         setBody(body)
