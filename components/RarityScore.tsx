@@ -69,7 +69,19 @@ export const RarityScoreSoonabots = () => {
                             options={displayOptions}
                         />
                         <div className="select-search-bottom"> Rarity Score: {display}</div>
-                        
+                    </Grid>
+                    <Grid>
+                        <h3 className="select-search-heading">BODY</h3>
+                        <SelectSearch
+                            //onChange={setBody}
+                            onChange={body => {setBodyValue(body)}}
+                            search
+                            filterOptions={fuzzySearch}
+                            value={body}
+                            placeholder="Set your body"
+                            options={bodyOptions}
+                        />
+                        <div className="select-search-bottom">Rarity Score: {body} </div>
                     </Grid>
 
         </Container>
