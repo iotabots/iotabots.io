@@ -69,6 +69,8 @@ export const bodyOptions  = [
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
     const [body, setBody] = useState(null);
+    const [face, setFace] = useState(null);
+
 
     const style = {
         fontFamily: '"Nunito Sans", sans-serif',
@@ -113,6 +115,11 @@ export const RarityScoreSoonabots = () => {
     const setBodyValue = (body) => {
         setBody(body)
         //setRarityScore()
+    }
+
+    const setFaceValue = (face) => {
+        setFace(face)
+       //setRarityScore()
     }
 
 
