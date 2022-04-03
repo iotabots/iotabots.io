@@ -137,16 +137,24 @@ export const RarityScoreSoonabots = () => {
         setBody(body)
         setRarityScore()
     }
+    useEffect(() => {
+        setRarityScore();
+      }, [body])
 
     const setFaceValue = (face) => {
         setFace(face)
         setRarityScore()
     }
+    useEffect(() => {
+        setRarityScore();
+      }, [face])
 
     const setBackgroundValue = (background) => {
         setBackground(background)
-        setRarityScore()
     }
+    useEffect(() => {
+        setRarityScore();
+      }, [background])
 
 
     const setRarityScore = () => {
