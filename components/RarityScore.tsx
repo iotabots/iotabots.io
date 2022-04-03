@@ -207,22 +207,17 @@ export const RarityScoreSoonabots = () => {
 
 
 
-                 <Grid  
-                    container spacing={1}
-                    justifyContent='center'
-                >
-                    <Grid className="select-search-reset-button">
-                    <button type="button" style="button" onClick={resetValues} >{display}</button>
-                    </Grid>
-                </Grid>  
                 <Grid  
                     container spacing={1}
                     justifyContent='center'
                 >
                     <Grid className="select-search-reset-button">
-                    <button type="button" style="buttonTwo" onClick={resetValues} >{body}</button>
+                    <button type="button" onClick={resetValues} >Click here to reset all values</button>
                     </Grid>
+                    
                 </Grid>  
+
+
 
                 <Grid  
                     container spacing={1}
