@@ -128,6 +128,11 @@ export const RarityScoreSoonabots = () => {
        //setRarityScore()
     }
 
+    const setBackgroundValue = (background) => {
+        setBackground(background)
+        //setRarityScore()
+    }
+
 
     return (       
         <Container maxWidth='md'>
