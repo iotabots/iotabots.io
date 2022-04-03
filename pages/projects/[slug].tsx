@@ -11,6 +11,7 @@ import styled from 'styled-components'
 import Image from '../../components/ImageLoader'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
+import RarityScore from '../../components/RarityScore'
 
 
 
@@ -40,6 +41,10 @@ const Project: React.FC<IProps> = ({ project }) => (
           <Markdown content={project.content} />
         </ProjectContainer>
       </Container>
+      {
+        project.meta.title == 'SOONABOTS' &&
+        <RarityScore/>
+      }
     </Section>
   </BaseLayout>
 )
