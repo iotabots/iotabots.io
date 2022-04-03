@@ -15,25 +15,6 @@ import Image from '../components/ImageLoader'
 import Select from 'react-select';
 
 
-
-
-// const colourStyles = {
-//     control: (styles) => ({ 
-//         ...styles, 
-//         color: "white!",
-//         backgroundColor: "rgba(137, 194, 177, 0.174)",
-//         border:"none",
-//      }),
-//     option: (styles, { isDisabled }) => {
-//       return {
-//         ...styles,
-//        // backgroundColor: isDisabled ? "white" : "white",
-//         color: "black",
-//         cursor: isDisabled ? "not-allowed" : "default"
-//       };
-//     }
-//   };
-
   const styles = {
     option: (provided, state) => ({
       ...provided,
@@ -41,11 +22,9 @@ import Select from 'react-select';
       color: "black",
       backgroundColor: "rgba(137, 194, 177, 0.174)",
       border:"none",
-      //fontSize: state.selectProps.myFontSize
     }),
     singleValue: (provided, state) => ({
       ...provided,
-      //color: state.data.color,
       fontSize: state.selectProps.myFontSize
     })
   };

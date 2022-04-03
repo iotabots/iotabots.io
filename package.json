@@ -37,7 +37,6 @@
     "react-markdown": "^7.1.1",
     "react-reveal": "^1.2.2",
     "react-select": "^5.2.2",
-    "react-select-search": "^3.0.9",
     "react-syntax-highlighter": "^15.4.5",
     "styled-components": "^5.3.5",
     "web3": "^1.6.1"
