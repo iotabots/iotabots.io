@@ -66,6 +66,11 @@ export const RarityScoreSoonabots = () => {
     const [rarityStateFace, setRarityStateFace] = useState(null);
     const [rarityStateBackground, setRarityStateBackground] = useState(null);
 
+    const [frequencyStateDisplay, setFrequencyStateDisplay] = useState(null);
+    const [frequencyStateBody, setFrequencyStateBody] = useState(null);
+    const [frequencyStateFace, setFrequencyStateFace] = useState(null);
+    const [frequencyStateBackground, setFrequencyStateBackground] = useState(null);
+
 
     const resetValues = () => {
         setDisplay(null)
@@ -84,6 +89,7 @@ export const RarityScoreSoonabots = () => {
         var rarityDisplay = 1/display.value 
         setDisplay(rarityDisplay)
         setRarityStateDisplay(display.raritystatus)
+        setFrequencyStateDisplay(display.value)
         setRarityScore()
     }
     //Use Effect is used as setState is done asynchronusly
@@ -95,6 +101,7 @@ export const RarityScoreSoonabots = () => {
         var rarityBody = 1/body.value
         setBody(rarityBody)
         setRarityStateBody(body.raritystatus)
+        setFrequencyStateBody(body.value)
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -105,6 +112,7 @@ export const RarityScoreSoonabots = () => {
     const setFaceValue = (face) => {
         var rarityFace = 1/face.value
         setRarityStateFace(face.raritystatus)
+        setFrequencyStateFace(face.value)
         setFace(rarityFace)
         setRarityScore()
     }
@@ -116,6 +124,7 @@ export const RarityScoreSoonabots = () => {
     const setBackgroundValue = (background) => {
         var rarityBackground = 1/background.value
         setRarityStateBackground(background.raritystatus)
+        setFrequencyStateBackground(background.value)
         setBackground(rarityBackground)
         setRarityScore()
     }
@@ -174,7 +183,10 @@ export const RarityScoreSoonabots = () => {
                             placeholder="Set your display"
                             styles={styles}
                         />
-                        <div className="select-search-bottom"> {rarityStateDisplay !=null && rarityStateDisplay}</div>
+                        <div className="select-search-bottom"> {rarityStateDisplay !=null && rarityStateDisplay }</div>
+                        {frequencyStateDisplay !=null && 
+                            <div className="select-search-bottom"> Frequency: {frequencyStateDisplay}%</div>
+                        }
                         <div className="select-search-bottom"> Rarity Score: {display !=null && display.toFixed(2)}</div>
                     </Grid>
                     <Grid width="220px">
@@ -190,6 +202,9 @@ export const RarityScoreSoonabots = () => {
                             
                         />
                         <div className="select-search-bottom"> {rarityStateBody !=null && rarityStateBody}</div>
+                        {frequencyStateBody !=null && 
+                            <div className="select-search-bottom"> Frequency: {frequencyStateBody}%</div>
+                        }
                         <div className="select-search-bottom">Rarity Score: {body != null && body.toFixed(2)} </div>
                     </Grid>
                     <Grid width="220px">
@@ -204,6 +219,9 @@ export const RarityScoreSoonabots = () => {
                             styles={styles}
                         />
                         <div className="select-search-bottom"> {rarityStateFace !=null && rarityStateFace}</div>
+                        {frequencyStateDisplay !=null && 
+                            <div className="select-search-bottom"> Frequency: {frequencyStateDisplay}%</div>
+                        }
                         <div className="select-search-bottom">Rarity Score: {face != null && face.toFixed(2)} </div>
                     </Grid>
                     <Grid width="220px">
@@ -218,6 +236,9 @@ export const RarityScoreSoonabots = () => {
                             styles={styles}
                         />
                         <div className="select-search-bottom"> {rarityStateBackground !=null && rarityStateBackground}</div>
+                        {frequencyStateDisplay !=null && 
+                            <div className="select-search-bottom"> Frequency: {frequencyStateDisplay}%</div>
+                        }
                         <div className="select-search-bottom">Rarity Score: {background != null && background.toFixed(2)}</div>
                     </Grid> 
                 </Grid>
