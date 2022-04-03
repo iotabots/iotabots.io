@@ -68,6 +68,7 @@ export const bodyOptions  = [
 
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
+    const [body, setBody] = useState(null);
 
     const style = {
         fontFamily: '"Nunito Sans", sans-serif',
@@ -101,10 +102,16 @@ export const RarityScoreSoonabots = () => {
     const resetValues = () => {
         setDisplay(null)
        
-     }
+    }
+
 
     const setDisplayValue = (display) => {
         setDisplay(display)
+        //setRarityScore()
+    }
+
+    const setBodyValue = (body) => {
+        setBody(body)
         //setRarityScore()
     }
 
@@ -142,9 +149,16 @@ export const RarityScoreSoonabots = () => {
                     justifyContent='center'
                 >
                     <Grid className="select-search-reset-button">
-                    <button type="button" style="Button" onClick={resetValues} >{display}</button>
+                    <button type="button" style="button" onClick={resetValues} >{display}</button>
                     </Grid>
-                    
+                </Grid>  
+                <Grid  
+                    container spacing={1}
+                    justifyContent='center'
+                >
+                    <Grid className="select-search-reset-button">
+                    <button type="button" style="buttonTwo" onClick={resetValues} >{body}</button>
+                    </Grid>
                 </Grid>  
 
         </Container>
