@@ -269,13 +269,14 @@ export const RarityScoreSoonabots = () => {
                     container spacing={1}
                     justifyContent='center'
                     className="select-search-reset-button">
-                    <div className="select-search-heading">The highest in theory possible Rarity Score is 4221.88. The in theory lowest possible Rarity Score is 65.72.</div>
+                    <div>The highest in theory possible Rarity Score is 4221.88. The in theory lowest possible Rarity Score is 65.72.</div>
+                    <div> But it still has to be discovered whether those bots actually exist.</div>
                 </Grid>
                 <Grid  
                     container spacing={1}
                     justifyContent='center'
                     className="select-search-reset-button">
-                    <h3 className="select-search-heading">Here is the percentage distribution of the individual components</h3>
+                    <h3 className="select-search-heading">Here is an complete overview of the percentage distribution of the individual properties:</h3>
                 </Grid>
                 <Grid  
                     container spacing={1}
