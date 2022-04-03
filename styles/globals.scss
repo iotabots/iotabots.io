@@ -78,3 +78,27 @@ html {
   font-size: large;
 
 }
+
+.select-search *,
+.select-search *::after,
+.select-search *::before {
+  box-sizing: inherit;
+}
+
+/**
+* Value wrapper
+*/
+.select-search__value {
+  position: relative;
+  z-index: 1;
+}
+
+.select-search__value::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 9px);
+  right: 19px;
+  width: 11px;
+  height: 11px;
+}
