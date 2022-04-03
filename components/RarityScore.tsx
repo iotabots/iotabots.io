@@ -120,7 +120,7 @@ export const RarityScoreSoonabots = () => {
         setBody(null)
         setFace(null)
         setBackground(null)
-       
+        setResult(null)
     }
 
 
@@ -142,6 +142,20 @@ export const RarityScoreSoonabots = () => {
     const setBackgroundValue = (background) => {
         setBackground(background)
         //setRarityScore()
+    }
+
+
+    const setRarityScore = () => {
+
+        if (body != null && display != null && face != null && background != null){
+            var rarityScore = body+display+face+background
+     
+            setResult(rarityScore)
+        }
+        else
+        {
+            setResult
+        }
     }
 
 
