@@ -228,6 +228,10 @@ export const RarityScoreSoonabots = () => {
                     <Grid>
                         <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result}</div>
                     </Grid>
+
+                    <Grid >
+                        <div>Fill all above values to get your Rarity Score</div>
+                    </Grid>
                 </Grid>
 
         </Container>
