@@ -87,34 +87,6 @@ export const RarityScoreSoonabots = () => {
     const [result, setResult] = useState(null);
 
 
-    const style = {
-        fontFamily: '"Nunito Sans", sans-serif',
-        marginTop: '16px',
-    };
-
-    const button = {
-        marginTop: '16px',
-        display: 'inline-flex',
-        position: 'relative',
-        alignItems: 'center',
-        height: '40px',
-        padding: '0 16px',
-        borderRadius: '3px',
-        border: 'none',
-        background: 'rgb(49, 173, 122)',
-        color: '#fff',
-        fontSize: '16px',
-        cursor: 'pointer',
-        outline: 'none',
-    };
-
-    const buttonTwo = {
-        ...button,
-        background: 'transparent',
-        border: '2px solid #888',
-        color: '#888',
-        marginLeft: '8px',
-    };
 
     const resetValues = () => {
         setDisplay(null)
