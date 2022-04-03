@@ -116,6 +116,9 @@ export const RarityScoreSoonabots = () => {
 
     const resetValues = () => {
         setDisplay(null)
+        setBody(null)
+        setFace(null)
+        setBackground(null)
        
     }
 
