@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import SelectSearch, { fuzzySearch } from 'react-select-search';
+import SelectSearch, { useSelect, fuzzySearch } from 'react-select-search';
 import {
     BaseLayout,
     Container,
@@ -11,7 +11,45 @@ import {
   } from '@iotabots/components'
 import { useEffect } from 'react';
 import {displayOptions, bodyOptions, faceOptions, backgroundOptions} from '../public/soonabotOptions.js'
+import Image from '../components/ImageLoader'
+import Select from 'react-select';
 
+
+
+
+const colourStyles = {
+    control: (styles) => ({ 
+        ...styles, 
+        color: "white!",
+        backgroundColor: "rgba(137, 194, 177, 0.174)",
+        border:"none",
+     }),
+    option: (styles, { isDisabled }) => {
+      return {
+        ...styles,
+       // backgroundColor: isDisabled ? "white" : "white",
+        color: "black",
+        cursor: isDisabled ? "not-allowed" : "default"
+      };
+    }
+  };
+
+  const styles = {
+    option: (provided, state) => ({
+      ...provided,
+      fontWeight: state.isSelected ? "bold" : "normal",
+      color: "black",
+      backgroundColor: "rgba(137, 194, 177, 0.174)",
+      border:"none",
+   
+      //fontSize: state.selectProps.myFontSize
+    }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      //color: state.data.color,
+      fontSize: state.selectProps.myFontSize
+    })
+  };
 
 
 // This function calculates the Rarity Score for Soonabots
@@ -35,7 +73,7 @@ export const RarityScoreSoonabots = () => {
 
 
     const setDisplayValue = (display) => {
-        setDisplay(display)
+        setDisplay(display.value)
         setRarityScore()
     }
     //Use Effect is used as setState is done asynchronusly
@@ -44,7 +82,7 @@ export const RarityScoreSoonabots = () => {
       }, [display])
 
     const setBodyValue = (body) => {
-        setBody(body)
+        setBody(body.value)
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -53,7 +91,7 @@ export const RarityScoreSoonabots = () => {
       }, [body])
 
     const setFaceValue = (face) => {
-        setFace(face)
+        setFace(face.value)
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -62,7 +100,7 @@ export const RarityScoreSoonabots = () => {
       }, [face])
 
     const setBackgroundValue = (background) => {
-        setBackground(background)
+        setBackground(background.value)
     }
      //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
@@ -87,6 +125,7 @@ export const RarityScoreSoonabots = () => {
     }
 
 
+
     return (       
         <Container maxWidth='md'>
                 <Grid
@@ -103,53 +142,57 @@ export const RarityScoreSoonabots = () => {
                 container spacing={4}
                 justifyContent='center'
                 className="rarity-score-top-heading">
-                    <Grid justifyContent='center'>
+                    <Grid justifyContent='center' width="220px">
                         <h3 className="select-search-heading">DISPLAY</h3>
-                        <SelectSearch
+                        <Select 
                             options={displayOptions}
-                            search
-                            filterOptions={fuzzySearch}
+                            //filterOptions={fuzzySearch}
                             onChange={display => {setDisplayValue(display)}}
-                            value={display}
+                            //value={display}
+                            //closeOnSelect={true}
                             placeholder="Set your display"
+                            styles={styles}
                         />
                         <div className="select-search-bottom"> Rarity Score: {display}</div>
                         
                     </Grid>
-                    <Grid>
+                    <Grid width="220px">
                         <h3 className="select-search-heading">BODY</h3>
-                        <SelectSearch
+                        <Select
                             onChange={body => {setBodyValue(body)}}
-                            search
-                            filterOptions={fuzzySearch}
-                            value={body}
+                            //search={true}
+                            //filterOptions={fuzzySearch}
+                            //value={body}
                             placeholder="Set your body"
                             options={bodyOptions}
+                            styles={styles}
                             
                         />
                         <div className="select-search-bottom">Rarity Score: {body} </div>
                     </Grid>
-                    <Grid>
+                    <Grid width="220px">
                         <h3 className="select-search-heading">FACE</h3>
-                        <SelectSearch
+                        <Select
                             onChange={face => {setFaceValue(face)}}
-                            search
-                            filterOptions={fuzzySearch}
-                            value={face}
+                            //search={true}
+                            //filterOptions={fuzzySearch}
+                            //value={face}
                             placeholder="Set your face"
                             options={faceOptions}
+                            styles={styles}
                         />
                         <div className="select-search-bottom">Rarity Score: {face} </div>
                     </Grid>
-                    <Grid>
+                    <Grid width="220px">
                         <h3 className="select-search-heading">BACKGROUND</h3>
-                        <SelectSearch
+                        <Select
                             onChange={background => {setBackgroundValue(background)}}
-                            search
-                            filterOptions={fuzzySearch}
-                            value={background}
+                            //search={true}
+                            //filterOptions={fuzzySearch}
+                            //value={background}
                             placeholder="Set your background"
                             options={backgroundOptions}
+                            styles={styles}
                         />
                         <div className="select-search-bottom">Rarity Score: {background}</div>
                     </Grid> 
@@ -176,6 +219,24 @@ export const RarityScoreSoonabots = () => {
                             <div>Fill all above values to get your Rarity Score</div>
                         </Grid>
                     }
+                </Grid>
+                <Grid  
+                    container spacing={1}
+                    justifyContent='center'
+                    className="select-search-reset-button">
+                    <h3 className="select-search-heading">Here is the rarity table of the individual parts</h3>
+                </Grid>
+                <Grid  
+                    container spacing={1}
+                    justifyContent='center'
+                    className="select-search-heading">    
+                    <Image 
+                        imageUrl='../assets/projects/rarity_table.jpg'
+                        width='500px'
+                        height= '100%'
+                        borderRadius='8px' 
+                        border='solid white 0.001em'
+                    />
                 </Grid>
 
         </Container>
