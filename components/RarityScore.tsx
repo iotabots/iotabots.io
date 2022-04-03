@@ -54,6 +54,12 @@ import {
 // }
 
 export const RarityScoreSoonabots = () => {
+    const [display, setDisplay] = useState(null);
+
+    const style = {
+        fontFamily: '"Nunito Sans", sans-serif',
+        marginTop: '16px',
+    };
 
 
     return (       
