@@ -53,6 +53,13 @@ import {
 //      )
 // }
 
+export const displayOptions  = [
+    { value: 0.03, name: 'Small' },
+    { value: 2.7, name: 'Medium' },
+    { value: 7.47, name: 'Large' },
+]
+
+
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
 
