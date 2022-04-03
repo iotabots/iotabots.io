@@ -86,7 +86,7 @@ export const RarityScoreSoonabots = () => {
 
 
     const setDisplayValue = (display) => {
-        var rarityDisplay = 1/display.value 
+        var rarityDisplay = 1/(display.value/100)
         setDisplay(rarityDisplay)
         setRarityStateDisplay(display.raritystatus)
         setFrequencyStateDisplay(display.value)
@@ -98,7 +98,7 @@ export const RarityScoreSoonabots = () => {
       }, [display])
 
     const setBodyValue = (body) => {
-        var rarityBody = 1/body.value
+        var rarityBody = 1/(body.value/100)
         setBody(rarityBody)
         setRarityStateBody(body.raritystatus)
         setFrequencyStateBody(body.value)
@@ -110,7 +110,7 @@ export const RarityScoreSoonabots = () => {
       }, [body])
 
     const setFaceValue = (face) => {
-        var rarityFace = 1/face.value
+        var rarityFace = 1/(face.value/100)
         setRarityStateFace(face.raritystatus)
         setFrequencyStateFace(face.value)
         setFace(rarityFace)
@@ -122,7 +122,7 @@ export const RarityScoreSoonabots = () => {
       }, [face])
 
     const setBackgroundValue = (background) => {
-        var rarityBackground = 1/background.value
+        var rarityBackground = 1/(background.value/100)
         setRarityStateBackground(background.raritystatus)
         setFrequencyStateBackground(background.value)
         setBackground(rarityBackground)
@@ -165,7 +165,7 @@ export const RarityScoreSoonabots = () => {
                 
                 <div>The rarity score is calculated in the following way:</div>
                 <div><i>[Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])</i> </div>
-                <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better</div>
+                <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better.</div>
                 </Grid> 
                 <Grid
                 item
@@ -219,8 +219,8 @@ export const RarityScoreSoonabots = () => {
                             styles={styles}
                         />
                         <div className="select-search-bottom"> {rarityStateFace !=null && rarityStateFace}</div>
-                        {frequencyStateDisplay !=null && 
-                            <div className="select-search-bottom"> Frequency: {frequencyStateDisplay}%</div>
+                        {frequencyStateFace !=null && 
+                            <div className="select-search-bottom"> Frequency: {frequencyStateFace}%</div>
                         }
                         <div className="select-search-bottom">Rarity Score: {face != null && face.toFixed(2)} </div>
                     </Grid>
@@ -236,8 +236,8 @@ export const RarityScoreSoonabots = () => {
                             styles={styles}
                         />
                         <div className="select-search-bottom"> {rarityStateBackground !=null && rarityStateBackground}</div>
-                        {frequencyStateDisplay !=null && 
-                            <div className="select-search-bottom"> Frequency: {frequencyStateDisplay}%</div>
+                        {frequencyStateBackground !=null && 
+                            <div className="select-search-bottom"> Frequency: {frequencyStateBackground}%</div>
                         }
                         <div className="select-search-bottom">Rarity Score: {background != null && background.toFixed(2)}</div>
                     </Grid> 
@@ -264,6 +264,12 @@ export const RarityScoreSoonabots = () => {
                             <div>Fill all above values to get your Rarity Score</div>
                         </Grid>
                     }
+                </Grid>
+                <Grid  
+                    container spacing={1}
+                    justifyContent='center'
+                    className="select-search-reset-button">
+                    <div className="select-search-heading">The highest in theory possible Rarity Score is 4221.88. The in theory lowest possible Rarity Score is 65.72.</div>
                 </Grid>
                 <Grid  
                     container spacing={1}
