@@ -58,6 +58,20 @@ export const RarityScoreSoonabots = () => {
 
     return (       
         <Container maxWidth='md'>
+                        <Grid justifyContent='center'>
+                        <h3 className="select-search-heading">DISPLAY</h3>
+                        <SelectSearch
+                            //onChange={setDisplay}
+                            onChange={display => {setDisplayValue(display)}}
+                            search
+                            filterOptions={fuzzySearch}
+                            value={display}
+                            placeholder="Set your display"
+                            options={displayOptions}
+                        />
+                        <div className="select-search-bottom"> Rarity Score: {display}</div>
+                        
+                    </Grid>
 
         </Container>
     );
