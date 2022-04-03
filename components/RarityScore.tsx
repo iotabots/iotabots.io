@@ -92,6 +92,11 @@ export const RarityScoreSoonabots = () => {
         marginLeft: '8px',
     };
 
+    const resetValues = () => {
+        setDisplay(null)
+       
+     }
+
     const setDisplayValue = (display) => {
         setDisplay(display)
         //setRarityScore()
@@ -124,6 +129,17 @@ export const RarityScoreSoonabots = () => {
                         />
                         <div className="select-search-bottom">Rarity Score: {body} </div>
                     </Grid>
+
+
+                 <Grid  
+                    container spacing={1}
+                    justifyContent='center'
+                >
+                    <Grid className="select-search-reset-button">
+                    <button type="button" style="Button" onClick={resetValues} >{display}</button>
+                    </Grid>
+                    
+                </Grid>  
 
         </Container>
     );
