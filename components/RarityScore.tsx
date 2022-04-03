@@ -17,22 +17,22 @@ import Select from 'react-select';
 
 
 
-const colourStyles = {
-    control: (styles) => ({ 
-        ...styles, 
-        color: "white!",
-        backgroundColor: "rgba(137, 194, 177, 0.174)",
-        border:"none",
-     }),
-    option: (styles, { isDisabled }) => {
-      return {
-        ...styles,
-       // backgroundColor: isDisabled ? "white" : "white",
-        color: "black",
-        cursor: isDisabled ? "not-allowed" : "default"
-      };
-    }
-  };
+// const colourStyles = {
+//     control: (styles) => ({ 
+//         ...styles, 
+//         color: "white!",
+//         backgroundColor: "rgba(137, 194, 177, 0.174)",
+//         border:"none",
+//      }),
+//     option: (styles, { isDisabled }) => {
+//       return {
+//         ...styles,
+//        // backgroundColor: isDisabled ? "white" : "white",
+//         color: "black",
+//         cursor: isDisabled ? "not-allowed" : "default"
+//       };
+//     }
+//   };
 
   const styles = {
     option: (provided, state) => ({
@@ -73,6 +73,10 @@ export const RarityScoreSoonabots = () => {
         setFace(null)
         setBackground(null)
         setResult(null)
+        setRarityStateDisplay(null)
+        setRarityStateBody(null)
+        setRarityStateFace(null)
+        setRarityStateBackground(null)
     }
 
 
@@ -127,7 +131,6 @@ export const RarityScoreSoonabots = () => {
             // [Individual Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])
             // [Final Rarity Score] = SumOf([Individual Rarity Score for a Trait Value])
             // https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c
-            console.log(body)
             var rarityScore = body+display+face+background
             var rarityScoreTwoDecimals = rarityScore;
             setResult(rarityScore)
@@ -232,7 +235,7 @@ export const RarityScoreSoonabots = () => {
                 >
                     { result != null &&
                         <Grid>
-                            <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result.toFixed(2)}</div>
+                            <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS <b>{result.toFixed(2)}</b></div>
                         </Grid>
                     }
                     { result == null &&
