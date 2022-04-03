@@ -12,8 +12,9 @@ import {
 import { useEffect } from 'react';
 import {displayOptions, bodyOptions, faceOptions, backgroundOptions} from '../public/soonabotOptions.js'
 
-
-
+// This function calculates the Rarity Score for Soonabots
+// TODO: Add functionality to import a SOONABOT based on the SOONABOT number. 
+// For this a table of all Soonabots is needed. 
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
     const [body, setBody] = useState(null);
@@ -35,6 +36,7 @@ export const RarityScoreSoonabots = () => {
         setDisplay(display)
         setRarityScore()
     }
+    //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
         setRarityScore();
       }, [display])
@@ -43,6 +45,7 @@ export const RarityScoreSoonabots = () => {
         setBody(body)
         setRarityScore()
     }
+     //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
         setRarityScore();
       }, [body])
@@ -51,6 +54,7 @@ export const RarityScoreSoonabots = () => {
         setFace(face)
         setRarityScore()
     }
+     //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
         setRarityScore();
       }, [face])
@@ -58,6 +62,7 @@ export const RarityScoreSoonabots = () => {
     const setBackgroundValue = (background) => {
         setBackground(background)
     }
+     //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
         setRarityScore();
       }, [background])
@@ -86,8 +91,7 @@ export const RarityScoreSoonabots = () => {
                     item
                     container spacing={1}
                     justifyContent='center'
-                    className="rarity-score-top-heading"
-                >
+                    className="rarity-score-top-heading">
                 <h2 >Calculate the Rarity Score of your SOONABOT</h2>
                 <div>You always wanted to know how rare your SOONABOT is? Then today is your lucky day. Here you can get the Rarity Score of your SOONABOT.
                 Just enter the properties of your SOONABOT here and you will receive the Rarity Score. You can find the properties of your SOONABOT in  <b><a href="https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a">SOONAVERSE</a></b>.</div> 
@@ -96,8 +100,7 @@ export const RarityScoreSoonabots = () => {
                     item
                     container spacing={4}
                     justifyContent='center'
-                    className="rarity-score-top-heading"
-                >
+                    className="rarity-score-top-heading">
                     <Grid justifyContent='center'>
                         <h3 className="select-search-heading">DISPLAY</h3>
                         <SelectSearch
@@ -148,36 +151,27 @@ export const RarityScoreSoonabots = () => {
                         <div className="select-search-bottom">Rarity Score: {background}</div>
                     </Grid> 
                 </Grid>
-
-
-
-
                 <Grid  
                     container spacing={1}
-                    justifyContent='center'
-                >
+                    justifyContent='center'>
                     <Grid className="select-search-reset-button">
-                    <button type="button" onClick={resetValues} >Click here to reset all values</button>
-                    </Grid>
-                    
+                        <button type="button" onClick={resetValues} >Click here to reset all values</button>
+                    </Grid>                
                 </Grid>  
-
-
-
                 <Grid  
                     container spacing={1}
                     justifyContent='center'
                     className="select-search-reset-button"
                 >
                     { result != null &&
-                    <Grid>
-                        <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result}</div>
-                    </Grid>
+                        <Grid>
+                            <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result}</div>
+                        </Grid>
                     }
                     { result == null &&
-                    <Grid >
-                    <div>Fill all above values to get your Rarity Score</div>
-                    </Grid>
+                        <Grid >
+                            <div>Fill all above values to get your Rarity Score</div>
+                        </Grid>
                     }
                 </Grid>
 
