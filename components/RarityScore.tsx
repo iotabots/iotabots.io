@@ -143,7 +143,13 @@ export const RarityScoreSoonabots = () => {
 
     return (       
         <Container maxWidth='md'>
-                        <Grid justifyContent='center'>
+                 <Grid
+                    item
+                    container spacing={4}
+                    justifyContent='center'
+                    className="rarity-score-top-heading"
+                >
+                    <Grid justifyContent='center'>
                         <h3 className="select-search-heading">DISPLAY</h3>
                         <SelectSearch
                             onChange={display => {setDisplayValue(display)}}
@@ -154,6 +160,7 @@ export const RarityScoreSoonabots = () => {
                             options={displayOptions}
                         />
                         <div className="select-search-bottom"> Rarity Score: {display}</div>
+                        
                     </Grid>
                     <Grid>
                         <h3 className="select-search-heading">BODY</h3>
@@ -191,6 +198,7 @@ export const RarityScoreSoonabots = () => {
                         />
                         <div className="select-search-bottom">Rarity Score: {background}</div>
                     </Grid> 
+                </Grid>
 
 
 
