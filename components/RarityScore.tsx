@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import SelectSearch, { fuzzySearch } from 'react-select-search';
 
 
@@ -7,10 +8,17 @@ import SelectSearch, { fuzzySearch } from 'react-select-search';
  * Required keys are "name" and "value" but you can have and use any number of key/value pairs.
  */
 
+ const sizes = [
+                    { value: 's', name: 'Small' },
+                    { value: 'm', name: 'Medium' },
+                    { value: 'l', name: 'Large' },
+                ]
+
    const [size, setSize] = useState('s');
      const style = {
          fontFamily: '"Nunito Sans", sans-serif',
          marginTop: '24px',
+         fontSize: '16px'
      };
 
      if (size === 's') {
@@ -26,7 +34,7 @@ import SelectSearch, { fuzzySearch } from 'react-select-search';
      return(
          <div>
          <SelectSearch
-             options={countries}
+             options={sizes}
              search
              filterOptions={fuzzySearch}
              emptyMessage="Not found"
@@ -36,3 +44,5 @@ import SelectSearch, { fuzzySearch } from 'react-select-search';
          </div>
      )
 }
+
+export default RarityScore
