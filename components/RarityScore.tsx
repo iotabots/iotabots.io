@@ -150,7 +150,11 @@ export const RarityScoreSoonabots = () => {
                 <h2 >Calculate the Rarity Score of your SOONABOT</h2>
                 <div>You always wanted to know how rare your SOONABOT is? Then today is your lucky day. Here you can get the Rarity Score of your SOONABOT.
                 Just enter the properties of your SOONABOT here and you will receive the Rarity Score. You can find the properties of your SOONABOT in  <b><a href="https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a">SOONAVERSE</a></b>.</div> 
-                </Grid>
+                
+                <div>The rarity score is calculated in the following way:</div>
+                <div><i>[Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])</i> </div>
+                <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better</div>
+                </Grid> 
                 <Grid
                 item
                 container spacing={4}
@@ -167,10 +171,8 @@ export const RarityScoreSoonabots = () => {
                             placeholder="Set your display"
                             styles={styles}
                         />
-                        
-                        <div className="select-search-bottom"> Rarity Score: {display !=null && display.toFixed(2)}</div>
                         <div className="select-search-bottom"> {rarityStateDisplay !=null && rarityStateDisplay}</div>
-   
+                        <div className="select-search-bottom"> Rarity Score: {display !=null && display.toFixed(2)}</div>
                     </Grid>
                     <Grid width="220px">
                         <h3 className="select-search-heading">BODY</h3>
@@ -184,8 +186,8 @@ export const RarityScoreSoonabots = () => {
                             styles={styles}
                             
                         />
-                        <div className="select-search-bottom">Rarity Score: {body != null && body.toFixed(2)} </div>
                         <div className="select-search-bottom"> {rarityStateBody !=null && rarityStateBody}</div>
+                        <div className="select-search-bottom">Rarity Score: {body != null && body.toFixed(2)} </div>
                     </Grid>
                     <Grid width="220px">
                         <h3 className="select-search-heading">FACE</h3>
@@ -198,8 +200,8 @@ export const RarityScoreSoonabots = () => {
                             options={faceOptions}
                             styles={styles}
                         />
-                        <div className="select-search-bottom">Rarity Score: {face != null && face.toFixed(2)} </div>
                         <div className="select-search-bottom"> {rarityStateFace !=null && rarityStateFace}</div>
+                        <div className="select-search-bottom">Rarity Score: {face != null && face.toFixed(2)} </div>
                     </Grid>
                     <Grid width="220px">
                         <h3 className="select-search-heading">BACKGROUND</h3>
@@ -212,8 +214,8 @@ export const RarityScoreSoonabots = () => {
                             options={backgroundOptions}
                             styles={styles}
                         />
-                        <div className="select-search-bottom">Rarity Score: {background != null && background.toFixed(2)}</div>
                         <div className="select-search-bottom"> {rarityStateBackground !=null && rarityStateBackground}</div>
+                        <div className="select-search-bottom">Rarity Score: {background != null && background.toFixed(2)}</div>
                     </Grid> 
                 </Grid>
                 {/* <Grid  
@@ -243,7 +245,7 @@ export const RarityScoreSoonabots = () => {
                     container spacing={1}
                     justifyContent='center'
                     className="select-search-reset-button">
-                    <h3 className="select-search-heading">Here is the rarity table of the individual parts</h3>
+                    <h3 className="select-search-heading">Here is the percentage distribution of the individual components</h3>
                 </Grid>
                 <Grid  
                     container spacing={1}
