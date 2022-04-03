@@ -225,7 +225,9 @@ export const RarityScoreSoonabots = () => {
                     justifyContent='center'
                     className="select-search-reset-button"
                 >
-                
+                    <Grid>
+                        <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result}</div>
+                    </Grid>
                 </Grid>
 
         </Container>
