@@ -61,6 +61,11 @@ export const RarityScoreSoonabots = () => {
         marginTop: '16px',
     };
 
+    const setDisplayValue = (display) => {
+        setDisplay(display)
+        //setRarityScore()
+    }
+
 
     return (       
         <Container maxWidth='md'>
