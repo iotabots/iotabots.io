@@ -126,22 +126,22 @@ export const RarityScoreSoonabots = () => {
 
     const setDisplayValue = (display) => {
         setDisplay(display)
-        //setRarityScore()
+        setRarityScore()
     }
 
     const setBodyValue = (body) => {
         setBody(body)
-        //setRarityScore()
+        setRarityScore()
     }
 
     const setFaceValue = (face) => {
         setFace(face)
-       //setRarityScore()
+        setRarityScore()
     }
 
     const setBackgroundValue = (background) => {
         setBackground(background)
-        //setRarityScore()
+        setRarityScore()
     }
 
 
