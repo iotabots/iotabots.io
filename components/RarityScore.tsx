@@ -109,9 +109,11 @@ export const RarityScoreSoonabots = () => {
     const setRarityScore = () => {
 
         if (body != null && display != null && face != null && background != null){
-            var rarityScore = body+display+face+background
-     
-            setResult(rarityScore)
+            // [Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])
+            // https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c
+            var rarityScore = (1/body)+(1/display)+(1/face)+(1/background)
+            var rarityScoreTwoDecimals = rarityScore.toFixed(2);
+            setResult(rarityScoreTwoDecimals)
         }
         else
         {
