@@ -12,6 +12,8 @@ import {
 import { useEffect } from 'react';
 import {displayOptions, bodyOptions, faceOptions, backgroundOptions} from '../public/soonabotOptions.js'
 
+
+
 // This function calculates the Rarity Score for Soonabots
 // TODO: Add functionality to import a SOONABOT based on the SOONABOT number. 
 // For this a table of all Soonabots is needed. 
@@ -96,20 +98,20 @@ export const RarityScoreSoonabots = () => {
                 <div>You always wanted to know how rare your SOONABOT is? Then today is your lucky day. Here you can get the Rarity Score of your SOONABOT.
                 Just enter the properties of your SOONABOT here and you will receive the Rarity Score. You can find the properties of your SOONABOT in  <b><a href="https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a">SOONAVERSE</a></b>.</div> 
                 </Grid>
-                 <Grid
-                    item
-                    container spacing={4}
-                    justifyContent='center'
-                    className="rarity-score-top-heading">
+                <Grid
+                item
+                container spacing={4}
+                justifyContent='center'
+                className="rarity-score-top-heading">
                     <Grid justifyContent='center'>
                         <h3 className="select-search-heading">DISPLAY</h3>
                         <SelectSearch
-                            onChange={display => {setDisplayValue(display)}}
+                            options={displayOptions}
                             search
                             filterOptions={fuzzySearch}
+                            onChange={display => {setDisplayValue(display)}}
                             value={display}
                             placeholder="Set your display"
-                            options={displayOptions}
                         />
                         <div className="select-search-bottom"> Rarity Score: {display}</div>
                         
@@ -123,6 +125,7 @@ export const RarityScoreSoonabots = () => {
                             value={body}
                             placeholder="Set your body"
                             options={bodyOptions}
+                            
                         />
                         <div className="select-search-bottom">Rarity Score: {body} </div>
                     </Grid>

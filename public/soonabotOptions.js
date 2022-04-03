@@ -25,7 +25,7 @@ export const displayOptions  = [
     {value: 1.02,	name: 'Strike'	 	},  //  ,optional: 'Star'   
     {value: 2.76,	name: 'Target'	 	},  //  ,optional: 'Rhombus'
     {value: 4.09,	name: 'Wasp'		},  //  ,optional: 'Circle' 
-]
+];
 
 export const bodyOptions  = [
     {value: 1.16, name: 'Chroma'    }, //,optional: 'Rhombus'
@@ -77,7 +77,7 @@ export const bodyOptions  = [
     {value: 3.32, name: 'Zop'       }, //,optional: 'Circle '
     {value: 1.26, name: 'Zyan'      }, //,optional: 'Square '
     {value: 0.27, name: 'Zyr'       }, //,optional: 'Star   '
-]
+];
 
 export const faceOptions  = [
     {value: 0.49 ,name: '3D'        }, //,optional: 'Star'   
@@ -100,7 +100,7 @@ export const faceOptions  = [
     {value: 5.10 ,name: 'Rofl'      }, //,optional: 'Circle' 
     {value: 2.63 ,name: 'Sad'       }, //,optional: 'Square' 
     {value: 2.39 ,name: 'Shouting'  }, //,optional: 'Square' 
-    {value: 2.96 ,name: 'Shutup	'   }, //,optional: 'Square' 
+    {value: 2.96 ,name: 'Shutup'    }, //,optional: 'Square' 
     {value: 2.88 ,name: 'Skull'     }, //,optional: 'Square' 
     {value: 5.19 ,name: 'Sleeping'  }, //,optional: 'Rhombus'
     {value: 3.05 ,name: 'Smiling'   }, //,optional: 'Square' 
@@ -113,15 +113,15 @@ export const faceOptions  = [
     {value: 1.32 ,name: 'Vomit'     }, //,optional: 'Rhombus'
     {value: 0.16 ,name: 'Woozy'     }, //,optional: 'Sun'    
     {value: 3.29 ,name: 'Worried'   }, //,optional: 'Square' 
-]
+];
 
 export const backgroundOptions  = [
-    {value:5.09     ,name:'Black' }, //	optional: 'Rhombus'
-    {value:8.56 	,name:'Blue	' }, //	optional: 'Square '
-    {value:13.19	,name:'Green' }, //	optional: 'Circle '
-    {value:9.49 	,name:'Orange'}, //	optional: 'Square '
-    {value:15.97	,name:'Pink	' }, //	optional: 'Circle '
-    {value:18.98	,name:'Red	' }, //	optional: 'Circle '
-    {value:15.51	,name:'Sea	' }, //	optional: 'Circle '
-    {value:13.19	,name:'Yellow'}, //	optional: 'Circle '
-]
+    {value: 5.09 ,name:'Black'  }, //	optional: 'Rhombus'
+    {value: 8.56 ,name:'Blue'   }, //	optional: 'Square '
+    {value:13.19 ,name:'Green'  }, //	optional: 'Circle '
+    {value: 9.49 ,name:'Orange' }, //	optional: 'Square '
+    {value:15.97 ,name:'Pink'   }, //	optional: 'Circle '
+    {value:18.98 ,name:'Red'    }, //	optional: 'Circle '
+    {value:15.51 ,name:'Sea'    }, //	optional: 'Circle '
+    {value:13.19 ,name:'Yellow' }, //	optional: 'Circle '
+];
