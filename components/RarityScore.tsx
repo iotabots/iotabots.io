@@ -71,11 +71,18 @@ export const faceOptions  = [
     { value: 5.19, name: 'Large' },
 ]
 
+export const backgroundOptions  = [
+    { value: 5.09, name: 'Small' },
+    { value: 20, name: 'Medium' },
+    { value: 18.98, name: 'Large' },
+]
+
 
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
     const [body, setBody] = useState(null);
     const [face, setFace] = useState(null);
+    const [background, setBackground] = useState(null);
 
 
     const style = {
