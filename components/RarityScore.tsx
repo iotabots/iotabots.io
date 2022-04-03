@@ -14,49 +14,6 @@ import {displayOptions, bodyOptions, faceOptions, backgroundOptions} from '../pu
 
 
 
-/**
- * The options array should contain objects.
- * Required keys are "name" and "value" but you can have and use any number of key/value pairs.
- */
-
-//  const sizes = [
-//                     { value: 's', name: 'Small' },
-//                     { value: 'm', name: 'Medium' },
-//                     { value: 'l', name: 'Large' },
-//                 ]
-
-//    const [size, setSize] = useState('s');
-//      const style = {
-//          fontFamily: '"Nunito Sans", sans-serif',
-//          marginTop: '24px',
-//          fontSize: '16px'
-//      };
-
-//      if (size === 's') {
-//          style.fontSize = '16px';
-//      } else if (size === 'm') {
-//          style.fontSize = '32px';
-//      } if (size === 'l') {
-//          style.fontSize = '64px';
-//      }
-
-//  const RarityScore: React.FC = () => {
-   
-//      return(
-//          <div>
-//          <SelectSearch
-//              options={sizes}
-//              search
-//              filterOptions={fuzzySearch}
-//              emptyMessage="Not found"
-//              placeholder="Select your country"
-//          />
-//          <h1 style={style}>Aa</h1>
-//          </div>
-//      )
-// }
-
-
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
     const [body, setBody] = useState(null);
@@ -109,7 +66,8 @@ export const RarityScoreSoonabots = () => {
     const setRarityScore = () => {
 
         if (body != null && display != null && face != null && background != null){
-            // [Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])
+            // [Individual Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])
+            // [Final Rarity Score] = SumOf([Individual Rarity Score for a Trait Value])
             // https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c
             var rarityScore = (1/body)+(1/display)+(1/face)+(1/background)
             var rarityScoreTwoDecimals = rarityScore.toFixed(2);
