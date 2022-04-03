@@ -92,7 +92,8 @@ export const RarityScoreSoonabots = () => {
       }, [body])
 
     const setFaceValue = (face) => {
-        setFace(face.value)
+        var rarityFace = 1/face.value
+        setFace(rarityFace.toFixed(2))
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -101,7 +102,8 @@ export const RarityScoreSoonabots = () => {
       }, [face])
 
     const setBackgroundValue = (background) => {
-        setBackground(background.value)
+        var rarityBackground = 1/background.values
+        setBackground(rarityBackground.toFixed(2))
     }
      //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
@@ -115,7 +117,7 @@ export const RarityScoreSoonabots = () => {
             // [Individual Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])
             // [Final Rarity Score] = SumOf([Individual Rarity Score for a Trait Value])
             // https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c
-            var rarityScore = (1/body)+(1/display)+(1/face)+(1/background)
+            var rarityScore = body+display+face+background
             var rarityScoreTwoDecimals = rarityScore.toFixed(2);
             setResult(rarityScoreTwoDecimals)
         }
