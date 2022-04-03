@@ -83,6 +83,7 @@ export const RarityScoreSoonabots = () => {
     const [body, setBody] = useState(null);
     const [face, setFace] = useState(null);
     const [background, setBackground] = useState(null);
+    const [result, setResult] = useState(null);
 
 
     const style = {
