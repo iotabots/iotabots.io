@@ -102,3 +102,38 @@ html {
   width: 11px;
   height: 11px;
 }
+
+/**
+* Input
+*/
+.select-search__input {
+  display: block;
+  height: 36px;
+  width: 100%;
+  padding: 0 40px 0 16px;
+  //background: #fff;
+  background:rgba(137, 194, 177, 0.174);
+  border: 1px solid transparent;
+  box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  outline: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  text-align: left;
+  text-overflow: ellipsis;
+  line-height: 36px;
+  -webkit-appearance: none;
+  color:#fff;
+  text-align: center;
+}
+
+.select-search__input::-webkit-search-decoration,
+.select-search__input::-webkit-search-cancel-button,
+.select-search__input::-webkit-search-results-button,
+.select-search__input::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+.select-search__input:not([readonly]):focus {
+  cursor: initial;
+}
