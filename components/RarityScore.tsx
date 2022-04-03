@@ -209,13 +209,16 @@ export const RarityScoreSoonabots = () => {
                     justifyContent='center'
                     className="select-search-reset-button"
                 >
+                    { result != null &&
                     <Grid>
                         <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result}</div>
                     </Grid>
-
+                    }
+                    { result == null &&
                     <Grid >
-                        <div>Fill all above values to get your Rarity Score</div>
+                    <div>Fill all above values to get your Rarity Score</div>
                     </Grid>
+                    }
                 </Grid>
 
         </Container>
