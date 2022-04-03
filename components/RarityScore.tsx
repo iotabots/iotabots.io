@@ -65,6 +65,12 @@ export const bodyOptions  = [
     { value: 3.32, name: 'Large' },
 ]
 
+export const faceOptions  = [
+    { value: 0.33, name: 'Small' },
+    { value: 2, name: 'Medium' },
+    { value: 5.19, name: 'Large' },
+]
+
 
 export const RarityScoreSoonabots = () => {
     const [display, setDisplay] = useState(null);
