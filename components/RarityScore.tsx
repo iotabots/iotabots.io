@@ -61,7 +61,7 @@ export const RarityScoreSoonabots = () => {
     const [background, setBackground] = useState(null);
     const [result, setResult] = useState(null);
 
-    const [rarityState, setRarityState] = useState(null);
+    const [rarityStateDisplay, setRarityStateDisplay] = useState(null);
 
 
     const resetValues = () => {
@@ -76,7 +76,7 @@ export const RarityScoreSoonabots = () => {
     const setDisplayValue = (display) => {
         var rarityDisplay = 1/display.value 
         setDisplay(rarityDisplay)
-        setRarityState(display.optional)
+        setRarityStateDisplay(display.optional)
         setRarityScore()
     }
     //Use Effect is used as setState is done asynchronusly
@@ -163,10 +163,8 @@ export const RarityScoreSoonabots = () => {
                         />
                         
                         <div className="select-search-bottom"> Rarity Score: {display !=null && display.toFixed(2)}</div>
-                        <div className="select-search-bottom"> Rarity State: {rarityState !=null && rarityState}</div>
-
-                        
-                        
+                        <div className="select-search-bottom"> {rarityStateDisplay !=null && rarityStateDisplay}</div>
+   
                     </Grid>
                     <Grid width="220px">
                         <h3 className="select-search-heading">BODY</h3>
