@@ -61,6 +61,8 @@ export const RarityScoreSoonabots = () => {
     const [background, setBackground] = useState(null);
     const [result, setResult] = useState(null);
 
+    const [rarityState, setRarityState] = useState(null);
+
 
     const resetValues = () => {
         setDisplay(null)
@@ -73,7 +75,8 @@ export const RarityScoreSoonabots = () => {
 
     const setDisplayValue = (display) => {
         var rarityDisplay = 1/display.value 
-        setDisplay(rarityDisplay.toFixed(2))
+        setDisplay(rarityDisplay)
+        setRarityState(display.optional)
         setRarityScore()
     }
     //Use Effect is used as setState is done asynchronusly
@@ -83,7 +86,7 @@ export const RarityScoreSoonabots = () => {
 
     const setBodyValue = (body) => {
         var rarityBody = 1/body.value
-        setBody(rarityBody.toFixed(2))
+        setBody(rarityBody)
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -93,7 +96,7 @@ export const RarityScoreSoonabots = () => {
 
     const setFaceValue = (face) => {
         var rarityFace = 1/face.value
-        setFace(rarityFace.toFixed(2))
+        setFace(rarityFace)
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -102,8 +105,9 @@ export const RarityScoreSoonabots = () => {
       }, [face])
 
     const setBackgroundValue = (background) => {
-        var rarityBackground = 1/background.values
-        setBackground(rarityBackground.toFixed(2))
+        var rarityBackground = 1/background.value
+        setBackground(rarityBackground)
+        setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
     useEffect(() => {
@@ -117,9 +121,10 @@ export const RarityScoreSoonabots = () => {
             // [Individual Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])
             // [Final Rarity Score] = SumOf([Individual Rarity Score for a Trait Value])
             // https://raritytools.medium.com/ranking-rarity-understanding-rarity-calculation-methods-86ceaeb9b98c
+            console.log(body)
             var rarityScore = body+display+face+background
-            var rarityScoreTwoDecimals = rarityScore.toFixed(2);
-            setResult(rarityScoreTwoDecimals)
+            var rarityScoreTwoDecimals = rarityScore;
+            setResult(rarityScore)
         }
         else
         {
@@ -156,7 +161,11 @@ export const RarityScoreSoonabots = () => {
                             placeholder="Set your display"
                             styles={styles}
                         />
-                        <div className="select-search-bottom"> Rarity Score: {display}</div>
+                        
+                        <div className="select-search-bottom"> Rarity Score: {display !=null && display.toFixed(2)}</div>
+                        <div className="select-search-bottom"> Rarity State: {rarityState !=null && rarityState}</div>
+
+                        
                         
                     </Grid>
                     <Grid width="220px">
@@ -171,7 +180,7 @@ export const RarityScoreSoonabots = () => {
                             styles={styles}
                             
                         />
-                        <div className="select-search-bottom">Rarity Score: {body} </div>
+                        <div className="select-search-bottom">Rarity Score: {body != null && body.toFixed(2)} </div>
                     </Grid>
                     <Grid width="220px">
                         <h3 className="select-search-heading">FACE</h3>
@@ -184,7 +193,7 @@ export const RarityScoreSoonabots = () => {
                             options={faceOptions}
                             styles={styles}
                         />
-                        <div className="select-search-bottom">Rarity Score: {face} </div>
+                        <div className="select-search-bottom">Rarity Score: {face != null && face.toFixed(2)} </div>
                     </Grid>
                     <Grid width="220px">
                         <h3 className="select-search-heading">BACKGROUND</h3>
@@ -197,7 +206,8 @@ export const RarityScoreSoonabots = () => {
                             options={backgroundOptions}
                             styles={styles}
                         />
-                        <div className="select-search-bottom">Rarity Score: {background}</div>
+                        <div className="select-search-bottom">Rarity Score: {background != null && background.toFixed(2)}</div>
+                        <div className="select-search-bottom">Rarity Score: {background != null && background.toFixed(2)}</div>
                     </Grid> 
                 </Grid>
                 {/* <Grid  
@@ -214,7 +224,7 @@ export const RarityScoreSoonabots = () => {
                 >
                     { result != null &&
                         <Grid>
-                            <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result}</div>
+                            <div className="rarity-score-result">YOUR OVERALL RARITY SCORE IS {result.toFixed(2)}</div>
                         </Grid>
                     }
                     { result == null &&

@@ -28,32 +28,32 @@
 // ];
 
 export const displayOptions  = [
-    {value: 1.94,label: '4 Star'},	//,optional: 'Rhombus'
-    {value: 1.54,label: '5 Star'},	//,optional: 'Rhombus'
-    {value: 1.02,label: 'Assembly'},	//,optional: 'Star'   
-    {value: 2.97,label: 'Atom'},	//,optional: 'Square' 
-    {value: 1.54,label: 'Battery'},	//,optional: 'Rhombus'
-    {value: 5.32,label: 'Bee'},  //  ,optional: 'Circle' 
-    {value: 0.41,label: 'BOLTS'}, 	//,optional: 'Sun'    
-    {value: 3.99,label: 'Cross'},	//,optional: 'Square' 
-    {value: 6.55,label: 'Dizzy'},	//,optional: 'Circle' 
-    {value: 3.28,label: 'Exclamation'}, 	//,optional: 'Square' 
-    {value: 6.55,label: 'Eye'},  //  ,optional: 'Circle' 
-    {value: 7.57,label: 'Gear'},	//,optional: 'Circle' 
-    {value: 6.55,label: 'Hazard'},	//,optional: 'Circle' 
-    {value: 7.47,label: 'Heart'},	//,optional: 'Circle' 
-    {value: 3.38,label: 'Hornet'},  //  ,optional: 'Square' 
-    {value: 3.17,label: 'IOTA'},	//,optional: 'Square' 
-    {value: 3.58,label: 'LUM'},  //  ,optional: 'Square' 
-    {value: 6.24,label: 'Notification'},	//,optional: 'Circle' 
-    {value: 6.86,label: 'Pirate'},  //  ,optional: 'Circle' 
-    {value: 2.05,label: 'Pulse'},  //  ,optional: 'Rhombus'
-    {value: 3.28,label: 'Pyramid'},  //  ,optional: 'Square' 
-    {value: 4.09,label: 'Question'},	//,optional: 'Circle' 
-    {value: 2.76,label: 'Shimmer'},  //  ,optional: 'Rhombus'
-    {value: 1.02,label: 'Strike'},  //  ,optional: 'Star'   
-    {value: 2.76,label: 'Target'},  //  ,optional: 'Rhombus'
-    {value: 4.09,label: 'Wasp'}  //  ,optional: 'Circle' 
+    {value: 1.94,label: '4 Star',optional: 'Rhombus' },
+    {value: 1.54,label: '5 Star',optional: 'Rhombus' },
+    {value: 1.02,label: 'Assembly',optional: 'Star'},   
+    {value: 2.97,label: 'Atom',optional: 'Square' },
+    {value: 1.54,label: 'Battery',optional: 'Rhombus'},
+    {value: 5.32,label: 'Bee',optional: 'Circle' },
+    {value: 0.41,label: 'BOLTS',optional: 'Sun'   }, 
+    {value: 3.99,label: 'Cross',optional: 'Square' },
+    {value: 6.55,label: 'Dizzy',optional: 'Circle' },
+    {value: 3.28,label: 'Exclamation',optional: 'Square' },
+    {value: 6.55,label: 'Eye',optional: 'Circle' },
+    {value: 7.57,label: 'Gear',optional: 'Circle' },
+    {value: 6.55,label: 'Hazard',optional: 'Circle' },
+    {value: 7.47,label: 'Heart',optional: 'Circle' },
+    {value: 3.38,label: 'Hornet',optional: 'Square' },
+    {value: 3.17,label: 'IOTA',optional: 'Square' },
+    {value: 3.58,label: 'LUM',optional: 'Square' },
+    {value: 6.24,label: 'Notification',optional: 'Circle' },
+    {value: 6.86,label: 'Pirate',optional: 'Circle' },
+    {value: 2.05,label: 'Pulse',optional: 'Rhombus'},
+    {value: 3.28,label: 'Pyramid' ,optional: 'Square' },
+    {value: 4.09,label: 'Question',optional: 'Circle' },
+    {value: 2.76,label: 'Shimmer',optional: 'Rhombus'},
+    {value: 1.02,label: 'Strike' ,optional: 'Star'   },
+    {value: 2.76,label: 'Target',optional: 'Rhombus'},
+    {value: 4.09,label: 'Wasp',optional: 'Circle' }
 ];
 
 // export const bodyOptions  = [
@@ -109,6 +109,17 @@ export const displayOptions  = [
 // ];
 
 export const bodyOptions  = [
+    {value: 0.03, label: 'Azalea'},
+    {value: 0.07, label: 'Bank'},
+    {value: 0.10, label: 'Blush'},
+    {value: 0.13, label: 'Bow'},
+    {value: 0.17, label: 'Brilliant'},
+    {value: 0.27, label: 'Camo'},
+    {value: 0.33, label: 'Can'},
+    {value: 0.50, label: 'Cashmere'},
+    {value: 0.63, label: 'Chameleon'},
+    {value: 0.86, label: 'Chamois'},
+    {value: 1.03, label: 'Chenin'},
     {value: 1.16, label: 'Chroma'    }, //,optional: 'Rhombus'
     {value: 2.16, label: 'Cost'      }, //,optional: 'Circle '
     {value: 1.43, label: 'Cruise'    }, //,optional: 'Square '
