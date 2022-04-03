@@ -42,7 +42,7 @@ const Project: React.FC<IProps> = ({ project }) => (
         </ProjectContainer>
       </Container>
       {
-        project.meta.title == 'SOONABOTS' &&
+        project.meta.title === 'SOONABOTS' &&
         <RarityScoreSoonabots/>
       }
     </Section>
