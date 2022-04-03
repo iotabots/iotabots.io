@@ -70,7 +70,12 @@ export const faceOptions  = [
 ]
 
 export const backgroundOptions  = [
-    { value: 5.09, name: 'Small' },
-    { value: 20, name: 'Medium' },
-    { value: 18.98, name: 'Large' },
+    {value:5.09     ,name:'Black' }, //	optional: 'Rhombus'
+    {value:8.56 	,name:'Blue	' }, //	optional: 'Square '
+    {value:13.19	,name:'Green' }, //	optional: 'Circle '
+    {value:9.49 	,name:'Orange'}, //	optional: 'Square '
+    {value:15.97	,name:'Pink	' }, //	optional: 'Circle '
+    {value:18.98	,name:'Red	' }, //	optional: 'Circle '
+    {value:15.51	,name:'Sea	' }, //	optional: 'Circle '
+    {value:13.19	,name:'Yellow'}, //	optional: 'Circle '
 ]
