@@ -60,29 +60,30 @@ export const RarityScoreSoonabots: React.FC = () => {
     //     setRarityStateBackground(null)
     // }
 
-
+    
     const setDisplayValue = (displayArray):void => {
         const rarityDisplay = 1/(displayArray.value/100)
         setDisplay(rarityDisplay)
         setRarityStateDisplay(displayArray.raritystatus)
-        setFrequencyStateDisplay(displayArray.value)
-        setRarityScore()
+        setFrequencyStateDisplay(displayArray.value) 
     }
-    // Use Effect is used as setState is done asynchronusly
+    // Use Effect is used as setState is done asynchronously
     useEffect(() => {
         setRarityScore()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [displayState])
 
+    
     const setBodyValue = (bodyArray):void => {
         const rarityBody = 1/(bodyArray.value/100)
         setBody(rarityBody)
         setRarityStateBody(bodyArray.raritystatus)
         setFrequencyStateBody(bodyArray.value)
-        setRarityScore()
     }
-     // Use Effect is used as setState is done asynchronusly
+     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
         setRarityScore()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [bodyState])
 
     const setFaceValue = (faceArray):void => {
@@ -90,11 +91,11 @@ export const RarityScoreSoonabots: React.FC = () => {
         setRarityStateFace(faceArray.raritystatus)
         setFrequencyStateFace(faceArray.value)
         setFace(rarityFace)
-        setRarityScore()
     }
-     // Use Effect is used as setState is done asynchronusly
+     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
         setRarityScore()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [faceState])
 
     const setBackgroundValue = (backgroundArray):void => {
@@ -102,11 +103,11 @@ export const RarityScoreSoonabots: React.FC = () => {
         setRarityStateBackground(backgroundArray.raritystatus)
         setFrequencyStateBackground(backgroundArray.value)
         setBackground(rarityBackground)
-        setRarityScore()
     }
-     // Use Effect is used as setState is done asynchronusly
+     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
         setRarityScore()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [backgroundState])
 
 
