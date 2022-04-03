@@ -41,7 +41,6 @@ const colourStyles = {
       color: "black",
       backgroundColor: "rgba(137, 194, 177, 0.174)",
       border:"none",
-   
       //fontSize: state.selectProps.myFontSize
     }),
     singleValue: (provided, state) => ({
@@ -73,7 +72,8 @@ export const RarityScoreSoonabots = () => {
 
 
     const setDisplayValue = (display) => {
-        setDisplay(display.value)
+        var rarityDisplay = 1/display.value 
+        setDisplay(rarityDisplay.toFixed(2))
         setRarityScore()
     }
     //Use Effect is used as setState is done asynchronusly
@@ -82,7 +82,8 @@ export const RarityScoreSoonabots = () => {
       }, [display])
 
     const setBodyValue = (body) => {
-        setBody(body.value)
+        var rarityBody = 1/body.value
+        setBody(rarityBody.toFixed(2))
         setRarityScore()
     }
      //Use Effect is used as setState is done asynchronusly
@@ -197,13 +198,13 @@ export const RarityScoreSoonabots = () => {
                         <div className="select-search-bottom">Rarity Score: {background}</div>
                     </Grid> 
                 </Grid>
-                <Grid  
+                {/* <Grid  
                     container spacing={1}
                     justifyContent='center'>
                     <Grid className="select-search-reset-button">
                         <button type="button" onClick={resetValues} >Click here to reset all values</button>
                     </Grid>                
-                </Grid>  
+                </Grid>   */}
                 <Grid  
                     container spacing={1}
                     justifyContent='center'
@@ -232,7 +233,7 @@ export const RarityScoreSoonabots = () => {
                     className="select-search-heading">    
                     <Image 
                         imageUrl='../assets/projects/rarity_table.jpg'
-                        width='500px'
+                        width='400px'
                         height= '100%'
                         borderRadius='8px' 
                         border='solid white 0.001em'
