@@ -11,6 +11,7 @@ import styled from 'styled-components'
 import Image from '../../components/ImageLoader'
 import { ProjectInfo } from '../../interfaces/project'
 import Markdown from '../../components/Markdown'
+import RarityScoreSoonabots from '../../components/RarityScore'
 
 
 
@@ -28,7 +29,7 @@ const Project: React.FC<IProps> = ({ project }) => (
   <BaseLayout>
     <Section>
       <SectionHeader title={project.meta.title} subtitle='' />
-      <Container maxWidth='sm'>
+      <Container maxWidth='md'>
         <ProjectContainer>
             <Image 
               imageUrl={project.meta.thumbnail} 
@@ -40,6 +41,10 @@ const Project: React.FC<IProps> = ({ project }) => (
           <Markdown content={project.content} />
         </ProjectContainer>
       </Container>
+      {
+        project.meta.title === 'SOONABOTS' &&
+        <RarityScoreSoonabots/>
+      }
     </Section>
   </BaseLayout>
 )

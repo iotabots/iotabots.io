@@ -42,3 +42,28 @@ a {
 html {
   scroll-behavior: smooth;
 }
+
+
+
+.rarity-score-top-heading{
+  padding: 20px 0px 0px 0px;
+}
+
+.select-search-heading {
+  text-align: center;
+}
+.select-search-bottom {
+  padding: 10px 0px 0px 0px;
+  text-align: center;
+}
+.select-search-reset-button{
+  padding: 30px 0px 0px 0px;
+}
+.rarity-score-result{
+  background: rgba(46, 255, 191, 0.1);
+  border-radius: 40px;
+  padding: 0px 10px 0px 10px;
+  margin: 0px 10px 0px 10px;
+  font-size: large;
+
+}

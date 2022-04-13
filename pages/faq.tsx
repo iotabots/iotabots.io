@@ -27,16 +27,40 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/987.png'
           // eslint-disable-next-line max-len
-          text='1048 - The first 1000 IOTABOTS could be minted for free - the other was randomly choosen in Givaways mostly on Twitter.'
-          headline='How many NFTs exist?'
+          text='Right now there are 1048 IOTABOTS, 1001 SPACEBOTS and 3333 SOONABOTS.' 
+          headline='How many NFTs exist right now?'
         >
           { }
         </ContentBox>
         <ContentBox
           image='http://assets.iotabots.io/compressed/990.png'
           // eslint-disable-next-line max-len
-          text='10.000 unique IOTABOTS.'
+          text='10.000 unique IOTABOTS, 1001 SPACEBOTS, 3333 SOONABOTS and tbd NATUREBOTS.'
           headline='How many NFTs will exist?'
+        >
+          { }
+        </ContentBox>
+        <ContentBox
+          image='http://assets.iotabots.io/compressed/773.png'
+          // eslint-disable-next-line max-len
+          text='Follow IOTABOTS on Twitter (https://twitter.com/iotabots) or/and join the Discord (https://t.co/BLwSLmwoJt) channel to not miss anything.'
+          headline='How do I know about any updates and giveaways?'
+        >
+          { }
+        </ContentBox>
+        <ContentBox
+          image='http://assets.iotabots.io/compressed/385.png'
+          // eslint-disable-next-line max-len
+          text='On SOONAVERSE (https://soonaverse.com/) you can buy, sell and trade NFTs like the SOONABOTS without any fees. But it is also a platform to create DAOs and let the community engage for example via proposals.'
+          headline='What is SOONAVERSE?'
+        >
+          { }
+        </ContentBox>
+        <ContentBox
+          image='http://assets.iotabots.io/compressed/62.png'
+          // eslint-disable-next-line max-len
+          text='All currently existing IOTABOTS and SPACEBOTS were given away for free and can no longer be acquired. The sale of the SOONABOTS is still live on SOONAVERSE where you can get one for 100 MIOTA. Here is the link where you can buy some SOONABOTS: https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'
+          headline='How can I get NFTs?'
         >
           { }
         </ContentBox>
@@ -51,8 +75,16 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/845.png'
           // eslint-disable-next-line max-len
-          text='Download your favourite one and use it as a profile picture.'
-          headline='What can I do with my IOTABOT?'
+          text='Download your favourite IOTABOT or SOONABOT and use it as a profile picture. The SOONABOT is a fully animated BOT. Your SPACEBOT gives you access to a NFT game.'
+          headline='What can I do with my BOTs?'
+        >
+          { }
+        </ContentBox>
+        <ContentBox
+          image=''
+          // eslint-disable-next-line max-len
+          text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
+          headline='How do i get the animated SOONABOT version as my profile picture?'
         >
           { }
         </ContentBox>
