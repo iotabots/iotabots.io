@@ -16,6 +16,7 @@ declare global {
     web3: any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ethereum: any
+    soon: any
   }
 }
 
@@ -97,7 +98,7 @@ const Iotabots: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 cursor: 'pointer',
-                borderRadius: '3px'
+                borderRadius: '3px',
               }}
             >
               <BotCard

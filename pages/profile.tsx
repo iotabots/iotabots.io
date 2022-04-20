@@ -13,6 +13,7 @@ import * as React from 'react'
 import { useRouter } from 'next/router'
 import Connector from '../components/Connector'
 import FakeIotabots from '../components/FakeIotabots'
+import SoonaBots from '../components/SoonaBots'
 import { DISCORD_CONNECT } from '../config'
 
 const Profile: React.FC = (props: any) => {
@@ -54,6 +55,7 @@ const Profile: React.FC = (props: any) => {
             </Grid>
             <Grid item xs={12} md={8}>
               <FakeIotabots bots={bots} />
+              <SoonaBots />
             </Grid>
           </Grid>
         </Container>

@@ -64,6 +64,7 @@ const App: React.FC<AppProps> = (props) => {
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sarpanch:wght@800&display=swap'
           rel='stylesheet'
         />
+        <script src='https://cdn.jsdelivr.net/npm/soonaverse@0.1.10/dist/soon.js' />
 
         <meta name='msapplication-TileColor' content='#da532c' />
         <meta name='theme-color' content='#ffffff' />
