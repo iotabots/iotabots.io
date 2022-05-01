@@ -67,7 +67,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/187.png'
           // eslint-disable-next-line max-len
-          text='Current IOTABOTS are deployed on the tesnet. The SaveTheBots initiative tries to make a successfull transition to the mainnet - so the users can hold their IOTABOTS.'
+          text='Current IOTABOTS are deployed on the testnet. The SaveTheBots initiative tries to make a successfull transition to the mainnet - so the users can hold their IOTABOTS.'
           headline='What does SaveTheBots mean?'
         >
           { }
@@ -84,7 +84,7 @@ const FAQ: React.FC = () => (
           image=''
           // eslint-disable-next-line max-len
           text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
-          headline='How do i get the animated SOONABOT version as my profile picture?'
+          headline='How do I get the animated SOONABOT version as my profile picture?'
         >
           { }
         </ContentBox>
@@ -92,7 +92,7 @@ const FAQ: React.FC = () => (
           image='http://assets.iotabots.io/compressed/895.png'
           // eslint-disable-next-line max-len
           text='You need Metamask with the following custom network settings: RPC URL = https://evm.wasp.sc.iota.org and Chain ID = 1074'
-          headline='How can i connect to the public IOTA EVM testnet?'
+          headline='How can I connect to the public IOTA EVM testnet?'
         >
           { }
         </ContentBox>
