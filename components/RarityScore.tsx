@@ -148,6 +148,34 @@ export const RarityScoreSoonabots: React.FC = () => {
                 spacing={4}
                 justifyContent='center'
                 className='rarity-score-top-heading'>
+                    <Grid width='220px'>
+                        <h3 className='select-search-heading'>BACKGROUND</h3>
+                        <Select
+                            onChange={background => {setBackgroundValue(background)}}
+                            placeholder='Set your background'
+                            options={backgroundOptions}
+                            styles={styles}
+                        />
+                        <div className='select-search-bottom'> {rarityStateBackground !=null && rarityStateBackground}</div>
+                        {frequencyStateBackground !=null && 
+                            <div className='select-search-bottom'> Frequency: {frequencyStateBackground}%</div>
+                        }
+                        <div className='select-search-bottom'>Rarity Score: {backgroundState != null && backgroundState.toFixed(2)}</div>
+                    </Grid>  
+                    <Grid width='220px'>
+                        <h3 className='select-search-heading'>BODY</h3>
+                        <Select
+                            onChange={body => {setBodyValue(body)}}
+                            placeholder='Set your body'
+                            options={bodyOptions}
+                            styles={styles}  
+                        />
+                        <div className='select-search-bottom'> {rarityStateBody !=null && rarityStateBody}</div>
+                        {frequencyStateBody !=null && 
+                            <div className='select-search-bottom'> Frequency: {frequencyStateBody}%</div>
+                        }
+                        <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(2)} </div>
+                    </Grid>
                     <Grid justifyContent='center' width='220px'>
                         <h3 className='select-search-heading'>DISPLAY</h3>
                         <Select 
@@ -163,20 +191,6 @@ export const RarityScoreSoonabots: React.FC = () => {
                         <div className='select-search-bottom'> Rarity Score: {displayState !=null && displayState.toFixed(2)}</div>
                     </Grid>
                     <Grid width='220px'>
-                        <h3 className='select-search-heading'>BODY</h3>
-                        <Select
-                            onChange={body => {setBodyValue(body)}}
-                            placeholder='Set your body'
-                            options={bodyOptions}
-                            styles={styles}  
-                        />
-                        <div className='select-search-bottom'> {rarityStateBody !=null && rarityStateBody}</div>
-                        {frequencyStateBody !=null && 
-                            <div className='select-search-bottom'> Frequency: {frequencyStateBody}%</div>
-                        }
-                        <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(2)} </div>
-                    </Grid>
-                    <Grid width='220px'>
                         <h3 className='select-search-heading'>FACE</h3>
                         <Select
                             onChange={face => {setFaceValue(face)}}
@@ -190,20 +204,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                         }
                         <div className='select-search-bottom'>Rarity Score: {faceState != null && faceState.toFixed(2)} </div>
                     </Grid>
-                    <Grid width='220px'>
-                        <h3 className='select-search-heading'>BACKGROUND</h3>
-                        <Select
-                            onChange={background => {setBackgroundValue(background)}}
-                            placeholder='Set your background'
-                            options={backgroundOptions}
-                            styles={styles}
-                        />
-                        <div className='select-search-bottom'> {rarityStateBackground !=null && rarityStateBackground}</div>
-                        {frequencyStateBackground !=null && 
-                            <div className='select-search-bottom'> Frequency: {frequencyStateBackground}%</div>
-                        }
-                        <div className='select-search-bottom'>Rarity Score: {backgroundState != null && backgroundState.toFixed(2)}</div>
-                    </Grid> 
+                 
                 </Grid>
                 {/* <Grid  
                     container spacing={1}
