@@ -84,6 +84,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         tempDisplay = displayOptions.find(tempDisplay => tempDisplay.label === soonabotDistProps.display)
         setDisplayValue(tempDisplay)
 
+        tempBody = bodyOptions.find(tempBody => tempBody.label === soonabotDistProps.Body)
+        setBodyValue(tempBody)
         
         //setBody(soonabotDistProps.Body)
         //setFace(soonabotDistProps.face)
