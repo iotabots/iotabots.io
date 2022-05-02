@@ -78,6 +78,9 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBackgroundValue(tempBackground)
         //setTemp(displayOptions.find(e => e.label === 'Cross'))
 
+        tempFace = faceOptions.find(tempFace => tempFace.label === soonabotDistProps.face)
+        setFaceValue(tempFace)
+
         e = displayOptions.find(e => e.label === soonabotDistProps.display)
         console.log(e)
         console.log(tempBackground)
