@@ -34,6 +34,8 @@ export const RarityScoreSoonabots: React.FC = () => {
     const [frequencyStateFace, setFrequencyStateFace] = useState(null)
     const [frequencyStateBackground, setFrequencyStateBackground] = useState(null)
 
+    const[temp, setTemp] = useState(null)
+
     const styles = {
         option: (provided, state) => ({
           ...provided,
@@ -61,6 +63,30 @@ export const RarityScoreSoonabots: React.FC = () => {
     //     setRarityStateBackground(null)
     // }
 
+
+    
+    const setSoonabotId = (soonabotDistProps):void => {
+        //setDisplayValue(soonabotDistProps.display)
+        var e = null
+        //find the same value in the displayOptions
+
+        setTemp(displayOptions.find(e => e.label === soonabotDistProps.display))
+        
+        e = displayOptions.find(e => e.label === soonabotDistProps.display)
+        console.log(e)
+        console.log(temp)
+        setDisplayValue(temp)
+
+        //setBody(soonabotDistProps.Body)
+        //setFace(soonabotDistProps.face)
+        //setBackground(soonabotDistProps.background)
+    }
+    useEffect(() => {
+        setRarityScore()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [temp])
+
+    
     
     const setDisplayValue = (displayArray):void => {
         const rarityDisplay = 1/(displayArray.value/100)
@@ -151,7 +177,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                     className='rarity-score-top-heading'>
                         <h3 className='select-search-heading'>SOONABOT</h3>
                         <Select
-                            onChange={body => {setBodyValue(body)}}
+                            onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}}
                             placeholder='Set your SOONABOT ID'
                             options={soonabotDistProps}
                             styles={styles}  
