@@ -150,6 +150,12 @@ export const RarityScoreSoonabots: React.FC = () => {
                     justifyContent='center'
                     className='rarity-score-top-heading'>
                         <h3 className='select-search-heading'>SOONABOT</h3>
+                        <Select
+                            onChange={body => {setBodyValue(body)}}
+                            placeholder='Set your SOONABOT ID'
+                            options={soonabotDistProps}
+                            styles={styles}  
+                        />
                 </Grid>
                 <Grid
                 item
