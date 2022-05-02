@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo ,useState,  } from 'react'
+import escapeRegExp from "lodash/escapeRegExp";
 import {
     Container,
     Grid,
@@ -174,17 +175,71 @@ export const RarityScoreSoonabots: React.FC = () => {
             setResult(null)
         }
     }
-
-    const filterColors = (inputValue: string) => {
-        return soonabotDistProps
+    interface State {
+        readonly inputValue: number;
       }
 
-      const promiseOptions = (inputValue: string) =>
-      new Promise((resolve) => {
+    const getSoonabotDisPropsAsync = (inputValue: number) => {
+        return soonabotDistProps.filter((i) =>
+        i.label
+        )
+      }
+
+      const promiseOptions = (inputValue: number) => new Promise<typeof soonabotDistProps>((resolve) => {
+                setTimeout(() => {
+            resolve(getSoonabotDisPropsAsync(inputValue));
+            }, 1000);
+        });
+
+      const loadOptions = (inputValue: number, callback: (options: typeof soonabotDistProps) 
+        => void) => {
         setTimeout(() => {
-          resolve(filterColors(inputValue))
-        }, 1000)
-      })
+          callback(getSoonabotDisPropsAsync(inputValue));
+        }, 1000);
+      };
+
+
+      const MAX_DISPLAYED_OPTIONS = 100;
+
+      const options = [];
+      for (let i = 0; i < 10000; i = i + 1) {
+        options.push({ value: i, label: `Option ${i}` });
+      }
+
+      const [inputValue, setInputValue] = useState("");
+
+      const filteredOptions = useMemo(() => {
+        if (!inputValue) {
+          return soonabotDistProps;
+        }
+    
+        const matchByStart = [];
+        const matchByInclusion = [];
+    
+        const regByInclusion = new RegExp(escapeRegExp(inputValue), "i");
+        const regByStart = new RegExp(`^${escapeRegExp(inputValue)}`, "i");
+    
+        for (const option of soonabotDistProps) {
+          if (regByInclusion.test(String(option.label))) {
+            if (regByStart.test(String(option.label))) {
+              matchByStart.push(option);
+            } else {
+              matchByInclusion.push(option);
+            }
+          }
+        }
+    
+        return [...matchByStart, ...matchByInclusion];
+      }, [inputValue]);
+
+
+      const slicedOptions = useMemo(
+        () => filteredOptions.slice(0, MAX_DISPLAYED_OPTIONS),
+        [filteredOptions]
+      );
+
+
+
 
     return (       
         <Container maxWidth='md'>
@@ -209,18 +264,28 @@ export const RarityScoreSoonabots: React.FC = () => {
                     justifyContent='center'
                     className='rarity-score-top-heading'>
                         <h3 className='select-search-heading'>SOONABOT</h3>
+                        <div className='select-search-bottom'>
                         <Grid width='300px'>
                         <Select
                             onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
                             placeholder='Set your SOONABOT ID'
                             options={soonabotDistProps}
                             styles={styles}  
-                            
-                            filterOption={createFilter(filterConfig)}
-                            
-         
+                            filterOption={createFilter({ignoreAccents: false})}
                         />
+                        <Select
+                            onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
+                            placeholder='Set your SOONABOT ID'
+                            options={slicedOptions}
+                            styles={styles}  
+                            onInputChange={(value) => setInputValue(value)}
+                            filterOption={() => true} // disable native filter
+
+                        />
+
+                       
                         </Grid>
+                        </div>
                 </Grid>
                 <Grid
                 item
