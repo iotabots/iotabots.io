@@ -81,7 +81,7 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         tempBackground = backgroundOptions.find(tempBackground => tempBackground.label === soonabotDistProps.background)
         setBackgroundValue(tempBackground)
-        //setTemp(displayOptions.find(e => e.label === 'Cross'))
+        setSelectedBackgroundOption(tempBackground)
 
         tempFace = faceOptions.find(tempFace => tempFace.label === soonabotDistProps.face)
         setFaceValue(tempFace)
@@ -164,6 +164,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setRarityStateBackground(backgroundArray.raritystatus)
         setFrequencyStateBackground(backgroundArray.value)
         setBackground(rarityBackground)
+
+        setSelectedBackgroundOption(backgroundArray)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -230,6 +232,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             placeholder='Set your background'
                             options={backgroundOptions}
                             styles={styles}
+                            value={selectedBackgroundOption}
                         />
                         <div className='select-search-bottom'> {rarityStateBackground !=null && rarityStateBackground}</div>
                         {frequencyStateBackground !=null && 
