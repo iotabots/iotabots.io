@@ -37,6 +37,9 @@ export const RarityScoreSoonabots: React.FC = () => {
     const[temp, setTemp] = useState(null)
 
     const [selectedBodyOption, setSelectedBodyOption] = useState(null)
+    const [selectedFaceOption, setSelectedFaceOption] = useState(null)
+    const [selectedBackgroundOption, setSelectedBackgroundOption] = useState(null)
+    const [selectedDisplayOption, setSelectedDisplayOption] = useState(null)
 
     const styles = {
         option: (provided, state) => ({
@@ -82,16 +85,22 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         tempFace = faceOptions.find(tempFace => tempFace.label === soonabotDistProps.face)
         setFaceValue(tempFace)
+        setSelectedFaceOption(tempFace)
 
         tempDisplay = displayOptions.find(tempDisplay => tempDisplay.label === soonabotDistProps.display)
         setDisplayValue(tempDisplay)
+        
 
         tempBody = bodyOptions.find(tempBody => tempBody.label === soonabotDistProps.Body)
         setBodyValue(tempBody)
+        setSelectedBodyOption(tempBody)
 
         setTemp(tempBody.label)
 
-        setSelectedBodyOption(tempBody)
+        
+
+
+        
         console.log(tempBody)
    
         //setBody(soonabotDistProps.Body)
@@ -127,7 +136,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBody(rarityBody)
         setRarityStateBody(bodyArray.raritystatus)
         setFrequencyStateBody(bodyArray.value)
-        
+
         setSelectedBodyOption(bodyArray)
     }
      // Use Effect is used as setState is done asynchronously
@@ -141,6 +150,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setRarityStateFace(faceArray.raritystatus)
         setFrequencyStateFace(faceArray.value)
         setFace(rarityFace)
+
+        setSelectedFaceOption(faceArray)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -263,6 +274,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             placeholder='Set your face'
                             options={faceOptions}
                             styles={styles}
+                            value={selectedFaceOption}
                         />
                         <div className='select-search-bottom'> {rarityStateFace !=null && rarityStateFace}</div>
                         {frequencyStateFace !=null && 
