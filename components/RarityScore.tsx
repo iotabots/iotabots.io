@@ -68,14 +68,18 @@ export const RarityScoreSoonabots: React.FC = () => {
     const setSoonabotId = (soonabotDistProps):void => {
         //setDisplayValue(soonabotDistProps.display)
         var e = null
+        var tempBackground = null
+        var tempFace = null
+        var tempDisplay = null
+        var tempBody = null
         //find the same value in the displayOptions
 
-        setTemp(displayOptions.find(e => e.label === soonabotDistProps.display))
-        
+        //setTemp(displayOptions.find(e => e.label === 'CROSS'))
+
         e = displayOptions.find(e => e.label === soonabotDistProps.display)
         console.log(e)
         console.log(temp)
-        setDisplayValue(temp)
+        setDisplayValue(e)
 
         //setBody(soonabotDistProps.Body)
         //setFace(soonabotDistProps.face)
