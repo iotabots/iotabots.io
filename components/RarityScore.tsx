@@ -89,40 +89,20 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         tempDisplay = displayOptions.find(tempDisplay => tempDisplay.label === soonabotDistProps.display)
         setDisplayValue(tempDisplay)
-        
+        setSelectedDisplayOption(tempDisplay)
 
         tempBody = bodyOptions.find(tempBody => tempBody.label === soonabotDistProps.Body)
         setBodyValue(tempBody)
         setSelectedBodyOption(tempBody)
-
-        setTemp(tempBody.label)
-
-        
-
-
-        
-        console.log(tempBody)
-   
-        //setBody(soonabotDistProps.Body)
-        //setFace(soonabotDistProps.face)
-        //setBackground(soonabotDistProps.background)
     }
-    useEffect(() => {
 
-       console.log(bodyOptions[1])
-       // console.log(temp)
-
-        setRarityScore()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [temp])
-
-    
-    
     const setDisplayValue = (displayArray):void => {
         const rarityDisplay = 1/(displayArray.value/100)
         setDisplay(rarityDisplay)
         setRarityStateDisplay(displayArray.raritystatus)
         setFrequencyStateDisplay(displayArray.value) 
+
+        setSelectedDisplayOption(displayArray)
     }
     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -263,6 +243,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             onChange={display => {setDisplayValue(display)}}
                             placeholder='Set your display'
                             styles={styles}
+                            value={selectedDisplayOption}
                         />
                         <div className='select-search-bottom'> {rarityStateDisplay !=null && rarityStateDisplay }</div>
                         {frequencyStateDisplay !=null && 
