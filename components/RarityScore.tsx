@@ -36,6 +36,8 @@ export const RarityScoreSoonabots: React.FC = () => {
 
     const[temp, setTemp] = useState(null)
 
+    const [selectedBodyOption, setSelectedBodyOption] = useState(null)
+
     const styles = {
         option: (provided, state) => ({
           ...provided,
@@ -86,12 +88,21 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         tempBody = bodyOptions.find(tempBody => tempBody.label === soonabotDistProps.Body)
         setBodyValue(tempBody)
-        
+
+        setTemp(tempBody.label)
+
+        setSelectedBodyOption(tempBody)
+        console.log(tempBody)
+   
         //setBody(soonabotDistProps.Body)
         //setFace(soonabotDistProps.face)
         //setBackground(soonabotDistProps.background)
     }
     useEffect(() => {
+
+       console.log(bodyOptions[1])
+       // console.log(temp)
+
         setRarityScore()
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [temp])
@@ -116,6 +127,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBody(rarityBody)
         setRarityStateBody(bodyArray.raritystatus)
         setFrequencyStateBody(bodyArray.value)
+        
+        setSelectedBodyOption(bodyArray)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -220,6 +233,8 @@ export const RarityScoreSoonabots: React.FC = () => {
                             placeholder='Set your body'
                             options={bodyOptions}
                             styles={styles}  
+                            value={selectedBodyOption}
+                           
                         />
                         <div className='select-search-bottom'> {rarityStateBody !=null && rarityStateBody}</div>
                         {frequencyStateBody !=null && 
