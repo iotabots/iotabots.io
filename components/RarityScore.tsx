@@ -144,6 +144,14 @@ export const RarityScoreSoonabots: React.FC = () => {
                 <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better.</div>
                 </Grid> 
                 <Grid
+                    item
+                    container 
+                    spacing={1}
+                    justifyContent='center'
+                    className='rarity-score-top-heading'>
+                        <h3 className='select-search-heading'>SOONABOT</h3>
+                </Grid>
+                <Grid
                 item
                 container 
                 spacing={4}
