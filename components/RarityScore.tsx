@@ -237,7 +237,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         () => filteredOptions.slice(0, MAX_DISPLAYED_OPTIONS),
         [filteredOptions]
       );
-
+            // TODO: https://github.com/JedWatson/react-select/issues/3128 to test for Search performance enhancement
 
 
 
@@ -263,29 +263,29 @@ export const RarityScoreSoonabots: React.FC = () => {
                     spacing={1}
                     justifyContent='center'
                     className='rarity-score-top-heading'>
+                         <Grid>
                         <h3 className='select-search-heading'>SOONABOT</h3>
-                        <div className='select-search-bottom'>
-                        <Grid width='300px'>
-                        <Select
-                            onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
-                            placeholder='Set your SOONABOT ID'
-                            options={soonabotDistProps}
-                            styles={styles}  
-                            filterOption={createFilter({ignoreAccents: false})}
-                        />
-                        <Select
-                            onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
-                            placeholder='Set your SOONABOT ID'
-                            options={slicedOptions}
-                            styles={styles}  
-                            onInputChange={(value) => setInputValue(value)}
-                            filterOption={() => true} // disable native filter
-
-                        />
-
-                       
                         </Grid>
-                        </div>
+                        <Grid width='300px'>
+                     
+                            <Select
+                                onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
+                                placeholder='Set your SOONABOT ID'
+                                options={soonabotDistProps}
+                                styles={styles}  
+                                filterOption={createFilter({ignoreAccents: false})}
+                            />
+                            <Select
+                                onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
+                                placeholder='Set your SOONABOT ID'
+                                options={slicedOptions}
+                                styles={styles}  
+                                onInputChange={(value) => setInputValue(value)}
+                                filterOption={() => true} // disable native filter
+                            />
+                        </Grid>
+                  
+                        
                 </Grid>
                 <Grid
                 item
