@@ -4,12 +4,11 @@ import {
     Container,
     Grid,
   } from '@iotabots/components'
-import Select from 'react-select'
+import Select, { createFilter } from 'react-select'
+import AsyncSelect from 'react-select/async'
 import { backgroundOptions, bodyOptions, displayOptions, faceOptions } from '../public/soonabotOptions.js'
 import { soonabotDistProps } from '../public/soonabotDistribution.js'
 import Image from './ImageLoader'
-
-
 
 
 
@@ -40,6 +39,13 @@ export const RarityScoreSoonabots: React.FC = () => {
     const [selectedFaceOption, setSelectedFaceOption] = useState(null)
     const [selectedBackgroundOption, setSelectedBackgroundOption] = useState(null)
     const [selectedDisplayOption, setSelectedDisplayOption] = useState(null)
+
+ 
+    const filterConfig = {
+        matchFrom: true
+        ? ('start' as const)
+        : ('any' as const),
+    };
 
     const styles = {
         option: (provided, state) => ({
@@ -169,6 +175,17 @@ export const RarityScoreSoonabots: React.FC = () => {
         }
     }
 
+    const filterColors = (inputValue: string) => {
+        return soonabotDistProps
+      }
+
+      const promiseOptions = (inputValue: string) =>
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(filterColors(inputValue))
+        }, 1000)
+      })
+
     return (       
         <Container maxWidth='md'>
                 <Grid
@@ -192,12 +209,18 @@ export const RarityScoreSoonabots: React.FC = () => {
                     justifyContent='center'
                     className='rarity-score-top-heading'>
                         <h3 className='select-search-heading'>SOONABOT</h3>
+                        <Grid width='300px'>
                         <Select
-                            onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}}
+                            onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
                             placeholder='Set your SOONABOT ID'
                             options={soonabotDistProps}
                             styles={styles}  
+                            
+                            filterOption={createFilter(filterConfig)}
+                            
+         
                         />
+                        </Grid>
                 </Grid>
                 <Grid
                 item
