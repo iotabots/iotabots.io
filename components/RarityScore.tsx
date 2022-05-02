@@ -5,7 +5,8 @@ import {
     Grid,
   } from '@iotabots/components'
 import Select from 'react-select'
-import { backgroundOptions, bodyOptions, displayOptions, faceOptions} from '../public/soonabotOptions.js'
+import { backgroundOptions, bodyOptions, displayOptions, faceOptions } from '../public/soonabotOptions.js'
+import { soonabotDistProps } from '../public/soonabotDistribution.js'
 import Image from './ImageLoader'
 
 
