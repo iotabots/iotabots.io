@@ -261,22 +261,21 @@ export const RarityScoreSoonabots: React.FC = () => {
                     container 
                     spacing={1}
                     justifyContent='center'
+                    alignItems='center'
                     className='rarity-score-top-heading'>
                          <Grid>
-                        <h3 className='select-search-heading'>SOONABOT</h3>
+                        <h3 className='select-search-heading'>SOONABOT #</h3>
                         </Grid>
-                        <Grid width='240px'>
+                        <Grid width='110px'>
                             <Select
                                 onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
-                                placeholder='Set your SOONABOT ID'
+                                placeholder='ID'
                                 options={slicedOptions}
                                 styles={styles}  
                                 onInputChange={(value) => setInputValue(value)}
                                 filterOption={() => true} // disable native filter
                             />
-                        </Grid>
-                  
-                        
+                        </Grid>   
                 </Grid>
                 <Grid
                 item
