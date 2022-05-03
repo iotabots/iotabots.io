@@ -13,7 +13,6 @@ import Image from './ImageLoader'
 
 
 
-
 // This function calculates the Rarity Score for Soonabots
 // TODO: Add functionality to import a SOONABOT based on the SOONABOT number. 
 // For this a table of all Soonabots is needed. 
@@ -34,12 +33,12 @@ export const RarityScoreSoonabots: React.FC = () => {
     const [frequencyStateFace, setFrequencyStateFace] = useState(null)
     const [frequencyStateBackground, setFrequencyStateBackground] = useState(null)
 
-    const[temp, setTemp] = useState(null)
-
     const [selectedBodyOption, setSelectedBodyOption] = useState(null)
     const [selectedFaceOption, setSelectedFaceOption] = useState(null)
     const [selectedBackgroundOption, setSelectedBackgroundOption] = useState(null)
     const [selectedDisplayOption, setSelectedDisplayOption] = useState(null)
+
+    const [selectedSoonabotId, setSelectedSoonabotId] = useState(null)
 
  
     const filterConfig = {
@@ -101,6 +100,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         tempBody = bodyOptions.find(tempBody => tempBody.label === soonabotDistProps.Body)
         setBodyValue(tempBody)
         setSelectedBodyOption(tempBody)
+
+        setSelectedSoonabotId(soonabotDistProps)
     }
 
     const setDisplayValue = (displayArray):void => {
@@ -237,8 +238,6 @@ export const RarityScoreSoonabots: React.FC = () => {
         () => filteredOptions.slice(0, MAX_DISPLAYED_OPTIONS),
         [filteredOptions]
       );
-            // TODO: https://github.com/JedWatson/react-select/issues/3128 to test for Search performance enhancement
-
 
 
     return (       
@@ -266,15 +265,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                          <Grid>
                         <h3 className='select-search-heading'>SOONABOT</h3>
                         </Grid>
-                        <Grid width='300px'>
-                     
-                            <Select
-                                onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
-                                placeholder='Set your SOONABOT ID'
-                                options={soonabotDistProps}
-                                styles={styles}  
-                                filterOption={createFilter({ignoreAccents: false})}
-                            />
+                        <Grid width='240px'>
                             <Select
                                 onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
                                 placeholder='Set your SOONABOT ID'
