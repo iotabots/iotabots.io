@@ -22,6 +22,7 @@ export const RarityScoreSoonabots: React.FC = () => {
     const [faceState, setFace] = useState(null)
     const [backgroundState, setBackground] = useState(null)
     const [result, setResult] = useState(null)
+    const [rank, setRank] = useState(null)
 
     const [rarityStateDisplay, setRarityStateDisplay] = useState(null)
     const [rarityStateBody, setRarityStateBody] = useState(null)
@@ -102,6 +103,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setSelectedBodyOption(tempBody)
 
         setSelectedSoonabotId(soonabotDistProps)
+        setRank(soonabotDistProps.rank)
     }
 
     const setDisplayValue = (displayArray):void => {
@@ -358,11 +360,17 @@ export const RarityScoreSoonabots: React.FC = () => {
                     spacing={1}
                     justifyContent='center'
                     className='select-search-reset-button'>
+                        
                     { result != null &&
                         <Grid>
-                            <div className='rarity-score-result'>YOUR OVERALL RARITY SCORE IS <b>{result.toFixed(2)}</b></div>
+                            <div className='rarity-score-result'>YOUR OVERALL RARITY SCORE IS: <b>{result.toFixed(2)}</b>
+                            {result != null && rank != null &&
+                                <div>YOUR RARITY RANK IS: <b>{rank}</b></div>
+                            }
+                            </div>
                         </Grid>
                     }
+
                     { result == null &&
                         <Grid >
                             <div>Fill all above values to get your Rarity Score</div>
