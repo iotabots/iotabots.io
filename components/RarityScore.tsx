@@ -1,12 +1,11 @@
 /* eslint-disable max-len */
-import React, { useEffect, useMemo ,useState,  } from 'react'
-import escapeRegExp from "lodash/escapeRegExp";
+import React, { useEffect, useMemo ,useState  } from 'react'
+import escapeRegExp from 'lodash/escapeRegExp'
 import {
     Container,
     Grid,
   } from '@iotabots/components'
-import Select, { createFilter } from 'react-select'
-import AsyncSelect from 'react-select/async'
+import Select from 'react-select'
 import { backgroundOptions, bodyOptions, displayOptions, faceOptions } from '../public/soonabotOptions.js'
 import { soonabotDistProps } from '../public/soonabotDistribution.js'
 import Image from './ImageLoader'
@@ -46,7 +45,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         matchFrom: true
         ? ('start' as const)
         : ('any' as const),
-    };
+    }
 
     const styles = {
         option: (provided, state) => ({
@@ -62,48 +61,33 @@ export const RarityScoreSoonabots: React.FC = () => {
         })
       }
 
-
-    // const resetValues = () => {
-    //     setDisplay(null)
-    //     setBody(null)
-    //     setFace(null)
-    //     setBackground(null)
-    //     setResult(null)
-    //     setRarityStateDisplay(null)
-    //     setRarityStateBody(null)
-    //     setRarityStateFace(null)
-    //     setRarityStateBackground(null)
-    // }
-
-
     
-    const setSoonabotId = (soonabotDistProps):void => {
-        //setDisplayValue(soonabotDistProps.display)
-        var e = null
-        var tempBackground = null
-        var tempFace = null
-        var tempDisplay = null
-        var tempBody = null
-        //find the same value in the displayOptions
+    const setSoonabotId = (soonabotDistPropsArray):void => {
 
-        tempBackground = backgroundOptions.find(tempBackground => tempBackground.label === soonabotDistProps.background)
+        const e = null
+        let tempBackground = null
+        let tempFace = null
+        let tempDisplay = null
+        let tempBody = null
+
+        tempBackground = backgroundOptions.find(tmp => tmp.label === soonabotDistPropsArray.background)
         setBackgroundValue(tempBackground)
         setSelectedBackgroundOption(tempBackground)
 
-        tempFace = faceOptions.find(tempFace => tempFace.label === soonabotDistProps.face)
+        tempFace = faceOptions.find(tmp => tmp.label === soonabotDistPropsArray.face)
         setFaceValue(tempFace)
         setSelectedFaceOption(tempFace)
 
-        tempDisplay = displayOptions.find(tempDisplay => tempDisplay.label === soonabotDistProps.display)
+        tempDisplay = displayOptions.find(tmp => tmp.label === soonabotDistPropsArray.display)
         setDisplayValue(tempDisplay)
         setSelectedDisplayOption(tempDisplay)
 
-        tempBody = bodyOptions.find(tempBody => tempBody.label === soonabotDistProps.Body)
+        tempBody = bodyOptions.find(tmp => tmp.label === soonabotDistPropsArray.Body)
         setBodyValue(tempBody)
         setSelectedBodyOption(tempBody)
 
-        setSelectedSoonabotId(soonabotDistProps)
-        setRank(soonabotDistProps.rank)
+        setSelectedSoonabotId(soonabotDistPropsArray)
+        setRank(soonabotDistPropsArray.rank)
     }
 
     const setDisplayValue = (displayArray):void => {
@@ -194,64 +178,64 @@ export const RarityScoreSoonabots: React.FC = () => {
         readonly inputValue: number;
       }
 
-    const getSoonabotDisPropsAsync = (inputValue: number) => {
-        return soonabotDistProps.filter((i) =>
-        i.label
-        )
-      }
+    const getSoonabotDisPropsAsync = (inputValue: number): typeof getSoonabotDisPropsAsync => (
+         soonabotDistProps.filter((i) => i.label)
+         )
+      
 
-      const promiseOptions = (inputValue: number) => new Promise<typeof soonabotDistProps>((resolve) => {
+      const promiseOptions = (inputValue: number):typeof promiseOptions => new Promise<typeof soonabotDistProps>((resolve) => {
                 setTimeout(() => {
-            resolve(getSoonabotDisPropsAsync(inputValue));
-            }, 1000);
-        });
+            resolve(getSoonabotDisPropsAsync(inputValue))
+            }, 1000)
+        })
 
       const loadOptions = (inputValue: number, callback: (options: typeof soonabotDistProps) 
-        => void) => {
+        => void):void => {
         setTimeout(() => {
-          callback(getSoonabotDisPropsAsync(inputValue));
-        }, 1000);
-      };
-
-
-      const MAX_DISPLAYED_OPTIONS = 133;
-
-      const options = [];
-      for (let i = 0; i < 10000; i = i + 1) {
-        options.push({ value: i, label: `Option ${i}` });
+          callback(getSoonabotDisPropsAsync(inputValue))
+        }, 1000)
       }
 
-      const [inputValue, setInputValue] = useState("");
+
+      const MAX_DISPLAYED_OPTIONS = 133
+
+      const options = []
+      for (let i = 0; i < 10000; i += 1) {
+        options.push({ value: i, label: `Option ${i}` })
+      }
+
+      const [inputValue, setInputValue] = useState('')
 
       const filteredOptions = useMemo(() => {
         if (!inputValue) {
-          return soonabotDistProps;
+          return soonabotDistProps
         }
     
-        const matchByStart = [];
-        const matchByInclusion = [];
+        const matchByStart = []
+        const matchByInclusion = []
     
-        const regByInclusion = new RegExp(escapeRegExp(inputValue), "i");
-        const regByStart = new RegExp(`^${escapeRegExp(inputValue)}`, "i");
+        const regByInclusion = new RegExp(escapeRegExp(inputValue), 'i')
+        const regByStart = new RegExp(`^${escapeRegExp(inputValue)}`, 'i')
     
-        for (const option of soonabotDistProps) {
+        // for (const option of soonabotDistProps)
+        soonabotDistProps.forEach(option => {
           if (regByInclusion.test(String(option.label))) {
             if (regByStart.test(String(option.label))) {
-              matchByStart.push(option);
+              matchByStart.push(option)
             } else {
-              matchByInclusion.push(option);
+              matchByInclusion.push(option)
             }
           }
-        }
+        })
     
-        return [...matchByStart, ...matchByInclusion];
-      }, [inputValue]);
+        return [...matchByStart, ...matchByInclusion]
+      }, [inputValue])
 
 
       const slicedOptions = useMemo(
         () => filteredOptions.slice(0, MAX_DISPLAYED_OPTIONS),
         [filteredOptions]
-      );
+      )
 
 
     return (       
@@ -362,13 +346,6 @@ export const RarityScoreSoonabots: React.FC = () => {
                     </Grid>
                  
                 </Grid>
-                {/* <Grid  
-                    container spacing={1}
-                    justifyContent='center'>
-                    <Grid className="select-search-reset-button">
-                        <button type="button" onClick={resetValues} >Click here to reset all values</button>
-                    </Grid>                
-                </Grid>   */}
                 <Grid  
                     container 
                     spacing={1}
