@@ -396,7 +396,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                     spacing={1}
                     justifyContent='center'
                     className='select-search-reset-button'>
-                    <div>The highest possible Rarity Score is 3387.62. The in theory lowest possible Rarity Score is 65.9972.</div>
+                    <div>The highest possible Rarity Score is 3387.62. The lowest Rarity Score is 65.9972.</div>
                 </Grid>
                 <Grid  
                     container 
