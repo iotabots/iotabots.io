@@ -115,9 +115,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setSelectedDisplayOption(displayArray)
 
         setRank(null)
-        //setInputValue('ID')
-        //setSelectedSoonabotId(null)
-        //setSoonabotId('ID')
+        setSelectedSoonabotId(null)
     }
     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -135,6 +133,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setSelectedBodyOption(bodyArray)
 
         setRank(null)
+        setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -151,6 +150,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setSelectedFaceOption(faceArray)
 
         setRank(null)
+        setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -167,6 +167,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setSelectedBackgroundOption(backgroundArray)
 
         setRank(null)
+        setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -213,7 +214,7 @@ export const RarityScoreSoonabots: React.FC = () => {
       };
 
 
-      const MAX_DISPLAYED_OPTIONS = 100;
+      const MAX_DISPLAYED_OPTIONS = 133;
 
       const options = [];
       for (let i = 0; i < 10000; i = i + 1) {
@@ -287,6 +288,8 @@ export const RarityScoreSoonabots: React.FC = () => {
                                 styles={styles}  
                                 onInputChange={(value) => setInputValue(value)}
                                 filterOption={() => true} // disable native filter
+                                value={selectedSoonabotId}
+                            
                             />
                         </Grid>   
                 </Grid>
