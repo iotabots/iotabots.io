@@ -113,6 +113,11 @@ export const RarityScoreSoonabots: React.FC = () => {
         setFrequencyStateDisplay(displayArray.value) 
 
         setSelectedDisplayOption(displayArray)
+
+        setRank(null)
+        //setInputValue('ID')
+        //setSelectedSoonabotId(null)
+        //setSoonabotId('ID')
     }
     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -128,6 +133,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setFrequencyStateBody(bodyArray.value)
 
         setSelectedBodyOption(bodyArray)
+
+        setRank(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -142,6 +149,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setFace(rarityFace)
 
         setSelectedFaceOption(faceArray)
+
+        setRank(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -156,6 +165,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBackground(rarityBackground)
 
         setSelectedBackgroundOption(backgroundArray)
+
+        setRank(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
