@@ -70,7 +70,6 @@ export const RarityScoreSoonabots: React.FC = () => {
     
     const setSoonabotId = (soonabotDistPropsArray):void => {
 
-        const e = null
         let tempBackground = null
         let tempFace = null
         let tempDisplay = null
