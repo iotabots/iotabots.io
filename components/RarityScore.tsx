@@ -181,9 +181,7 @@ export const RarityScoreSoonabots: React.FC = () => {
             setResult(null)
         }
     }
-    interface State {
-        readonly inputValue: number;
-      }
+
 
     const getSoonabotDisPropsAsync = (inputValue: number): typeof getSoonabotDisPropsAsync => (
          soonabotDistProps.filter((i) => i.label)
