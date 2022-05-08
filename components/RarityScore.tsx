@@ -253,7 +253,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                     <div>The rarity score is calculated in the following way:</div>
                     <div><i>[Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])</i> </div>
                     <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better.  
-                        <div>
+                        <div className='top-spacing'>
                             Fill all underneath properties to get your Rarity Score or enter your SOONABOT ID to get additionally your Rarity Rank!
                         </div>
                     </div>
@@ -320,7 +320,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             <div className='select-search-bottom'> Frequency: {frequencyStateBody}%</div>
                         }
                         {bodyState != null &&
-                            <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(2)} </div>
+                            <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(4)} </div>
                         }   
                     </Grid>
                     <Grid justifyContent='center' width='220px'>
@@ -337,7 +337,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             <div className='select-search-bottom'> Frequency: {frequencyStateDisplay}%</div>
                         }
                         {displayState !=null &&
-                            <div className='select-search-bottom'> Rarity Score: {displayState !=null && displayState.toFixed(2)}</div>
+                            <div className='select-search-bottom'> Rarity Score: {displayState !=null && displayState.toFixed(4)}</div>
                         }
                         
                     </Grid>
@@ -355,7 +355,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             <div className='select-search-bottom'> Frequency: {frequencyStateFace}%</div>
                         }
                         {faceState != null &&
-                            <div className='select-search-bottom'>Rarity Score: {faceState != null && faceState.toFixed(2)} </div>
+                            <div className='select-search-bottom'>Rarity Score: {faceState != null && faceState.toFixed(4)} </div>
                         }
                         
                     </Grid>
@@ -369,7 +369,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                         
                     { result != null &&
                         <Grid>
-                            <div className='rarity-score-result'>YOUR OVERALL RARITY SCORE IS: <b>{result.toFixed(2)}</b>
+                            <div className='rarity-score-result'>YOUR OVERALL RARITY SCORE IS: <b>{result.toFixed(4)}</b>
                             {result != null && rank != null &&
                                 <div>YOUR RARITY RANK IS: <b>{rank}</b></div>
                             }
@@ -383,7 +383,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                     spacing={1}
                     justifyContent='center'
                     className='select-search-reset-button'>
-                    <div>The highest possible Rarity Score is 3387.62. The lowest possible Rarity Score is 65.9972.</div>
+                    <div>The highest possible Rarity Score is 3387.6239. The lowest possible Rarity Score is 65.9972.</div>
                 </Grid>
                 <Grid  
                     container 
