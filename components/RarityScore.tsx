@@ -186,7 +186,7 @@ export const RarityScoreSoonabots: React.FC = () => {
          soonabotDistProps.filter((i) => i.label)
          )
       
-         
+
     const MAX_DISPLAYED_OPTIONS = 133
 
     const options = []
@@ -285,7 +285,6 @@ export const RarityScoreSoonabots: React.FC = () => {
                             width='50px'
                             height= '100%'
                             borderRadius='8px' 
-                            border='solid white 0.001em'
                             />
                         }
                         </h3>
@@ -313,7 +312,6 @@ export const RarityScoreSoonabots: React.FC = () => {
                             width='50px'
                             height= '100%'
                             borderRadius='8px' 
-                            border='solid white 0.001em'
                             />
                         }
                         </h3>
@@ -343,7 +341,6 @@ export const RarityScoreSoonabots: React.FC = () => {
                             width='50px'
                             height= '100%'
                             borderRadius='8px' 
-                            border='solid white 0.001em'
                             />
                         }
                         </h3>
@@ -372,7 +369,6 @@ export const RarityScoreSoonabots: React.FC = () => {
                             width='50px'
                             height= '100%'
                             borderRadius='8px' 
-                            border='solid white 0.001em'
                             />
                         }
                         </h3>
