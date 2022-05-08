@@ -40,6 +40,12 @@ export const RarityScoreSoonabots: React.FC = () => {
 
     const [selectedSoonabotId, setSelectedSoonabotId] = useState(null)
 
+    const [bodyPicturePath, setBodyPicturePath] = useState(null)
+    const [facePicturePath, setFacePicturePath] = useState(null)
+    const [backgroundPicturePath, setBackgroundPicturePath] = useState(null)
+    const [displayPicturePath, setDisplayPicturePath] = useState(null)
+
+
  
     const filterConfig = {
         matchFrom: true
@@ -98,6 +104,9 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         setSelectedDisplayOption(displayArray)
 
+        setDisplayPicturePath(displayArray.label)
+
+
         setRank(null)
         setSelectedSoonabotId(null)
     }
@@ -116,6 +125,8 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         setSelectedBodyOption(bodyArray)
 
+        setBodyPicturePath(bodyArray.label)
+
         setRank(null)
         setSelectedSoonabotId(null)
     }
@@ -133,6 +144,8 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         setSelectedFaceOption(faceArray)
 
+        setFacePicturePath(faceArray.label)
+
         setRank(null)
         setSelectedSoonabotId(null)
     }
@@ -149,6 +162,8 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBackground(rarityBackground)
 
         setSelectedBackgroundOption(backgroundArray)
+
+        setBackgroundPicturePath(backgroundArray.label)
 
         setRank(null)
         setSelectedSoonabotId(null)
@@ -288,7 +303,17 @@ export const RarityScoreSoonabots: React.FC = () => {
                 justifyContent='center'
                 className='rarity-score-top-heading'>
                     <Grid width='220px'>
-                        <h3 className='select-search-heading'>BACKGROUND</h3>
+                        <h3 className='select-search-heading'>BACKGROUND
+                        {backgroundPicturePath != null &&
+                            <Image 
+                            imageUrl={`/assets/rarity/background/${backgroundPicturePath}.png`} 
+                            width='50px'
+                            height= '100%'
+                            borderRadius='8px' 
+                            border='solid white 0.001em'
+                            />
+                        }
+                        </h3>
                         <Select
                             onChange={background => {setBackgroundValue(background)}}
                             placeholder='Set your background'
@@ -303,10 +328,21 @@ export const RarityScoreSoonabots: React.FC = () => {
                         {backgroundState != null &&
                             <div className='select-search-bottom'>Rarity Score: {backgroundState != null && backgroundState.toFixed(2)}</div>
                         }
-                        
                     </Grid>  
+
                     <Grid width='220px'>
-                        <h3 className='select-search-heading'>BODY</h3>
+                        <h3 className='select-search-heading'>BODY
+                        {bodyPicturePath != null &&
+                            <Image 
+                            imageUrl={`/assets/rarity/body/${bodyPicturePath}.png`} 
+                            width='50px'
+                            height= '100%'
+                            borderRadius='8px' 
+                            border='solid white 0.001em'
+                            />
+                        }
+                        </h3>
+
                         <Select
                             onChange={body => {setBodyValue(body)}}
                             placeholder='Set your body'
@@ -323,8 +359,19 @@ export const RarityScoreSoonabots: React.FC = () => {
                             <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(4)} </div>
                         }   
                     </Grid>
+
                     <Grid justifyContent='center' width='220px'>
-                        <h3 className='select-search-heading'>DISPLAY</h3>
+                        <h3 className='select-search-heading'>DISPLAY
+                        {displayPicturePath != null &&
+                            <Image 
+                            imageUrl={`/assets/rarity/display/${displayPicturePath}.png`} 
+                            width='50px'
+                            height= '100%'
+                            borderRadius='8px' 
+                            border='solid white 0.001em'
+                            />
+                        }
+                        </h3>
                         <Select 
                             options={displayOptions}
                             onChange={display => {setDisplayValue(display)}}
@@ -341,8 +388,20 @@ export const RarityScoreSoonabots: React.FC = () => {
                         }
                         
                     </Grid>
+
                     <Grid width='220px'>
-                        <h3 className='select-search-heading'>FACE</h3>
+                        <h3 className='select-search-heading'>FACE
+                        {facePicturePath != null &&
+                            <Image 
+                            imageUrl={`/assets/rarity/face/${facePicturePath}.png`} 
+                            width='50px'
+                            height= '100%'
+                            borderRadius='8px' 
+                            border='solid white 0.001em'
+                            />
+                        }
+                        </h3>
+
                         <Select
                             onChange={face => {setFaceValue(face)}}
                             placeholder='Set your face'
