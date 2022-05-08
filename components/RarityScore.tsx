@@ -182,65 +182,64 @@ export const RarityScoreSoonabots: React.FC = () => {
         }
     }
 
-
-    const getSoonabotDisPropsAsync = (inputValue: number): typeof getSoonabotDisPropsAsync => (
+    const getSoonabotDisPropsAsync = (): typeof getSoonabotDisPropsAsync => (
          soonabotDistProps.filter((i) => i.label)
          )
       
 
-      const promiseOptions = (inputValue: number):typeof promiseOptions => new Promise<typeof soonabotDistProps>((resolve) => {
-                setTimeout(() => {
-            resolve(getSoonabotDisPropsAsync(inputValue))
-            }, 1000)
-        })
-
-      const loadOptions = (inputValue: number, callback: (options: typeof soonabotDistProps) 
-        => void):void => {
-        setTimeout(() => {
-          callback(getSoonabotDisPropsAsync(inputValue))
+    const promiseOptions = (inputValue: number):typeof promiseOptions => new Promise<typeof soonabotDistProps>((resolve) => {
+            setTimeout(() => {
+        resolve(getSoonabotDisPropsAsync(inputValue))
         }, 1000)
-      }
+    })
+
+    const loadOptions = (inputValue: number, callback: (options: typeof soonabotDistProps) 
+    => void):void => {
+    setTimeout(() => {
+        callback(getSoonabotDisPropsAsync(inputValue))
+    }, 1000)
+    }
 
 
-      const MAX_DISPLAYED_OPTIONS = 133
+    const MAX_DISPLAYED_OPTIONS = 133
 
-      const options = []
-      for (let i = 0; i < 10000; i += 1) {
-        options.push({ value: i, label: `Option ${i}` })
-      }
+    const options = []
+    for (let i = 0; i < 10000; i += 1) {
+    options.push({ value: i, label: `Option ${i}` })
+    }
 
-      const [inputValue, setInputValue] = useState('')
+    const [inputValue, setInputValue] = useState('')
 
-      const filteredOptions = useMemo(() => {
-        if (!inputValue) {
-          return soonabotDistProps
+    const filteredOptions = useMemo(() => {
+    if (!inputValue) {
+        return soonabotDistProps
+    }
+
+    const matchByStart = []
+    const matchByInclusion = []
+
+    const regByInclusion = new RegExp(escapeRegExp(inputValue), 'i')
+    const regByStart = new RegExp(`^${escapeRegExp(inputValue)}`, 'i')
+
+    // for (const option of soonabotDistProps)
+    soonabotDistProps.forEach(option => {
+        if (regByInclusion.test(String(option.label))) {
+        if (regByStart.test(String(option.label))) {
+            matchByStart.push(option)
+        } else {
+            matchByInclusion.push(option)
         }
-    
-        const matchByStart = []
-        const matchByInclusion = []
-    
-        const regByInclusion = new RegExp(escapeRegExp(inputValue), 'i')
-        const regByStart = new RegExp(`^${escapeRegExp(inputValue)}`, 'i')
-    
-        // for (const option of soonabotDistProps)
-        soonabotDistProps.forEach(option => {
-          if (regByInclusion.test(String(option.label))) {
-            if (regByStart.test(String(option.label))) {
-              matchByStart.push(option)
-            } else {
-              matchByInclusion.push(option)
-            }
-          }
-        })
-    
-        return [...matchByStart, ...matchByInclusion]
-      }, [inputValue])
+        }
+    })
+
+    return [...matchByStart, ...matchByInclusion]
+    }, [inputValue])
 
 
-      const slicedOptions = useMemo(
-        () => filteredOptions.slice(0, MAX_DISPLAYED_OPTIONS),
-        [filteredOptions]
-      )
+    const slicedOptions = useMemo(
+    () => filteredOptions.slice(0, MAX_DISPLAYED_OPTIONS),
+    [filteredOptions]
+    )
 
 
     return (       
