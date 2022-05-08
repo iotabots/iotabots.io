@@ -266,7 +266,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                         </Grid>
                         <Grid width='110px'>
                             <Select
-                                onChange={soonabotDistProps => {setSoonabotId(soonabotDistProps)}} 
+                                onChange={soonabotDistPropsChange => {setSoonabotId(soonabotDistPropsChange)}} 
                                 placeholder='ID'
                                 options={slicedOptions}
                                 styles={styles}  
