@@ -186,14 +186,7 @@ export const RarityScoreSoonabots: React.FC = () => {
          soonabotDistProps.filter((i) => i.label)
          )
       
-
-    const promiseOptions = (inputValue: number):typeof promiseOptions => new Promise<typeof soonabotDistProps>((resolve) => {
-        setTimeout(() => {
-            resolve(getSoonabotDisPropsAsync(inputValue))
-        }, 1000)
-    })
-
-
+         
     const MAX_DISPLAYED_OPTIONS = 133
 
     const options = []
