@@ -246,13 +246,17 @@ export const RarityScoreSoonabots: React.FC = () => {
                     spacing={1}
                     justifyContent='center'
                     className='rarity-score-top-heading'>
-                <h2 >Calculate the Rarity Score of your SOONABOT</h2>
-                <div>You always wanted to know how rare your SOONABOT is? Then today is your lucky day. Here you can get the Rarity Score of your SOONABOT.
-                Just enter the properties of your SOONABOT here and you will receive the Rarity Score. You can find the properties of your SOONABOT in  <b><a href='https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'>SOONAVERSE</a></b>.</div> 
-                
-                <div>The rarity score is calculated in the following way:</div>
-                <div><i>[Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])</i> </div>
-                <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better.</div>
+                    <h2 >Calculate the Rarity Score and the Rarity Rank of your SOONABOT</h2>
+                    <div>You always wanted to know how rare your SOONABOT is? Then today is your lucky day. Here you can get the Rarity Score of your SOONABOT.
+                    Just enter the properties of your SOONABOT here and you will receive the Rarity Score. You can find the properties of your SOONABOT in  <b><a href='https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'>SOONAVERSE</a></b>.</div> 
+                    
+                    <div>The rarity score is calculated in the following way:</div>
+                    <div><i>[Rarity Score for a Trait Value] = 1 / ([Number of Items with that Trait Value] / [Total Number of Items in Collection])</i> </div>
+                    <div> The total Rarity Score for an NFT is the sum of the Rarity Score of all of its trait values. This means the higher the value the better.  
+                        <div>
+                            Fill all underneath properties to get your Rarity Score or enter your SOONABOT ID to get additionally your Rarity Rank!
+                        </div>
+                    </div>
                 </Grid> 
                 <Grid
                     item
@@ -296,7 +300,10 @@ export const RarityScoreSoonabots: React.FC = () => {
                         {frequencyStateBackground !=null && 
                             <div className='select-search-bottom'> Frequency: {frequencyStateBackground}%</div>
                         }
-                        <div className='select-search-bottom'>Rarity Score: {backgroundState != null && backgroundState.toFixed(2)}</div>
+                        {backgroundState != null &&
+                            <div className='select-search-bottom'>Rarity Score: {backgroundState != null && backgroundState.toFixed(2)}</div>
+                        }
+                        
                     </Grid>  
                     <Grid width='220px'>
                         <h3 className='select-search-heading'>BODY</h3>
@@ -312,7 +319,9 @@ export const RarityScoreSoonabots: React.FC = () => {
                         {frequencyStateBody !=null && 
                             <div className='select-search-bottom'> Frequency: {frequencyStateBody}%</div>
                         }
-                        <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(2)} </div>
+                        {bodyState != null &&
+                            <div className='select-search-bottom'>Rarity Score: {bodyState != null && bodyState.toFixed(2)} </div>
+                        }   
                     </Grid>
                     <Grid justifyContent='center' width='220px'>
                         <h3 className='select-search-heading'>DISPLAY</h3>
@@ -327,7 +336,10 @@ export const RarityScoreSoonabots: React.FC = () => {
                         {frequencyStateDisplay !=null && 
                             <div className='select-search-bottom'> Frequency: {frequencyStateDisplay}%</div>
                         }
-                        <div className='select-search-bottom'> Rarity Score: {displayState !=null && displayState.toFixed(2)}</div>
+                        {displayState !=null &&
+                            <div className='select-search-bottom'> Rarity Score: {displayState !=null && displayState.toFixed(2)}</div>
+                        }
+                        
                     </Grid>
                     <Grid width='220px'>
                         <h3 className='select-search-heading'>FACE</h3>
@@ -342,7 +354,10 @@ export const RarityScoreSoonabots: React.FC = () => {
                         {frequencyStateFace !=null && 
                             <div className='select-search-bottom'> Frequency: {frequencyStateFace}%</div>
                         }
-                        <div className='select-search-bottom'>Rarity Score: {faceState != null && faceState.toFixed(2)} </div>
+                        {faceState != null &&
+                            <div className='select-search-bottom'>Rarity Score: {faceState != null && faceState.toFixed(2)} </div>
+                        }
+                        
                     </Grid>
                  
                 </Grid>
@@ -362,18 +377,13 @@ export const RarityScoreSoonabots: React.FC = () => {
                         </Grid>
                     }
 
-                    { result == null &&
-                        <Grid >
-                            <div>Fill all above values to get your Rarity Score</div>
-                        </Grid>
-                    }
                 </Grid>
                 <Grid  
                     container 
                     spacing={1}
                     justifyContent='center'
                     className='select-search-reset-button'>
-                    <div>The highest possible Rarity Score is 3387.62. The lowest Rarity Score is 65.9972.</div>
+                    <div>The highest possible Rarity Score is 3387.62. The lowest possible Rarity Score is 65.9972.</div>
                 </Grid>
                 <Grid  
                     container 
