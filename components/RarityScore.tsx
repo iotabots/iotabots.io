@@ -46,13 +46,6 @@ export const RarityScoreSoonabots: React.FC = () => {
     const [displayPicturePath, setDisplayPicturePath] = useState(null)
 
 
- 
-    const filterConfig = {
-        matchFrom: true
-        ? ('start' as const)
-        : ('any' as const),
-    }
-
     const styles = {
         option: (provided, state) => ({
           ...provided,
