@@ -72,6 +72,9 @@ export const RarityScoreSoonabots: React.FC = () => {
         else if (typeOfProperty === "background" && property !== null){
             filteredArray = soonabotDistProps.filter(tmp => tmp.background === property)
         }
+        else if (typeOfProperty === "face" && property !== null){
+            filteredArray = soonabotDistProps.filter(tmp => tmp.face === property)
+        }
     
     }
     
