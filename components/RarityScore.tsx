@@ -88,6 +88,15 @@ export const RarityScoreSoonabots: React.FC = () => {
         if (typeOfProperty !== "display" && filteredArray.length > 0 && selectedDisplayOption !== null){
             filteredArray = filteredArray.filter(tmp => tmp.display === selectedDisplayOption.label)
         }
+
+        if (filteredArray.length === 1){
+            setSelectedSoonabotId(filteredArray)
+            setRank(filteredArray[0].rank)
+        }
+        else {
+            setSelectedSoonabotId(null)
+            setRank(null)
+        }
     
     }
     
