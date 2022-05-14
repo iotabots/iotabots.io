@@ -79,6 +79,9 @@ export const RarityScoreSoonabots: React.FC = () => {
         if (typeOfProperty !== "body" && filteredArray.length > 0 && selectedBodyOption !== null){
             filteredArray = filteredArray.filter(tmp => tmp.Body === selectedBodyOption.label)
         }
+        if (typeOfProperty !== "face" && filteredArray.length > 0 && selectedFaceOption !== null){
+            filteredArray = filteredArray.filter(tmp => tmp.face === selectedFaceOption.label)
+        }
     
     }
     
