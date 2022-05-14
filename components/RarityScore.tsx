@@ -226,10 +226,6 @@ export const RarityScoreSoonabots: React.FC = () => {
         }
     }
 
-    const getSoonabotDisPropsAsync = (): typeof getSoonabotDisPropsAsync => (
-         soonabotDistProps.filter((i) => i.label)
-         )
-      
 
     const MAX_DISPLAYED_OPTIONS = 133
 
