@@ -291,7 +291,7 @@ export const RarityScoreSoonabots: React.FC = () => {
                             Your Rarity Rank indicates the rarity compared to other SOONABOTS. The lower your rank, the rarer your SOONABOT.
                         </div> 
                         <div className='top-spacing'>
-                            Fill all underneath properties to get your Rarity Score or enter your SOONABOT ID to get additionally your Rarity Rank!
+                            Enter your SOONABOT ID or the properties to get your Rarity Score and Rarity Rank!
                         </div>
                     </div>
                 </Grid> 
