@@ -63,29 +63,29 @@ export const RarityScoreSoonabots: React.FC = () => {
     const findMatchingSoonabot = (property, typeOfProperty):void => {
         let filteredArray = null 
 
-        if (typeOfProperty === "display" && property !== null){
+        if (typeOfProperty === 'display' && property !== null){
             filteredArray = soonabotDistProps.filter(tmp => tmp.display === property)
         }
-        else if (typeOfProperty === "body" && property !== null){
+        else if (typeOfProperty === 'body' && property !== null){
             filteredArray = soonabotDistProps.filter(tmp => tmp.Body === property)
         }
-        else if (typeOfProperty === "background" && property !== null){
+        else if (typeOfProperty === 'background' && property !== null){
             filteredArray = soonabotDistProps.filter(tmp => tmp.background === property)
         }
-        else if (typeOfProperty === "face" && property !== null){
+        else if (typeOfProperty === 'face' && property !== null){
             filteredArray = soonabotDistProps.filter(tmp => tmp.face === property)
         }
 
-        if (typeOfProperty !== "body" && filteredArray.length > 0 && selectedBodyOption !== null){
+        if (typeOfProperty !== 'body' && filteredArray.length > 0 && selectedBodyOption !== null){
             filteredArray = filteredArray.filter(tmp => tmp.Body === selectedBodyOption.label)
         }
-        if (typeOfProperty !== "face" && filteredArray.length > 0 && selectedFaceOption !== null){
+        if (typeOfProperty !== 'face' && filteredArray.length > 0 && selectedFaceOption !== null){
             filteredArray = filteredArray.filter(tmp => tmp.face === selectedFaceOption.label)
         }
-        if (typeOfProperty !== "background" && filteredArray.length > 0 && selectedBackgroundOption !== null){
+        if (typeOfProperty !== 'background' && filteredArray.length > 0 && selectedBackgroundOption !== null){
             filteredArray = filteredArray.filter(tmp => tmp.background === selectedBackgroundOption.label)
         }
-        if (typeOfProperty !== "display" && filteredArray.length > 0 && selectedDisplayOption !== null){
+        if (typeOfProperty !== 'display' && filteredArray.length > 0 && selectedDisplayOption !== null){
             filteredArray = filteredArray.filter(tmp => tmp.display === selectedDisplayOption.label)
         }
 
@@ -140,7 +140,7 @@ export const RarityScoreSoonabots: React.FC = () => {
 
 
         // setRank(null)
-        findMatchingSoonabot(displayArray.label, "display")
+        findMatchingSoonabot(displayArray.label, 'display')
         // setSelectedSoonabotId(null)
     }
     // Use Effect is used as setState is done asynchronously
@@ -161,7 +161,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBodyPicturePath(bodyArray.label)
 
         // setRank(null)
-        findMatchingSoonabot(bodyArray.label, "body")
+        findMatchingSoonabot(bodyArray.label, 'body')
         // setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
@@ -181,7 +181,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setFacePicturePath(faceArray.label)
 
         // setRank(null)
-        findMatchingSoonabot(faceArray.label, "face")
+        findMatchingSoonabot(faceArray.label, 'face')
         // setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
@@ -201,7 +201,7 @@ export const RarityScoreSoonabots: React.FC = () => {
         setBackgroundPicturePath(backgroundArray.label)
 
         // setRank(null)
-        findMatchingSoonabot(backgroundArray.label, "background")
+        findMatchingSoonabot(backgroundArray.label, 'background')
         // setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
