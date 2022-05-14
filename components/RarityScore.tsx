@@ -59,8 +59,7 @@ export const RarityScoreSoonabots: React.FC = () => {
           fontSize: state.selectProps.myFontSize
         })
       }
-
-    
+ 
     const setSoonabotId = (soonabotDistPropsArray):void => {
 
         let tempBackground = null
@@ -99,8 +98,9 @@ export const RarityScoreSoonabots: React.FC = () => {
         setDisplayPicturePath(displayArray.label)
 
 
-        setRank(null)
-        setSelectedSoonabotId(null)
+        // setRank(null)
+        findMatchingSoonabot(displayArray.label, "display")
+        // setSelectedSoonabotId(null)
     }
     // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -119,8 +119,9 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         setBodyPicturePath(bodyArray.label)
 
-        setRank(null)
-        setSelectedSoonabotId(null)
+        // setRank(null)
+        findMatchingSoonabot(bodyArray.label, "body")
+        // setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -138,8 +139,9 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         setFacePicturePath(faceArray.label)
 
-        setRank(null)
-        setSelectedSoonabotId(null)
+        // setRank(null)
+        findMatchingSoonabot(faceArray.label, "face")
+        // setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
@@ -157,8 +159,9 @@ export const RarityScoreSoonabots: React.FC = () => {
 
         setBackgroundPicturePath(backgroundArray.label)
 
-        setRank(null)
-        setSelectedSoonabotId(null)
+        // setRank(null)
+        findMatchingSoonabot(backgroundArray.label, "background")
+        // setSelectedSoonabotId(null)
     }
      // Use Effect is used as setState is done asynchronously
     useEffect(() => {
