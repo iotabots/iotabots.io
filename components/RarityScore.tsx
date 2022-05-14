@@ -59,6 +59,16 @@ export const RarityScoreSoonabots: React.FC = () => {
           fontSize: state.selectProps.myFontSize
         })
       }
+
+    const findMatchingSoonabot = (property, typeOfProperty):void => {
+        let filteredArray = null 
+
+        if (typeOfProperty === "display" && property !== null){
+            filteredArray = soonabotDistProps.filter(tmp => tmp.display === property)
+        }
+    
+    }
+    
  
     const setSoonabotId = (soonabotDistPropsArray):void => {
 
