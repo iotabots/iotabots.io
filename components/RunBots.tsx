@@ -56,9 +56,9 @@ const RunBots = () => {
             Play
           </a>
 
-          <Grid container spacing={6}>
+          <Grid container spacing={2}>
             {bots.flatMap((bot) => (
-              <Grid item key={bot.position} xs={2} sm={3} md={4}>
+              <Grid item key={bot.position} xs={4} sm={4} md={4}>
                 <Link href={`https://soonaverse.com/nft/${bot.uid}`}>
                   <Card
                     sx={{

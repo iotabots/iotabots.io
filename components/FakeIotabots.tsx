@@ -20,9 +20,9 @@ const FakeIotabots = ({ bots }) => (
         You don&apos;t own any IotaBots yet :(
       </Typography>
     ) : (
-      <Grid container spacing={6}>
+      <Grid container spacing={2}>
         {bots.flatMap((bot) => (
-          <Grid item key={bot} xs={2} sm={3} md={4}>
+          <Grid item key={bot} xs={4} sm={4} md={4}>
             <Link href={`/bots/${bot}`}>
               <Card
                 sx={{
