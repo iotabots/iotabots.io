@@ -48,13 +48,13 @@ const RunBots = () => {
         </Typography>
       ) : (
         <>
-          <Button
+          <a
             href='https://runbot.iotabots.io/'
             target='_blank'
             rel='noreferrer'
           >
             Play
-          </Button>
+          </a>
 
           <Grid container spacing={6}>
             {bots.flatMap((bot) => (
