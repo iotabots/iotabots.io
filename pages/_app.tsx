@@ -42,6 +42,13 @@ const App: React.FC<AppProps> = (props) => {
     { label: 'Projects', onClick: () => push('/projects') },
     { label: 'FAQ', onClick: () => push('/faq') },
   ]
+  const mobileMenuItems = [
+    { label: 'Home', onClick: () => push('/') },
+    { label: 'Profile', onClick: () => push('/profile') },
+    { label: 'Bots', onClick: () => push('/bots') },
+    { label: 'Projects', onClick: () => push('/projects') },
+    { label: 'FAQ', onClick: () => push('/faq') },
+  ]
 
   React.useEffect(() => {
     ReactGA.initialize(`${YOUR_TRACKING_ID}`)
@@ -100,7 +107,7 @@ const App: React.FC<AppProps> = (props) => {
         <Web3ReactProvider getLibrary={getLibrary}>
           <Navigation
             menu={menuItems}
-            mobileMenu={menuItems}
+            mobileMenu={mobileMenuItems}
             identity
             logo={<Logo />}
             onClickProfile={() => push('/profile')}
