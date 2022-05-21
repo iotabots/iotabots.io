@@ -18,7 +18,7 @@ const RunBots = () => {
   React.useEffect(() => {
     if (!!account && !!library) {
       if (process.browser && bots.length === 0) {
-        console.log('gogo')
+        console.log('gogo RunBots!!')
         // client-side-only code
         window.soon.getNftsByEthAddress(account).then((obj) => {
           // soonabots collection "0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a"

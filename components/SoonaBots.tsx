@@ -4,14 +4,14 @@ import Link from 'next/link'
 import * as React from 'react'
 import { useWeb3React } from '@web3-react/core'
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const FakeIotabots = () => {
+const Soonabots = () => {
   const [bots, setBots] = React.useState<Array<any>>([])
   const { account, library } = useWeb3React()
 
   React.useEffect(() => {
     if (account) {
       if (process.browser && bots.length === 0) {
-        console.log('gogo')
+        console.log('gogo Soonabots')
         // client-side-only code
         window.soon.getNftsByEthAddress(account).then((obj) => {
           // soonabots collection "0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a"
@@ -23,7 +23,7 @@ const FakeIotabots = () => {
         })
       }
     }
-  })
+  }, [account])
   return (
     <Box sx={{ marginBottom: '10px' }}>
       <Typography gutterBottom variant='h4'>
@@ -73,4 +73,4 @@ const FakeIotabots = () => {
   )
 }
 
-export default FakeIotabots
+export default Soonabots
