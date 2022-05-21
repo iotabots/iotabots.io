@@ -3,10 +3,12 @@ import { Web3Provider } from '@ethersproject/providers'
 import {
   BaseLayout,
   Button,
+  ConnectButton,
   Container,
   Grid,
   Section,
   SectionHeader,
+  Typography,
 } from '@iotabots/components'
 import { useWeb3React } from '@web3-react/core'
 import * as React from 'react'
@@ -49,6 +51,16 @@ const Profile: React.FC = (props: any) => {
           subtitle='Here at your profile we will show all your NFTs from different collections.'
         />
         <Container maxWidth='md'>
+          {account ? (
+            <p>
+              {' '}
+              <Typography variant='h6' mb={0}>
+                {`Welcome ${bots.length > 0 ? bots[0] : ''}!`}
+              </Typography>
+            </p>
+          ) : (
+            <ConnectButton />
+          )}
           <Grid container spacing={6}>
             <Grid item xs={12} md={4}>
               <Connector bots={bots} />
