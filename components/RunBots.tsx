@@ -15,6 +15,11 @@ const RunBots = () => {
   const [bots, setBots] = React.useState<Array<any>>([])
   const { account, library } = useWeb3React()
 
+  const play = () => {
+    console.log('Play')
+    window.open('https://runbot.iotabots.io/', '_blank')
+  }
+
   React.useEffect(() => {
     if (!!account && !!library) {
       if (process.browser && bots.length === 0) {
@@ -23,7 +28,7 @@ const RunBots = () => {
         window.soon.getNftsByEthAddress(account).then((obj) => {
           // soonabots collection "0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a"
           const filteredBots = obj.filter(
-            (e) => e.collection === '0x3e063afa1d0d4bc154d6de98d1093cf55415b146'
+            (e) => e.collection === '0x730bc88f5f98f1448eb2f5acdf1b32ffe6f27bc0'
           )
           console.log('filteredBots', filteredBots)
           setBots(filteredBots)
@@ -48,14 +53,9 @@ const RunBots = () => {
         </Typography>
       ) : (
         <>
-          <a
-            href='https://runbot.iotabots.io/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            Play
-          </a>
-
+          <br />
+          <Button onClick={play}>Play Runbot!</Button>
+          <br />
           <Grid container spacing={2}>
             {bots.flatMap((bot) => (
               <Grid item key={bot.position} xs={4} sm={4} md={4}>
