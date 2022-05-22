@@ -15,7 +15,7 @@ const RunBots = () => {
   const [bots, setBots] = React.useState<Array<any>>([])
   const { account, library } = useWeb3React()
 
-  const play = () => {
+  const play = (): any => {
     console.log('Play')
     window.open('https://runbot.iotabots.io/', '_blank')
   }
