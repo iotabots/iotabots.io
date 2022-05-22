@@ -17,7 +17,7 @@ const RunBots = () => {
 
   const play = (): any => {
     console.log('Play')
-    window.open('https://runbot.iotabots.io/', '_blank')
+    window.open('https://runbot.iotabots.io/')
   }
 
   React.useEffect(() => {
