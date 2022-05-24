@@ -28,7 +28,7 @@ const ProjectCard: React.FC<IProps> = ({ project }) => {
 
   return (
     <Card sx={{ bgcolor: 'rgba(0,0,0,0.5)' }}>
-      <CardMedia sx={{ height: 200 }} image={project.thumbnail} />
+      <CardMedia sx={{ height: 340 }} image={project.thumbnail} />
       <CardContent>
         <Status status={project.status} />
         <Typography mt={3} mb={1} variant='h4'>

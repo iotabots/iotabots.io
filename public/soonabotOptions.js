@@ -120,8 +120,6 @@ export const bodyOptions  = [
     {value: 0.63, label: 'Chameleon' ,raritystatus: 'Rare'  	  },
     {value: 0.86, label: 'Chamois'	 ,raritystatus: 'Rare'  	  },
     {value: 1.03, label: 'Chenin'	 ,raritystatus: 'Rare'  	  },
-	
-	
     {value: 1.16, label: 'Chroma'    ,raritystatus: 'Rare'        },
     {value: 2.16, label: 'Cost'      ,raritystatus: 'Common'	  },
     {value: 1.43, label: 'Cruise'    ,raritystatus: 'Uncommon'	  },
@@ -235,7 +233,7 @@ export const faceOptions  = [
     {value: 5.19 ,label: 'Sleeping'  ,raritystatus: 'Rare'       	},
     {value: 3.05 ,label: 'Smiling'   ,raritystatus: 'Uncommon'   	},
     {value: 2.39 ,label: 'Smirking'  ,raritystatus: 'Uncommon'  	},
-    {value: 5.35 ,label: 'Starsruck' ,raritystatus: 'Common'		},	
+    {value: 5.35 ,label: 'Starstruck' ,raritystatus: 'Common'		},	
     {value: 2.55 ,label: 'Surprise'  ,raritystatus: 'Uncommon'		},
     {value: 1.73 ,label: 'Suspicious',raritystatus: 'Rare'			},
     {value: 1.48 ,label: 'Sweat'     ,raritystatus: 'Rare'   		},
