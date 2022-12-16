@@ -75,13 +75,13 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/845.png'
           // eslint-disable-next-line max-len
-          text='Download your favourite IOTABOT or SOONABOT and use it as a profile picture. The SOONABOT is a fully animated BOT. Your SPACEBOT gives you access to a NFT game.'
+          text='Download your favourite IOTABOT or SOONABOT and use it as a profile picture. The SOONABOT is a fully animated BOT. Your SPACEBOT and your RUNBOT gives you access to a NFT game.'
           headline='What can I do with my BOTs?'
         >
           { }
         </ContentBox>
         <ContentBox
-          image=''
+          image='http://assets.iotabots.io/compressed/5.png'
           // eslint-disable-next-line max-len
           text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
           headline='How do I get the animated SOONABOT version as my profile picture?'
