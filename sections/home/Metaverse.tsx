@@ -41,7 +41,7 @@ const data = {
     {
       headline: 'Minigames',
       text: 'placeholder',
-      image: '/assets/metaverse/runbot.png',
+      image: '/assets/projects/minigames.png',
     },
   ],
 }
