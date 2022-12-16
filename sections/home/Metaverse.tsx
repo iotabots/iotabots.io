@@ -33,6 +33,11 @@ const data = {
       text: 'SOONABOTS are a 3D, fully animated, PFP NFT. They give you access to the IOTABOT Metaverse.',
       image: '/assets/metaverse/soonabot.svg',
     },
+    {
+      headline: 'RUNBOTS',
+      text: 'Let your SOONABOT run for as long as possible to reach the highest highscore for this NFT Game.',
+      image: '/assets/metaverse/runbot.png',
+    },
   ],
 }
 
