@@ -59,7 +59,8 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/62.png'
           // eslint-disable-next-line max-len
-          text='All currently existing IOTABOTS and SPACEBOTS were given away for free and can no longer be acquired. The RUNBOTS were available for free for SOONABOT owners (1 mi dust protection) and can now be purchased on the secondary market on Soonaverse. The sale of the SOONABOTS is still live on SOONAVERSE where you can get one for 100 MIOTA. Here is the link where you can buy some SOONABOTS: https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'
+          text='All currently existing IOTABOTS and SPACEBOTS were given away for free and can no longer be acquired. The RUNBOTS were available for free for SOONABOT owners (1 mi dust protection) and can now be purchased on the secondary market on Soonaverse. 
+          The sale of the SOONABOTS is still live on SOONAVERSE where you can get one for 100 MIOTA. Here is the link where you can buy some SOONABOTS: https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'
           headline='How can I get NFTs?'
         >
           { }
