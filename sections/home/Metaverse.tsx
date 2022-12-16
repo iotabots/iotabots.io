@@ -40,7 +40,7 @@ const data = {
     },
     {
       headline: 'Minigames',
-      text: 'placeholder',
+      text: 'Play minigames with your IOTABOT or your LUMI without having to own any NFT',
       image: '/assets/projects/minigames.png',
     },
   ],
