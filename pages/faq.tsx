@@ -81,6 +81,14 @@ const FAQ: React.FC = () => (
           { }
         </ContentBox>
         <ContentBox
+        image='http://assets.iotabots.io/compressed/85.png'
+        // eslint-disable-next-line max-len
+        text='Yes you can! A SOONABOT was only needed to be able to purchase the RUNBOT initially at the first sale.'
+        headline='Can I play the RUNBOT game without owning a SOONABOT?'
+        >
+          { }  
+        </ContentBox>
+        <ContentBox
           image='http://assets.iotabots.io/compressed/5.png'
           // eslint-disable-next-line max-len
           text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
