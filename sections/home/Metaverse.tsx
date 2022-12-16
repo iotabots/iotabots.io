@@ -38,6 +38,11 @@ const data = {
       text: 'Let your SOONABOT run for as long as possible to reach the highest highscore for this NFT Game.',
       image: '/assets/metaverse/runbot.png',
     },
+    {
+      headline: 'Minigames',
+      text: 'placeholder',
+      image: '/assets/metaverse/runbot.png',
+    },
   ],
 }
 
