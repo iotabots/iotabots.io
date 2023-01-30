@@ -38,15 +38,15 @@ const App: React.FC<AppProps> = (props) => {
 
   const menuItems = [
     { label: 'Home', onClick: () => push('/') },
-    { label: 'Bots', onClick: () => push('/bots') },
-    { label: 'Projects', onClick: () => push('/projects') },
+    // { label: 'Bots', onClick: () => push('/bots') },
+    // { label: 'Projects', onClick: () => push('/projects') },
     { label: 'FAQ', onClick: () => push('/faq') },
   ]
   const mobileMenuItems = [
     { label: 'Home', onClick: () => push('/') },
-    { label: 'Profile', onClick: () => push('/profile') },
-    { label: 'Bots', onClick: () => push('/bots') },
-    { label: 'Projects', onClick: () => push('/projects') },
+    // { label: 'Profile', onClick: () => push('/profile') },
+    // { label: 'Bots', onClick: () => push('/bots') },
+    // { label: 'Projects', onClick: () => push('/projects') },
     { label: 'FAQ', onClick: () => push('/faq') },
   ]
 
@@ -85,7 +85,7 @@ const App: React.FC<AppProps> = (props) => {
         />
         <meta key='og:url' name='og:url' content={SEO.openGraph.url} />
         <meta key='og:image' name='og:image' content={SEO.openGraph.image} />
-        <meta name='keywords' content='IOTA, NFT, Metaverse, DeFi, EVM' />
+        <meta name='keywords' content='Web3, NFT, Metaverse, DeFi, EVM' />
         <script
           async
           // eslint-disable-next-line max-len
