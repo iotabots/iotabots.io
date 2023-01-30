@@ -37,17 +37,17 @@ const App: React.FC<AppProps> = (props) => {
   const { push } = useRouter()
 
   const menuItems = [
-    { label: 'Home', onClick: () => push('/') },
+    { label: '首页', onClick: () => push('/') },
     // { label: 'Bots', onClick: () => push('/bots') },
     // { label: 'Projects', onClick: () => push('/projects') },
-    { label: 'FAQ', onClick: () => push('/faq') },
+    { label: '关于', onClick: () => push('/faq') },
   ]
   const mobileMenuItems = [
-    { label: 'Home', onClick: () => push('/') },
+    { label: '首页', onClick: () => push('/') },
     // { label: 'Profile', onClick: () => push('/profile') },
     // { label: 'Bots', onClick: () => push('/bots') },
     // { label: 'Projects', onClick: () => push('/projects') },
-    { label: 'FAQ', onClick: () => push('/faq') },
+    { label: '关于', onClick: () => push('/faq') },
   ]
 
   React.useEffect(() => {

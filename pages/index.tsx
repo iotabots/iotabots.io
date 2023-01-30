@@ -9,8 +9,8 @@ import Roadmap from '../sections/home/Roadmap'
 export const Home: React.FC = () => (
   <BaseLayout>
     <Hero />
-    <Metaverse />
-    <Roadmap />
+    {/* <Metaverse /> */}
+    {/* <Roadmap /> */}
   </BaseLayout>
 )
 

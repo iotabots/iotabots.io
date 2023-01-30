@@ -50,12 +50,12 @@ const Bots: React.FC = () => {
   return (
     <BaseLayout>
       <Head>
-        <title>{`${SEO.title} | Bot List`}</title>
+        <title>{`${SEO.title} | CC List`}</title>
       </Head>
       <Section>
         <SectionHeader
-          title='IOTABOTS'
-          subtitle='Discover all IOTABOTS or find your own.'
+          title='CCDAO'
+          subtitle='Discover all CC or find your own.'
         />
         <Container maxWidth='md'>
           <Box mb={6}>
@@ -72,7 +72,7 @@ const Bots: React.FC = () => {
                         onClick={() => push(`/bots/${number}`)}
                         // eslint-disable-next-line max-len
                         src={`https://assets.iotabots.io/compressed/${number}.png`}
-                        alt={`IOTABOT #${number}`}
+                        alt={`CCDAO #${number}`}
                         layout='intrinsic'
                         width={300}
                         height={300}
@@ -80,7 +80,7 @@ const Bots: React.FC = () => {
                       />
                     </HoverText>
                   }
-                  headline={`IOTABOT #${number}`}
+                  headline={`CCDAO #${number}`}
                   text=''
                   maxWidth='300px'
                   rounded

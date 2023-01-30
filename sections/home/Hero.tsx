@@ -12,10 +12,10 @@ import Lottie from 'react-lottie-player'
 import iotabots from '../../public/assets/logo_anim.gif'
 
 const data = {
-  title: 'Enter the Multiverse',
+  title: 'CCDAO ~ ~ 专注技术开发',
   subtitle:
-    '*BEE* *BOB* *BOO* First NFT project on IOTA. Discover the Metaverse | NFTs | DEFI | DAO | GAMES | P2E | 100% OPENSOURCE',
-  buttonText: 'Explore Metaverse',
+    '我们构建多种基于 Web3 的数字解决方案和产品，包括 DeFi平台、NFT、定制区块链、智能合约、套利脚本、量化交易、加密钱包、边玩边赚游戏和元宇宙空间。',
+  buttonText: '业务咨询',
   image: iotabots.src,
 }
 

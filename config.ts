@@ -1,14 +1,14 @@
 export const SEO = {
-  title: 'IOTABOTS',
+  title: 'CCDAO',
   description:
-    'First NFT Profile Picture Project on IOTA. #DeFi #NFT #GameFi #play2earn',
+    'CC DAO 是一个技术开发的孵化 DAO. 我们构建多种基于 Web3 的数字解决方案和产品，包括 DeFi、NFT、NFT 市场、定制区块链、智能合约、加密钱包、边玩边赚游戏和元宇宙空间。',
   openGraph: {
     type: 'website',
-    url: 'www.iotabots.io',
-    title: 'IOTABOTS',
+    url: 'www.ccdao.club',
+    title: 'CCDAO',
     description:
       // eslint-disable-next-line max-len
-      'First NFT Profile Picture Project on IOTA. #DeFi #NFT #GameFi #play2earn',
+      'CC DAO 是一个技术开发的孵化 DAO. 我们构建多种基于 Web3 的数字解决方案和产品，包括 #DeFi、#NFT、#NFT 市场、定制区块链、#智能合约、#加密钱包、边玩边赚游戏和元宇宙空间。',
     image: '/assets/logo192.png',
   },
 }
