@@ -10,27 +10,27 @@ import {
 } from '@iotabots/components'
 
 const data = {
-  title: 'Metaverse',
-  subtitle: 'NFTs | DEFI | DAO | GAMES | P2E | 100% OPENSOURCE',
+  title: 'Web3 业务',
+  subtitle: 'NFTs | DEFI | DAO | GAMES | P2E | 100% 源码提供',
   data: [
     {
-      headline: 'IOTABOTS',
-      text: 'IOTABOTS Profile Picture (PFP) NFTs were the first minted NFTs on IOTA. They bring access for the Metaverse via web3 applications.',
+      headline: '去中心化咨询',
+      text: '我们的 Dapp 开发专家始终了解 Dapp 市场的最新趋势，从而帮助您分析项目创意的成功前景。获得有关项目技术和业务方面的快速咨询和指导。',
       image: '/assets/metaverse/iotabots.png',
     },
     {
-      headline: 'Trading Card Game',
-      text: 'The IOTABOTS TCG is the connection between the real world and the Metaverse. The game consists of physical cards and NFTs. Collect, trade, play & earn!',
+      headline: 'Web3产品设计开发',
+      text: '在 Dapp 设计方面，我们创建了直观、简单且引人入胜的前端，以提供卓越和最佳的用户体验。为广泛的业务设计和开发强大的去中心化应用程序。',
       image: '/assets/metaverse/tradingcards.png',
     },
     {
-      headline: 'Spacebots',
-      text: 'This was the first NFT Game of many more following in the future. Spacebots is pixelbased simple game and just 1001 games are available as a NFT. Shows, how NFTs can be used for game access.',
+      headline: '智能合约安全检测',
+      text: '机构级别的资金管理, 实时扫描漏洞安全威胁, 合约安全威胁检测.',
       image: '/assets/metaverse/gameboy.png',
     },
     {
-      headline: 'Soonabots',
-      text: 'SOONABOTS are a 3D, fully animated, PFP NFT. They give you access to the IOTABOT Metaverse.',
+      headline: '国际化市场运营方案',
+      text: '品牌运营、 合规框架搭建、 社交媒体运营、 媒体服务、  产品收录、合约审计',
       image: '/assets/metaverse/soonabot.svg',
     },
   ],
