@@ -15,7 +15,7 @@ const data = {
   title: 'CCDAO ~ ~ 专注技术开发',
   subtitle:
     '我们构建多种基于 Web3 的数字解决方案和产品，包括 DeFi平台、NFT、定制区块链、智能合约、套利脚本、量化交易、加密钱包、边玩边赚游戏和元宇宙空间。',
-  buttonText: '业务咨询',
+  buttonText: '业务咨询: @NyganBuilder',
   image: iotabots.src,
 }
 

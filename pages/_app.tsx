@@ -40,7 +40,9 @@ const App: React.FC<AppProps> = (props) => {
     { label: '首页', onClick: () => push('/') },
     // { label: 'Bots', onClick: () => push('/bots') },
     // { label: 'Projects', onClick: () => push('/projects') },
-    { label: '关于', onClick: () => push('/faq') },
+    { label: '联系我们', onClick: () => push('https://t.me/NyganBuilder') },
+
+    
   ]
   const mobileMenuItems = [
     { label: '首页', onClick: () => push('/') },
