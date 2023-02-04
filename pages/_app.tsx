@@ -38,16 +38,19 @@ const App: React.FC<AppProps> = (props) => {
 
   const menuItems = [
     { label: '首页', onClick: () => push('/') },
-    // { label: 'Bots', onClick: () => push('/bots') },
+    // { label: 'Bots', onClick: () => push('/bots') }, 
     { label: '经典案例', onClick: () => push('/projects') },
-    { label: '联系我们', onClick: () => push('https://t.me/NyganBuilder') },
+    { label: '服务咨询', onClick: () => push('https://t.me/NyganBuilder') },
+    { label: '关于我们', onClick: () => push('/assets/projects/CCDAO.pdf') },
   ]
   const mobileMenuItems = [
     { label: '首页', onClick: () => push('/') },
     // { label: 'Profile', onClick: () => push('/profile') },
     // { label: 'Bots', onClick: () => push('/bots') },
-    // { label: 'Projects', onClick: () => push('/projects') },
-    { label: '关于', onClick: () => push('/faq') },
+    { label: '经典案例', onClick: () => push('/projects') },
+    { label: '服务咨询', onClick: () => push('https://t.me/NyganBuilder') },
+    { label: '关于我们', onClick: () => push('/assets/projects/CCDAO.pdf') },
+    // { label: '关于', onClick: () => push('/faq') },
   ]
 
   React.useEffect(() => {

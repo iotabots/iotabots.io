@@ -53,6 +53,7 @@ const Hero: React.FC = () => {
             >
               {data.title}
             </Typography>
+            
             <Typography
               variant='subtitle1'
               mb={6}
@@ -63,6 +64,7 @@ const Hero: React.FC = () => {
             <Button size='large' color='secondary' onClick={scrollToBottom}>
               {data.buttonText}
             </Button>
+            
           </Grid>
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: '100%' }} component='img' src={data.image} />
