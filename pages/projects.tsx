@@ -18,9 +18,8 @@ interface IProps {
 const Projects: React.FC<IProps> = ({ projects }) => (
   <BaseLayout>
     <Section>
-      <SectionHeader title='Projects'
-        subtitle='The IOTABOTS Team and the Community building amazing projects.
-          Discover all projects in the IOTABOTS Metaverse.' />
+      <SectionHeader title='选择 CC DAO'
+        subtitle='借助我们安全、可扩展且现代的 Dapp 开发服务，成为区块链技术的创新者.' />
       <Container>
         <Grid
           style={{
