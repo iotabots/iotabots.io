@@ -41,7 +41,7 @@ const App: React.FC<AppProps> = (props) => {
     // { label: 'Bots', onClick: () => push('/bots') }, 
     { label: '经典案例', onClick: () => push('/projects') },
     { label: '服务咨询', onClick: () => push('https://t.me/NyganBuilder') },
-    { label: '关于我们', onClick: () => push('/assets/projects/CCDAO.pdf') },
+    { label: '关于我们', onClick: () => push('/CCDAO.pdf') },
   ]
   const mobileMenuItems = [
     { label: '首页', onClick: () => push('/') },
@@ -49,7 +49,7 @@ const App: React.FC<AppProps> = (props) => {
     // { label: 'Bots', onClick: () => push('/bots') },
     { label: '经典案例', onClick: () => push('/projects') },
     { label: '服务咨询', onClick: () => push('https://t.me/NyganBuilder') },
-    { label: '关于我们', onClick: () => push('/assets/projects/CCDAO.pdf') },
+    { label: '关于我们', onClick: () => push('/CCDAO.pdf') },
     // { label: '关于', onClick: () => push('/faq') },
   ]
 
