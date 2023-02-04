@@ -1,7 +1,7 @@
 import React from 'react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { BaseLayout } from '@iotabots/components'
+import { BaseLayout } from '@ccdao/components'
 import Hero from '../sections/home/Hero'
 import Metaverse from '../sections/home/Metaverse'
 import Roadmap from '../sections/home/Roadmap'

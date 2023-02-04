@@ -8,7 +8,7 @@ import {
   Search,
   Section,
   SectionHeader
-} from '@iotabots/components'
+} from '@ccdao/components'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Head from 'next/head'

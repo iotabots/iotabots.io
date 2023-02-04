@@ -6,7 +6,7 @@ import {
   Section,
   SectionHeader,
 //  Typography
-} from '@iotabots/components'
+} from '@ccdao/components'
 
 const FAQ: React.FC = () => (
   <BaseLayout>

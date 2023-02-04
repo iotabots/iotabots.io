@@ -4,7 +4,7 @@ import escapeRegExp from 'lodash/escapeRegExp'
 import {
     Container,
     Grid,
-  } from '@iotabots/components'
+  } from '@ccdao/components'
 import Select from 'react-select'
 import { backgroundOptions, bodyOptions, displayOptions, faceOptions } from '../public/soonabotOptions.js'
 import { soonabotDistProps } from '../public/soonabotDistribution.js'

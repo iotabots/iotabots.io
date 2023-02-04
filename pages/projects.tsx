@@ -7,7 +7,7 @@ import {
   Grid,
   Section,
   SectionHeader
-} from '@iotabots/components'
+} from '@ccdao/components'
 import ProjectCard from '../components/ProjectCard'
 import { ProjectMeta } from '../interfaces/project'
 

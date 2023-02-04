@@ -5,7 +5,7 @@ import {
   Section,
   SectionHeader,
   Timeline,
-} from '@iotabots/components'
+} from '@ccdao/components'
 
 const data = {
   title: '成功案例',

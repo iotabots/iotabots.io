@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import * as React from 'react'
 import { useRouter } from 'next/router'
-import { BotCard, Box, Grid, Typography } from '@iotabots/components'
+import { BotCard, Box, Grid, Typography } from '@ccdao/components'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const BotList: React.FC = () => {

@@ -9,7 +9,7 @@ import {
   Section,
   SectionHeader,
   Typography,
-} from '@iotabots/components'
+} from '@ccdao/components'
 import { useWeb3React } from '@web3-react/core'
 import * as React from 'react'
 import { useRouter } from 'next/router'

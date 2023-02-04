@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
-import { Box, Button, Typography } from '@iotabots/components'
+import { Box, Button, Typography } from '@ccdao/components'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import { useWeb3React } from '@web3-react/core'
 import {

@@ -7,7 +7,7 @@ import {
   Grid,
   Section,
   Typography,
-} from '@iotabots/components'
+} from '@ccdao/components'
 import Lottie from 'react-lottie-player'
 import iotabots from '../../public/assets/logo_anim.gif'
 

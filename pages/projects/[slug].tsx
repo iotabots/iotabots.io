@@ -6,7 +6,7 @@ import {
   Container,
   Section,
   SectionHeader
-} from '@iotabots/components'
+} from '@ccdao/components'
 import styled from 'styled-components'
 import Image from '../../components/ImageLoader'
 import { ProjectInfo } from '../../interfaces/project'

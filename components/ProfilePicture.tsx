@@ -1,4 +1,4 @@
-import { Avatar, Badge, Box, Typography } from '@iotabots/components'
+import { Avatar, Badge, Box, Typography } from '@ccdao/components'
 import { Popper } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { useWeb3React } from '@web3-react/core'

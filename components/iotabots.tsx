@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { BotCard, Box, Grid, Typography } from '@iotabots/components'
+import { BotCard, Box, Grid, Typography } from '@ccdao/components'
 import Image from 'next/image'
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React } from '@web3-react/core'

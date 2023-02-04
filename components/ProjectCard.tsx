@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useRouter } from 'next/router'
-import { Button, Chip, Typography } from '@iotabots/components'
+import { Button, Chip, Typography } from '@ccdao/components'
 import { Card, CardContent, CardMedia } from '@mui/material'
 import { ProjectMeta } from '../interfaces/project'
 

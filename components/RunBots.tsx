@@ -5,7 +5,7 @@ import {
   CardContent,
   Grid,
   Typography,
-} from '@iotabots/components'
+} from '@ccdao/components'
 import CardMedia from '@mui/material/CardMedia'
 import Link from 'next/link'
 import * as React from 'react'

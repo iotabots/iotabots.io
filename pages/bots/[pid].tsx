@@ -6,7 +6,7 @@ import {
   Container,
   Section,
   Typography
-} from '@iotabots/components'
+} from '@ccdao/components'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Head from 'next/head'

@@ -5,7 +5,7 @@ import {
   Section,
   SectionHeader,
   Typography,
-} from '@iotabots/components'
+} from '@ccdao/components'
 import { useWeb3React } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
 import { useRouter } from 'next/router'

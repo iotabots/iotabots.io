@@ -1,5 +1,5 @@
 import React from 'react'
-import { BotCard, Grid } from '@iotabots/components'
+import { BotCard, Grid } from '@ccdao/components'
 import Image from 'next/image'
 import { Box } from '@mui/material'
 import Link from 'next/link'

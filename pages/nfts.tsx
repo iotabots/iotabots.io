@@ -3,7 +3,7 @@ import {
   BaseLayout,
   Section,
   SectionHeader,
-} from '@iotabots/components'
+} from '@ccdao/components'
 
 const Nfts: React.FC = () => (
   <BaseLayout>

@@ -7,7 +7,7 @@ import {
   Section,
   SectionHeader,
   Typography,
-} from '@iotabots/components'
+} from '@ccdao/components'
 
 const data = {
   title: 'Web3 业务',

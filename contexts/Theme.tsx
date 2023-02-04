@@ -3,7 +3,7 @@ import {
   CssBaseline,
   CustomThemeName,
   ThemeProvider as MuiThemeProvider
-} from '@iotabots/components'
+} from '@ccdao/components'
 
 export interface ThemeProviderProps {
   children: JSX.Element

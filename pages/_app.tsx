@@ -8,7 +8,7 @@ import { Web3Provider } from '@ethersproject/providers'
 import { Web3ReactProvider } from '@web3-react/core'
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import ReactGA from 'react-ga'
-import { Navigation } from '@iotabots/components'
+import { Navigation } from '@ccdao/components'
 import { useRouter } from 'next/router'
 import { SEO } from '../config'
 import ActiveLink from '../components/ActiveLink'
@@ -39,10 +39,8 @@ const App: React.FC<AppProps> = (props) => {
   const menuItems = [
     { label: '首页', onClick: () => push('/') },
     // { label: 'Bots', onClick: () => push('/bots') },
-    // { label: 'Projects', onClick: () => push('/projects') },
+    { label: '经典案例', onClick: () => push('/projects') },
     { label: '联系我们', onClick: () => push('https://t.me/NyganBuilder') },
-
-    
   ]
   const mobileMenuItems = [
     { label: '首页', onClick: () => push('/') },
