@@ -12,10 +12,10 @@ import Lottie from 'react-lottie-player'
 import iotabots from '../../public/assets/logo_anim.gif'
 
 const data = {
-  title: 'CCDAO ~ ~ 专注技术开发',
+  title: '  CC  DAO 🚀 专注技术开发',
   subtitle:
-    '我们构建多种基于 Web3 的数字解决方案和产品，包括 DeFi平台、NFT、定制区块链、智能合约、套利脚本、量化交易、加密钱包、边玩边赚游戏和元宇宙空间。',
-  buttonText: '业务咨询: @NyganBuilder',
+    'CC DAO 是一个技术开发的孵化团队，构建基于Web3的数字解决方案和产品，包括DeFi平台、 NFT、定制区块链、智能合约、加密钱包、GameFi和元宇宙空间、项目安全运维、链上数据监控、Web3原生品牌运营方案全案服务，帮助项目和品牌在Web3世界发展壮大。',
+  buttonText: '提供业务',
   image: iotabots.src,
 }
 
