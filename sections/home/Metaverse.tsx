@@ -16,22 +16,22 @@ const data = {
     {
       headline: '去中心化咨询',
       text: '我们的 Dapp 开发专家始终了解 Dapp 市场的最新趋势，从而帮助您分析项目创意的成功前景。获得有关项目技术和业务方面的快速咨询和指导。',
-      image: '/assets/metaverse/iotabots.png',
+      image: '/assets/metaverse/ccdao1.png',
     },
     {
       headline: 'Web3产品设计开发',
       text: '在 Dapp 设计方面，我们创建了直观、简单且引人入胜的前端，以提供卓越和最佳的用户体验。为广泛的业务设计和开发强大的去中心化应用程序。',
-      image: '/assets/metaverse/tradingcards.png',
+      image: '/assets/metaverse/ccdao3.png',
     },
     {
       headline: '智能合约安全检测',
       text: '机构级别的资金管理, 实时扫描漏洞安全威胁, 合约安全威胁检测.',
-      image: '/assets/metaverse/gameboy.png',
+      image: '/assets/metaverse/ccdao6.png',
     },
     {
       headline: '国际化市场运营方案',
       text: '品牌运营、 合规框架搭建、 社交媒体运营、 媒体服务、  产品收录、合约审计',
-      image: '/assets/metaverse/soonabot.svg',
+      image: '/assets/metaverse/ccdao5.png',
     },
   ],
 }
@@ -79,6 +79,7 @@ const Metaverse: React.FC = () => (
                 sx={{
                   maxWidth: '100%',
                   maxHeight: { xs: '200px', sm: '400px' },
+                  borderRadius: '8%' 
                 }}
               />
             </Grid>

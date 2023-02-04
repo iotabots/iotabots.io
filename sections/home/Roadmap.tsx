@@ -8,7 +8,7 @@ import {
 } from '@ccdao/components'
 
 const data = {
-  title: '成功案例',
+  title: '专业服务',
   subtitle:
     '借助我们安全、可扩展且现代的 Dapp 开发服务，成为区块链技术的创新者',
   data: [
