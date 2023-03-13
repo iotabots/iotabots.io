@@ -9,7 +9,8 @@ import {
   Typography,
 } from '@ccdao/components'
 import Lottie from 'react-lottie-player'
-import iotabots from '../../public/assets/logo_anim.gif'
+// import iotabots from '../../public/assets/logo_anim.gif'
+import iotabots from '../../public/assets/logo.png'
 
 const data = {
   title: '  CC  DAO 🚀 专注技术开发',
@@ -70,7 +71,7 @@ const Hero: React.FC = () => {
             
           </Grid>
           <Grid item md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
-            <Box sx={{ width: '100%' }} component='img' src={data.image} />
+            <Box ml={10} mt={5}  sx={{ width: '70%' }} component='img' src={data.image} />
           </Grid>
         </Grid>
         <Grid
