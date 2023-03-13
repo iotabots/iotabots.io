@@ -26,8 +26,11 @@ const Hero: React.FC = () => {
     import('../../public/assets/lottie.json').then(setAnimationData)
   }, [])
   const scrollToBottom = (): void => {
-    const bottomEle = document.getElementById('metaverse')
-    if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
+    const w = window.open('about:blank')
+    // https://t.me/RobbieSon
+    w.location.href = "https://t.me/RobbieSon"
+    // const bottomEle = document.getElementById('metaverse')
+    // if (bottomEle) bottomEle.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
