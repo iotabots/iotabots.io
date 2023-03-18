@@ -40,7 +40,7 @@ const App: React.FC<AppProps> = (props) => {
     { label: '首页', onClick: () => push('/') },
     // { label: 'Bots', onClick: () => push('/bots') }, 
     { label: '经典案例', onClick: () => push('/projects') },
-    { label: '服务咨询', onClick: () => push('https://t.me/RobbieSon') },
+    { label: '服务咨询', onClick: () => push('https://t.me/icefrog666') },
     { label: '关于我们', onClick: () => push('/CCDAO.pdf') },
     { label: 'ICEFROG冰蛙', onClick: () => push('https://twitter.com/Ice_Frog666666') },
   ]
@@ -49,7 +49,7 @@ const App: React.FC<AppProps> = (props) => {
     // { label: 'Profile', onClick: () => push('/profile') },
     // { label: 'Bots', onClick: () => push('/bots') },
     { label: '经典案例', onClick: () => push('/projects') },
-    { label: '服务咨询', onClick: () => push('https://t.me/RobbieSon') },
+    { label: '服务咨询', onClick: () => push('https://t.me/icefrog666') },
     { label: '关于我们', onClick: () => push('/CCDAO.pdf') },
     { label: 'ICEFROG冰蛙', onClick: () => push('https://twitter.com/Ice_Frog666666') },
     // { label: '关于', onClick: () => push('/faq') },
