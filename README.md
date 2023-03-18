@@ -8,7 +8,7 @@
 
 # Website
 
-This is the repository for the website on [www.ccdao.club](https://ice.ccdao.club).
+冰蛙合作: [ice.ccdao.club](https://ice.ccdao.club).
 
 
 
