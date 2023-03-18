@@ -16,7 +16,7 @@
     ]
   },
   "dependencies": {
-    "@ccdao/components": "0.1.4",
+    "@ccdao/components": "0.1.6",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@ethersproject/providers": "^5.5.1",
