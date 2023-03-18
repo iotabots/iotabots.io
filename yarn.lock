@@ -1099,10 +1099,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@ccdao/components@0.1.5":
-  version "0.1.5"
-  resolved "https://registry.npmjs.org/@ccdao/components/-/components-0.1.5.tgz#f89c775708321efeabfa6f512f128d690c535415"
-  integrity sha512-Zq02sAL2ROquUE6d2/7Sg7Odj4il3vxjCcpXTFUbBA7gAwmxhoXjO/ev6KDwUQbsMu9XJovHWJjBi7axusrgMw==
+"@ccdao/components@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.npmjs.org/@ccdao/components/-/components-0.1.6.tgz#8eb8239701d17262e95f12d326426454ad89fd42"
+  integrity sha512-CZ3yP6h3vbJo/Bj2RyhgImhVs009U5VeVNe3lhvqasrafR9kpawzKJxiR2V3nVvcTevoBaFGbr5rG81iNpL1kw==
   dependencies:
     "@date-io/date-fns" "^1.3.13"
     "@date-io/moment" "^1.3.13"
