@@ -4,13 +4,11 @@ import matter from 'gray-matter'
 import { BaseLayout } from '@iotabots/components'
 import Hero from '../sections/home/Hero'
 import Metaverse from '../sections/home/Metaverse'
-import Roadmap from '../sections/home/Roadmap'
 
 export const Home: React.FC = () => (
   <BaseLayout>
     <Hero />
     <Metaverse />
-    <Roadmap />
   </BaseLayout>
 )
 
