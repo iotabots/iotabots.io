@@ -3,15 +3,15 @@ import { NetworkConnector } from '@web3-react/network-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 
 const RPC_URLS: { [chainId: number]: string } = {
-  1074: process.env.RPC_URL_IOTA_EVM as string,
+  1071: process.env.RPC_URL_IOTA_EVM as string,
 }
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1074]
+  supportedChainIds: [1071]
 })
 
 export const network = new NetworkConnector({
-  urls: { 1074: RPC_URLS[1074] },
+  urls: { 1071: RPC_URLS[1071] },
   defaultChainId: 1
 })
 
