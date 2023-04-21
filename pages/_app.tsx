@@ -11,7 +11,6 @@ import ReactGA from 'react-ga'
 import { Navigation } from '@iotabots/components'
 import { useRouter } from 'next/router'
 import { SEO } from '../config'
-import ActiveLink from '../components/ActiveLink'
 import Logo from '../components/Logo'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
