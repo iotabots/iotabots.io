@@ -42,7 +42,7 @@ const App: React.FC<AppProps> = (props) => {
     { label: '经典案例', onClick: () => push('/projects') },
     { label: '服务咨询', onClick: () => push('https://t.me/icefrog666') },
     { label: '关于我们', onClick: () => push('/CCDAO.pdf') },
-    { label: 'ICEFROG冰蛙', onClick: () => push('https://twitter.com/Ice_Frog666666') },
+    { label: 'Airdrops+', onClick: () => push('https://airdrops.plus') },
   ]
   const mobileMenuItems = [
     { label: '首页', onClick: () => push('/') },
@@ -51,7 +51,7 @@ const App: React.FC<AppProps> = (props) => {
     { label: '经典案例', onClick: () => push('/projects') },
     { label: '服务咨询', onClick: () => push('https://t.me/icefrog666') },
     { label: '关于我们', onClick: () => push('/CCDAO.pdf') },
-    { label: 'ICEFROG冰蛙', onClick: () => push('https://twitter.com/Ice_Frog666666') },
+    { label: 'Airdrops+', onClick: () => push('https://airdrops.plus') },
     // { label: '关于', onClick: () => push('/faq') },
   ]
 
