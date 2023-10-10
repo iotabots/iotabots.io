@@ -19,7 +19,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/11.png'
           // eslint-disable-next-line max-len
-          text='An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. At this time they are NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet.'
+          text='An IOTABOT is a NFT in the form of a profile picture (PFP) that gives you access to the IOTABOTVERSE. They were the first NFTs (ERC721 Tokens) on the public IOTA Smart Contract EVM Testnet in 2021, now they are deployed on the ShimmerEVM Mainnet.'
           headline='WHAT IS AN IOTABOT?!'
         >
           {}
@@ -27,7 +27,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/987.png'
           // eslint-disable-next-line max-len
-          text='Right now there are 1048 IOTABOTS, 1001 SPACEBOTS and 3333 SOONABOTS.'
+          text='There are 1337 IOTABOTS, 1001 SPACEBOTS and 3333 SOONABOTS.'
           headline='How many NFTs exist right now?'
         >
           {}
@@ -35,7 +35,7 @@ const FAQ: React.FC = () => (
         <ContentBox
           image='http://assets.iotabots.io/compressed/990.png'
           // eslint-disable-next-line max-len
-          text='1337 unique IOTABOTS, 1001 SPACEBOTS, 3333 SOONABOTS and tbd NATUREBOTS.'
+          text='1337 unique IOTABOTS, 1001 SPACEBOTS, 3333 SOONABOTS.'
           headline='How many NFTs will exist?'
         >
           {}
@@ -45,30 +45,6 @@ const FAQ: React.FC = () => (
           // eslint-disable-next-line max-len
           text='Follow IOTABOTS on Twitter (https://twitter.com/iotabots) or/and join the Discord (https://t.co/BLwSLmwoJt) channel to not miss anything.'
           headline='How do I know about any updates and giveaways?'
-        >
-          {}
-        </ContentBox>
-        <ContentBox
-          image='http://assets.iotabots.io/compressed/385.png'
-          // eslint-disable-next-line max-len
-          text='On SOONAVERSE (https://soonaverse.com/) you can buy, sell and trade NFTs like the SOONABOTS without any fees. But it is also a platform to create DAOs and let the community engage for example via proposals.'
-          headline='What is SOONAVERSE?'
-        >
-          {}
-        </ContentBox>
-        <ContentBox
-          image='http://assets.iotabots.io/compressed/62.png'
-          // eslint-disable-next-line max-len
-          text='All currently existing IOTABOTS and SPACEBOTS were given away for free and can no longer be acquired. The sale of the SOONABOTS is still live on SOONAVERSE where you can get one for 100 MIOTA. Here is the link where you can buy some SOONABOTS: https://soonaverse.com/collection/0xeb47806ef8d4c908179bd05eeabc20bc3de8c81a'
-          headline='How can I get NFTs?'
-        >
-          {}
-        </ContentBox>
-        <ContentBox
-          image='http://assets.iotabots.io/compressed/187.png'
-          // eslint-disable-next-line max-len
-          text='Current IOTABOTS are deployed on the testnet. The SaveTheBots initiative tries to make a successfull transition to the mainnet - so the users can hold their IOTABOTS.'
-          headline='What does SaveTheBots mean?'
         >
           {}
         </ContentBox>
@@ -85,14 +61,6 @@ const FAQ: React.FC = () => (
           // eslint-disable-next-line max-len
           text='Use the following link for the instructions to download the animated version of your SOONABOT: http://docs.iotabots.io/faq#soonabots '
           headline='How do I get the animated SOONABOT version as my profile picture?'
-        >
-          {}
-        </ContentBox>
-        <ContentBox
-          image='http://assets.iotabots.io/compressed/895.png'
-          // eslint-disable-next-line max-len
-          text='You need Metamask with the following custom network settings: RPC URL = https://evm.wasp.sc.iota.org and Chain ID = 1074'
-          headline='How can I connect to the public IOTA EVM testnet?'
         >
           {}
         </ContentBox>
