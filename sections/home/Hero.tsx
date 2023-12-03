@@ -14,7 +14,7 @@ import iotabots from '../../public/assets/logo_anim.gif'
 const data = {
   title: 'Enter the Multiverse',
   subtitle:
-    '*BEE* *BOB* *BOO* First NFT project on IOTA. Discover the Metaverse | NFTs | DEFI | DAO | GAMES | P2E | 100% OPENSOURCE',
+    '*BEE* *BOB* *BOO* First and free NFT project on IOTA.',
   buttonText: 'Explore Metaverse',
   image: iotabots.src,
 }
