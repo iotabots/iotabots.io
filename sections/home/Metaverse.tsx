@@ -11,27 +11,22 @@ import {
 
 const data = {
   title: 'Metaverse',
-  subtitle: 'NFTs | DEFI | DAO | GAMES | P2E | 100% OPENSOURCE',
+  subtitle: 'NFTs | 100% OPENSOURCE',
   data: [
     {
       headline: 'IOTABOTS',
-      text: 'IOTABOTS Profile Picture (PFP) NFTs were the first minted NFTs on IOTA. They bring access for the Metaverse via web3 applications.',
+      text: 'IOTABOTS Profile Picture (PFP) NFTs were the first and free minted NFTs on IOTA.',
       image: '/assets/metaverse/iotabots.png',
     },
     {
       headline: 'Trading Card Game',
-      text: 'The IOTABOTS TCG is the connection between the real world and the Metaverse. The game consists of physical cards and NFTs. Collect, trade, play & earn!',
+      text: 'The IOTABOTS TCG are physical trading cards made by the community!',
       image: '/assets/metaverse/tradingcards.png',
     },
     {
-      headline: 'Spacebots',
-      text: 'This was the first NFT Game of many more following in the future. Spacebots is pixelbased simple game and just 1001 games are available as a NFT. Shows, how NFTs can be used for game access.',
+      headline: 'Game Bots',
+      text: 'Game Bots are simple and free Games as NFTs on IOTA and Shimmer.',
       image: '/assets/metaverse/gameboy.png',
-    },
-    {
-      headline: 'Soonabots',
-      text: 'SOONABOTS are a 3D, fully animated, PFP NFT. They give you access to the IOTABOT Metaverse.',
-      image: '/assets/metaverse/soonabot.svg',
     },
   ],
 }
